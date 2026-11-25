@@ -1,0 +1,12 @@
+FAS 1.10
+
+function[2] "localNamesProbe" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "inputValue"
+  00001  e0           PushLiteral             literal-index=0  ; "!"
+  00002  25           Concatenate             
+  00003  45           GetData                 
+  00004  b1           PopVariable             variable-index=1  ; "meaningfulLocal"
+  00005  4f           StoreResult             
+  00006  a1           PushVariable            variable-index=1  ; "meaningfulLocal"
+  00007  0f           Return                  
+  00008  0f           Return                  

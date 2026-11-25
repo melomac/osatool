@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"commandSpacingProbe\"",
+      "arguments": "[]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "descriptor(\"alis\",000000000140000200010c4d6163696e746f736820484400...)"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 18,
+          "mnemonic": "Tell",
+          "raw_hex": "120007",
+          "operands": [
+            {
+              "kind": "signed-word",
+              "value": 7
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 5,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 6,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0001",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "event(\"misc\",\"actv\",\"null\",0xffff8000,\"obj \",0xffff8000) activate"
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 85,
+          "mnemonic": "EndTell",
+          "raw_hex": "55"
+        },
+        {
+          "offset": 10,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

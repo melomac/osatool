@@ -1,0 +1,9 @@
+FAS 1.10
+
+function[4] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "first_value"
+  00005  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "second_value"
+  0000a  6c           Push2                   
+  0000b  76           MakeVector              
+  0000c  0f           Return                  
+  0000d  0f           Return                  

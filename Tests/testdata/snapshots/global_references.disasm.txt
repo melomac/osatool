@@ -1,0 +1,15 @@
+FAS 1.10
+
+function[3] "globalProbe" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "changed"
+  00001  45           GetData                 
+  00002  d1           PopGlobal               literal-index=1  ; "saved_value"
+  00003  4f           StoreResult             
+  00004  c1           PushGlobal              literal-index=1  ; "saved_value"
+  00005  6a           Push0                   
+  00006  0c0002       MessageSend             literal-index=2  ; event("syso","dlog","askr",0x00000000,"TEXT",0x00000000) display dialog
+  00009  4f           StoreResult             
+  0000a  c3           PushGlobal              literal-index=3  ; constant(0x72736c74) 'rslt' result
+  0000b  45           GetData                 
+  0000c  0f           Return                  
+  0000d  0f           Return                  

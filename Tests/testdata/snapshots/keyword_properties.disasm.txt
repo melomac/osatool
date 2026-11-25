@@ -1,0 +1,87 @@
+FAS 1.10
+
+function[8] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  2a           PushIt                  
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x7074737a) 'ptsz' size
+  00002  2c           MakeObjectAlias           ; property
+  00003  6b           Push1                   
+  00004  1e           Add                     
+  00005  2a           PushIt                  
+  00006  e0           PushLiteral             literal-index=0  ; constant(0x7074737a) 'ptsz' size
+  00007  2c           MakeObjectAlias           ; property
+  00008  46           SetData                 
+  00009  4f           StoreResult             
+  0000a  2a           PushIt                  
+  0000b  e0           PushLiteral             literal-index=0  ; constant(0x7074737a) 'ptsz' size
+  0000c  2c           MakeObjectAlias           ; property
+  0000d  45           GetData                 
+  0000e  2a           PushIt                  
+  0000f  e1           PushLiteral             literal-index=1  ; constant(0x49442020) 'ID  ' id
+  00010  2c           MakeObjectAlias           ; property
+  00011  45           GetData                 
+  00012  2a           PushIt                  
+  00013  e2           PushLiteral             literal-index=2  ; constant(0x706e616d) 'pnam' name
+  00014  2c           MakeObjectAlias           ; property
+  00015  45           GetData                 
+  00016  2a           PushIt                  
+  00017  e3           PushLiteral             literal-index=3  ; constant(0x76657273) 'vers' version
+  00018  2c           MakeObjectAlias           ; property
+  00019  45           GetData                 
+  0001a  2a           PushIt                  
+  0001b  e4           PushLiteral             literal-index=4  ; constant(0x636f6c72) 'colr' color
+  0001c  2c           MakeObjectAlias           ; property
+  0001d  45           GetData                 
+  0001e  6200010005   PushParentVariable      parent-depth=1, variable-index=5  ; "outer"
+  00023  e5           PushLiteral             literal-index=5  ; constant(0x70626e64) 'pbnd' bounds
+  00024  2c           MakeObjectAlias           ; property
+  00025  45           GetData                 
+  00026  6200010005   PushParentVariable      parent-depth=1, variable-index=5  ; "outer"
+  0002b  6a           Push0                   
+  0002c  2b0006       PositionalMessageSend   literal-index=6  ; "reset"
+  0002f  e7           PushLiteral             literal-index=7  ; 7
+  00030  76           MakeVector              
+  00031  0f           Return                  
+  00032  0f           Return                  
+
+function[6] "reset" arguments=[] owner="outer" path=root[7].vector[4][6]
+  00000  6a           Push0                   
+  00001  2a           PushIt                  
+  00002  e0           PushLiteral             literal-index=0  ; constant(0x7074737a) 'ptsz' size
+  00003  2c           MakeObjectAlias           ; property
+  00004  46           SetData                 
+  00005  4f           StoreResult             
+  00006  6a           Push0                   
+  00007  6a           Push0                   
+  00008  6a           Push0                   
+  00009  6a           Push0                   
+  0000a  e1           PushLiteral             literal-index=1  ; 4
+  0000b  76           MakeVector              
+  0000c  2a           PushIt                  
+  0000d  e2           PushLiteral             literal-index=2  ; constant(0x70626e64) 'pbnd' bounds
+  0000e  2c           MakeObjectAlias           ; property
+  0000f  46           SetData                 
+  00010  4f           StoreResult             
+  00011  6200010003   PushParentVariable      parent-depth=1, variable-index=3  ; "inner"
+  00016  6a           Push0                   
+  00017  2b0003       PositionalMessageSend   literal-index=3  ; "show"
+  0001a  0f           Return                  
+  0001b  0f           Return                  
+
+function[2] "show" arguments=[] owner="inner" path=root[7].vector[4][5].vector[4][2]
+  00000  2a           PushIt                  
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x7074737a) 'ptsz' size
+  00002  2c           MakeObjectAlias           ; property
+  00003  45           GetData                 
+  00004  2a           PushIt                  
+  00005  e1           PushLiteral             literal-index=1  ; constant(0x70626e64) 'pbnd' bounds
+  00006  2c           MakeObjectAlias           ; property
+  00007  45           GetData                 
+  00008  6200020002   PushParentVariable      parent-depth=2, variable-index=2  ; "label"
+  0000d  2a           PushIt                  
+  0000e  e2           PushLiteral             literal-index=2  ; constant(0x49442020) 'ID  ' id
+  0000f  2c           MakeObjectAlias           ; property
+  00010  45           GetData                 
+  00011  e3           PushLiteral             literal-index=3  ; 4
+  00012  76           MakeVector              
+  00013  0f           Return                  
+  00014  0f           Return                  

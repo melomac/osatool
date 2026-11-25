@@ -1,0 +1,14 @@
+FAS 1.10
+
+function[4] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "object"
+  00005  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "holder"
+  0000a  e0           PushLiteral             literal-index=0  ; "object"
+  0000b  2c           MakeObjectAlias           ; property
+  0000c  1e           Add                     
+  0000d  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "holder"
+  00012  e1           PushLiteral             literal-index=1  ; "other"
+  00013  2c           MakeObjectAlias           ; property
+  00014  1e           Add                     
+  00015  0f           Return                  
+  00016  0f           Return                  

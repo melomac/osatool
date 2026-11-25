@@ -1,0 +1,9 @@
+FAS 1.10
+
+function[2] "enumerationProbe" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "warning"
+  00001  e1           PushLiteral             literal-index=1  ; constant(0x61732041) 'as A' as
+  00002  e2           PushLiteral             literal-index=2  ; constant(0x45416c5463726954) 'EAlTcriT' critical
+  00003  6c           Push2                   
+  00004  0c0003       MessageSend             literal-index=3  ; event("syso","disA","aleR",0x00000000,"TEXT",0x00000000) display alert
+  00007  0f           Return                  

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "event(\"aevt\",\"odoc\",\"null\",0x00008000,\"alis\",0x00001000)",
+      "arguments": "\"dropped_items\"",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"dropped_items\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+.build/
+.swiftpm/
+.DS_Store
+*.xcodeproj
+.build-fuzz/
+Fuzz/corpus/
+Fuzz/corpus-terminology/
+Fuzz/artifacts/
+
+# Xcode local configuration
+local.xcconfig

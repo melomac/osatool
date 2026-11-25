@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 4,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010000",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"object\""
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010001",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"holder\""
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"object\""
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 12,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 13,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010001",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"holder\""
+          ]
+        },
+        {
+          "offset": 18,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"other\""
+          ]
+        },
+        {
+          "offset": 19,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 20,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 21,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 22,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"unknownEnumerationProbe\"",
+      "arguments": "[]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x7465737441424344) 'testABCD'"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

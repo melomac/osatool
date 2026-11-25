@@ -1,0 +1,52 @@
+FAS 1.10
+
+function[2] "describe" arguments=[]
+  00000  29           PushMe                  
+  00001  6a           Push0                   
+  00002  64           PushNext                
+  00003  2a           PushIt                  
+  00004  100000       Continue                literal-index=0  ; "describe"
+  00007  0f           Return                  
+
+function[3] "pair" arguments=vector(type=4,len=2)
+  00000  29           PushMe                  
+  00001  a0           PushVariable            variable-index=0  ; "a"
+  00002  a1           PushVariable            variable-index=1  ; "b"
+  00003  6c           Push2                   
+  00004  64           PushNext                
+  00005  2a           PushIt                  
+  00006  4a0000       PositionalContinue      literal-index=0  ; "pair"
+  00009  45           GetData                 
+  0000a  b2           PopVariable             variable-index=2  ; "x"
+  0000b  4f           StoreResult             
+  0000c  e1           PushLiteral             literal-index=1  ; "got "
+  0000d  a2           PushVariable            variable-index=2  ; "x"
+  0000e  25           Concatenate             
+  0000f  0f           Return                  
+  00010  0f           Return                  
+
+function[4] event("aevt","quit","null",0xffff8000,"null",0xffff9000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; "bye"
+  00001  6a           Push0                   
+  00002  0c0001       MessageSend             literal-index=1  ; event("syso","dlog","askr",0x00000000,"TEXT",0x00000000) display dialog
+  00005  4f           StoreResult             
+  00006  29           PushMe                  
+  00007  6a           Push0                   
+  00008  64           PushNext                
+  00009  2a           PushIt                  
+  0000a  100002       Continue                literal-index=2  ; event("aevt","quit","null",0xffff8000,"null",0xffff9000) quit
+  0000d  0f           Return                  
+
+function[5] "label" arguments=vector(type=4,len=2)
+  00000  e0           PushLiteral             literal-index=0  ; "<"
+  00001  29           PushMe                  
+  00002  a0           PushVariable            variable-index=0  ; "a"
+  00003  6b           Push1                   
+  00004  64           PushNext                
+  00005  2a           PushIt                  
+  00006  4a0001       PositionalContinue      literal-index=1  ; "label"
+  00009  25           Concatenate             
+  0000a  e2           PushLiteral             literal-index=2  ; ">"
+  0000b  25           Concatenate             
+  0000c  0f           Return                  
+  0000d  0f           Return                  

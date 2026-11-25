@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"fixture_label\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"value\""
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 3,
+          "opcode": 14,
+          "mnemonic": "MakeRecord",
+          "raw_hex": "0e"
+        },
+        {
+          "offset": 4,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 5,
+          "opcode": 210,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"recordValue\""
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 7,
+          "opcode": 194,
+          "mnemonic": "PushGlobal",
+          "raw_hex": "c2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"recordValue\""
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"fixture_label\""
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 11,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 12,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

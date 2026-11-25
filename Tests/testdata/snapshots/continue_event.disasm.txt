@@ -1,0 +1,9 @@
+FAS 1.10
+
+function[2] event("aevt","odoc","null",0x00008000,"alis",0x00001000) arguments="xs"
+  00000  29           PushMe                  
+  00001  6a           Push0                   
+  00002  64           PushNext                
+  00003  a0           PushVariable            variable-index=0  ; "xs"
+  00004  100000       Continue                literal-index=0  ; event("aevt","odoc","null",0x00008000,"alis",0x00001000) open
+  00007  0f           Return                  

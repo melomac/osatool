@@ -1,0 +1,92 @@
+FAS 1.10
+
+function[2] "exerciseSpecifiers" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "inputValues"
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00002  6c           Push2                   
+  00003  2f           MakeObjectAlias           ; index
+  00004  45           GetData                 
+  00005  b1           PopVariable             variable-index=1  ; "indexedValue"
+  00006  4f           StoreResult             
+  00007  a0           PushVariable            variable-index=0  ; "inputValues"
+  00008  5b           Dup                     
+  00009  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0000a  5c           GCSwap                  
+  0000b  5b           Dup                     
+  0000c  5a           Pop                     
+  0000d  6c           Push2                   
+  0000e  5c           GCSwap                  
+  0000f  5a           Pop                     
+  00010  6d           Push3                   
+  00011  32           MakeObjectAlias           ; range
+  00012  45           GetData                 
+  00013  b2           PopVariable             variable-index=2  ; "rangedValues"
+  00014  4f           StoreResult             
+  00015  a0           PushVariable            variable-index=0  ; "inputValues"
+  00016  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00017  6b           Push1                   
+  00018  2f           MakeObjectAlias           ; index
+  00019  45           GetData                 
+  0001a  b3           PopVariable             variable-index=3  ; "firstValue"
+  0001b  4f           StoreResult             
+  0001c  a0           PushVariable            variable-index=0  ; "inputValues"
+  0001d  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0001e  69           PushMinus1              
+  0001f  2f           MakeObjectAlias           ; index
+  00020  45           GetData                 
+  00021  b4           PopVariable             variable-index=4  ; "lastValue"
+  00022  4f           StoreResult             
+  00023  a0           PushVariable            variable-index=0  ; "inputValues"
+  00024  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00025  37           MakeObjectAlias           ; middle
+  00026  45           GetData                 
+  00027  b5           PopVariable             variable-index=5  ; "middleValue"
+  00028  4f           StoreResult             
+  00029  a0           PushVariable            variable-index=0  ; "inputValues"
+  0002a  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0002b  2e           MakeObjectAlias           ; some
+  0002c  45           GetData                 
+  0002d  b6           PopVariable             variable-index=6  ; "someValue"
+  0002e  4f           StoreResult             
+  0002f  a0           PushVariable            variable-index=0  ; "inputValues"
+  00030  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00031  2d           MakeObjectAlias           ; every
+  00032  45           GetData                 
+  00033  b7           PopVariable             variable-index=7  ; "allValues"
+  00034  4f           StoreResult             
+  00035  a0           PushVariable            variable-index=0  ; "inputValues"
+  00036  35           MakeObjectAlias           ; beginning
+  00037  45           GetData                 
+  00038  b8           PopVariable             variable-index=8  ; "beginningValue"
+  00039  4f           StoreResult             
+  0003a  a0           PushVariable            variable-index=0  ; "inputValues"
+  0003b  36           MakeObjectAlias           ; end
+  0003c  45           GetData                 
+  0003d  b9           PopVariable             variable-index=9  ; "endValue"
+  0003e  4f           StoreResult             
+  0003f  a1           PushVariable            variable-index=1  ; "indexedValue"
+  00040  a2           PushVariable            variable-index=2  ; "rangedValues"
+  00041  a3           PushVariable            variable-index=3  ; "firstValue"
+  00042  a4           PushVariable            variable-index=4  ; "lastValue"
+  00043  a5           PushVariable            variable-index=5  ; "middleValue"
+  00044  a6           PushVariable            variable-index=6  ; "someValue"
+  00045  a7           PushVariable            variable-index=7  ; "allValues"
+  00046  a8           PushVariable            variable-index=8  ; "beginningValue"
+  00047  a9           PushVariable            variable-index=9  ; "endValue"
+  00048  e1           PushLiteral             literal-index=1  ; 9
+  00049  76           MakeVector              
+  0004a  0f           Return                  
+  0004b  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  2a           PushIt                  
+  00001  e0           PushLiteral             literal-index=0  ; "a"
+  00002  e1           PushLiteral             literal-index=1  ; "b"
+  00003  e2           PushLiteral             literal-index=2  ; "c"
+  00004  e3           PushLiteral             literal-index=3  ; "d"
+  00005  e4           PushLiteral             literal-index=4  ; 4
+  00006  76           MakeVector              
+  00007  6b           Push1                   
+  00008  2b0005       PositionalMessageSend   literal-index=5  ; "exerciseSpecifiers"
+  0000b  0f           Return                  
+  0000c  0f           Return                  

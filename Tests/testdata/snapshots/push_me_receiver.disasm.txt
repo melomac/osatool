@@ -1,0 +1,15 @@
+FAS 1.10
+
+function[2] "meProbe" arguments=[]
+  00000  29           PushMe                  
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x706e616d) 'pnam' name
+  00002  2c           MakeObjectAlias           ; property
+  00003  45           GetData                 
+  00004  b0           PopVariable             variable-index=0  ; "ownName"
+  00005  4f           StoreResult             
+  00006  29           PushMe                  
+  00007  a0           PushVariable            variable-index=0  ; "ownName"
+  00008  6c           Push2                   
+  00009  76           MakeVector              
+  0000a  0f           Return                  
+  0000b  0f           Return                  

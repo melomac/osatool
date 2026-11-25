@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 8,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 1,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x7074737a) 'ptsz' size"
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 4,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 5,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 6,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x7074737a) 'ptsz' size"
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 70,
+          "mnemonic": "SetData",
+          "raw_hex": "46"
+        },
+        {
+          "offset": 9,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 10,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 11,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x7074737a) 'ptsz' size"
+          ]
+        },
+        {
+          "offset": 12,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 13,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 14,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 15,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x49442020) 'ID  ' id"
+          ]
+        },
+        {
+          "offset": 16,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 17,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 18,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 19,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "constant(0x706e616d) 'pnam' name"
+          ]
+        },
+        {
+          "offset": 20,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 21,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 22,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 23,
+          "opcode": 227,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "constant(0x76657273) 'vers' version"
+          ]
+        },
+        {
+          "offset": 24,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 25,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 26,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 27,
+          "opcode": 228,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e4",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "constant(0x636f6c72) 'colr' color"
+          ]
+        },
+        {
+          "offset": 28,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 29,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 30,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010005",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "\"outer\""
+          ]
+        },
+        {
+          "offset": 35,
+          "opcode": 229,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e5",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "constant(0x70626e64) 'pbnd' bounds"
+          ]
+        },
+        {
+          "offset": 36,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 37,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 38,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010005",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "\"outer\""
+          ]
+        },
+        {
+          "offset": 43,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 44,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0006",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "\"reset\""
+          ]
+        },
+        {
+          "offset": 47,
+          "opcode": 231,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e7",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 7
+            }
+          ],
+          "annotations": [
+            "7"
+          ]
+        },
+        {
+          "offset": 48,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 49,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 50,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 6,
+      "name": "\"reset\"",
+      "arguments": "[]",
+      "owner": "\"outer\"",
+      "path": "root[7].vector[4][6]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 1,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 2,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x7074737a) 'ptsz' size"
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 70,
+          "mnemonic": "SetData",
+          "raw_hex": "46"
+        },
+        {
+          "offset": 5,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 6,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 7,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 8,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 9,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 10,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "4"
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 12,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 13,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "constant(0x70626e64) 'pbnd' bounds"
+          ]
+        },
+        {
+          "offset": 14,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 15,
+          "opcode": 70,
+          "mnemonic": "SetData",
+          "raw_hex": "46"
+        },
+        {
+          "offset": 16,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 17,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010003",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"inner\""
+          ]
+        },
+        {
+          "offset": 22,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 23,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0003",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"show\""
+          ]
+        },
+        {
+          "offset": 26,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 27,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "name": "\"show\"",
+      "arguments": "[]",
+      "owner": "\"inner\"",
+      "path": "root[7].vector[4][5].vector[4][2]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 1,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x7074737a) 'ptsz' size"
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 4,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 5,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x70626e64) 'pbnd' bounds"
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 8,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200020002",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 2
+            },
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"label\""
+          ]
+        },
+        {
+          "offset": 13,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 14,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "constant(0x49442020) 'ID  ' id"
+          ]
+        },
+        {
+          "offset": 15,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 16,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 17,
+          "opcode": 227,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "4"
+          ]
+        },
+        {
+          "offset": 18,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 19,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 20,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

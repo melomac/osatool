@@ -1,0 +1,84 @@
+/System/Applications/Automator.app/Contents/Resources/Automator.scriptSuite
+/System/Applications/Automator.app/Contents/Resources/Automator.scriptTerminology
+/System/Applications/Calendar.app/Contents/Resources/iCal.sdef
+/System/Applications/Contacts.app/Contents/Resources/Contacts.sdef
+/System/Applications/Dictionary.app/Contents/Resources/DictionaryBrowser.scriptSuite
+/System/Applications/Mail.app/Contents/Resources/Mail.sdef
+/System/Applications/Messages.app/Contents/Resources/Messages.sdef
+/System/Applications/Music.app/Contents/Resources/com.apple.Music.sdef
+/System/Applications/Notes.app/Contents/Resources/Notes.sdef
+/System/Applications/Photos.app/Contents/Resources/Photos.sdef
+/System/Applications/QuickTime Player.app/Contents/Resources/QuickTimePlayerX.sdef
+/System/Applications/Reminders.app/Contents/Resources/Reminders.sdef
+/System/Applications/Shortcuts.app/Contents/Resources/Shortcuts.sdef
+/System/Applications/System Settings.app/Contents/Resources/SettingsAppleScript.sdef
+/System/Applications/TextEdit.app/Contents/Resources/TextEdit.scriptSuite
+/System/Applications/TextEdit.app/Contents/Resources/TextEdit.scriptTerminology
+/System/Applications/TV.app/Contents/Resources/com.apple.TV.sdef
+/System/Applications/Utilities/Bluetooth File Exchange.app/Contents/Resources/Bluetooth File Exchange.sdef
+/System/Applications/Utilities/Console.app/Contents/Resources/Console.sdef
+/System/Applications/Utilities/Screen Sharing.app/Contents/Resources/ScreenSharing.sdef
+/System/Applications/Utilities/Script Editor.app/Contents/Resources/SESuite.scriptSuite
+/System/Applications/Utilities/Script Editor.app/Contents/Resources/SESuite.scriptTerminology
+/System/Applications/Utilities/System Information.app/Contents/Resources/System Profiler.scriptSuite
+/System/Applications/Utilities/System Information.app/Contents/Resources/System Profiler.scriptTerminology
+/System/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.sdef
+/System/Library/CoreServices/AppleScript Utility.app/Contents/Resources/AppleScriptUtility.sdef
+/System/Library/CoreServices/Applications/Folder Actions Setup.app/Contents/Resources/Folder Actions Setup.sdef
+/System/Library/CoreServices/Database Events.app/Contents/Resources/Database.scriptSuite
+/System/Library/CoreServices/Database Events.app/Contents/Resources/Database.scriptTerminology
+/System/Library/CoreServices/Database Events.app/Contents/Resources/DatabaseEvents.scriptSuite
+/System/Library/CoreServices/Database Events.app/Contents/Resources/DatabaseEvents.scriptTerminology
+/System/Library/CoreServices/Finder.app/Contents/Resources/Finder.sdef
+/System/Library/CoreServices/FolderActionsDispatcher.app/Contents/Resources/FolderActionsDispatcher.sdef
+/System/Library/CoreServices/Image Events.app/Contents/Resources/ImageEvents.sdef
+/System/Library/CoreServices/Shortcuts Events.app/Contents/Resources/Shortcuts.sdef
+/System/Library/CoreServices/System Events.app/Contents/Resources/SystemEvents.sdef
+/System/Library/CoreServices/VoiceOver.app/Contents/Resources/VoiceOver.sdef
+/System/Library/ExtensionKit/Extensions/Wallpaper.appex/Contents/Resources/DesktopAppleScriptSupport.scripting/Contents/Resources/Desktop.scriptSuite
+/System/Library/ExtensionKit/Extensions/Wallpaper.appex/Contents/Resources/DesktopAppleScriptSupport.scripting/Contents/Resources/Desktop.scriptTerminology
+/System/Library/ExtensionKit/Extensions/Wallpaper.appex/Contents/Resources/ScreenSaverAppleScriptSupport.scripting/Contents/Resources/ScreenSaver.scriptSuite
+/System/Library/ExtensionKit/Extensions/Wallpaper.appex/Contents/Resources/ScreenSaverAppleScriptSupport.scripting/Contents/Resources/ScreenSaver.scriptTerminology
+/System/Library/Frameworks/AppKit.framework/Versions/C/Resources/NSTextSuite.scriptSuite
+/System/Library/Frameworks/AppKit.framework/Versions/C/Resources/NSTextSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/AppleScriptKit.sdef
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKApplicationSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKApplicationSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKContainerViewSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKContainerViewSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKControlViewSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKControlViewSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKDataViewSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKDataViewSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKDocumentSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKDocumentSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKDragAndDropSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKDragAndDropSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKMenuSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKMenuSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKPanelSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKPanelSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKPluginSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKPluginSuite.scriptTerminology
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKTextViewSuite.scriptSuite
+/System/Library/Frameworks/AppleScriptKit.framework/Versions/A/Resources/ASKTextViewSuite.scriptTerminology
+/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/Resources/Compatibility.sdef
+/System/Library/Frameworks/Foundation.framework/Versions/C/Resources/Intrinsics.sdef
+/System/Library/Frameworks/Foundation.framework/Versions/C/Resources/NSCoreSuite.scriptSuite
+/System/Library/Frameworks/Foundation.framework/Versions/C/Resources/NSCoreSuite.scriptTerminology
+/System/Library/Frameworks/ScriptingBridge.framework/Versions/A/Resources/intrinsics.sdef
+/System/Library/Frameworks/Tk.framework/Versions/8.5/Resources/Wish.app/Contents/Resources/Wish.sdef
+/System/Library/PreferencePanes/Accounts.prefPane/Contents/Resources/AccountsAppleScriptSupport.scripting/Contents/Resources/Accounts.scriptSuite
+/System/Library/PreferencePanes/Accounts.prefPane/Contents/Resources/AccountsAppleScriptSupport.scripting/Contents/Resources/Accounts.scriptTerminology
+/System/Library/PreferencePanes/Accounts.prefPane/Contents/Resources/AccountsAppleScriptSupport.scripting/Contents/Resources/LoginItemsPref.scriptSuite
+/System/Library/PreferencePanes/Accounts.prefPane/Contents/Resources/AccountsAppleScriptSupport.scripting/Contents/Resources/LoginItemsPref.scriptTerminology
+/System/Library/PreferencePanes/Appearance.prefPane/Contents/Resources/Appearance.scripting/Contents/Resources/Appearance.scriptSuite
+/System/Library/PreferencePanes/Appearance.prefPane/Contents/Resources/Appearance.scripting/Contents/Resources/Appearance.scriptTerminology
+/System/Library/PreferencePanes/DigiHubDiscs.prefPane/Contents/Resources/DigiHubPrefAppleScriptSupport.scripting/Contents/Resources/DigiHubPref.scriptSuite
+/System/Library/PreferencePanes/DigiHubDiscs.prefPane/Contents/Resources/DigiHubPrefAppleScriptSupport.scripting/Contents/Resources/DigiHubPref.scriptTerminology
+/System/Library/PreferencePanes/Network.prefPane/Contents/Resources/Network.scripting/Contents/Resources/NetworkPref.scriptSuite
+/System/Library/PreferencePanes/Network.prefPane/Contents/Resources/Network.scripting/Contents/Resources/NetworkPref.scriptTerminology
+/System/Library/PrivateFrameworks/FolderActionsKit.framework/Versions/A/Resources/FolderActions.sdef
+/System/Library/ScriptingAdditions/StandardAdditions.osax/Contents/Resources/StandardAdditions.sdef
+/System/Library/ScriptingDefinitions/CocoaStandard.sdef
+/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/Safari.sdef

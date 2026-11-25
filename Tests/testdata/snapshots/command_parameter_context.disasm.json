@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"commandParameterProbe\"",
+      "arguments": "[]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "descriptor(\"alis\",000000000140000200010c4d6163696e746f736820484400...)"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 18,
+          "mnemonic": "Tell",
+          "raw_hex": "120012",
+          "operands": [
+            {
+              "kind": "signed-word",
+              "value": 18
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 5,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x6b6f636c) 'kocl'"
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "constant(0x63666f6c) 'cfol'"
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 227,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "constant(0x696e7368) 'insh'"
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 9,
+          "opcode": 228,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e4",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "constant(0x6465736b) 'desk' desktop"
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 229,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e5",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "constant(0x70726474) 'prdt' with properties"
+          ]
+        },
+        {
+          "offset": 12,
+          "opcode": 230,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e6",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "constant(0x706e616d) 'pnam' name"
+          ]
+        },
+        {
+          "offset": 13,
+          "opcode": 231,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e7",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 7
+            }
+          ],
+          "annotations": [
+            "\"Decompiler Oracle\""
+          ]
+        },
+        {
+          "offset": 14,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 15,
+          "opcode": 14,
+          "mnemonic": "MakeRecord",
+          "raw_hex": "0e"
+        },
+        {
+          "offset": 16,
+          "opcode": 232,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e8",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 8
+            }
+          ],
+          "annotations": [
+            "6"
+          ]
+        },
+        {
+          "offset": 17,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0009",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 9
+            }
+          ],
+          "annotations": [
+            "event(\"core\",\"crel\",\"****\",0x00000000,\"null\",0x00009000) make"
+          ]
+        },
+        {
+          "offset": 20,
+          "opcode": 85,
+          "mnemonic": "EndTell",
+          "raw_hex": "55"
+        },
+        {
+          "offset": 21,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

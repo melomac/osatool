@@ -1,0 +1,9 @@
+FAS 1.10
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "ICON"
+  00005  e0           PushLiteral             literal-index=0  ; data[12](6c647420000000007c25b080)
+  00006  6c           Push2                   
+  00007  76           MakeVector              
+  00008  0f           Return                  
+  00009  0f           Return                  

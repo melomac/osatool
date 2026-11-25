@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "event(\"aevt\",\"odoc\",\"null\",0x00008000,\"alis\",0x00001000)",
+      "arguments": "\"xs\"",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 41,
+          "mnemonic": "PushMe",
+          "raw_hex": "29"
+        },
+        {
+          "offset": 1,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 2,
+          "opcode": 100,
+          "mnemonic": "PushNext",
+          "raw_hex": "64"
+        },
+        {
+          "offset": 3,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"xs\""
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 16,
+          "mnemonic": "Continue",
+          "raw_hex": "100000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "event(\"aevt\",\"odoc\",\"null\",0x00008000,\"alis\",0x00001000) open"
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

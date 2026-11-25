@@ -1,0 +1,24 @@
+FAS 1.10
+
+function[2] event("emal","cpma","****",0x00000000,"****",0x00009000) arguments="theMessages"
+  00000  14000c       ErrorHandler            branch-target=0xd
+  00003  a0           PushVariable            variable-index=0  ; "theMessages"
+  00004  6a           Push0                   
+  00005  0c0000       MessageSend             literal-index=0  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  00008  45           GetData                 
+  00009  b2           PopVariable             variable-index=2  ; "handledCount"
+  0000a  57000b       EndErrorHandler         branch-target=0x16
+  0000d  5800010002   HandleError             literal-index=1, literal-index=2  ; "messageText", binding(constant(0x6572726e),...)
+  00012  a3           PushVariable            variable-index=3  ; "messageText"
+  00013  a4           PushVariable            variable-index=4  ; "numberValue"
+  00014  25           Concatenate             
+  00015  0f           Return                  
+  00016  4f           StoreResult             
+  00017  a2           PushVariable            variable-index=2  ; "handledCount"
+  00018  0f           Return                  
+  00019  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments="argv"
+  00000  a0           PushVariable            variable-index=0  ; "argv"
+  00001  0f           Return                  
+  00002  0f           Return                  

@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 3,
+      "name": "\"globalProbe\"",
+      "arguments": "[]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"changed\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 2,
+          "opcode": 209,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"saved_value\""
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 4,
+          "opcode": 193,
+          "mnemonic": "PushGlobal",
+          "raw_hex": "c1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"saved_value\""
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 6,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0002",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "event(\"syso\",\"dlog\",\"askr\",0x00000000,\"TEXT\",0x00000000) display dialog"
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 10,
+          "opcode": 195,
+          "mnemonic": "PushGlobal",
+          "raw_hex": "c3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "constant(0x72736c74) 'rslt' result"
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 12,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 13,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+FAS 1.10
+
+function[2] "rawHandler" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; constant(0x7a7a7a7a) 'zzzz'
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; constant(0x6d69736363757261) 'misccura' current application
+  00001  120007       Tell                    signed-word=7
+  00004  2a           PushIt                  
+  00005  6a           Push0                   
+  00006  0c0001       MessageSend             literal-index=1  ; event("ABCD","wxyz","****",0x00000000,"****",0x00009000)
+  00009  55           EndTell                 
+  0000a  0f           Return                  

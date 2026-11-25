@@ -1,0 +1,44 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",00000000015c000200010c4d6163696e746f736820484400...)
+  00001  120029       Tell                    signed-word=41
+  00004  2a           PushIt                  
+  00005  e1           PushLiteral             literal-index=1  ; constant(0x70726373) 'prcs'
+  00006  2d           MakeObjectAlias           ; every
+  00007  e2           PushLiteral             literal-index=2  ; vector(type=19,len=0) it
+  00008  5b           Dup                     
+  00009  5b           Dup                     
+  0000a  e3           PushLiteral             literal-index=3  ; constant(0x70697366) 'pisf' frontmost
+  0000b  2c           MakeObjectAlias           ; property
+  0000c  5c           GCSwap                  
+  0000d  5a           Pop                     
+  0000e  65           PushTrue                
+  0000f  38           MakeComp                  ; Equal
+  00010  43           MakeComp                  ; Not
+  00011  5c           GCSwap                  
+  00012  5b           Dup                     
+  00013  e4           PushLiteral             literal-index=4  ; constant(0x706e616d) 'pnam' name
+  00014  2c           MakeObjectAlias           ; property
+  00015  5c           GCSwap                  
+  00016  5a           Pop                     
+  00017  e5           PushLiteral             literal-index=5  ; ""
+  00018  39           MakeComp                  ; NotEqual
+  00019  41           MakeComp                  ; And
+  0001a  31           MakeObjectAlias           ; whose
+  0001b  45           GetData                 
+  0001c  d6           PopGlobal               literal-index=6  ; "matchingProcesses"
+  0001d  4f           StoreResult             
+  0001e  c6           PushGlobal              literal-index=6  ; "matchingProcesses"
+  0001f  e7           PushLiteral             literal-index=7  ; constant(0x636f626a) 'cobj' item
+  00020  6b           Push1                   
+  00021  2f           MakeObjectAlias           ; index
+  00022  120007       Tell                    signed-word=7
+  00025  2a           PushIt                  
+  00026  e8           PushLiteral             literal-index=8  ; constant(0x70414c4c) 'pALL'
+  00027  2c           MakeObjectAlias           ; property
+  00028  45           GetData                 
+  00029  0f           Return                  
+  0002a  55           EndTell                 
+  0002b  55           EndTell                 
+  0002c  0f           Return                  

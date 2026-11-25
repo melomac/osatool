@@ -1,0 +1,128 @@
+--- arithmetic
+on t(x, y)
+    return {x + y, x - y, x * y, x / y, x div y, x mod y, x ^ y, -x, x + y * 2, (x + y) * 2, x - (y - 1), x / (y / 2)}
+end t
+--- comparisons symbols
+on t(x, y)
+    return {x = y, x ≠ y, x < y, x > y, x ≤ y, x ≥ y, x <= y, x >= y, x /= y}
+end t
+--- comparisons words
+on t(x, y)
+    return {x is y, x is equal to y, x equals y, x is not y, x isn't y, x is not equal to y, x does not equal y, x is less than y, x is greater than y, x comes before y, x comes after y, x is less than or equal to y, x is greater than or equal to y, x is not less than y, x is not greater than y}
+end t
+--- containment
+on t(x, y)
+    return {x contains y, x does not contain y, x doesn't contain y, x starts with y, x begins with y, x ends with y, x is in y, x is contained by y, x is not in y, x is not contained by y, x isn't contained by y}
+end t
+--- containment negated
+on t(x, y)
+    return {not (x contains y), not (x starts with y), not (x ends with y), not (x is in y), x does not start with y, x does not end with y}
+end t
+--- logic
+on t(a, b, c)
+    return {a and b, a or b, not a, a and b and c, a or b or c, a and (b or c), (a and b) or c, not (a and b), not a and not b, a and not (b or not c)}
+end t
+--- logic with comparisons
+on t(x, y, z)
+    return {x = 1 and y = 2, x < y or y < z, not (x = y), x ≠ y and not (y = z), (x > 0 and y > 0) or z = 0, x is 1 or x is 2 or x is 3}
+end t
+--- logic as conditions
+on t(x, y)
+    if x > 0 and y > 0 then return 1
+    if x > 0 or y > 0 then return 2
+    if not (x > 0) then return 3
+    if x > 0 and (y > 0 or y < -10) and not (x = y) then return 4
+    return 0
+end t
+--- logic short circuit values
+on t(x, y)
+    set a to x is missing value or y is missing value
+    set b to x is not missing value and length of x > 0
+    return {a, b}
+end t
+--- concatenation
+on t(x, y)
+    return {x & y, x & y & x, x & "a" & y & "b", {x} & {y}, x & {y}, {x} & y, "a" & 1, 1 & "a", x & (y as text), (x as text) & y}
+end t
+--- coercion chains
+on t(x)
+    return {x as text as list, (x as integer) as text, x as text & "s", (x & "s") as text, x + 1 as text, (x + 1) as text, x as integer + 1}
+end t
+--- reference forms
+on t(x)
+    set r to a reference to x
+    set s to a reference to item 1 of x
+    set c to contents of r
+    set contents of s to 5
+    return {r, s, c, contents of s, a reference to length of x}
+end t
+--- unary mixes
+on t(x, y)
+    return {-x + y, x + -y, -(x * y), -x * y, not x = y, not (x = y), (not x) = y, - -x, -(-x)}
+end t
+--- parenthesized author style
+on t(x, y)
+    return {(x), ((x + y)), (x) + (y), ((x) * (y)) + 1, (x = y), ((x) = (y)) and (x > 0)}
+end t
+--- mixed precedence
+on t(a, b, c, d)
+    return {a + b * c - d / a, a * b + c * d, (a + b) * (c - d), a + b & c + d, a & b = c & d, a + b = c + d, a = b & c, a < b + c, a mod b = 0, a div b * b + a mod b}
+end t
+--- power and negation
+on t(a, b, c)
+    return {a ^ b, a ^ (b ^ c), (a ^ b) ^ c, -a ^ b, (-a) ^ b, -(a ^ b), a ^ -b, a * b ^ c, (a * b) ^ c}
+end t
+--- text comparisons
+on t(x)
+    return {x = "a", x is "a", "a" is x, x < "b", x comes before "b", x is not "", x ≠ "", "" = x}
+end t
+--- is in forms
+on t(x)
+    return {x is in {1, 2, 3}, {x} is in {1, 2, 3}, x is not in {1, 2}, "a" is in x, x contains "a", {1, 2} contains x, x is in "abc"}
+end t
+--- equality with booleans
+on t(x)
+    return {x is true, x is false, x = true, x ≠ false, x is not true, true is x}
+end t
+--- equality with missing value
+on t(x)
+    return {x is missing value, x is not missing value, x = missing value, missing value is x, x ≠ missing value}
+end t
+--- number tests
+on t(x)
+    return {x mod 2 = 0, x mod 2 is 1, x div 10, x / 10, (x div 10) * 10, round x, round (x / 2), round x rounding up, round x rounding down, round x rounding toward zero, round x rounding as taught in school}
+end t
+--- string operations
+on t(x)
+    return {length of x, count of x, count x, count characters of x, count of characters of x, number of characters of x, number of words in x, reverse of characters of x, x's length, x's characters}
+end t
+--- offset
+on t(x, y)
+    return {offset of x in y, (offset of x in y) + 1, (offset of "a" in y) > 0}
+end t
+--- as in conditions
+on t(x)
+    if x as text is "1" then return 1
+    if (x as integer) > 1 then return 2
+    if x as text = "a" & "b" then return 3
+    return 0
+end t
+--- chained comparisons need parens
+on t(a, b, c)
+    return {(a = b) = c, a = (b = c), (a < b) = (b < c), (a contains b) and (b contains c), (a = b) ≠ (b = c)}
+end t
+--- containment with a coercion
+on t(a, b)
+    return {a contains (b as text), (a as text) contains b, (a as text) starts with b, a starts with (b as text), (a as text) ends with b, a ends with (b as text), (a contains b) as text, a = b as text, a < b as text, a contains b & "x", a & b contains "x"}
+end t
+--- list concatenation building
+on t(x)
+    set l to {}
+    set l to l & x
+    set l to l & {x, x}
+    set end of l to x
+    set beginning of l to x
+    copy x to end of l
+    copy x to beginning of l
+    return l
+end t

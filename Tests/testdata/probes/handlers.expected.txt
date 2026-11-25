@@ -1,0 +1,461 @@
+--- positional
+on a()
+    return 0
+end a
+
+on b(x)
+    return x
+end b
+
+on c(x, y, z)
+    return x + y + z
+end c
+
+on t()
+    return a() + b(1) + c(1, 2, 3) + b(b(b(1))) + c(a(), b(1), c(1, 2, 3))
+end t
+--- call forms
+on a(x)
+    return x
+end a
+
+on t()
+    set r to a(1)
+    a(2)
+    my a(3)
+    my a(4)
+    tell me
+        a(5)
+    end tell
+    return {r, a(6), my a(7), a(8) & "s"}
+end t
+--- labeled prepositions
+on moveIt from a to b
+    return {a, b}
+end moveIt
+
+on findIt of x above y below z
+    return {x, y, z}
+end findIt
+
+on t()
+    return {(moveIt from 1 to 2), (findIt of 1 above 2 below 3), (moveIt from 1 to 2) & 3}
+end t
+--- labeled given
+on check of x given strict:s, limit:l
+    return {x, s, l}
+end check
+
+on t()
+    set a to check of 1 with strict given limit:2
+    set b to check of 1 with strict given limit:2
+    set c to check of 1 without strict given limit:2
+    return {a, b, c, (check of 1 without strict given limit:3) & 1}
+end t
+--- labeled all prepositions
+on p about a above b against c apart from d around e aside from f at g below h beneath i beside j between k by l for m from n instead of o into q on r onto s out of u over v since w thru x under y
+    return {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, q, r, s, u, v, w, x, y}
+end p
+--- direct only
+on shout of x given loud:b
+    return x
+end shout
+
+on whisper to x
+    return x
+end whisper
+
+on t()
+    return {(shout of 1 to 2 with loud and whisper)}
+end t
+--- patterns in parameters
+on a({x, y})
+    return x + y
+end a
+
+on b({x, {y, z}}, w)
+    return x + y + z + w
+end b
+
+on c({name:n, id:i})
+    return {n, i}
+end c
+
+on t()
+    return {a({1, 2}), b({1, {2, 3}}, 4), c({name:"n", id:1})}
+end t
+--- recursion
+on fact(n)
+    if n ≤ 1 then
+        return 1
+    end if
+    return n * (fact(n - 1))
+end fact
+--- handler returning list and using result
+on pair(x)
+    return {x, x + 1}
+end pair
+
+on t()
+    set {a, b} to pair(1)
+    pair(2)
+    set c to item 1 of result
+    return a + b + c + (item 2 of pair(3))
+end t
+--- locals and globals
+property p1 : 0
+
+on t(x)
+    global g1, g2
+    set a to x
+    set b to a
+    set g1 to b
+    set g2 to g1
+    set p1 to g2
+    set p1 of me to 1
+    return {a, b, g1, g2, p1, p1 of me}
+end t
+--- properties
+property a : 1
+property b : "two"
+property c : {1, 2, 3}
+property d : {x:1, y:2}
+property e : missing value
+property f : true
+property g : 1.5
+property h : {}
+property i : 1
+property j : 3.141592653589793
+property k : "ab"
+property l : 3
+
+on t()
+    return {a, b, c, d, e, f, g, h, i, j, k, l}
+end t
+--- property and global with same uses
+property counter : 0
+
+on bump()
+    set counter to counter + 1
+    return counter
+end bump
+
+on reset()
+    set counter of me to 0
+end reset
+--- handler variables shadowing
+property x : 1
+
+on t(x)
+    return x
+end t
+
+on u()
+    local x
+    set x to 2
+    return x
+end u
+
+on v()
+    return x
+end v
+--- first class handlers
+on a(x)
+    return x + 1
+end a
+
+on applyIt(f, x)
+    script holder
+        property g : f
+    end script
+    return holder's g(x)
+end applyIt
+
+on t()
+    return applyIt(a, 1)
+end t
+--- event handlers
+on open theFiles
+    return theFiles
+end open
+
+on idle
+    return 60
+end idle
+
+on quit
+    continue quit
+end quit
+
+on reopen
+    return
+end reopen
+--- run handler forms
+on run {a, b}
+    return a + b
+end run
+--- handlers calling with complex args
+on a(x, y)
+    return x
+end a
+
+on t(l)
+    return a(item 1 of l, {1, 2}) + a(length of l, l) + a(a(1, 2), a(3, 4)) + a({k:1}, "s" & l) + a(-1, not true) + a(l as text, length of l)
+end t
+--- handler names
+on doIt()
+end doIt
+
+on do_it()
+end do_it
+
+on |do it|()
+end |do it|
+
+on doIt2(x)
+end doIt2
+
+on t()
+    doIt()
+    do_it()
+    |do it|()
+    doIt2(1)
+end t
+--- return handler result of tell
+on t()
+    tell application "Finder"
+        return my helper(name of startup disk)
+    end tell
+end t
+
+on helper(x)
+    return x
+end helper
+--- continue forms
+script parentScript
+    on greet(x)
+        return "hello " & x
+    end greet
+
+    on shout given text:x
+        return x
+    end shout
+end script
+
+script child
+    property parent : parentScript
+
+    on greet(x)
+        return (continue greet(x)) & "!"
+    end greet
+
+    on shout given text:x
+        continue shout given text:(x & "!")
+    end shout
+end script
+--- handler with try and labeled error
+on t(x)
+    try
+        error "boom" number 7
+    on error m number n
+        return {m, n}
+    end try
+end t
+--- many parameters and locals
+on t(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p)
+    set q to a + b + c + d + e + f + g + h
+    set r to i + j + k + l + m + n + o + p
+    set s to q + r
+    set u to s * 2
+    set v to u - q
+    set w to v - r
+    return {q, r, s, u, v, w}
+end t
+--- script objects
+script counter
+    property n : 0
+
+    on bump()
+        set n to n + 1
+        return n
+    end bump
+
+    on reset()
+        set n to 0
+    end reset
+end script
+
+on t()
+    counter's bump()
+    tell counter
+        bump()
+    end tell
+    tell counter
+        bump()
+        set its n to 5
+        set m to its n
+        reset()
+    end tell
+    return {n of counter, n of counter, m}
+end t
+--- script object in handler
+on makeCounter(start)
+    script c
+        property n : start
+
+        on bump()
+            set n to n + 1
+        end bump
+    end script
+    return c
+end makeCounter
+
+on t()
+    set a to makeCounter(1)
+    set b to makeCounter(10)
+    a's bump()
+    tell b
+        bump()
+    end tell
+    return {n of a, n of b}
+end t
+--- script inheritance
+script base
+    property kind : "base"
+
+    on describe()
+        return "I am " & kind
+    end describe
+
+    on helper()
+        return 1
+    end helper
+end script
+
+script derived
+    property parent : base
+    property kind : "derived"
+
+    on describe()
+        return (continue describe()) & "!"
+    end describe
+
+    on both()
+        return {kind of me, kind of parent, helper(), my helper()}
+    end both
+end script
+
+on t()
+    return {derived's describe(), derived's both(), base's describe()}
+end t
+--- nested script objects
+script outer
+    property a : 1
+
+    script midLevel
+        property b : 2
+
+        script inner
+            property c : 3
+
+            on sum()
+                return c
+            end sum
+        end script
+
+        on sum()
+            return b + (inner's sum())
+        end sum
+    end script
+
+    on sum()
+        return a + (midLevel's sum())
+    end sum
+end script
+--- script with run handler
+script job
+    property done : false
+
+    on run
+        set done to true
+        return 1
+    end run
+end script
+
+on t()
+    run job
+    tell job
+        run
+    end tell
+    return done of job
+end t
+--- script with parent application
+script finderHelper
+    property parent : application "Finder"
+
+    on diskName()
+        return name of startup disk
+    end diskName
+end script
+--- script object properties referencing
+script config
+    property items_ : {1, 2, 3}
+    property title : "t"
+    property nested : {a:1, b:{c:2}}
+end script
+
+on t()
+    set end of items_ of config to 4
+    set title of config to "u"
+    set c of b of nested of config to 3
+    return {items_ of config, title of config, c of b of nested of config, item 1 of items_ of config, length of items_ of config}
+end t
+--- anonymous script
+on t()
+    script
+        property x : 1
+    end script
+    return x of result
+end t
+--- script copied
+script proto
+    property n : 0
+end script
+
+on t()
+    copy proto to a
+    set b to proto
+    set n of a to 1
+    return {n of a, n of b, n of proto}
+end t
+--- load and run script commands
+on t(f)
+    set lib to load script f
+    set r to run script f
+    set s to run script "1 + 1"
+    set u to run script f with parameters {1, 2}
+    store script lib in f replacing yes
+    return {lib, r, s, u}
+end t
+--- handler in tell target context
+on t(x)
+    tell x
+        set a to my helper(it)
+        set b to my helper(1)
+    end tell
+    return {a, b}
+end t
+
+on helper(y)
+    return y
+end helper
+--- global used at top level
+on bump()
+    global total
+    set total to total + 1
+end bump
+
+set total to 0
+bump()
+bump()
+return total

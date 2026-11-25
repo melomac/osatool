@@ -1,0 +1,144 @@
+FAS 1.10
+
+function[2] "exerciseControls" arguments=vector(type=4,len=2)
+  00000  6a           Push0                   
+  00001  45           GetData                 
+  00002  b1           PopVariable             variable-index=1  ; "total"
+  00003  4f           StoreResult             
+  00004  170010       LinkRepeat              branch-target=0x15
+  00007  6c           Push2                   
+  00008  6b           Push1                   
+  00009  68           PushUndefined           
+  0000a  18           RepeatNTimes            
+  0000b  a1           PushVariable            variable-index=1  ; "total"
+  0000c  6b           Push1                   
+  0000d  1e           Add                     
+  0000e  45           GetData                 
+  0000f  b1           PopVariable             variable-index=1  ; "total"
+  00010  5b           Dup                     
+  00011  4f           StoreResult             
+  00012  59fff7       Jump                    branch-target=0xa
+  00015  4f           StoreResult             
+  00016  170011       LinkRepeat              branch-target=0x28
+  00019  68           PushUndefined           
+  0001a  a1           PushVariable            variable-index=1  ; "total"
+  0001b  6d           Push3                   
+  0001c  04           LessThan                
+  0001d  19           RepeatWhile             
+  0001e  a1           PushVariable            variable-index=1  ; "total"
+  0001f  6b           Push1                   
+  00020  1e           Add                     
+  00021  45           GetData                 
+  00022  b1           PopVariable             variable-index=1  ; "total"
+  00023  5b           Dup                     
+  00024  4f           StoreResult             
+  00025  59fff4       Jump                    branch-target=0x1a
+  00028  4f           StoreResult             
+  00029  170011       LinkRepeat              branch-target=0x3b
+  0002c  68           PushUndefined           
+  0002d  a1           PushVariable            variable-index=1  ; "total"
+  0002e  e0           PushLiteral             literal-index=0  ; 4
+  0002f  03           GreaterThanOrEqual      
+  00030  1a           RepeatUntil             
+  00031  a1           PushVariable            variable-index=1  ; "total"
+  00032  6b           Push1                   
+  00033  1e           Add                     
+  00034  45           GetData                 
+  00035  b1           PopVariable             variable-index=1  ; "total"
+  00036  5b           Dup                     
+  00037  4f           StoreResult             
+  00038  59fff4       Jump                    branch-target=0x2d
+  0003b  4f           StoreResult             
+  0003c  170013       LinkRepeat              branch-target=0x50
+  0003f  6b           Push1                   
+  00040  6d           Push3                   
+  00041  6b           Push1                   
+  00042  68           PushUndefined           
+  00043  1c0002       RepeatInRange           variable-index=2  ; "counter"
+  00046  a1           PushVariable            variable-index=1  ; "total"
+  00047  a2           PushVariable            variable-index=2  ; "counter"
+  00048  1e           Add                     
+  00049  45           GetData                 
+  0004a  b1           PopVariable             variable-index=1  ; "total"
+  0004b  5b           Dup                     
+  0004c  4f           StoreResult             
+  0004d  59fff5       Jump                    branch-target=0x43
+  00050  4f           StoreResult             
+  00051  170013       LinkRepeat              branch-target=0x65
+  00054  6b           Push1                   
+  00055  e1           PushLiteral             literal-index=1  ; 5
+  00056  6c           Push2                   
+  00057  68           PushUndefined           
+  00058  1c0002       RepeatInRange           variable-index=2  ; "counter"
+  0005b  a1           PushVariable            variable-index=1  ; "total"
+  0005c  a2           PushVariable            variable-index=2  ; "counter"
+  0005d  1e           Add                     
+  0005e  45           GetData                 
+  0005f  b1           PopVariable             variable-index=1  ; "total"
+  00060  5b           Dup                     
+  00061  4f           StoreResult             
+  00062  59fff5       Jump                    branch-target=0x58
+  00065  4f           StoreResult             
+  00066  170025       LinkRepeat              branch-target=0x8c
+  00069  a0           PushVariable            variable-index=0  ; "inputValues"
+  0006a  5b           Dup                     
+  0006b  e2           PushLiteral             literal-index=2  ; constant(0x6b6f636c) 'kocl'
+  0006c  e3           PushLiteral             literal-index=3  ; constant(0x636f626a) 'cobj' item
+  0006d  6c           Push2                   
+  0006e  0c0004       MessageSend             literal-index=4  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  00071  6b           Push1                   
+  00072  68           PushUndefined           
+  00073  1b0003       RepeatInCollection      variable-index=3  ; "entry"
+  00076  a3           PushVariable            variable-index=3  ; "entry"
+  00077  e5           PushLiteral             literal-index=5  ; constant(0x6d736e67) 'msng' missing value
+  00078  00           Equal                   
+  00079  1d0006       TestIf                  branch-target=0x80
+  0007c  16           Exit                    
+  0007d  590003       Jump                    branch-target=0x81
+  00080  68           PushUndefined           
+  00081  4f           StoreResult             
+  00082  a1           PushVariable            variable-index=1  ; "total"
+  00083  a3           PushVariable            variable-index=3  ; "entry"
+  00084  1e           Add                     
+  00085  45           GetData                 
+  00086  b1           PopVariable             variable-index=1  ; "total"
+  00087  5b           Dup                     
+  00088  4f           StoreResult             
+  00089  59ffe9       Jump                    branch-target=0x73
+  0008c  4f           StoreResult             
+  0008d  140015       ErrorHandler            branch-target=0xa3
+  00090  a1           PushVariable            variable-index=1  ; "total"
+  00091  6a           Push0                   
+  00092  02           GreaterThan             
+  00093  1d000b       TestIf                  branch-target=0x9f
+  00096  29           PushMe                  
+  00097  e6           PushLiteral             literal-index=6  ; constant(0x6572726e) 'errn' number
+  00098  e7           PushLiteral             literal-index=7  ; 17
+  00099  6c           Push2                   
+  0009a  e8           PushLiteral             literal-index=8  ; "positive"
+  0009b  15           Error                   
+  0009c  590003       Jump                    branch-target=0xa0
+  0009f  68           PushUndefined           
+  000a0  57000c       EndErrorHandler         branch-target=0xad
+  000a3  580009000a   HandleError             literal-index=9, literal-index=10  ; "messageText", binding(constant(0x6572726e),...)
+  000a8  a1           PushVariable            variable-index=1  ; "total"
+  000a9  a5           PushVariable            variable-index=5  ; "numberValue"
+  000aa  1e           Add                     
+  000ab  45           GetData                 
+  000ac  b1           PopVariable             variable-index=1  ; "total"
+  000ad  4f           StoreResult             
+  000ae  a1           PushVariable            variable-index=1  ; "total"
+  000af  0f           Return                  
+  000b0  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  2a           PushIt                  
+  00001  6b           Push1                   
+  00002  6c           Push2                   
+  00003  e0           PushLiteral             literal-index=0  ; constant(0x6d736e67) 'msng' missing value
+  00004  6d           Push3                   
+  00005  76           MakeVector              
+  00006  6b           Push1                   
+  00007  2b0001       PositionalMessageSend   literal-index=1  ; "exerciseControls"
+  0000a  0f           Return                  
+  0000b  0f           Return                  

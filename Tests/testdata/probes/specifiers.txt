@@ -1,0 +1,236 @@
+--- index forms
+on t(x)
+    return {item 1 of x, item -1 of x, item 2 of x, first item of x, second item of x, third item of x, tenth item of x, last item of x, item (count of x) of x, item ((count of x) - 1) of x, x's item 3, 3rd item of x, 2nd item of x, 1st item of x}
+end t
+--- index with variable
+on t(x, i)
+    return {item i of x, item (i + 1) of x, item -i of x, item (i * 2 - 1) of x, character i of x, word (i) of x}
+end t
+--- middle some every
+on t(x)
+    return {middle item of x, some item of x, every item of x, items of x, every integer of x, integers of x, every text of x, strings of x, every character of x, characters of x}
+end t
+--- ranges
+on t(x)
+    return {items 1 thru 2 of x, items 2 thru -1 of x, items 1 through 3 of x, item 1 thru 2 of x, characters 1 thru 3 of x, text 1 thru 3 of x, text 2 thru -2 of x, words 1 thru 2 of x, paragraphs 2 thru -1 of x, text from character 2 to character 4 of x, text from word 1 to word 2 of x}
+end t
+--- ranges with variables
+on t(x, i, j)
+    return {items i thru j of x, items (i + 1) thru (j - 1) of x, text i thru -1 of x, text 1 thru (i - 1) of x, items i thru (count of x) of x, text (i) thru (length of x) of x}
+end t
+--- text elements
+on t(x)
+    return {character 1 of x, word 1 of x, paragraph 1 of x, text item 1 of x, characters of x, words of x, paragraphs of x, text items of x, every word of x, last word of x, last character of x, word -2 of x, count of words of x, number of paragraphs of x}
+end t
+--- text elements chained
+on t(x)
+    return {character 1 of word 1 of x, first character of last word of paragraph 1 of x, characters 1 thru 2 of word 1 of x, word 1 of text item 2 of x, length of word 1 of x, text 1 thru 2 of (item 1 of x)}
+end t
+--- properties of values
+on t(x)
+    return {length of x, class of x, reverse of x, rest of x, contents of x, count of x, number of items of x, number of x, x's reverse, x's rest, length of rest of x, class of item 1 of x}
+end t
+--- record access
+on t(r)
+    return {name of r, r's name, alpha of r, r's alpha, |my key| of r, length of r, count of r, name of (item 1 of r), alpha of beta of r, r's beta's alpha}
+end t
+--- setting elements
+on t(x, r)
+    set item 1 of x to 0
+    set item -1 of x to 0
+    set last item of x to 1
+    set name of r to "n"
+    set alpha of r to 1
+    set r's alpha to 2
+    set alpha of beta of r to 3
+    set item 2 of alpha of r to 4
+    set end of x to 5
+    set beginning of x to 6
+    set end of alpha of r to 7
+    return {x, r}
+end t
+--- insertion locations
+on t(x)
+    set end of x to 1
+    set beginning of x to 2
+    copy 3 to end of x
+    copy 4 to beginning of x
+    set x's end to 5
+    return x
+end t
+--- whose simple
+on t(x)
+    tell application "Finder"
+        return {every file of x whose name is "a", files of x whose name contains "b", first file of x whose name starts with "c", name of every file of x whose size > 100, every folder of x whose name ends with "d", (files of x whose name is not "e") as alias list}
+    end tell
+end t
+--- whose compound
+on t(x)
+    tell application "Finder"
+        return {every file of x whose name contains "a" and size > 10, every file of x whose name contains "a" or name contains "b", every file of x whose not (name contains "a"), every file of x whose (name contains "a" or name contains "b") and size < 5, every item of x whose name does not start with "." and kind is not "Folder"}
+    end tell
+end t
+--- whose with its and where
+on t(x)
+    tell application "Finder"
+        return {every file of x where its name is "a", every file of x whose its size > 1, first item of x whose name of it = "a", every file of x whose name extension is in {"txt", "md"}, every file of x whose creation date > (current date) - 7 * days}
+    end tell
+end t
+--- whose on system events
+on t(n)
+    tell application "System Events"
+        return {every process whose name is n, name of every process whose background only is false, first process whose frontmost is true, (processes whose visible is true and name is not n), exists (first process whose name is n), count (every process whose name is n)}
+    end tell
+end t
+--- name and id forms
+on t(n)
+    tell application "Finder"
+        return {folder n, folder named n, file "a" of folder n, window 1, window id 5, item n of startup disk, disk n, folder "a" of folder "b" of startup disk, Finder window 1, file (n & ".txt") of desktop}
+    end tell
+end t
+--- relative forms
+on t(n)
+    tell application "Finder"
+        return {window after window 1, window before window 2, file after file 1 of desktop, item before item 2 of startup disk, window in front of window 2, window behind window 1}
+    end tell
+end t
+--- nested tell specifiers
+on t(n)
+    tell application "Finder"
+        tell startup disk
+            tell folder n
+                return {name, name of it, its name, name of container, every file, file 1, files 1 thru 2, count of files, count files, exists file "a", name of file 1 of folder "b"}
+            end tell
+        end tell
+    end tell
+end t
+--- tell with of chains
+on t(n)
+    tell application "System Events"
+        tell process n
+            return {name of window 1, title of every window, value of text field 1 of window 1, name of menu item 1 of menu 1 of menu bar item 2 of menu bar 1, button "OK" of sheet 1 of window 1, UI elements of window 1, position of window 1, size of first window}
+        end tell
+    end tell
+end t
+--- get and explicit get
+on t(x)
+    get item 1 of x
+    set a to result
+    set b to get item 2 of x
+    get x
+    return {a, b, get length of x, (get item 1 of x) + 1}
+end t
+--- references and contents
+on t(x)
+    set r to a reference to item 1 of x
+    set contents of r to 9
+    set s to contents of r
+    repeat with e in x
+        set contents of e to 0
+    end repeat
+    return {r, s, x, contents of (a reference to x)}
+end t
+--- text item delimiters
+on t(x)
+    set saved to AppleScript's text item delimiters
+    set AppleScript's text item delimiters to ","
+    set parts to text items of x
+    set AppleScript's text item delimiters to {"-", "_"}
+    set joined to parts as text
+    set text item delimiters to ""
+    set my text item delimiters to " "
+    set text item delimiters of AppleScript to saved
+    return {parts, joined, text item delimiters}
+end t
+--- count forms
+on t(x)
+    return {count x, count of x, count items of x, count of items of x, count every item of x, count each item of x, number of items in x, count x's items, count integers of x, count of (every text of x), (count x) + 1, (count of x) > 0}
+end t
+--- exists and other commands on specifiers
+on t(n)
+    tell application "Finder"
+        if exists folder n then return 1
+        if not (exists file n of desktop) then return 2
+        if (exists disk n) and (count of windows) > 0 then return 3
+        return {exists window 1, window 1 exists, count windows, count of every window, name of windows, index of window 1}
+    end tell
+end t
+--- properties record
+on t(n)
+    tell application "Finder"
+        return {properties of window 1, name of startup disk, bounds of window 1, {name, size} of file 1 of desktop, class of item 1 of desktop}
+    end tell
+end t
+--- make and set in app
+on t(n)
+    tell application "Finder"
+        set f to make new folder at desktop with properties {name:n}
+        set name of f to n & "2"
+        set w to make new Finder window
+        set target of w to f
+        set bounds of w to {0, 0, 100, 100}
+        set position of w to {1, 2}
+        duplicate f to desktop with replacing
+        move f to trash
+        delete f
+        close w
+        open f
+        return {f, w}
+    end tell
+end t
+--- every with filter-like indexes
+on t(x)
+    return {items 2 thru -2 of x, rest of rest of x, item 1 of rest of x, last item of items 1 thru 2 of x, reverse of (items 1 thru 2 of x), (reverse of x)'s item 1, item 1 of (reverse of x), item 1 of {1, 2, 3}, item 2 of {a:1, b:2}, character 1 of "abc", length of "abc", length of {1, 2}}
+end t
+--- list in list access
+on t(x)
+    return {item 1 of item 1 of x, item 2 of item 1 of item 3 of x, x's item 1's item 2, (item 1 of x)'s length, length of item 1 of x, name of item 1 of x, item 1 of name of x}
+end t
+--- class specifier with of
+on t(x)
+    return {integer 1 of x, text 1 of x, string 2 of x, list 1 of x, record 1 of x, real 1 of x, number 1 of x, boolean 1 of x}
+end t
+--- date parts
+on t(d)
+    set year of d to 2020
+    set month of d to 1
+    set day of d to 2
+    set time of d to 0
+    set hours of d to 3
+    return {d + 1 * days, d - 2 * hours, (d - (current date)) / days, d's year, month of d as integer, weekday of d as text, d > (current date), short date string of d & " " & time string of d}
+end t
+--- list of properties of one object
+on t(x)
+    tell application "Finder"
+        set a to {name, size} of file 1 of desktop
+        set {b, c} to {name, kind} of x
+        return {a, b, c, {name, name extension, size} of x, {name of x, size of x}, {name} of x}
+    end tell
+end t
+--- list of parts of one value
+on t(x, r)
+    return {{length, class} of x, {item 1, item 2} of x, {alpha, beta} of r, {name of r, id of r}, {item 1 of x, item 1 of x}, ({length, rest} of x) & {1}}
+end t
+--- selector that is a reference
+on pick(x)
+    return 1
+end pick
+on t(names, order, i, x, w)
+    set a to item (item i of order) of names
+    set b to item (my pick(x)) of names
+    set c to {item (i + 1) of x, item i of x, item -1 of x, item -i of x, character (length of x) of x, item (count of x) of x}
+    tell application "Finder"
+        set d to {window (name of w) of x, window id (id of w) of x, folder (name of w)}
+    end tell
+    return {a, b, c, d}
+end t
+--- filter as a container
+on t(x)
+    tell application "Finder"
+        set a to item 1 of (every item of x whose name is "a")
+        set b to name of (every item of x whose size > 1)
+        set c to name of every item of x whose size > 1
+        set d to count of (files of x whose name extension is "txt")
+        return {a, b, c, d}
+    end tell
+end t

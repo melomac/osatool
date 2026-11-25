@@ -1,0 +1,2091 @@
+{
+  "schema_version": 1,
+  "source": "OSAGetSysTerminology",
+  "commands": [
+    {
+      "code": "ToySlog0",
+      "name": "stop log"
+    },
+    {
+      "code": "ToySlog1",
+      "name": "start log"
+    },
+    {
+      "code": "aevtoapp",
+      "name": "run"
+    },
+    {
+      "code": "aevtodoc",
+      "name": "open",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "aevtpdoc",
+      "name": "print",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "aevtquit",
+      "name": "quit",
+      "parameters": [
+        {
+          "code": "savo",
+          "name": "saving",
+          "type": "savo"
+        }
+      ]
+    },
+    {
+      "code": "aevtrapp",
+      "name": "reopen"
+    },
+    {
+      "code": "ascr*   ",
+      "name": "*",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr+   ",
+      "name": "+",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr-   ",
+      "name": "-",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr/   ",
+      "name": "÷",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr\u003c   ",
+      "name": "\u003c",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr\u003c=  ",
+      "name": "≤",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr=   ",
+      "name": "=",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr\u003e   ",
+      "name": "\u003e",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr\u003e=  ",
+      "name": "≥",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrAND ",
+      "name": "and",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrNOT ",
+      "name": "not",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrOR  ",
+      "name": "or",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascr^   ",
+      "name": "^",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrbgwt",
+      "name": "starts with",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrccat",
+      "name": "\u0026",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrcmnt",
+      "name": "log",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrcoer",
+      "name": "as",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrcont",
+      "name": "contains",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrdiv ",
+      "name": "div",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrends",
+      "name": "ends with",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrerr ",
+      "name": "error",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "errn",
+          "name": "number",
+          "type": "shor"
+        },
+        {
+          "code": "ptlr",
+          "name": "partial result",
+          "type": "list"
+        },
+        {
+          "code": "erob",
+          "name": "from",
+          "type": "****"
+        },
+        {
+          "code": "errt",
+          "name": "to",
+          "type": "****"
+        }
+      ]
+    },
+    {
+      "code": "ascrmod ",
+      "name": "mod",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrneg ",
+      "name": "negate",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "ascrnoop",
+      "name": "launch"
+    },
+    {
+      "code": "ascrpsbr",
+      "name": "Call•subroutine",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "at  ",
+          "name": "at",
+          "type": "****"
+        },
+        {
+          "code": "from",
+          "name": "from",
+          "type": "****"
+        },
+        {
+          "code": "for ",
+          "name": "for",
+          "type": "****"
+        },
+        {
+          "code": "to  ",
+          "name": "to",
+          "type": "****"
+        },
+        {
+          "code": "thru",
+          "name": "thru",
+          "type": "****"
+        },
+        {
+          "code": "thgh",
+          "name": "through",
+          "type": "****"
+        },
+        {
+          "code": "by  ",
+          "name": "by",
+          "type": "****"
+        },
+        {
+          "code": "on  ",
+          "name": "on",
+          "type": "****"
+        },
+        {
+          "code": "into",
+          "name": "into",
+          "type": "****"
+        },
+        {
+          "code": "onto",
+          "name": "onto",
+          "type": "****"
+        },
+        {
+          "code": "btwn",
+          "name": "between",
+          "type": "****"
+        },
+        {
+          "code": "agst",
+          "name": "against",
+          "type": "****"
+        },
+        {
+          "code": "outo",
+          "name": "out of",
+          "type": "****"
+        },
+        {
+          "code": "isto",
+          "name": "instead of",
+          "type": "****"
+        },
+        {
+          "code": "asdf",
+          "name": "aside from",
+          "type": "****"
+        },
+        {
+          "code": "arnd",
+          "name": "around",
+          "type": "****"
+        },
+        {
+          "code": "bsid",
+          "name": "beside",
+          "type": "****"
+        },
+        {
+          "code": "bnth",
+          "name": "beneath",
+          "type": "****"
+        },
+        {
+          "code": "undr",
+          "name": "under",
+          "type": "****"
+        },
+        {
+          "code": "over",
+          "name": "over",
+          "type": "****"
+        },
+        {
+          "code": "abve",
+          "name": "above",
+          "type": "****"
+        },
+        {
+          "code": "belw",
+          "name": "below",
+          "type": "****"
+        },
+        {
+          "code": "aprt",
+          "name": "apart from",
+          "type": "****"
+        },
+        {
+          "code": "abou",
+          "name": "about",
+          "type": "****"
+        },
+        {
+          "code": "snce",
+          "name": "since",
+          "type": "****"
+        },
+        {
+          "code": "givn",
+          "name": "given",
+          "type": "****"
+        },
+        {
+          "code": "with",
+          "name": "with",
+          "type": "type"
+        },
+        {
+          "code": "wout",
+          "name": "without",
+          "type": "type"
+        }
+      ]
+    },
+    {
+      "code": "ascrtell",
+      "name": "tell"
+    },
+    {
+      "code": "ascrtend",
+      "name": "end tell"
+    },
+    {
+      "code": "ascruse ",
+      "name": "use",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "minv",
+          "name": "version",
+          "type": "ns  "
+        },
+        {
+          "code": "impr",
+          "name": "importing",
+          "type": "list"
+        },
+        {
+          "code": "impx",
+          "name": "excluding",
+          "type": "list"
+        }
+      ]
+    },
+    {
+      "code": "ascr≠   ",
+      "name": "≠",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "coreclon",
+      "name": "duplicate",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "insh",
+          "name": "to",
+          "type": "insl"
+        },
+        {
+          "code": "prdt",
+          "name": "with properties",
+          "type": "reco"
+        }
+      ]
+    },
+    {
+      "code": "coreclos",
+      "name": "close",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "savo",
+          "name": "saving",
+          "type": "savo"
+        },
+        {
+          "code": "kfil",
+          "name": "saving in",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "code": "corecnte",
+      "name": "count",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "kocl",
+          "name": "each",
+          "type": "type"
+        }
+      ]
+    },
+    {
+      "code": "corecrel",
+      "name": "make",
+      "parameters": [
+        {
+          "code": "kocl",
+          "name": "new",
+          "type": "type"
+        },
+        {
+          "code": "insh",
+          "name": "at",
+          "type": "insl"
+        },
+        {
+          "code": "data",
+          "name": "with data",
+          "type": "****"
+        },
+        {
+          "code": "prdt",
+          "name": "with properties",
+          "type": "reco"
+        }
+      ]
+    },
+    {
+      "code": "coredelo",
+      "name": "delete",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "coredoex",
+      "name": "exists",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "coredsiz",
+      "name": "data size",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "rtyp",
+          "name": "as",
+          "type": "type"
+        }
+      ]
+    },
+    {
+      "code": "coregtei",
+      "name": "event info",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "wrcd",
+          "name": "in",
+          "type": "intl"
+        }
+      ]
+    },
+    {
+      "code": "coregtsi",
+      "name": "suite info",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "wrcd",
+          "name": "in",
+          "type": "intl"
+        }
+      ]
+    },
+    {
+      "code": "coremove",
+      "name": "move",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "insh",
+          "name": "to",
+          "type": "insl"
+        }
+      ]
+    },
+    {
+      "code": "coreqobj",
+      "name": "class info",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "wrcd",
+          "name": "in",
+          "type": "intl"
+        }
+      ]
+    },
+    {
+      "code": "coresave",
+      "name": "save",
+      "has_direct_parameter": true,
+      "parameters": [
+        {
+          "code": "kfil",
+          "name": "in",
+          "type": "file"
+        },
+        {
+          "code": "fltp",
+          "name": "as",
+          "type": "type"
+        }
+      ]
+    },
+    {
+      "code": "miscactv",
+      "name": "activate"
+    },
+    {
+      "code": "miscidle",
+      "name": "idle"
+    },
+    {
+      "code": "miscslct",
+      "name": "select",
+      "has_direct_parameter": true
+    },
+    {
+      "code": "sysodela",
+      "name": "delay",
+      "has_direct_parameter": true
+    }
+  ],
+  "terms": [
+    {
+      "code": "****",
+      "name": "anything"
+    },
+    {
+      "code": "EPS ",
+      "name": "PostScript picture"
+    },
+    {
+      "code": "GIFf",
+      "name": "GIF picture"
+    },
+    {
+      "code": "ID  ",
+      "name": "id"
+    },
+    {
+      "code": "JPEG",
+      "name": "JPEG picture"
+    },
+    {
+      "code": "PICT",
+      "name": "picture"
+    },
+    {
+      "code": "QDpt",
+      "name": "point"
+    },
+    {
+      "code": "STXT",
+      "name": "styled text"
+    },
+    {
+      "code": "TEXT",
+      "name": "string"
+    },
+    {
+      "code": "TIFF",
+      "name": "TIFF picture"
+    },
+    {
+      "code": "aete",
+      "name": "application dictionary"
+    },
+    {
+      "code": "aeut",
+      "name": "system dictionary"
+    },
+    {
+      "code": "alis",
+      "name": "alias"
+    },
+    {
+      "code": "apr ",
+      "name": "April"
+    },
+    {
+      "code": "ascr",
+      "name": "AppleScript"
+    },
+    {
+      "code": "aug ",
+      "name": "August"
+    },
+    {
+      "code": "bool",
+      "name": "boolean"
+    },
+    {
+      "code": "cRGB",
+      "name": "RGB color"
+    },
+    {
+      "code": "capp",
+      "name": "application"
+    },
+    {
+      "code": "case",
+      "name": "upper case"
+    },
+    {
+      "code": "ccmt",
+      "name": "cubic centimeters"
+    },
+    {
+      "code": "cfet",
+      "name": "cubic feet"
+    },
+    {
+      "code": "cflo",
+      "name": "text flow"
+    },
+    {
+      "code": "cha ",
+      "name": "character"
+    },
+    {
+      "code": "cins",
+      "name": "insertion point"
+    },
+    {
+      "code": "citl",
+      "name": "writing code info"
+    },
+    {
+      "code": "citm",
+      "name": "text item"
+    },
+    {
+      "code": "clin",
+      "name": "line"
+    },
+    {
+      "code": "clrt",
+      "name": "color table"
+    },
+    {
+      "code": "cmen",
+      "name": "menu item"
+    },
+    {
+      "code": "cmet",
+      "name": "cubic meters"
+    },
+    {
+      "code": "cmnu",
+      "name": "menu"
+    },
+    {
+      "code": "cmtr",
+      "name": "centimeters"
+    },
+    {
+      "code": "cobj",
+      "name": "item"
+    },
+    {
+      "code": "colr",
+      "name": "color"
+    },
+    {
+      "code": "comp",
+      "name": "double integer"
+    },
+    {
+      "code": "cpar",
+      "name": "paragraph"
+    },
+    {
+      "code": "cstr",
+      "name": "C string"
+    },
+    {
+      "code": "ctxt",
+      "name": "text"
+    },
+    {
+      "code": "cuin",
+      "name": "cubic inches"
+    },
+    {
+      "code": "cwin",
+      "name": "window"
+    },
+    {
+      "code": "cwor",
+      "name": "word"
+    },
+    {
+      "code": "cyrd",
+      "name": "cubic yards"
+    },
+    {
+      "code": "day ",
+      "name": "day"
+    },
+    {
+      "code": "days",
+      "name": "days"
+    },
+    {
+      "code": "dec ",
+      "name": "December"
+    },
+    {
+      "code": "degc",
+      "name": "degrees Celsius"
+    },
+    {
+      "code": "degf",
+      "name": "degrees Fahrenheit"
+    },
+    {
+      "code": "degk",
+      "name": "degrees Kelvin"
+    },
+    {
+      "code": "docu",
+      "name": "document"
+    },
+    {
+      "code": "doub",
+      "name": "real"
+    },
+    {
+      "code": "dstr",
+      "name": "date string"
+    },
+    {
+      "code": "dylb",
+      "name": "dynamic library"
+    },
+    {
+      "code": "elin",
+      "name": "type element info"
+    },
+    {
+      "code": "encs",
+      "name": "encoded string"
+    },
+    {
+      "code": "enum",
+      "name": "constant"
+    },
+    {
+      "code": "evin",
+      "name": "type event info"
+    },
+    {
+      "code": "evnt",
+      "name": "event"
+    },
+    {
+      "code": "exte",
+      "name": "extended real"
+    },
+    {
+      "code": "feb ",
+      "name": "February"
+    },
+    {
+      "code": "feet",
+      "name": "feet"
+    },
+    {
+      "code": "file",
+      "name": "file"
+    },
+    {
+      "code": "fixd",
+      "name": "fixed"
+    },
+    {
+      "code": "font",
+      "name": "font"
+    },
+    {
+      "code": "fpnt",
+      "name": "fixed point"
+    },
+    {
+      "code": "frct",
+      "name": "fixed rectangle"
+    },
+    {
+      "code": "fri ",
+      "name": "Friday"
+    },
+    {
+      "code": "frmk",
+      "name": "framework"
+    },
+    {
+      "code": "fss ",
+      "name": "file specification"
+    },
+    {
+      "code": "galn",
+      "name": "gallons"
+    },
+    {
+      "code": "gcli",
+      "name": "type class info"
+    },
+    {
+      "code": "gram",
+      "name": "grams"
+    },
+    {
+      "code": "hand",
+      "name": "handler"
+    },
+    {
+      "code": "hclb",
+      "name": "closeable"
+    },
+    {
+      "code": "hour",
+      "name": "hours"
+    },
+    {
+      "code": "imod",
+      "name": "modified"
+    },
+    {
+      "code": "inch",
+      "name": "inches"
+    },
+    {
+      "code": "insl",
+      "name": "location reference"
+    },
+    {
+      "code": "isfl",
+      "name": "floating"
+    },
+    {
+      "code": "iszm",
+      "name": "zoomable"
+    },
+    {
+      "code": "itxt",
+      "name": "international text"
+    },
+    {
+      "code": "jan ",
+      "name": "January"
+    },
+    {
+      "code": "jul ",
+      "name": "July"
+    },
+    {
+      "code": "jun ",
+      "name": "June"
+    },
+    {
+      "code": "kMod",
+      "name": "modifiers"
+    },
+    {
+      "code": "kMsg",
+      "name": "key"
+    },
+    {
+      "code": "kfrm",
+      "name": "reference form"
+    },
+    {
+      "code": "kgrm",
+      "name": "kilograms"
+    },
+    {
+      "code": "kknd",
+      "name": "key kind"
+    },
+    {
+      "code": "kmtr",
+      "name": "kilometers"
+    },
+    {
+      "code": "kprs",
+      "name": "keystroke"
+    },
+    {
+      "code": "lbs ",
+      "name": "pounds"
+    },
+    {
+      "code": "ldt ",
+      "name": "date"
+    },
+    {
+      "code": "leng",
+      "name": "length"
+    },
+    {
+      "code": "lfpt",
+      "name": "long fixed point"
+    },
+    {
+      "code": "lfrc",
+      "name": "long fixed rectangle"
+    },
+    {
+      "code": "lfxd",
+      "name": "long fixed"
+    },
+    {
+      "code": "list",
+      "name": "list"
+    },
+    {
+      "code": "litr",
+      "name": "liters"
+    },
+    {
+      "code": "llst",
+      "name": "linked list"
+    },
+    {
+      "code": "lnfd",
+      "name": "linefeed"
+    },
+    {
+      "code": "long",
+      "name": "integer"
+    },
+    {
+      "code": "lpnt",
+      "name": "long point"
+    },
+    {
+      "code": "lr  ",
+      "name": "list or record"
+    },
+    {
+      "code": "lrct",
+      "name": "long rectangle"
+    },
+    {
+      "code": "ls  ",
+      "name": "list or string"
+    },
+    {
+      "code": "mLoc",
+      "name": "machine location"
+    },
+    {
+      "code": "mach",
+      "name": "machine"
+    },
+    {
+      "code": "magn",
+      "name": "unsigned integer"
+    },
+    {
+      "code": "mar ",
+      "name": "March"
+    },
+    {
+      "code": "may ",
+      "name": "May"
+    },
+    {
+      "code": "metr",
+      "name": "meters"
+    },
+    {
+      "code": "mile",
+      "name": "miles"
+    },
+    {
+      "code": "min ",
+      "name": "minutes"
+    },
+    {
+      "code": "mnth",
+      "name": "month"
+    },
+    {
+      "code": "mon ",
+      "name": "Monday"
+    },
+    {
+      "code": "msng",
+      "name": "missing value"
+    },
+    {
+      "code": "nd  ",
+      "name": "number or date"
+    },
+    {
+      "code": "nmbr",
+      "name": "number"
+    },
+    {
+      "code": "nov ",
+      "name": "November"
+    },
+    {
+      "code": "ns  ",
+      "name": "number or string"
+    },
+    {
+      "code": "null",
+      "name": "null"
+    },
+    {
+      "code": "obj ",
+      "name": "reference"
+    },
+    {
+      "code": "oct ",
+      "name": "October"
+    },
+    {
+      "code": "ofst",
+      "name": "off styles"
+    },
+    {
+      "code": "onst",
+      "name": "on styles"
+    },
+    {
+      "code": "osax",
+      "name": "scripting addition"
+    },
+    {
+      "code": "ozs ",
+      "name": "ounces"
+    },
+    {
+      "code": "pare",
+      "name": "parent"
+    },
+    {
+      "code": "pbnd",
+      "name": "bounds"
+    },
+    {
+      "code": "pcli",
+      "name": "clipboard"
+    },
+    {
+      "code": "pcls",
+      "name": "class"
+    },
+    {
+      "code": "pcnt",
+      "name": "contents"
+    },
+    {
+      "code": "pi  ",
+      "name": "pi"
+    },
+    {
+      "code": "pidx",
+      "name": "index"
+    },
+    {
+      "code": "pimr",
+      "name": "required import items"
+    },
+    {
+      "code": "pinf",
+      "name": "type property info"
+    },
+    {
+      "code": "pisf",
+      "name": "frontmost"
+    },
+    {
+      "code": "pjst",
+      "name": "justification"
+    },
+    {
+      "code": "plcd",
+      "name": "language code"
+    },
+    {
+      "code": "pmin",
+      "name": "type parameter info"
+    },
+    {
+      "code": "pmod",
+      "name": "modal"
+    },
+    {
+      "code": "pnam",
+      "name": "name"
+    },
+    {
+      "code": "ppga",
+      "name": "progress additional description"
+    },
+    {
+      "code": "ppgc",
+      "name": "progress completed steps"
+    },
+    {
+      "code": "ppgd",
+      "name": "progress description"
+    },
+    {
+      "code": "ppgt",
+      "name": "progress total steps"
+    },
+    {
+      "code": "ppor",
+      "name": "port"
+    },
+    {
+      "code": "prdp",
+      "name": "print depth"
+    },
+    {
+      "code": "prep",
+      "name": "preposition"
+    },
+    {
+      "code": "prln",
+      "name": "print length"
+    },
+    {
+      "code": "prsz",
+      "name": "resizable"
+    },
+    {
+      "code": "prun",
+      "name": "running"
+    },
+    {
+      "code": "pscd",
+      "name": "script code"
+    },
+    {
+      "code": "psct",
+      "name": "writing code"
+    },
+    {
+      "code": "pstr",
+      "name": "Pascal string"
+    },
+    {
+      "code": "psxf",
+      "name": "POSIX file"
+    },
+    {
+      "code": "psxp",
+      "name": "POSIX path"
+    },
+    {
+      "code": "ptit",
+      "name": "titled"
+    },
+    {
+      "code": "ptsz",
+      "name": "size"
+    },
+    {
+      "code": "pvis",
+      "name": "visible"
+    },
+    {
+      "code": "pzum",
+      "name": "zoomed"
+    },
+    {
+      "code": "qdrt",
+      "name": "bounding rectangle"
+    },
+    {
+      "code": "qrts",
+      "name": "quarts"
+    },
+    {
+      "code": "quot",
+      "name": "quote"
+    },
+    {
+      "code": "rdat",
+      "name": "data"
+    },
+    {
+      "code": "reco",
+      "name": "record"
+    },
+    {
+      "code": "rest",
+      "name": "rest"
+    },
+    {
+      "code": "ret ",
+      "name": "return"
+    },
+    {
+      "code": "rslt",
+      "name": "result"
+    },
+    {
+      "code": "rvse",
+      "name": "reverse"
+    },
+    {
+      "code": "sat ",
+      "name": "Saturday"
+    },
+    {
+      "code": "scnd",
+      "name": "seconds"
+    },
+    {
+      "code": "scpt",
+      "name": "script"
+    },
+    {
+      "code": "sele",
+      "name": "selection"
+    },
+    {
+      "code": "sep ",
+      "name": "September"
+    },
+    {
+      "code": "sf  ",
+      "name": "alias or string"
+    },
+    {
+      "code": "shdt",
+      "name": "short date string"
+    },
+    {
+      "code": "shor",
+      "name": "small integer"
+    },
+    {
+      "code": "sing",
+      "name": "small real"
+    },
+    {
+      "code": "snd ",
+      "name": "sound"
+    },
+    {
+      "code": "spac",
+      "name": "space"
+    },
+    {
+      "code": "sqft",
+      "name": "square feet"
+    },
+    {
+      "code": "sqkm",
+      "name": "square kilometers"
+    },
+    {
+      "code": "sqmi",
+      "name": "square miles"
+    },
+    {
+      "code": "sqrm",
+      "name": "square meters"
+    },
+    {
+      "code": "sqyd",
+      "name": "square yards"
+    },
+    {
+      "code": "strq",
+      "name": "quoted form"
+    },
+    {
+      "code": "styl",
+      "name": "styled Clipboard text"
+    },
+    {
+      "code": "suin",
+      "name": "type suite info"
+    },
+    {
+      "code": "sun ",
+      "name": "Sunday"
+    },
+    {
+      "code": "sutx",
+      "name": "styled Unicode text"
+    },
+    {
+      "code": "tab ",
+      "name": "tab"
+    },
+    {
+      "code": "tdas",
+      "name": "dash style"
+    },
+    {
+      "code": "thu ",
+      "name": "Thursday"
+    },
+    {
+      "code": "time",
+      "name": "time"
+    },
+    {
+      "code": "tpmm",
+      "name": "pixel map record"
+    },
+    {
+      "code": "tr16",
+      "name": "RGB16 color"
+    },
+    {
+      "code": "tr96",
+      "name": "RGB96 color"
+    },
+    {
+      "code": "trot",
+      "name": "rotation"
+    },
+    {
+      "code": "tstr",
+      "name": "time string"
+    },
+    {
+      "code": "tsty",
+      "name": "text style info"
+    },
+    {
+      "code": "tue ",
+      "name": "Tuesday"
+    },
+    {
+      "code": "txdl",
+      "name": "text item delimiters"
+    },
+    {
+      "code": "txst",
+      "name": "style"
+    },
+    {
+      "code": "type",
+      "name": "type class"
+    },
+    {
+      "code": "ustl",
+      "name": "uniform styles"
+    },
+    {
+      "code": "utxt",
+      "name": "Unicode text"
+    },
+    {
+      "code": "vect",
+      "name": "vector"
+    },
+    {
+      "code": "vers",
+      "name": "version"
+    },
+    {
+      "code": "wed ",
+      "name": "Wednesday"
+    },
+    {
+      "code": "week",
+      "name": "weeks"
+    },
+    {
+      "code": "wkdy",
+      "name": "weekday"
+    },
+    {
+      "code": "yard",
+      "name": "yards"
+    },
+    {
+      "code": "year",
+      "name": "year"
+    }
+  ],
+  "enumerations": [
+    {
+      "group": "boov",
+      "code": "fals",
+      "name": "false"
+    },
+    {
+      "group": "boov",
+      "code": "true",
+      "name": "true"
+    },
+    {
+      "group": "cons",
+      "code": "case",
+      "name": "case"
+    },
+    {
+      "group": "cons",
+      "code": "diac",
+      "name": "diacriticals"
+    },
+    {
+      "group": "cons",
+      "code": "hyph",
+      "name": "hyphens"
+    },
+    {
+      "group": "cons",
+      "code": "nume",
+      "name": "numeric strings"
+    },
+    {
+      "group": "cons",
+      "code": "punc",
+      "name": "punctuation"
+    },
+    {
+      "group": "cons",
+      "code": "rmte",
+      "name": "application responses"
+    },
+    {
+      "group": "cons",
+      "code": "whit",
+      "name": "white space"
+    },
+    {
+      "group": "eMds",
+      "code": "Kclk",
+      "name": "caps lock down"
+    },
+    {
+      "group": "eMds",
+      "code": "Kcmd",
+      "name": "command down"
+    },
+    {
+      "group": "eMds",
+      "code": "Kctl",
+      "name": "control down"
+    },
+    {
+      "group": "eMds",
+      "code": "Kopt",
+      "name": "option down"
+    },
+    {
+      "group": "eMds",
+      "code": "Ksft",
+      "name": "shift down"
+    },
+    {
+      "group": "ekst",
+      "code": "ks$\u0000",
+      "name": "return key"
+    },
+    {
+      "group": "ekst",
+      "code": "ks0\u0000",
+      "name": "tab key"
+    },
+    {
+      "group": "ekst",
+      "code": "ks3\u0000",
+      "name": "delete key"
+    },
+    {
+      "group": "ekst",
+      "code": "ks5\u0000",
+      "name": "escape key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksG\u0000",
+      "name": "clear key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksL\u0000",
+      "name": "enter key"
+    },
+    {
+      "group": "ekst",
+      "code": "ks`\u0000",
+      "name": "F5 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksa\u0000",
+      "name": "F6 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksb\u0000",
+      "name": "F7 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksc\u0000",
+      "name": "F3 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksd\u0000",
+      "name": "F8 key"
+    },
+    {
+      "group": "ekst",
+      "code": "kse\u0000",
+      "name": "F9 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksg\u0000",
+      "name": "F11 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksi\u0000",
+      "name": "F13 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksk\u0000",
+      "name": "F14 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksm\u0000",
+      "name": "F10 key"
+    },
+    {
+      "group": "ekst",
+      "code": "kso\u0000",
+      "name": "F12 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksq\u0000",
+      "name": "F15 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksr\u0000",
+      "name": "help key"
+    },
+    {
+      "group": "ekst",
+      "code": "kss\u0000",
+      "name": "home key"
+    },
+    {
+      "group": "ekst",
+      "code": "kst\u0000",
+      "name": "page up key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksu\u0000",
+      "name": "forward del key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksv\u0000",
+      "name": "F4 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksw\u0000",
+      "name": "end key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksx\u0000",
+      "name": "F2 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksy\u0000",
+      "name": "page down key"
+    },
+    {
+      "group": "ekst",
+      "code": "ksz\u0000",
+      "name": "F1 key"
+    },
+    {
+      "group": "ekst",
+      "code": "ks{\u0000",
+      "name": "left arrow key"
+    },
+    {
+      "group": "ekst",
+      "code": "ks|\u0000",
+      "name": "right arrow key"
+    },
+    {
+      "group": "ekst",
+      "code": "ks}\u0000",
+      "name": "down arrow key"
+    },
+    {
+      "group": "ekst",
+      "code": "ks~\u0000",
+      "name": "up arrow key"
+    },
+    {
+      "group": "just",
+      "code": "cent",
+      "name": "center"
+    },
+    {
+      "group": "just",
+      "code": "full",
+      "name": "full"
+    },
+    {
+      "group": "just",
+      "code": "left",
+      "name": "left"
+    },
+    {
+      "group": "just",
+      "code": "rght",
+      "name": "right"
+    },
+    {
+      "group": "misc",
+      "code": "cura",
+      "name": "current application"
+    },
+    {
+      "group": "savo",
+      "code": "ask ",
+      "name": "ask"
+    },
+    {
+      "group": "savo",
+      "code": "no  ",
+      "name": "no"
+    },
+    {
+      "group": "savo",
+      "code": "yes ",
+      "name": "yes"
+    },
+    {
+      "group": "styl",
+      "code": "alcp",
+      "name": "all caps"
+    },
+    {
+      "group": "styl",
+      "code": "bold",
+      "name": "bold"
+    },
+    {
+      "group": "styl",
+      "code": "cond",
+      "name": "condensed"
+    },
+    {
+      "group": "styl",
+      "code": "hidn",
+      "name": "hidden"
+    },
+    {
+      "group": "styl",
+      "code": "ital",
+      "name": "italic"
+    },
+    {
+      "group": "styl",
+      "code": "lowc",
+      "name": "all lowercase"
+    },
+    {
+      "group": "styl",
+      "code": "outl",
+      "name": "outline"
+    },
+    {
+      "group": "styl",
+      "code": "pexp",
+      "name": "expanded"
+    },
+    {
+      "group": "styl",
+      "code": "plan",
+      "name": "plain"
+    },
+    {
+      "group": "styl",
+      "code": "sbsc",
+      "name": "subscript"
+    },
+    {
+      "group": "styl",
+      "code": "shad",
+      "name": "shadow"
+    },
+    {
+      "group": "styl",
+      "code": "smcp",
+      "name": "small caps"
+    },
+    {
+      "group": "styl",
+      "code": "spsc",
+      "name": "superscript"
+    },
+    {
+      "group": "styl",
+      "code": "strk",
+      "name": "strikethrough"
+    },
+    {
+      "group": "styl",
+      "code": "undl",
+      "name": "underline"
+    }
+  ],
+  "reserved_words": [
+    "about",
+    "above",
+    "activate",
+    "after",
+    "against",
+    "alias",
+    "aliases",
+    "and",
+    "anything",
+    "app",
+    "applescript",
+    "appletalk",
+    "application",
+    "applications",
+    "april",
+    "around",
+    "as",
+    "ask",
+    "at",
+    "august",
+    "back",
+    "beep",
+    "before",
+    "beginning",
+    "behind",
+    "below",
+    "beneath",
+    "beside",
+    "between",
+    "bold",
+    "boolean",
+    "booleans",
+    "bounds",
+    "but",
+    "by",
+    "case",
+    "caution",
+    "center",
+    "centimeters",
+    "character",
+    "characters",
+    "class",
+    "classes",
+    "clipboard",
+    "close",
+    "closeable",
+    "color",
+    "computer",
+    "condensed",
+    "considering",
+    "constant",
+    "constants",
+    "contain",
+    "contains",
+    "contents",
+    "continue",
+    "copy",
+    "count",
+    "critical",
+    "data",
+    "date",
+    "dates",
+    "day",
+    "days",
+    "december",
+    "delay",
+    "delete",
+    "desktop",
+    "diacriticals",
+    "div",
+    "document",
+    "documents",
+    "does",
+    "down",
+    "duplicate",
+    "editors",
+    "eighth",
+    "else",
+    "end",
+    "eof",
+    "equal",
+    "equals",
+    "error",
+    "event",
+    "events",
+    "every",
+    "exists",
+    "exit",
+    "expanded",
+    "extensions",
+    "false",
+    "february",
+    "feet",
+    "fifth",
+    "file",
+    "files",
+    "first",
+    "fixed",
+    "floating",
+    "folder",
+    "font",
+    "fonts",
+    "for",
+    "fourth",
+    "framework",
+    "frameworks",
+    "friday",
+    "from",
+    "front",
+    "frontmost",
+    "full",
+    "gallons",
+    "get",
+    "given",
+    "global",
+    "grams",
+    "handler",
+    "handlers",
+    "help",
+    "hidden",
+    "host",
+    "hours",
+    "hyphens",
+    "id",
+    "idle",
+    "if",
+    "ignoring",
+    "in",
+    "inches",
+    "index",
+    "informational",
+    "integer",
+    "integers",
+    "into",
+    "ip",
+    "is",
+    "it",
+    "italic",
+    "item",
+    "items",
+    "its",
+    "january",
+    "july",
+    "june",
+    "justification",
+    "key",
+    "keystroke",
+    "keystrokes",
+    "kilograms",
+    "kilometers",
+    "kind",
+    "last",
+    "launch",
+    "left",
+    "length",
+    "line",
+    "linefeed",
+    "lines",
+    "list",
+    "lists",
+    "liters",
+    "local",
+    "locked",
+    "log",
+    "machine",
+    "machines",
+    "make",
+    "march",
+    "may",
+    "me",
+    "menu",
+    "meters",
+    "middle",
+    "miles",
+    "minutes",
+    "mod",
+    "modal",
+    "modified",
+    "modifiers",
+    "monday",
+    "month",
+    "months",
+    "move",
+    "my",
+    "name",
+    "named",
+    "nd",
+    "negate",
+    "ninth",
+    "no",
+    "not",
+    "note",
+    "november",
+    "null",
+    "number",
+    "numbers",
+    "october",
+    "of",
+    "offset",
+    "on",
+    "onto",
+    "open",
+    "or",
+    "ounces",
+    "outline",
+    "over",
+    "paragraph",
+    "paragraphs",
+    "parent",
+    "password",
+    "path",
+    "pi",
+    "picture",
+    "pictures",
+    "plain",
+    "plugins",
+    "point",
+    "port",
+    "pounds",
+    "preferences",
+    "preposition",
+    "prepositions",
+    "print",
+    "printmonitor",
+    "prop",
+    "properties",
+    "property",
+    "punctuation",
+    "put",
+    "quarts",
+    "quit",
+    "quote",
+    "rd",
+    "read",
+    "real",
+    "reals",
+    "record",
+    "records",
+    "ref",
+    "reference",
+    "relative",
+    "reopen",
+    "repeat",
+    "resizable",
+    "rest",
+    "result",
+    "return",
+    "returning",
+    "reverse",
+    "right",
+    "rotation",
+    "round",
+    "run",
+    "running",
+    "saturday",
+    "save",
+    "say",
+    "scheme",
+    "script",
+    "scripts",
+    "second",
+    "seconds",
+    "select",
+    "selection",
+    "september",
+    "set",
+    "seventh",
+    "shadow",
+    "short",
+    "since",
+    "sixth",
+    "size",
+    "some",
+    "sound",
+    "sounds",
+    "space",
+    "st",
+    "startup",
+    "stationery",
+    "stop",
+    "strikethrough",
+    "string",
+    "strings",
+    "style",
+    "subscript",
+    "summarize",
+    "sunday",
+    "superscript",
+    "tab",
+    "tell",
+    "tenth",
+    "text",
+    "th",
+    "that",
+    "the",
+    "then",
+    "third",
+    "through",
+    "thru",
+    "thursday",
+    "time",
+    "timeout",
+    "times",
+    "titled",
+    "to",
+    "transaction",
+    "trash",
+    "true",
+    "try",
+    "tuesday",
+    "under",
+    "underline",
+    "until",
+    "up",
+    "url",
+    "use",
+    "vector",
+    "vectors",
+    "version",
+    "visible",
+    "voices",
+    "volume",
+    "warning",
+    "wednesday",
+    "weekday",
+    "weekdays",
+    "weeks",
+    "where",
+    "while",
+    "whose",
+    "window",
+    "windows",
+    "with",
+    "without",
+    "word",
+    "words",
+    "write",
+    "yards",
+    "year",
+    "yes",
+    "zoomable",
+    "zoomed"
+  ]
+}

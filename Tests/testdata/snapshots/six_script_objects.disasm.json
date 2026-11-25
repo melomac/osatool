@@ -1,0 +1,484 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 8,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010000",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"one\""
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 6,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"value\""
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010001",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"two\""
+          ]
+        },
+        {
+          "offset": 14,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 15,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"value\""
+          ]
+        },
+        {
+          "offset": 18,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 19,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010002",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"three\""
+          ]
+        },
+        {
+          "offset": 24,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 25,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"value\""
+          ]
+        },
+        {
+          "offset": 28,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 29,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010003",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"four\""
+          ]
+        },
+        {
+          "offset": 34,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 35,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"value\""
+          ]
+        },
+        {
+          "offset": 38,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 39,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010004",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "\"five\""
+          ]
+        },
+        {
+          "offset": 44,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 45,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"value\""
+          ]
+        },
+        {
+          "offset": 48,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 49,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010005",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "\"six\""
+          ]
+        },
+        {
+          "offset": 54,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 55,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"value\""
+          ]
+        },
+        {
+          "offset": 58,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 59,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 60,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "name": "\"value\"",
+      "arguments": "[]",
+      "owner": "\"one\"",
+      "path": "root[2].vector[4][2]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "name": "\"value\"",
+      "arguments": "[]",
+      "owner": "\"two\"",
+      "path": "root[3].vector[4][2]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "name": "\"value\"",
+      "arguments": "[]",
+      "owner": "\"three\"",
+      "path": "root[4].vector[4][2]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 109,
+          "mnemonic": "Push3",
+          "raw_hex": "6d"
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "name": "\"value\"",
+      "arguments": "[]",
+      "owner": "\"four\"",
+      "path": "root[5].vector[4][2]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "4"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "name": "\"value\"",
+      "arguments": "[]",
+      "owner": "\"five\"",
+      "path": "root[6].vector[4][2]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "5"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "name": "\"value\"",
+      "arguments": "[]",
+      "owner": "\"six\"",
+      "path": "root[7].vector[4][2]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "6"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

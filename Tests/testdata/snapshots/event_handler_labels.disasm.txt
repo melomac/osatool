@@ -1,0 +1,29 @@
+FAS 1.10
+
+function[2] event("syso","dlog","askr",0x00000000,"TEXT",0x00000000) arguments="msg"
+  00000  a0           PushVariable            variable-index=0  ; "msg"
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[3] event("GURL","GURL","null",0xffff8000,"TEXT",0xffff8000) arguments="theURL"
+  00000  a0           PushVariable            variable-index=0  ; "theURL"
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[4] event("aevt","odoc","null",0x00008000,"alis",0x00001000) arguments="theFiles"
+  00000  a0           PushVariable            variable-index=0  ; "theFiles"
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[5] event("gtqp","chlt","ns  ",0x00004000,"ns  ",0x00004000) arguments="choices"
+  00000  a1           PushVariable            variable-index=1  ; "p"
+  00001  a2           PushVariable            variable-index=2  ; "d"
+  00002  6c           Push2                   
+  00003  76           MakeVector              
+  00004  0f           Return                  
+  00005  0f           Return                  
+
+function[6] event("misc","idle","nmbr",0x00000000,"null",0xffff9000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; 5
+  00001  0f           Return                  
+  00002  0f           Return                  

@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"value00\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 2,
+          "opcode": 209,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"literal00\""
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 4,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"value01\""
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 6,
+          "opcode": 211,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"literal01\""
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 8,
+          "opcode": 228,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e4",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "\"value02\""
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 10,
+          "opcode": 213,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d5",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "\"literal02\""
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 12,
+          "opcode": 230,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e6",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "\"value03\""
+          ]
+        },
+        {
+          "offset": 13,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 14,
+          "opcode": 215,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d7",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 7
+            }
+          ],
+          "annotations": [
+            "\"literal03\""
+          ]
+        },
+        {
+          "offset": 15,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 16,
+          "opcode": 232,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e8",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 8
+            }
+          ],
+          "annotations": [
+            "\"value04\""
+          ]
+        },
+        {
+          "offset": 17,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 18,
+          "opcode": 217,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d9",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 9
+            }
+          ],
+          "annotations": [
+            "\"literal04\""
+          ]
+        },
+        {
+          "offset": 19,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 20,
+          "opcode": 234,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "ea",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 10
+            }
+          ],
+          "annotations": [
+            "\"value05\""
+          ]
+        },
+        {
+          "offset": 21,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 22,
+          "opcode": 219,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "db",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 11
+            }
+          ],
+          "annotations": [
+            "\"literal05\""
+          ]
+        },
+        {
+          "offset": 23,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 24,
+          "opcode": 236,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "ec",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 12
+            }
+          ],
+          "annotations": [
+            "\"value06\""
+          ]
+        },
+        {
+          "offset": 25,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 26,
+          "opcode": 221,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "dd",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 13
+            }
+          ],
+          "annotations": [
+            "\"literal06\""
+          ]
+        },
+        {
+          "offset": 27,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 28,
+          "opcode": 238,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "ee",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 14
+            }
+          ],
+          "annotations": [
+            "\"value07\""
+          ]
+        },
+        {
+          "offset": 29,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 30,
+          "opcode": 223,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "df",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 15
+            }
+          ],
+          "annotations": [
+            "\"literal07\""
+          ]
+        },
+        {
+          "offset": 31,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 32,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "610010",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 16
+            }
+          ],
+          "annotations": [
+            "\"value08\""
+          ]
+        },
+        {
+          "offset": 35,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 36,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "600011",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 17
+            }
+          ],
+          "annotations": [
+            "\"literal08\""
+          ]
+        },
+        {
+          "offset": 39,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 40,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "610012",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 18
+            }
+          ],
+          "annotations": [
+            "\"value09\""
+          ]
+        },
+        {
+          "offset": 43,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 44,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "600013",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 19
+            }
+          ],
+          "annotations": [
+            "\"literal09\""
+          ]
+        },
+        {
+          "offset": 47,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 48,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "610014",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 20
+            }
+          ],
+          "annotations": [
+            "\"value10\""
+          ]
+        },
+        {
+          "offset": 51,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 52,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "600015",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 21
+            }
+          ],
+          "annotations": [
+            "\"literal10\""
+          ]
+        },
+        {
+          "offset": 55,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 56,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "610016",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 22
+            }
+          ],
+          "annotations": [
+            "\"value11\""
+          ]
+        },
+        {
+          "offset": 59,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 60,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "600017",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 23
+            }
+          ],
+          "annotations": [
+            "\"literal11\""
+          ]
+        },
+        {
+          "offset": 63,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 64,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "610018",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 24
+            }
+          ],
+          "annotations": [
+            "\"value12\""
+          ]
+        },
+        {
+          "offset": 67,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 68,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "600019",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 25
+            }
+          ],
+          "annotations": [
+            "\"literal12\""
+          ]
+        },
+        {
+          "offset": 71,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 72,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "61001a",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 26
+            }
+          ],
+          "annotations": [
+            "\"value13\""
+          ]
+        },
+        {
+          "offset": 75,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 76,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "60001b",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 27
+            }
+          ],
+          "annotations": [
+            "\"literal13\""
+          ]
+        },
+        {
+          "offset": 79,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 80,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "61001c",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 28
+            }
+          ],
+          "annotations": [
+            "\"value14\""
+          ]
+        },
+        {
+          "offset": 83,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 84,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "60001d",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 29
+            }
+          ],
+          "annotations": [
+            "\"literal14\""
+          ]
+        },
+        {
+          "offset": 87,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 88,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "61001e",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 30
+            }
+          ],
+          "annotations": [
+            "\"value15\""
+          ]
+        },
+        {
+          "offset": 91,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 92,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "60001f",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 31
+            }
+          ],
+          "annotations": [
+            "\"literal15\""
+          ]
+        },
+        {
+          "offset": 95,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 96,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "610020",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 32
+            }
+          ],
+          "annotations": [
+            "\"value16\""
+          ]
+        },
+        {
+          "offset": 99,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 100,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "600021",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 33
+            }
+          ],
+          "annotations": [
+            "\"literal16\""
+          ]
+        },
+        {
+          "offset": 103,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 104,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "610022",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 34
+            }
+          ],
+          "annotations": [
+            "\"value17\""
+          ]
+        },
+        {
+          "offset": 107,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 108,
+          "opcode": 96,
+          "mnemonic": "PopGlobalExtended",
+          "raw_hex": "600023",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 35
+            }
+          ],
+          "annotations": [
+            "\"literal17\""
+          ]
+        },
+        {
+          "offset": 111,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 112,
+          "opcode": 95,
+          "mnemonic": "PushGlobalExtended",
+          "raw_hex": "5f0023",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 35
+            }
+          ],
+          "annotations": [
+            "\"literal17\""
+          ]
+        },
+        {
+          "offset": 115,
+          "opcode": 97,
+          "mnemonic": "PushLiteralExtended",
+          "raw_hex": "610024",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 36
+            }
+          ],
+          "annotations": [
+            "data[6](544553540102)"
+          ]
+        },
+        {
+          "offset": 118,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 119,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 120,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 121,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

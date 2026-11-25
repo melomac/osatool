@@ -1,0 +1,656 @@
+FAS 1.10
+
+function[4] "listPatterns" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "x"
+  00001  a1           PushVariable            variable-index=1  ; "y"
+  00002  6c           Push2                   
+  00003  76           MakeVector              
+  00004  45           GetData                 
+  00005  5b           Dup                     
+  00006  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00007  6b           Push1                   
+  00008  2f           MakeObjectAlias           ; index
+  00009  45           GetData                 
+  0000a  b2           PopVariable             variable-index=2  ; "a"
+  0000b  5a           Pop                     
+  0000c  5b           Dup                     
+  0000d  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0000e  6c           Push2                   
+  0000f  2f           MakeObjectAlias           ; index
+  00010  45           GetData                 
+  00011  b3           PopVariable             variable-index=3  ; "b"
+  00012  5a           Pop                     
+  00013  4f           StoreResult             
+  00014  a0           PushVariable            variable-index=0  ; "x"
+  00015  a1           PushVariable            variable-index=1  ; "y"
+  00016  a0           PushVariable            variable-index=0  ; "x"
+  00017  6c           Push2                   
+  00018  76           MakeVector              
+  00019  6c           Push2                   
+  0001a  76           MakeVector              
+  0001b  45           GetData                 
+  0001c  5b           Dup                     
+  0001d  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0001e  6b           Push1                   
+  0001f  2f           MakeObjectAlias           ; index
+  00020  45           GetData                 
+  00021  b4           PopVariable             variable-index=4  ; "c"
+  00022  5a           Pop                     
+  00023  5b           Dup                     
+  00024  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00025  6c           Push2                   
+  00026  2f           MakeObjectAlias           ; index
+  00027  45           GetData                 
+  00028  5b           Dup                     
+  00029  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0002a  6b           Push1                   
+  0002b  2f           MakeObjectAlias           ; index
+  0002c  45           GetData                 
+  0002d  b5           PopVariable             variable-index=5  ; "d"
+  0002e  5a           Pop                     
+  0002f  5b           Dup                     
+  00030  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00031  6c           Push2                   
+  00032  2f           MakeObjectAlias           ; index
+  00033  45           GetData                 
+  00034  b6           PopVariable             variable-index=6  ; "e"
+  00035  5a           Pop                     
+  00036  5a           Pop                     
+  00037  4f           StoreResult             
+  00038  a0           PushVariable            variable-index=0  ; "x"
+  00039  a1           PushVariable            variable-index=1  ; "y"
+  0003a  6c           Push2                   
+  0003b  76           MakeVector              
+  0003c  a0           PushVariable            variable-index=0  ; "x"
+  0003d  6c           Push2                   
+  0003e  76           MakeVector              
+  0003f  45           GetData                 
+  00040  5b           Dup                     
+  00041  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00042  6b           Push1                   
+  00043  2f           MakeObjectAlias           ; index
+  00044  45           GetData                 
+  00045  5b           Dup                     
+  00046  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00047  6b           Push1                   
+  00048  2f           MakeObjectAlias           ; index
+  00049  45           GetData                 
+  0004a  b7           PopVariable             variable-index=7  ; "f"
+  0004b  5a           Pop                     
+  0004c  5b           Dup                     
+  0004d  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0004e  6c           Push2                   
+  0004f  2f           MakeObjectAlias           ; index
+  00050  45           GetData                 
+  00051  b8           PopVariable             variable-index=8  ; "g"
+  00052  5a           Pop                     
+  00053  5a           Pop                     
+  00054  5b           Dup                     
+  00055  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00056  6c           Push2                   
+  00057  2f           MakeObjectAlias           ; index
+  00058  45           GetData                 
+  00059  b9           PopVariable             variable-index=9  ; "h"
+  0005a  5a           Pop                     
+  0005b  4f           StoreResult             
+  0005c  a0           PushVariable            variable-index=0  ; "x"
+  0005d  45           GetData                 
+  0005e  5b           Dup                     
+  0005f  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00060  6b           Push1                   
+  00061  2f           MakeObjectAlias           ; index
+  00062  45           GetData                 
+  00063  ba           PopVariable             variable-index=10  ; "i"
+  00064  5a           Pop                     
+  00065  4f           StoreResult             
+  00066  a0           PushVariable            variable-index=0  ; "x"
+  00067  45           GetData                 
+  00068  5b           Dup                     
+  00069  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0006a  6b           Push1                   
+  0006b  2f           MakeObjectAlias           ; index
+  0006c  45           GetData                 
+  0006d  bb           PopVariable             variable-index=11  ; "j"
+  0006e  5a           Pop                     
+  0006f  5b           Dup                     
+  00070  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00071  6c           Push2                   
+  00072  2f           MakeObjectAlias           ; index
+  00073  45           GetData                 
+  00074  bc           PopVariable             variable-index=12  ; "k"
+  00075  5a           Pop                     
+  00076  5b           Dup                     
+  00077  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00078  6d           Push3                   
+  00079  2f           MakeObjectAlias           ; index
+  0007a  45           GetData                 
+  0007b  bd           PopVariable             variable-index=13  ; "l"
+  0007c  5a           Pop                     
+  0007d  4f           StoreResult             
+  0007e  a1           PushVariable            variable-index=1  ; "y"
+  0007f  a0           PushVariable            variable-index=0  ; "x"
+  00080  6c           Push2                   
+  00081  76           MakeVector              
+  00082  45           GetData                 
+  00083  5b           Dup                     
+  00084  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00085  6b           Push1                   
+  00086  2f           MakeObjectAlias           ; index
+  00087  45           GetData                 
+  00088  b0           PopVariable             variable-index=0  ; "x"
+  00089  5a           Pop                     
+  0008a  5b           Dup                     
+  0008b  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0008c  6c           Push2                   
+  0008d  2f           MakeObjectAlias           ; index
+  0008e  45           GetData                 
+  0008f  b1           PopVariable             variable-index=1  ; "y"
+  00090  5a           Pop                     
+  00091  4f           StoreResult             
+  00092  a2           PushVariable            variable-index=2  ; "a"
+  00093  a3           PushVariable            variable-index=3  ; "b"
+  00094  a4           PushVariable            variable-index=4  ; "c"
+  00095  a5           PushVariable            variable-index=5  ; "d"
+  00096  a6           PushVariable            variable-index=6  ; "e"
+  00097  a7           PushVariable            variable-index=7  ; "f"
+  00098  a8           PushVariable            variable-index=8  ; "g"
+  00099  a9           PushVariable            variable-index=9  ; "h"
+  0009a  aa           PushVariable            variable-index=10  ; "i"
+  0009b  ab           PushVariable            variable-index=11  ; "j"
+  0009c  ac           PushVariable            variable-index=12  ; "k"
+  0009d  ad           PushVariable            variable-index=13  ; "l"
+  0009e  e1           PushLiteral             literal-index=1  ; 12
+  0009f  76           MakeVector              
+  000a0  0f           Return                  
+  000a1  0f           Return                  
+
+function[5] "recordPatterns" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "x"
+  00001  45           GetData                 
+  00002  5b           Dup                     
+  00003  e0           PushLiteral             literal-index=0  ; constant(0x706e616d) 'pnam' name
+  00004  2c           MakeObjectAlias           ; property
+  00005  45           GetData                 
+  00006  b1           PopVariable             variable-index=1  ; "a"
+  00007  5a           Pop                     
+  00008  5b           Dup                     
+  00009  e1           PushLiteral             literal-index=1  ; constant(0x49442020) 'ID  ' id
+  0000a  2c           MakeObjectAlias           ; property
+  0000b  45           GetData                 
+  0000c  b2           PopVariable             variable-index=2  ; "b"
+  0000d  5a           Pop                     
+  0000e  4f           StoreResult             
+  0000f  a0           PushVariable            variable-index=0  ; "x"
+  00010  45           GetData                 
+  00011  5b           Dup                     
+  00012  e2           PushLiteral             literal-index=2  ; "width"
+  00013  2c           MakeObjectAlias           ; property
+  00014  45           GetData                 
+  00015  b3           PopVariable             variable-index=3  ; "c"
+  00016  5a           Pop                     
+  00017  5b           Dup                     
+  00018  e3           PushLiteral             literal-index=3  ; "height"
+  00019  2c           MakeObjectAlias           ; property
+  0001a  45           GetData                 
+  0001b  b4           PopVariable             variable-index=4  ; "d"
+  0001c  5a           Pop                     
+  0001d  4f           StoreResult             
+  0001e  a0           PushVariable            variable-index=0  ; "x"
+  0001f  45           GetData                 
+  00020  5b           Dup                     
+  00021  e0           PushLiteral             literal-index=0  ; constant(0x706e616d) 'pnam' name
+  00022  2c           MakeObjectAlias           ; property
+  00023  45           GetData                 
+  00024  b5           PopVariable             variable-index=5  ; "e"
+  00025  5a           Pop                     
+  00026  5b           Dup                     
+  00027  e4           PushLiteral             literal-index=4  ; constant(0x70626e64) 'pbnd' bounds
+  00028  2c           MakeObjectAlias           ; property
+  00029  45           GetData                 
+  0002a  5b           Dup                     
+  0002b  e5           PushLiteral             literal-index=5  ; constant(0x636f626a) 'cobj' item
+  0002c  6b           Push1                   
+  0002d  2f           MakeObjectAlias           ; index
+  0002e  45           GetData                 
+  0002f  b6           PopVariable             variable-index=6  ; "f"
+  00030  5a           Pop                     
+  00031  5b           Dup                     
+  00032  e5           PushLiteral             literal-index=5  ; constant(0x636f626a) 'cobj' item
+  00033  6c           Push2                   
+  00034  2f           MakeObjectAlias           ; index
+  00035  45           GetData                 
+  00036  b7           PopVariable             variable-index=7  ; "g"
+  00037  5a           Pop                     
+  00038  5a           Pop                     
+  00039  4f           StoreResult             
+  0003a  a0           PushVariable            variable-index=0  ; "x"
+  0003b  45           GetData                 
+  0003c  5b           Dup                     
+  0003d  e5           PushLiteral             literal-index=5  ; constant(0x636f626a) 'cobj' item
+  0003e  6b           Push1                   
+  0003f  2f           MakeObjectAlias           ; index
+  00040  45           GetData                 
+  00041  5b           Dup                     
+  00042  e0           PushLiteral             literal-index=0  ; constant(0x706e616d) 'pnam' name
+  00043  2c           MakeObjectAlias           ; property
+  00044  45           GetData                 
+  00045  b8           PopVariable             variable-index=8  ; "h"
+  00046  5a           Pop                     
+  00047  5a           Pop                     
+  00048  5b           Dup                     
+  00049  e5           PushLiteral             literal-index=5  ; constant(0x636f626a) 'cobj' item
+  0004a  6c           Push2                   
+  0004b  2f           MakeObjectAlias           ; index
+  0004c  45           GetData                 
+  0004d  b9           PopVariable             variable-index=9  ; "i"
+  0004e  5a           Pop                     
+  0004f  4f           StoreResult             
+  00050  a1           PushVariable            variable-index=1  ; "a"
+  00051  a2           PushVariable            variable-index=2  ; "b"
+  00052  a3           PushVariable            variable-index=3  ; "c"
+  00053  a4           PushVariable            variable-index=4  ; "d"
+  00054  a5           PushVariable            variable-index=5  ; "e"
+  00055  a6           PushVariable            variable-index=6  ; "f"
+  00056  a7           PushVariable            variable-index=7  ; "g"
+  00057  a8           PushVariable            variable-index=8  ; "h"
+  00058  a9           PushVariable            variable-index=9  ; "i"
+  00059  e6           PushLiteral             literal-index=6  ; 9
+  0005a  76           MakeVector              
+  0005b  0f           Return                  
+  0005c  0f           Return                  
+
+function[6] "copyPatterns" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "x"
+  00001  a1           PushVariable            variable-index=1  ; "y"
+  00002  6c           Push2                   
+  00003  76           MakeVector              
+  00004  45           GetData                 
+  00005  5b           Dup                     
+  00006  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00007  6b           Push1                   
+  00008  2f           MakeObjectAlias           ; index
+  00009  45           GetData                 
+  0000a  51           Clone                   
+  0000b  b2           PopVariable             variable-index=2  ; "a"
+  0000c  5a           Pop                     
+  0000d  5b           Dup                     
+  0000e  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0000f  6c           Push2                   
+  00010  2f           MakeObjectAlias           ; index
+  00011  45           GetData                 
+  00012  51           Clone                   
+  00013  b3           PopVariable             variable-index=3  ; "b"
+  00014  5a           Pop                     
+  00015  4f           StoreResult             
+  00016  a0           PushVariable            variable-index=0  ; "x"
+  00017  45           GetData                 
+  00018  5b           Dup                     
+  00019  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0001a  6b           Push1                   
+  0001b  2f           MakeObjectAlias           ; index
+  0001c  45           GetData                 
+  0001d  51           Clone                   
+  0001e  b4           PopVariable             variable-index=4  ; "c"
+  0001f  5a           Pop                     
+  00020  5b           Dup                     
+  00021  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00022  6c           Push2                   
+  00023  2f           MakeObjectAlias           ; index
+  00024  45           GetData                 
+  00025  5b           Dup                     
+  00026  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00027  6b           Push1                   
+  00028  2f           MakeObjectAlias           ; index
+  00029  45           GetData                 
+  0002a  51           Clone                   
+  0002b  b5           PopVariable             variable-index=5  ; "d"
+  0002c  5a           Pop                     
+  0002d  5b           Dup                     
+  0002e  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0002f  6c           Push2                   
+  00030  2f           MakeObjectAlias           ; index
+  00031  45           GetData                 
+  00032  51           Clone                   
+  00033  b6           PopVariable             variable-index=6  ; "e"
+  00034  5a           Pop                     
+  00035  5a           Pop                     
+  00036  4f           StoreResult             
+  00037  e1           PushLiteral             literal-index=1  ; constant(0x706e616d) 'pnam' name
+  00038  a0           PushVariable            variable-index=0  ; "x"
+  00039  6c           Push2                   
+  0003a  0e           MakeRecord              
+  0003b  45           GetData                 
+  0003c  5b           Dup                     
+  0003d  e1           PushLiteral             literal-index=1  ; constant(0x706e616d) 'pnam' name
+  0003e  2c           MakeObjectAlias           ; property
+  0003f  45           GetData                 
+  00040  51           Clone                   
+  00041  b7           PopVariable             variable-index=7  ; "f"
+  00042  5a           Pop                     
+  00043  4f           StoreResult             
+  00044  a0           PushVariable            variable-index=0  ; "x"
+  00045  45           GetData                 
+  00046  51           Clone                   
+  00047  b8           PopVariable             variable-index=8  ; "g"
+  00048  4f           StoreResult             
+  00049  a2           PushVariable            variable-index=2  ; "a"
+  0004a  a3           PushVariable            variable-index=3  ; "b"
+  0004b  a4           PushVariable            variable-index=4  ; "c"
+  0004c  a5           PushVariable            variable-index=5  ; "d"
+  0004d  a6           PushVariable            variable-index=6  ; "e"
+  0004e  a7           PushVariable            variable-index=7  ; "f"
+  0004f  a8           PushVariable            variable-index=8  ; "g"
+  00050  e2           PushLiteral             literal-index=2  ; 7
+  00051  76           MakeVector              
+  00052  0f           Return                  
+  00053  0f           Return                  
+
+function[7] "targetKinds" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "x"
+  00001  45           GetData                 
+  00002  5b           Dup                     
+  00003  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00004  6b           Push1                   
+  00005  2f           MakeObjectAlias           ; index
+  00006  45           GetData                 
+  00007  6300010000   PopParentVariable       parent-depth=1, variable-index=0  ; "first_property"
+  0000c  5a           Pop                     
+  0000d  5b           Dup                     
+  0000e  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0000f  6c           Push2                   
+  00010  2f           MakeObjectAlias           ; index
+  00011  45           GetData                 
+  00012  6300010001   PopParentVariable       parent-depth=1, variable-index=1  ; "second_property"
+  00017  5a           Pop                     
+  00018  4f           StoreResult             
+  00019  a0           PushVariable            variable-index=0  ; "x"
+  0001a  45           GetData                 
+  0001b  5b           Dup                     
+  0001c  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  0001d  6b           Push1                   
+  0001e  2f           MakeObjectAlias           ; index
+  0001f  45           GetData                 
+  00020  d1           PopGlobal               literal-index=1  ; "shared"
+  00021  5a           Pop                     
+  00022  5b           Dup                     
+  00023  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00024  6c           Push2                   
+  00025  2f           MakeObjectAlias           ; index
+  00026  a1           PushVariable            variable-index=1  ; "z"
+  00027  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00028  6b           Push1                   
+  00029  2f           MakeObjectAlias           ; index
+  0002a  46           SetData                 
+  0002b  5a           Pop                     
+  0002c  4f           StoreResult             
+  0002d  a0           PushVariable            variable-index=0  ; "x"
+  0002e  45           GetData                 
+  0002f  5b           Dup                     
+  00030  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00031  6b           Push1                   
+  00032  2f           MakeObjectAlias           ; index
+  00033  45           GetData                 
+  00034  b2           PopVariable             variable-index=2  ; "a"
+  00035  5a           Pop                     
+  00036  5b           Dup                     
+  00037  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00038  6c           Push2                   
+  00039  2f           MakeObjectAlias           ; index
+  0003a  a1           PushVariable            variable-index=1  ; "z"
+  0003b  e2           PushLiteral             literal-index=2  ; constant(0x706e616d) 'pnam' name
+  0003c  2c           MakeObjectAlias           ; property
+  0003d  46           SetData                 
+  0003e  5a           Pop                     
+  0003f  4f           StoreResult             
+  00040  c3           PushGlobal              literal-index=3  ; constant(0x61736372) 'ascr' AppleScript
+  00041  e4           PushLiteral             literal-index=4  ; constant(0x7478646c) 'txdl' text item delimiters
+  00042  2c           MakeObjectAlias           ; property
+  00043  e5           PushLiteral             literal-index=5  ; ","
+  00044  6c           Push2                   
+  00045  76           MakeVector              
+  00046  45           GetData                 
+  00047  5b           Dup                     
+  00048  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00049  6b           Push1                   
+  0004a  2f           MakeObjectAlias           ; index
+  0004b  45           GetData                 
+  0004c  b3           PopVariable             variable-index=3  ; "oldDelimiters"
+  0004d  5a           Pop                     
+  0004e  5b           Dup                     
+  0004f  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00050  6c           Push2                   
+  00051  2f           MakeObjectAlias           ; index
+  00052  c3           PushGlobal              literal-index=3  ; constant(0x61736372) 'ascr' AppleScript
+  00053  e4           PushLiteral             literal-index=4  ; constant(0x7478646c) 'txdl' text item delimiters
+  00054  2c           MakeObjectAlias           ; property
+  00055  46           SetData                 
+  00056  5a           Pop                     
+  00057  4f           StoreResult             
+  00058  a0           PushVariable            variable-index=0  ; "x"
+  00059  e6           PushLiteral             literal-index=6  ; constant(0x6369746d) 'citm' text item
+  0005a  2d           MakeObjectAlias           ; every
+  0005b  45           GetData                 
+  0005c  b4           PopVariable             variable-index=4  ; "parts"
+  0005d  4f           StoreResult             
+  0005e  a3           PushVariable            variable-index=3  ; "oldDelimiters"
+  0005f  c3           PushGlobal              literal-index=3  ; constant(0x61736372) 'ascr' AppleScript
+  00060  e4           PushLiteral             literal-index=4  ; constant(0x7478646c) 'txdl' text item delimiters
+  00061  2c           MakeObjectAlias           ; property
+  00062  46           SetData                 
+  00063  4f           StoreResult             
+  00064  a2           PushVariable            variable-index=2  ; "a"
+  00065  a4           PushVariable            variable-index=4  ; "parts"
+  00066  6c           Push2                   
+  00067  76           MakeVector              
+  00068  0f           Return                  
+  00069  0f           Return                  
+
+function[8] "valueKinds" arguments=vector(type=4,len=2)
+  00000  2a           PushIt                  
+  00001  6a           Push0                   
+  00002  2b0000       PositionalMessageSend   literal-index=0  ; "amount"
+  00005  45           GetData                 
+  00006  5b           Dup                     
+  00007  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00008  6b           Push1                   
+  00009  2f           MakeObjectAlias           ; index
+  0000a  45           GetData                 
+  0000b  b1           PopVariable             variable-index=1  ; "a"
+  0000c  5a           Pop                     
+  0000d  5b           Dup                     
+  0000e  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  0000f  6c           Push2                   
+  00010  2f           MakeObjectAlias           ; index
+  00011  45           GetData                 
+  00012  b2           PopVariable             variable-index=2  ; "b"
+  00013  5a           Pop                     
+  00014  4f           StoreResult             
+  00015  a0           PushVariable            variable-index=0  ; "x"
+  00016  5b           Dup                     
+  00017  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00018  5c           GCSwap                  
+  00019  5b           Dup                     
+  0001a  5a           Pop                     
+  0001b  6b           Push1                   
+  0001c  5c           GCSwap                  
+  0001d  5a           Pop                     
+  0001e  6c           Push2                   
+  0001f  32           MakeObjectAlias           ; range
+  00020  45           GetData                 
+  00021  5b           Dup                     
+  00022  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00023  6b           Push1                   
+  00024  2f           MakeObjectAlias           ; index
+  00025  45           GetData                 
+  00026  b3           PopVariable             variable-index=3  ; "c"
+  00027  5a           Pop                     
+  00028  5b           Dup                     
+  00029  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  0002a  6c           Push2                   
+  0002b  2f           MakeObjectAlias           ; index
+  0002c  45           GetData                 
+  0002d  b4           PopVariable             variable-index=4  ; "d"
+  0002e  5a           Pop                     
+  0002f  4f           StoreResult             
+  00030  a0           PushVariable            variable-index=0  ; "x"
+  00031  6b           Push1                   
+  00032  6b           Push1                   
+  00033  76           MakeVector              
+  00034  25           Concatenate             
+  00035  45           GetData                 
+  00036  5b           Dup                     
+  00037  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00038  6b           Push1                   
+  00039  2f           MakeObjectAlias           ; index
+  0003a  45           GetData                 
+  0003b  b5           PopVariable             variable-index=5  ; "e"
+  0003c  5a           Pop                     
+  0003d  5b           Dup                     
+  0003e  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  0003f  6c           Push2                   
+  00040  2f           MakeObjectAlias           ; index
+  00041  45           GetData                 
+  00042  b6           PopVariable             variable-index=6  ; "f"
+  00043  5a           Pop                     
+  00044  4f           StoreResult             
+  00045  a0           PushVariable            variable-index=0  ; "x"
+  00046  120017       Tell                    signed-word=23
+  00049  2a           PushIt                  
+  0004a  e2           PushLiteral             literal-index=2  ; constant(0x706e616d) 'pnam' name
+  0004b  2c           MakeObjectAlias           ; property
+  0004c  6c           Push2                   
+  0004d  6c           Push2                   
+  0004e  76           MakeVector              
+  0004f  45           GetData                 
+  00050  5b           Dup                     
+  00051  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00052  6b           Push1                   
+  00053  2f           MakeObjectAlias           ; index
+  00054  45           GetData                 
+  00055  b7           PopVariable             variable-index=7  ; "g"
+  00056  5a           Pop                     
+  00057  5b           Dup                     
+  00058  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00059  6c           Push2                   
+  0005a  2f           MakeObjectAlias           ; index
+  0005b  45           GetData                 
+  0005c  b8           PopVariable             variable-index=8  ; "h"
+  0005d  5a           Pop                     
+  0005e  55           EndTell                 
+  0005f  4f           StoreResult             
+  00060  170023       LinkRepeat              branch-target=0x84
+  00063  6b           Push1                   
+  00064  6c           Push2                   
+  00065  6b           Push1                   
+  00066  68           PushUndefined           
+  00067  1c0009       RepeatInRange           variable-index=9  ; "n"
+  0006a  a9           PushVariable            variable-index=9  ; "n"
+  0006b  a9           PushVariable            variable-index=9  ; "n"
+  0006c  6b           Push1                   
+  0006d  1e           Add                     
+  0006e  6c           Push2                   
+  0006f  76           MakeVector              
+  00070  45           GetData                 
+  00071  5b           Dup                     
+  00072  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00073  6b           Push1                   
+  00074  2f           MakeObjectAlias           ; index
+  00075  45           GetData                 
+  00076  ba           PopVariable             variable-index=10  ; "i"
+  00077  5a           Pop                     
+  00078  5b           Dup                     
+  00079  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  0007a  6c           Push2                   
+  0007b  2f           MakeObjectAlias           ; index
+  0007c  45           GetData                 
+  0007d  bb           PopVariable             variable-index=11  ; "j"
+  0007e  5a           Pop                     
+  0007f  5b           Dup                     
+  00080  4f           StoreResult             
+  00081  59ffe5       Jump                    branch-target=0x67
+  00084  4f           StoreResult             
+  00085  a1           PushVariable            variable-index=1  ; "a"
+  00086  a2           PushVariable            variable-index=2  ; "b"
+  00087  00           Equal                   
+  00088  1d0018       TestIf                  branch-target=0xa1
+  0008b  6b           Push1                   
+  0008c  6c           Push2                   
+  0008d  6c           Push2                   
+  0008e  76           MakeVector              
+  0008f  45           GetData                 
+  00090  5b           Dup                     
+  00091  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00092  6b           Push1                   
+  00093  2f           MakeObjectAlias           ; index
+  00094  45           GetData                 
+  00095  bc           PopVariable             variable-index=12  ; "k"
+  00096  5a           Pop                     
+  00097  5b           Dup                     
+  00098  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  00099  6c           Push2                   
+  0009a  2f           MakeObjectAlias           ; index
+  0009b  45           GetData                 
+  0009c  bd           PopVariable             variable-index=13  ; "l"
+  0009d  5a           Pop                     
+  0009e  590015       Jump                    branch-target=0xb4
+  000a1  6d           Push3                   
+  000a2  e3           PushLiteral             literal-index=3  ; 4
+  000a3  6c           Push2                   
+  000a4  76           MakeVector              
+  000a5  45           GetData                 
+  000a6  5b           Dup                     
+  000a7  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  000a8  6b           Push1                   
+  000a9  2f           MakeObjectAlias           ; index
+  000aa  45           GetData                 
+  000ab  bc           PopVariable             variable-index=12  ; "k"
+  000ac  5a           Pop                     
+  000ad  5b           Dup                     
+  000ae  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  000af  6c           Push2                   
+  000b0  2f           MakeObjectAlias           ; index
+  000b1  45           GetData                 
+  000b2  bd           PopVariable             variable-index=13  ; "l"
+  000b3  5a           Pop                     
+  000b4  4f           StoreResult             
+  000b5  29           PushMe                  
+  000b6  e4           PushLiteral             literal-index=4  ; "x"
+  000b7  2c           MakeObjectAlias           ; property
+  000b8  11           ObjectAliasQuote        
+  000b9  45           GetData                 
+  000ba  be           PopVariable             variable-index=14  ; "m"
+  000bb  4f           StoreResult             
+  000bc  a0           PushVariable            variable-index=0  ; "x"
+  000bd  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  000be  6b           Push1                   
+  000bf  2f           MakeObjectAlias           ; index
+  000c0  11           ObjectAliasQuote        
+  000c1  45           GetData                 
+  000c2  bf           PopVariable             variable-index=15  ; "o"
+  000c3  4f           StoreResult             
+  000c4  a1           PushVariable            variable-index=1  ; "a"
+  000c5  a2           PushVariable            variable-index=2  ; "b"
+  000c6  a3           PushVariable            variable-index=3  ; "c"
+  000c7  a4           PushVariable            variable-index=4  ; "d"
+  000c8  a5           PushVariable            variable-index=5  ; "e"
+  000c9  a6           PushVariable            variable-index=6  ; "f"
+  000ca  a7           PushVariable            variable-index=7  ; "g"
+  000cb  a8           PushVariable            variable-index=8  ; "h"
+  000cc  aa           PushVariable            variable-index=10  ; "i"
+  000cd  ab           PushVariable            variable-index=11  ; "j"
+  000ce  ac           PushVariable            variable-index=12  ; "k"
+  000cf  ad           PushVariable            variable-index=13  ; "l"
+  000d0  ae           PushVariable            variable-index=14  ; "m"
+  000d1  af           PushVariable            variable-index=15  ; "o"
+  000d2  e5           PushLiteral             literal-index=5  ; 14
+  000d3  76           MakeVector              
+  000d4  0f           Return                  
+  000d5  0f           Return                  
+
+function[9] "amount" arguments=[]
+  00000  6b           Push1                   
+  00001  6c           Push2                   
+  00002  6c           Push2                   
+  00003  76           MakeVector              
+  00004  0f           Return                  
+  00005  0f           Return                  

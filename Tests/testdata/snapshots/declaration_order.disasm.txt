@@ -1,0 +1,29 @@
+FAS 1.10
+
+function[5] "f" arguments=[]
+  00000  6200010002   PushParentVariable      parent-depth=1, variable-index=2  ; "p"
+  00005  0f           Return                  
+  00006  0f           Return                  
+
+function[8] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; constant(0x6d69736363757261) 'misccura' current application
+  00001  120007       Tell                    signed-word=7
+  00004  2a           PushIt                  
+  00005  6a           Push0                   
+  00006  0c0001       MessageSend             literal-index=1  ; event("syso","beep","null",0xffff8000,"long",0xffff8000) beep
+  00009  55           EndTell                 
+  0000a  4f           StoreResult             
+  0000b  2a           PushIt                  
+  0000c  6a           Push0                   
+  0000d  2b0002       PositionalMessageSend   literal-index=2  ; "f"
+  00010  6a           Push0                   
+  00011  0c0003       MessageSend             literal-index=3  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00014  0f           Return                  
+
+function[2] "a" arguments=[] owner="s" path=root[6].vector[4][2]
+  00000  68           PushUndefined           
+  00001  0f           Return                  
+
+function[5] "b" arguments=[] owner="s" path=root[6].vector[4][5]
+  00000  68           PushUndefined           
+  00001  0f           Return                  

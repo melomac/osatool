@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"forwardValue\"",
+      "arguments": "vector(type=4,len=2)",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 41,
+          "mnemonic": "PushMe",
+          "raw_hex": "29"
+        },
+        {
+          "offset": 1,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"x\""
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 3,
+          "opcode": 100,
+          "mnemonic": "PushNext",
+          "raw_hex": "64"
+        },
+        {
+          "offset": 4,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 5,
+          "opcode": 74,
+          "mnemonic": "PositionalContinue",
+          "raw_hex": "4a0000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"forwardValue\""
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

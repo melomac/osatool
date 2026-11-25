@@ -1,0 +1,19 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  6c           Push2                   
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x6b66696c) 'kfil'
+  00002  6d           Push3                   
+  00003  6c           Push2                   
+  00004  0c0001       MessageSend             literal-index=1  ; event("abcd","efgh","****",0x00000000,"****",0x00009000)
+  00007  4f           StoreResult             
+  00008  2a           PushIt                  
+  00009  e0           PushLiteral             literal-index=0  ; constant(0x6b66696c) 'kfil'
+  0000a  e2           PushLiteral             literal-index=2  ; "x"
+  0000b  e3           PushLiteral             literal-index=3  ; constant(0x7a7a7a7a) 'zzzz'
+  0000c  6b           Push1                   
+  0000d  6c           Push2                   
+  0000e  1e           Add                     
+  0000f  e4           PushLiteral             literal-index=4  ; 4
+  00010  0c0001       MessageSend             literal-index=1  ; event("abcd","efgh","****",0x00000000,"****",0x00009000)
+  00013  0f           Return                  

@@ -1,0 +1,13 @@
+FAS 1.10
+
+function[2] "helper" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "ok"
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[3] "caller" arguments=[]
+  00000  29           PushMe                  
+  00001  6a           Push0                   
+  00002  2b0000       PositionalMessageSend   literal-index=0  ; "helper"
+  00005  0f           Return                  
+  00006  0f           Return                  

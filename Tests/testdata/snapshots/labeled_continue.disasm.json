@@ -1,0 +1,871 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 4,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010001",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"derived\""
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 18,
+          "mnemonic": "Tell",
+          "raw_hex": "120009",
+          "operands": [
+            {
+              "kind": "signed-word",
+              "value": 9
+            }
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 9,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x746f2020) 'to  ' to"
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "5"
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 12,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0002",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"polish\""
+          ]
+        },
+        {
+          "offset": 15,
+          "opcode": 85,
+          "mnemonic": "EndTell",
+          "raw_hex": "55"
+        },
+        {
+          "offset": 16,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 17,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010001",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"derived\""
+          ]
+        },
+        {
+          "offset": 22,
+          "opcode": 18,
+          "mnemonic": "Tell",
+          "raw_hex": "12000b",
+          "operands": [
+            {
+              "kind": "signed-word",
+              "value": 11
+            }
+          ]
+        },
+        {
+          "offset": 25,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 26,
+          "opcode": 227,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"flag\""
+          ]
+        },
+        {
+          "offset": 27,
+          "opcode": 101,
+          "mnemonic": "PushTrue",
+          "raw_hex": "65"
+        },
+        {
+          "offset": 28,
+          "opcode": 228,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e4",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "constant(0x7074737a) 'ptsz' size"
+          ]
+        },
+        {
+          "offset": 29,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 30,
+          "opcode": 229,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e5",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "4"
+          ]
+        },
+        {
+          "offset": 31,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0006",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "\"describe\""
+          ]
+        },
+        {
+          "offset": 34,
+          "opcode": 85,
+          "mnemonic": "EndTell",
+          "raw_hex": "55"
+        },
+        {
+          "offset": 35,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 36,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010001",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"derived\""
+          ]
+        },
+        {
+          "offset": 41,
+          "opcode": 18,
+          "mnemonic": "Tell",
+          "raw_hex": "120009",
+          "operands": [
+            {
+              "kind": "signed-word",
+              "value": 9
+            }
+          ]
+        },
+        {
+          "offset": 44,
+          "opcode": 231,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e7",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 7
+            }
+          ],
+          "annotations": [
+            "\"a\""
+          ]
+        },
+        {
+          "offset": 45,
+          "opcode": 232,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e8",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 8
+            }
+          ],
+          "annotations": [
+            "constant(0x62792020) 'by  ' by"
+          ]
+        },
+        {
+          "offset": 46,
+          "opcode": 233,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e9",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 9
+            }
+          ],
+          "annotations": [
+            "\"b\""
+          ]
+        },
+        {
+          "offset": 47,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 48,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c000a",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 10
+            }
+          ],
+          "annotations": [
+            "\"spread\""
+          ]
+        },
+        {
+          "offset": 51,
+          "opcode": 85,
+          "mnemonic": "EndTell",
+          "raw_hex": "55"
+        },
+        {
+          "offset": 52,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 2,
+      "name": "\"polish\"",
+      "arguments": "[]",
+      "owner": "\"base\"",
+      "path": "root[2].vector[4][2]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"x\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 3,
+      "name": "\"describe\"",
+      "arguments": "[]",
+      "owner": "\"base\"",
+      "path": "root[2].vector[4][3]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"f\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 161,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"n\""
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 3,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 4,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 5,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 4,
+      "name": "\"spread\"",
+      "arguments": "\"x\"",
+      "owner": "\"base\"",
+      "path": "root[2].vector[4][4]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"x\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 161,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"y\""
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 37,
+          "mnemonic": "Concatenate",
+          "raw_hex": "25"
+        },
+        {
+          "offset": 3,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 4,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 3,
+      "name": "\"polish\"",
+      "arguments": "[]",
+      "owner": "\"derived\"",
+      "path": "root[3].vector[4][3]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 41,
+          "mnemonic": "PushMe",
+          "raw_hex": "29"
+        },
+        {
+          "offset": 1,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x746f2020) 'to  ' to"
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"x\""
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 4,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 5,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 6,
+          "opcode": 100,
+          "mnemonic": "PushNext",
+          "raw_hex": "64"
+        },
+        {
+          "offset": 7,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 8,
+          "opcode": 16,
+          "mnemonic": "Continue",
+          "raw_hex": "100001",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"polish\""
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"!\""
+          ]
+        },
+        {
+          "offset": 12,
+          "opcode": 37,
+          "mnemonic": "Concatenate",
+          "raw_hex": "25"
+        },
+        {
+          "offset": 13,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 14,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 4,
+      "name": "\"describe\"",
+      "arguments": "[]",
+      "owner": "\"derived\"",
+      "path": "root[3].vector[4][4]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 41,
+          "mnemonic": "PushMe",
+          "raw_hex": "29"
+        },
+        {
+          "offset": 1,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"flag\""
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"f\""
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x7074737a) 'ptsz' size"
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 161,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"n\""
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 6,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 7,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "4"
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 100,
+          "mnemonic": "PushNext",
+          "raw_hex": "64"
+        },
+        {
+          "offset": 9,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 10,
+          "opcode": 16,
+          "mnemonic": "Continue",
+          "raw_hex": "100003",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"describe\""
+          ]
+        },
+        {
+          "offset": 13,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 5,
+      "name": "\"spread\"",
+      "arguments": "\"x\"",
+      "owner": "\"derived\"",
+      "path": "root[3].vector[4][5]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 41,
+          "mnemonic": "PushMe",
+          "raw_hex": "29"
+        },
+        {
+          "offset": 1,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x62792020) 'by  ' by"
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 161,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"y\""
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 4,
+          "opcode": 100,
+          "mnemonic": "PushNext",
+          "raw_hex": "64"
+        },
+        {
+          "offset": 5,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"x\""
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"!\""
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 37,
+          "mnemonic": "Concatenate",
+          "raw_hex": "25"
+        },
+        {
+          "offset": 8,
+          "opcode": 16,
+          "mnemonic": "Continue",
+          "raw_hex": "100002",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"spread\""
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

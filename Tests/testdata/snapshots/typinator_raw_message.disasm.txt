@@ -1,0 +1,22 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",00000000010c000200000c4d6163696e746f736820484400...)
+  00001  120015       Tell                    signed-word=21
+  00004  2a           PushIt                  
+  00005  e1           PushLiteral             literal-index=1  ; constant(0x66726f6d) 'from' from
+  00006  2a           PushIt                  
+  00007  e2           PushLiteral             literal-index=2  ; constant(0x73656c65) 'sele' selection
+  00008  2c           MakeObjectAlias           ; property
+  00009  6c           Push2                   
+  0000a  0c0003       MessageSend             literal-index=3  ; "create"
+  0000d  4f           StoreResult             
+  0000e  2a           PushIt                  
+  0000f  e1           PushLiteral             literal-index=1  ; constant(0x66726f6d) 'from' from
+  00010  2a           PushIt                  
+  00011  e4           PushLiteral             literal-index=4  ; constant(0x70636c69) 'pcli' clipboard
+  00012  2c           MakeObjectAlias           ; property
+  00013  6c           Push2                   
+  00014  0c0003       MessageSend             literal-index=3  ; "create"
+  00017  55           EndTell                 
+  00018  0f           Return                  

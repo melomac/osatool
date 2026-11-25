@@ -1,0 +1,77 @@
+FAS 1.10
+
+function[4] "rec" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  25           Concatenate             
+  00003  a2           PushVariable            variable-index=2  ; "c"
+  00004  25           Concatenate             
+  00005  0f           Return                  
+  00006  0f           Return                  
+
+function[5] "pat" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  25           Concatenate             
+  00003  a2           PushVariable            variable-index=2  ; "c"
+  00004  25           Concatenate             
+  00005  0f           Return                  
+  00006  0f           Return                  
+
+function[6] "spread" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  25           Concatenate             
+  00003  a2           PushVariable            variable-index=2  ; "y"
+  00004  25           Concatenate             
+  00005  0f           Return                  
+  00006  0f           Return                  
+
+function[7] event("aevt","odoc","null",0x00008000,"alis",0x00001000) arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "first_item"
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[8] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=vector(type=4,len=2)
+  00000  2a           PushIt                  
+  00001  e0           PushLiteral             literal-index=0  ; "x"
+  00002  6b           Push1                   
+  00003  e1           PushLiteral             literal-index=1  ; "y"
+  00004  6c           Push2                   
+  00005  e2           PushLiteral             literal-index=2  ; 4
+  00006  0e           MakeRecord              
+  00007  6d           Push3                   
+  00008  6c           Push2                   
+  00009  2b0003       PositionalMessageSend   literal-index=3  ; "rec"
+  0000c  4f           StoreResult             
+  0000d  2a           PushIt                  
+  0000e  6b           Push1                   
+  0000f  6c           Push2                   
+  00010  6d           Push3                   
+  00011  6c           Push2                   
+  00012  76           MakeVector              
+  00013  6c           Push2                   
+  00014  2b0004       PositionalMessageSend   literal-index=4  ; "pat"
+  00017  4f           StoreResult             
+  00018  6b           Push1                   
+  00019  6c           Push2                   
+  0001a  6c           Push2                   
+  0001b  76           MakeVector              
+  0001c  e5           PushLiteral             literal-index=5  ; constant(0x62792020) 'by  ' by
+  0001d  6d           Push3                   
+  0001e  6c           Push2                   
+  0001f  0c0006       MessageSend             literal-index=6  ; "spread"
+  00022  0f           Return                  
+  00023  0f           Return                  
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments="argv" owner="one" path=root[2].vector[4][2]
+  00000  a0           PushVariable            variable-index=0  ; "argv"
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=vector(type=4,len=2) owner="two" path=root[3].vector[4][2]
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  25           Concatenate             
+  00003  0f           Return                  
+  00004  0f           Return                  

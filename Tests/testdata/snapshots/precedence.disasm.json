@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"precedenceProbe\"",
+      "arguments": "vector(type=4,len=2)",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"a\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 161,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"b\""
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 3,
+          "opcode": 162,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a2",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"c\""
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 32,
+          "mnemonic": "Multiply",
+          "raw_hex": "20"
+        },
+        {
+          "offset": 5,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"a\""
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 161,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"b\""
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 162,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a2",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"c\""
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 31,
+          "mnemonic": "Subtract",
+          "raw_hex": "1f"
+        },
+        {
+          "offset": 9,
+          "opcode": 31,
+          "mnemonic": "Subtract",
+          "raw_hex": "1f"
+        },
+        {
+          "offset": 10,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 11,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 12,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 13,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

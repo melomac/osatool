@@ -1,0 +1,6 @@
+FAS 1.10
+
+function[2] "unknownEnumerationProbe" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; constant(0x7465737441424344) 'testABCD'
+  00001  0f           Return                  
+  00002  0f           Return                  

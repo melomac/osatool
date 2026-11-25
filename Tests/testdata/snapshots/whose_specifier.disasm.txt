@@ -1,0 +1,27 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",00000000015c000200010c4d6163696e746f736820484400...)
+  00001  120013       Tell                    signed-word=19
+  00004  2a           PushIt                  
+  00005  e1           PushLiteral             literal-index=1  ; constant(0x70726373) 'prcs'
+  00006  6b           Push1                   
+  00007  2f           MakeObjectAlias           ; index
+  00008  e2           PushLiteral             literal-index=2  ; constant(0x706e616d) 'pnam' name
+  00009  2c           MakeObjectAlias           ; property
+  0000a  e3           PushLiteral             literal-index=3  ; vector(type=19,len=0) it
+  0000b  5b           Dup                     
+  0000c  e4           PushLiteral             literal-index=4  ; constant(0x70697366) 'pisf' frontmost
+  0000d  2c           MakeObjectAlias           ; property
+  0000e  5c           GCSwap                  
+  0000f  5a           Pop                     
+  00010  65           PushTrue                
+  00011  38           MakeComp                  ; Equal
+  00012  31           MakeObjectAlias           ; whose
+  00013  45           GetData                 
+  00014  d5           PopGlobal               literal-index=5  ; "frontApplication"
+  00015  55           EndTell                 
+  00016  4f           StoreResult             
+  00017  c5           PushGlobal              literal-index=5  ; "frontApplication"
+  00018  0f           Return                  
+  00019  0f           Return                  

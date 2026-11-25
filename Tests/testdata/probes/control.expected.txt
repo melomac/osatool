@@ -1,0 +1,649 @@
+--- if simple
+on t(x)
+    if x then
+        return 1
+    end if
+    return 0
+end t
+--- if else
+on t(x)
+    if x > 0 then
+        set r to "pos"
+    else
+        set r to "neg"
+    end if
+    return r
+end t
+--- if else if chain
+on t(x)
+    if x = 1 then
+        set r to "one"
+    else if x = 2 then
+        set r to "two"
+    else if x = 3 then
+        set r to "three"
+    else
+        set r to "many"
+    end if
+    return r
+end t
+--- if else if without else
+on t(x)
+    set r to ""
+    if x = 1 then
+        set r to "one"
+    else if x = 2 then
+        set r to "two"
+    end if
+    return r
+end t
+--- if nested
+on t(x, y)
+    if x then
+        if y then
+            return 1
+        else
+            return 2
+        end if
+    else if y then
+        return 3
+    end if
+    return 4
+end t
+--- if else containing if and more
+on t(x, y)
+    if x then
+        set r to 1
+    else
+        if y then
+            set r to 2
+        end if
+        set r to r + 1
+    end if
+    return r
+end t
+--- if empty branches
+on t(x)
+    if x then
+    end if
+    if x then
+    else
+        return 1
+    end if
+    return 0
+end t
+--- if one line
+on t(x)
+    if x then
+        return 1
+    end if
+    if not x then
+        set y to 2
+    end if
+    return y
+end t
+--- if with returns in both
+on t(x)
+    if x then
+        return "a"
+    else
+        return "b"
+    end if
+end t
+--- if as last statement value
+on t(x)
+    if x then
+        "a"
+    else
+        "b"
+    end if
+end t
+--- repeat forever exit
+on t(x)
+    set n to 0
+    repeat
+        set n to n + 1
+        if n > x then
+            exit repeat
+        end if
+    end repeat
+    return n
+end t
+--- repeat times
+on t(x)
+    set n to 0
+    repeat 3 times
+        set n to n + 1
+    end repeat
+    repeat x times
+        set n to n + 1
+    end repeat
+    repeat x + 1 times
+        set n to n + 1
+    end repeat
+    return n
+end t
+--- repeat while until
+on t(x)
+    set n to 0
+    repeat while n < x
+        set n to n + 1
+    end repeat
+    repeat until n = 0
+        set n to n - 1
+    end repeat
+    repeat while n < x and n ≠ 5
+        set n to n + 1
+    end repeat
+    return n
+end t
+--- repeat with range
+on t(x)
+    set n to 0
+    repeat with i from 1 to x
+        set n to n + i
+    end repeat
+    repeat with i from 1 to x by 2
+        set n to n + i
+    end repeat
+    repeat with i from x to 1 by -1
+        set n to n + i
+    end repeat
+    repeat with i from x - 1 to x + 1
+        set n to n + i
+    end repeat
+    repeat with i from 0 to (count {1, 2}) by x
+        set n to n + i
+    end repeat
+    return n
+end t
+--- repeat with in
+on t(x)
+    set n to 0
+    repeat with e in x
+        set n to n + e
+    end repeat
+    repeat with e in {1, 2, 3}
+        set n to n + (contents of e)
+    end repeat
+    repeat with e in items 2 thru -1 of x
+        set n to n + e
+    end repeat
+    repeat with c in every character of "abc"
+        set n to n + 1
+    end repeat
+    return n
+end t
+--- repeat nested with exit
+on t(x)
+    set n to 0
+    repeat with i from 1 to x
+        repeat with j from 1 to i
+            if j > 3 then
+                exit repeat
+            end if
+            set n to n + 1
+        end repeat
+        if n > 100 then
+            exit repeat
+        end if
+    end repeat
+    return n
+end t
+--- repeat with return inside
+on t(x)
+    repeat with e in x
+        if e > 1 then
+            return e
+        end if
+    end repeat
+    return missing value
+end t
+--- repeat empty bodies
+on t(x)
+    repeat 2 times
+    end repeat
+    repeat with i from 1 to x
+    end repeat
+    repeat with e in x
+    end repeat
+    repeat while false
+    end repeat
+end t
+--- repeat with if else inside
+on t(x)
+    set a to 0
+    set b to 0
+    repeat with e in x
+        if e mod 2 = 0 then
+            set a to a + 1
+        else
+            set b to b + 1
+        end if
+    end repeat
+    return {a, b}
+end t
+--- repeat until with exit and continue trick
+on t(x)
+    set n to 0
+    repeat with i from 1 to x
+        repeat 1 times
+            if i = 2 then
+                exit repeat
+            end if
+            set n to n + i
+        end repeat
+    end repeat
+    return n
+end t
+--- try simple
+on t(x)
+    try
+        set r to x + 1
+    end try
+    return r
+end t
+--- try on error
+on t(x)
+    try
+        set r to x + 1
+    on error
+        set r to 0
+    end try
+    return r
+end t
+--- try on error message number
+on t(x)
+    try
+        set r to x + 1
+    on error msg number n
+        set r to {msg, n}
+    end try
+    return r
+end t
+--- try on error all
+on t(x)
+    try
+        set r to x + 1
+    on error msg number n from f to c partial result p
+        set r to {msg, n, f, c, p}
+    end try
+    return r
+end t
+--- try on error number only
+on t(x)
+    try
+        set r to x + 1
+    on error number n
+        set r to n
+    end try
+    return r
+end t
+--- try nested
+on t(x)
+    try
+        try
+            set r to x + 1
+        on error
+            set r to x & 1
+        end try
+    on error msg
+        set r to msg
+    end try
+    return r
+end t
+--- try in repeat with exit
+on t(x)
+    set n to 0
+    repeat with e in x
+        try
+            set n to n + e
+        on error
+            exit repeat
+        end try
+    end repeat
+    return n
+end t
+--- try with return
+on t(x)
+    try
+        return x + 1
+    on error
+        return 0
+    end try
+end t
+--- try in if in try
+on t(x)
+    try
+        if x then
+            try
+                return 1
+            end try
+        else
+            return 2
+        end if
+    on error e
+        return e
+    end try
+    return 3
+end t
+--- try empty error body
+on t(x)
+    try
+        set r to x + 1
+    end try
+    try
+    end try
+    return 1
+end t
+--- error forms
+on t(x)
+    if x = 1 then
+        error "plain"
+    end if
+    if x = 2 then
+        error "with number" number 42
+    end if
+    if x = 3 then
+        error number -128
+    end if
+    if x = 4 then
+        error "full" number 1 from x to integer partial result {x}
+    end if
+    if x = 5 then
+        error
+    end if
+    if x = 6 then
+        error x
+    end if
+    if x = 7 then
+        error "a" & x number x + 1
+    end if
+    return 0
+end t
+--- error rethrow
+on t(x)
+    try
+        return x + 1
+    on error msg number n from f to c partial result p
+        error msg number n from f to c partial result p
+    end try
+end t
+--- error rethrow partial
+on t(x)
+    try
+        return x + 1
+    on error msg number n
+        if n = -128 then
+            error number -128
+        else
+            error "wrapped: " & msg number n
+        end if
+    end try
+end t
+--- considering forms
+on t(x, y)
+    considering case
+        set a to x = y
+    end considering
+    ignoring case
+        set b to x = y
+    end ignoring
+    considering case, diacriticals and punctuation
+        set c to x = y
+    end considering
+    ignoring white space and hyphens
+        set d to x = y
+    end ignoring
+    considering numeric strings
+        set e to x < y
+    end considering
+    considering case but ignoring white space
+        set f to x = y
+    end considering
+    considering diacriticals but ignoring case
+        set g to x = y
+    end considering
+    return {a, b, c, d, e, f, g}
+end t
+--- considering nested and return
+on t(x, y)
+    considering case
+        ignoring white space
+            if x = y then
+                return true
+            end if
+        end ignoring
+    end considering
+    return false
+end t
+--- ignoring application responses
+on t()
+    ignoring application responses
+        tell application "Finder"
+            activate
+        end tell
+    end ignoring
+end t
+--- timeout
+on t(x)
+    with timeout of 30 seconds
+        set r to x + 1
+    end timeout
+    with timeout of x seconds
+        set r to r + 1
+    end timeout
+    with timeout of x * 60 seconds
+        set r to r + 1
+    end timeout
+    return r
+end t
+--- transaction
+on t(x)
+    tell application "Finder"
+        with transaction
+            set r to name of startup disk
+        end transaction
+    end tell
+    return r
+end t
+--- return forms
+on t(x)
+    if x = 1 then
+        return
+    end if
+    if x = 2 then
+        return 2
+    end if
+    if x = 3 then
+        return {x, x}
+    end if
+    if x = 4 then
+        return x + 1
+    end if
+    return missing value
+end t
+--- return in the middle
+on t(x)
+    set a to 1
+    return a
+    set a to 2
+end t
+--- no return value of last statement
+on t(x)
+    set a to x + 1
+    a * 2
+end t
+--- implicit run with statements
+set a to 1
+set b to a + 1
+if b > 1 then
+    set b to 0
+end if
+return b
+--- explicit run with argv
+on run argv
+    if (count argv) > 0 then
+        return item 1 of argv
+    end if
+    return ""
+end run
+--- run and other handlers
+on helper(x)
+    return x + 1
+end helper
+
+return helper(1)
+--- top level statements and handler
+on helper(x)
+    return x + 1
+end helper
+
+set r to helper(1)
+return r
+--- exit repeat in if else in repeat in try
+on t(x)
+    try
+        repeat with e in x
+            if e = 1 then
+                exit repeat
+            else if e = 2 then
+                error "two"
+            else
+                set r to e
+            end if
+        end repeat
+    on error
+        return 0
+    end try
+    return r
+end t
+--- while with complex condition and nested if
+on t(x, y)
+    repeat while x > 0 and y > 0 or x = -1
+        if x > y then
+            set x to x - y
+        else
+            set y to y - x
+        end if
+    end repeat
+    return x + y
+end t
+--- repeat with list of records
+on t(x)
+    set names to {}
+    repeat with r in x
+        set end of names to name of r
+        set {a, b} to {id of r, class of r}
+    end repeat
+    return names
+end t
+--- deep nesting
+on t(x)
+    if x > 0 then
+        repeat with i from 1 to x
+            try
+                tell me
+                    considering case
+                        with timeout of 5 seconds
+                            if i = 2 then
+                                return i
+                            end if
+                        end timeout
+                    end considering
+                end tell
+            on error
+                exit repeat
+            end try
+        end repeat
+    end if
+    return 0
+end t
+--- copy as the last statement of a block
+on t(x, y)
+    if x then
+        copy x to y
+    else
+        copy {1, 2} to y
+    end if
+    tell x
+        copy x to y
+    end tell
+    try
+        copy x to y
+    on error
+        copy y to x
+    end try
+    considering case
+        copy x to y
+    end considering
+    with timeout of 5 seconds
+        copy x to y
+    end timeout
+    repeat 2 times
+        copy x to y
+    end repeat
+    copy x to y
+end t
+--- pattern as the last statement of a block
+on f(x)
+    return {x, x}
+end f
+
+on t(x)
+    if x then
+        set {a, b} to f(x)
+    else
+        copy f(x) to {a, b}
+    end if
+    try
+        set {a, b} to f(x)
+    on error
+        set {b, a} to f(x)
+    end try
+    tell x
+        set {a, b} to f(x)
+    end tell
+    set {a, b} to f(x)
+end t
+
+on u(x)
+    copy f(x) to {a, b}
+end u
+--- script object as the last statement of a try block
+on t(x)
+    try
+        script s
+            on g()
+                return 1
+            end g
+        end script
+    on error
+        script u
+        end script
+    end try
+end t
+--- empty line that ends a block
+on t(x)
+    if x then
+        log 1
+
+    end if
+    try
+        log 1
+
+    on error
+        log 2
+
+    end try
+    repeat 2 times
+        log 1
+
+    end repeat
+
+end t
+
+on u()
+    log 1
+
+end u

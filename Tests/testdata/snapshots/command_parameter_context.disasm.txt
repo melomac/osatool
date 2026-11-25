@@ -1,0 +1,21 @@
+FAS 1.10
+
+function[2] "commandParameterProbe" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",000000000140000200010c4d6163696e746f736820484400...)
+  00001  120012       Tell                    signed-word=18
+  00004  2a           PushIt                  
+  00005  e1           PushLiteral             literal-index=1  ; constant(0x6b6f636c) 'kocl'
+  00006  e2           PushLiteral             literal-index=2  ; constant(0x63666f6c) 'cfol'
+  00007  e3           PushLiteral             literal-index=3  ; constant(0x696e7368) 'insh'
+  00008  2a           PushIt                  
+  00009  e4           PushLiteral             literal-index=4  ; constant(0x6465736b) 'desk' desktop
+  0000a  2c           MakeObjectAlias           ; property
+  0000b  e5           PushLiteral             literal-index=5  ; constant(0x70726474) 'prdt' with properties
+  0000c  e6           PushLiteral             literal-index=6  ; constant(0x706e616d) 'pnam' name
+  0000d  e7           PushLiteral             literal-index=7  ; "Decompiler Oracle"
+  0000e  6c           Push2                   
+  0000f  0e           MakeRecord              
+  00010  e8           PushLiteral             literal-index=8  ; 6
+  00011  0c0009       MessageSend             literal-index=9  ; event("core","crel","****",0x00000000,"null",0x00009000) make
+  00014  55           EndTell                 
+  00015  0f           Return                  

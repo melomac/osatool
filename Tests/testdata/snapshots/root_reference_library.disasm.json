@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 5,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010002",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"NSString\""
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 98,
+          "mnemonic": "PushParentVariable",
+          "raw_hex": "6200010001",
+          "operands": [
+            {
+              "kind": "parent-depth",
+              "value": 1
+            },
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"KevinLib\""
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 11,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 12,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 13,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+FAS 1.10
+
+function[2] "equalities" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  00           Equal                   
+  00003  a2           PushVariable            variable-index=2  ; "c"
+  00004  00           Equal                   
+  00005  a0           PushVariable            variable-index=0  ; "a"
+  00006  a1           PushVariable            variable-index=1  ; "b"
+  00007  a2           PushVariable            variable-index=2  ; "c"
+  00008  00           Equal                   
+  00009  00           Equal                   
+  0000a  a0           PushVariable            variable-index=0  ; "a"
+  0000b  a1           PushVariable            variable-index=1  ; "b"
+  0000c  04           LessThan                
+  0000d  a2           PushVariable            variable-index=2  ; "c"
+  0000e  00           Equal                   
+  0000f  a0           PushVariable            variable-index=0  ; "a"
+  00010  a1           PushVariable            variable-index=1  ; "b"
+  00011  a2           PushVariable            variable-index=2  ; "c"
+  00012  04           LessThan                
+  00013  00           Equal                   
+  00014  a0           PushVariable            variable-index=0  ; "a"
+  00015  a1           PushVariable            variable-index=1  ; "b"
+  00016  00           Equal                   
+  00017  a2           PushVariable            variable-index=2  ; "c"
+  00018  04           LessThan                
+  00019  a0           PushVariable            variable-index=0  ; "a"
+  0001a  a1           PushVariable            variable-index=1  ; "b"
+  0001b  a2           PushVariable            variable-index=2  ; "c"
+  0001c  00           Equal                   
+  0001d  04           LessThan                
+  0001e  a0           PushVariable            variable-index=0  ; "a"
+  0001f  a1           PushVariable            variable-index=1  ; "b"
+  00020  04           LessThan                
+  00021  a2           PushVariable            variable-index=2  ; "c"
+  00022  04           LessThan                
+  00023  a0           PushVariable            variable-index=0  ; "a"
+  00024  a1           PushVariable            variable-index=1  ; "b"
+  00025  a2           PushVariable            variable-index=2  ; "c"
+  00026  04           LessThan                
+  00027  04           LessThan                
+  00028  e0           PushLiteral             literal-index=0  ; 8
+  00029  76           MakeVector              
+  0002a  0f           Return                  
+  0002b  0f           Return                  
+
+function[3] "containments" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  08           Contains                
+  00003  a2           PushVariable            variable-index=2  ; "c"
+  00004  00           Equal                   
+  00005  a0           PushVariable            variable-index=0  ; "a"
+  00006  a1           PushVariable            variable-index=1  ; "b"
+  00007  a2           PushVariable            variable-index=2  ; "c"
+  00008  00           Equal                   
+  00009  08           Contains                
+  0000a  a0           PushVariable            variable-index=0  ; "a"
+  0000b  a1           PushVariable            variable-index=1  ; "b"
+  0000c  00           Equal                   
+  0000d  a2           PushVariable            variable-index=2  ; "c"
+  0000e  08           Contains                
+  0000f  a0           PushVariable            variable-index=0  ; "a"
+  00010  a1           PushVariable            variable-index=1  ; "b"
+  00011  04           LessThan                
+  00012  a2           PushVariable            variable-index=2  ; "c"
+  00013  08           Contains                
+  00014  a0           PushVariable            variable-index=0  ; "a"
+  00015  a1           PushVariable            variable-index=1  ; "b"
+  00016  a2           PushVariable            variable-index=2  ; "c"
+  00017  08           Contains                
+  00018  04           LessThan                
+  00019  a0           PushVariable            variable-index=0  ; "a"
+  0001a  a1           PushVariable            variable-index=1  ; "b"
+  0001b  06           StartsWith              
+  0001c  a2           PushVariable            variable-index=2  ; "c"
+  0001d  07           EndsWith                
+  0001e  a0           PushVariable            variable-index=0  ; "a"
+  0001f  a1           PushVariable            variable-index=1  ; "b"
+  00020  a2           PushVariable            variable-index=2  ; "c"
+  00021  07           EndsWith                
+  00022  06           StartsWith              
+  00023  e0           PushLiteral             literal-index=0  ; 7
+  00024  76           MakeVector              
+  00025  0f           Return                  
+  00026  0f           Return                  
+
+function[4] "coercions" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  e0           PushLiteral             literal-index=0  ; constant(0x63747874) 'ctxt' text
+  00003  26           Coerce                  
+  00004  00           Equal                   
+  00005  a0           PushVariable            variable-index=0  ; "a"
+  00006  a1           PushVariable            variable-index=1  ; "b"
+  00007  00           Equal                   
+  00008  e0           PushLiteral             literal-index=0  ; constant(0x63747874) 'ctxt' text
+  00009  26           Coerce                  
+  0000a  a0           PushVariable            variable-index=0  ; "a"
+  0000b  e0           PushLiteral             literal-index=0  ; constant(0x63747874) 'ctxt' text
+  0000c  26           Coerce                  
+  0000d  a1           PushVariable            variable-index=1  ; "b"
+  0000e  00           Equal                   
+  0000f  a0           PushVariable            variable-index=0  ; "a"
+  00010  e0           PushLiteral             literal-index=0  ; constant(0x63747874) 'ctxt' text
+  00011  26           Coerce                  
+  00012  e1           PushLiteral             literal-index=1  ; constant(0x6c697374) 'list' list
+  00013  26           Coerce                  
+  00014  a0           PushVariable            variable-index=0  ; "a"
+  00015  e0           PushLiteral             literal-index=0  ; constant(0x63747874) 'ctxt' text
+  00016  26           Coerce                  
+  00017  a1           PushVariable            variable-index=1  ; "b"
+  00018  25           Concatenate             
+  00019  a0           PushVariable            variable-index=0  ; "a"
+  0001a  a1           PushVariable            variable-index=1  ; "b"
+  0001b  e0           PushLiteral             literal-index=0  ; constant(0x63747874) 'ctxt' text
+  0001c  26           Coerce                  
+  0001d  25           Concatenate             
+  0001e  a0           PushVariable            variable-index=0  ; "a"
+  0001f  a1           PushVariable            variable-index=1  ; "b"
+  00020  25           Concatenate             
+  00021  e0           PushLiteral             literal-index=0  ; constant(0x63747874) 'ctxt' text
+  00022  26           Coerce                  
+  00023  a0           PushVariable            variable-index=0  ; "a"
+  00024  a1           PushVariable            variable-index=1  ; "b"
+  00025  1e           Add                     
+  00026  e0           PushLiteral             literal-index=0  ; constant(0x63747874) 'ctxt' text
+  00027  26           Coerce                  
+  00028  a0           PushVariable            variable-index=0  ; "a"
+  00029  a1           PushVariable            variable-index=1  ; "b"
+  0002a  e2           PushLiteral             literal-index=2  ; constant(0x6c6f6e67) 'long' integer
+  0002b  26           Coerce                  
+  0002c  1e           Add                     
+  0002d  e3           PushLiteral             literal-index=3  ; 9
+  0002e  76           MakeVector              
+  0002f  0f           Return                  
+  00030  0f           Return                  
+
+function[5] "negations" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  00           Equal                   
+  00003  0b           Not                     
+  00004  a0           PushVariable            variable-index=0  ; "a"
+  00005  0b           Not                     
+  00006  a1           PushVariable            variable-index=1  ; "b"
+  00007  00           Equal                   
+  00008  a0           PushVariable            variable-index=0  ; "a"
+  00009  090006       And                     branch-target=0x10
+  0000c  a1           PushVariable            variable-index=1  ; "b"
+  0000d  0b           Not                     
+  0000e  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  0000f  26           Coerce                  
+  00010  a0           PushVariable            variable-index=0  ; "a"
+  00011  090005       And                     branch-target=0x17
+  00014  a1           PushVariable            variable-index=1  ; "b"
+  00015  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00016  26           Coerce                  
+  00017  0b           Not                     
+  00018  a0           PushVariable            variable-index=0  ; "a"
+  00019  0b           Not                     
+  0001a  090005       And                     branch-target=0x20
+  0001d  a1           PushVariable            variable-index=1  ; "b"
+  0001e  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  0001f  26           Coerce                  
+  00020  a0           PushVariable            variable-index=0  ; "a"
+  00021  0a000c       Or                      branch-target=0x2e
+  00024  a1           PushVariable            variable-index=1  ; "b"
+  00025  0a0005       Or                      branch-target=0x2b
+  00028  a2           PushVariable            variable-index=2  ; "c"
+  00029  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  0002a  26           Coerce                  
+  0002b  0b           Not                     
+  0002c  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  0002d  26           Coerce                  
+  0002e  a0           PushVariable            variable-index=0  ; "a"
+  0002f  0b           Not                     
+  00030  0b           Not                     
+  00031  e1           PushLiteral             literal-index=1  ; 7
+  00032  76           MakeVector              
+  00033  0f           Return                  
+  00034  0f           Return                  
+
+function[6] "arithmetic" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  24           Power                   
+  00003  a2           PushVariable            variable-index=2  ; "c"
+  00004  24           Power                   
+  00005  a0           PushVariable            variable-index=0  ; "a"
+  00006  a1           PushVariable            variable-index=1  ; "b"
+  00007  a2           PushVariable            variable-index=2  ; "c"
+  00008  24           Power                   
+  00009  24           Power                   
+  0000a  a0           PushVariable            variable-index=0  ; "a"
+  0000b  a1           PushVariable            variable-index=1  ; "b"
+  0000c  24           Power                   
+  0000d  27           Negate                  
+  0000e  a0           PushVariable            variable-index=0  ; "a"
+  0000f  27           Negate                  
+  00010  a1           PushVariable            variable-index=1  ; "b"
+  00011  24           Power                   
+  00012  a0           PushVariable            variable-index=0  ; "a"
+  00013  a1           PushVariable            variable-index=1  ; "b"
+  00014  27           Negate                  
+  00015  24           Power                   
+  00016  a0           PushVariable            variable-index=0  ; "a"
+  00017  a1           PushVariable            variable-index=1  ; "b"
+  00018  a2           PushVariable            variable-index=2  ; "c"
+  00019  1f           Subtract                
+  0001a  1f           Subtract                
+  0001b  a0           PushVariable            variable-index=0  ; "a"
+  0001c  a1           PushVariable            variable-index=1  ; "b"
+  0001d  1f           Subtract                
+  0001e  a2           PushVariable            variable-index=2  ; "c"
+  0001f  1f           Subtract                
+  00020  a0           PushVariable            variable-index=0  ; "a"
+  00021  a1           PushVariable            variable-index=1  ; "b"
+  00022  a2           PushVariable            variable-index=2  ; "c"
+  00023  1e           Add                     
+  00024  1f           Subtract                
+  00025  a0           PushVariable            variable-index=0  ; "a"
+  00026  a1           PushVariable            variable-index=1  ; "b"
+  00027  1e           Add                     
+  00028  a2           PushVariable            variable-index=2  ; "c"
+  00029  20           Multiply                
+  0002a  a0           PushVariable            variable-index=0  ; "a"
+  0002b  a1           PushVariable            variable-index=1  ; "b"
+  0002c  a2           PushVariable            variable-index=2  ; "c"
+  0002d  20           Multiply                
+  0002e  21           Divide                  
+  0002f  a0           PushVariable            variable-index=0  ; "a"
+  00030  a1           PushVariable            variable-index=1  ; "b"
+  00031  20           Multiply                
+  00032  a2           PushVariable            variable-index=2  ; "c"
+  00033  21           Divide                  
+  00034  a0           PushVariable            variable-index=0  ; "a"
+  00035  a1           PushVariable            variable-index=1  ; "b"
+  00036  a2           PushVariable            variable-index=2  ; "c"
+  00037  22           Quotient                
+  00038  23           Remainder               
+  00039  a0           PushVariable            variable-index=0  ; "a"
+  0003a  a1           PushVariable            variable-index=1  ; "b"
+  0003b  25           Concatenate             
+  0003c  a2           PushVariable            variable-index=2  ; "c"
+  0003d  25           Concatenate             
+  0003e  a0           PushVariable            variable-index=0  ; "a"
+  0003f  a1           PushVariable            variable-index=1  ; "b"
+  00040  a2           PushVariable            variable-index=2  ; "c"
+  00041  25           Concatenate             
+  00042  25           Concatenate             
+  00043  e0           PushLiteral             literal-index=0  ; 14
+  00044  76           MakeVector              
+  00045  0f           Return                  
+  00046  0f           Return                  
+
+function[7] "logic" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  0a0005       Or                      branch-target=0x7
+  00004  a1           PushVariable            variable-index=1  ; "b"
+  00005  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00006  26           Coerce                  
+  00007  090005       And                     branch-target=0xd
+  0000a  a2           PushVariable            variable-index=2  ; "c"
+  0000b  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  0000c  26           Coerce                  
+  0000d  a0           PushVariable            variable-index=0  ; "a"
+  0000e  0a000b       Or                      branch-target=0x1a
+  00011  a1           PushVariable            variable-index=1  ; "b"
+  00012  090005       And                     branch-target=0x18
+  00015  a2           PushVariable            variable-index=2  ; "c"
+  00016  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00017  26           Coerce                  
+  00018  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00019  26           Coerce                  
+  0001a  a0           PushVariable            variable-index=0  ; "a"
+  0001b  090005       And                     branch-target=0x21
+  0001e  a1           PushVariable            variable-index=1  ; "b"
+  0001f  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00020  26           Coerce                  
+  00021  0a0005       Or                      branch-target=0x27
+  00024  a2           PushVariable            variable-index=2  ; "c"
+  00025  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00026  26           Coerce                  
+  00027  a0           PushVariable            variable-index=0  ; "a"
+  00028  09000b       And                     branch-target=0x34
+  0002b  a1           PushVariable            variable-index=1  ; "b"
+  0002c  0a0005       Or                      branch-target=0x32
+  0002f  a2           PushVariable            variable-index=2  ; "c"
+  00030  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00031  26           Coerce                  
+  00032  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00033  26           Coerce                  
+  00034  a0           PushVariable            variable-index=0  ; "a"
+  00035  0a0005       Or                      branch-target=0x3b
+  00038  a1           PushVariable            variable-index=1  ; "b"
+  00039  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  0003a  26           Coerce                  
+  0003b  0a0005       Or                      branch-target=0x41
+  0003e  a2           PushVariable            variable-index=2  ; "c"
+  0003f  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00040  26           Coerce                  
+  00041  a0           PushVariable            variable-index=0  ; "a"
+  00042  0a000b       Or                      branch-target=0x4e
+  00045  a1           PushVariable            variable-index=1  ; "b"
+  00046  0a0005       Or                      branch-target=0x4c
+  00049  a2           PushVariable            variable-index=2  ; "c"
+  0004a  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  0004b  26           Coerce                  
+  0004c  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  0004d  26           Coerce                  
+  0004e  a0           PushVariable            variable-index=0  ; "a"
+  0004f  a1           PushVariable            variable-index=1  ; "b"
+  00050  00           Equal                   
+  00051  090007       And                     branch-target=0x59
+  00054  a1           PushVariable            variable-index=1  ; "b"
+  00055  a2           PushVariable            variable-index=2  ; "c"
+  00056  00           Equal                   
+  00057  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00058  26           Coerce                  
+  00059  a0           PushVariable            variable-index=0  ; "a"
+  0005a  a1           PushVariable            variable-index=1  ; "b"
+  0005b  04           LessThan                
+  0005c  0a0008       Or                      branch-target=0x65
+  0005f  a1           PushVariable            variable-index=1  ; "b"
+  00060  a2           PushVariable            variable-index=2  ; "c"
+  00061  04           LessThan                
+  00062  0b           Not                     
+  00063  e0           PushLiteral             literal-index=0  ; constant(0x626f6f6c) 'bool' boolean
+  00064  26           Coerce                  
+  00065  e1           PushLiteral             literal-index=1  ; 8
+  00066  76           MakeVector              
+  00067  0f           Return                  
+  00068  0f           Return                  

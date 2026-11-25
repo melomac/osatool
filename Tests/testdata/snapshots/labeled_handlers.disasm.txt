@@ -1,0 +1,175 @@
+FAS 1.10
+
+function[2] "describe" arguments=[]
+  00000  a0           PushVariable            variable-index=0  ; "f"
+  00001  a1           PushVariable            variable-index=1  ; "n"
+  00002  6c           Push2                   
+  00003  76           MakeVector              
+  00004  0f           Return                  
+  00005  0f           Return                  
+
+function[3] "polish" arguments=[]
+  00000  a0           PushVariable            variable-index=0  ; "x"
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[4] "findNumbers" arguments="numberList"
+  00000  a0           PushVariable            variable-index=0  ; "numberList"
+  00001  a1           PushVariable            variable-index=1  ; "minLimit"
+  00002  a2           PushVariable            variable-index=2  ; "roundBoolean"
+  00003  6d           Push3                   
+  00004  76           MakeVector              
+  00005  0f           Return                  
+  00006  0f           Return                  
+
+function[5] "slide" arguments=[]
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  a2           PushVariable            variable-index=2  ; "c"
+  00003  6d           Push3                   
+  00004  76           MakeVector              
+  00005  0f           Return                  
+  00006  0f           Return                  
+
+function[6] "flags" arguments=[]
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  a2           PushVariable            variable-index=2  ; "c"
+  00003  a3           PushVariable            variable-index=3  ; "d"
+  00004  e0           PushLiteral             literal-index=0  ; 4
+  00005  76           MakeVector              
+  00006  0f           Return                  
+  00007  0f           Return                  
+
+function[7] "mix" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  25           Concatenate             
+  00003  0f           Return                  
+  00004  0f           Return                  
+
+function[8] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  2a           PushIt                  
+  00001  e0           PushLiteral             literal-index=0  ; "flag"
+  00002  65           PushTrue                
+  00003  e1           PushLiteral             literal-index=1  ; constant(0x7074737a) 'ptsz' size
+  00004  6c           Push2                   
+  00005  e2           PushLiteral             literal-index=2  ; 4
+  00006  0c0003       MessageSend             literal-index=3  ; "describe"
+  00009  4f           StoreResult             
+  0000a  2a           PushIt                  
+  0000b  e0           PushLiteral             literal-index=0  ; "flag"
+  0000c  66           PushFalse               
+  0000d  e1           PushLiteral             literal-index=1  ; constant(0x7074737a) 'ptsz' size
+  0000e  e2           PushLiteral             literal-index=2  ; 4
+  0000f  e2           PushLiteral             literal-index=2  ; 4
+  00010  0c0003       MessageSend             literal-index=3  ; "describe"
+  00013  4f           StoreResult             
+  00014  2a           PushIt                  
+  00015  e4           PushLiteral             literal-index=4  ; constant(0x746f2020) 'to  ' to
+  00016  e5           PushLiteral             literal-index=5  ; 5
+  00017  6c           Push2                   
+  00018  0c0006       MessageSend             literal-index=6  ; "polish"
+  0001b  4f           StoreResult             
+  0001c  6b           Push1                   
+  0001d  6c           Push2                   
+  0001e  6c           Push2                   
+  0001f  76           MakeVector              
+  00020  e7           PushLiteral             literal-index=7  ; constant(0x61627665) 'abve' above
+  00021  6b           Push1                   
+  00022  e8           PushLiteral             literal-index=8  ; "rounding"
+  00023  66           PushFalse               
+  00024  e2           PushLiteral             literal-index=2  ; 4
+  00025  0c0009       MessageSend             literal-index=9  ; "findNumbers"
+  00028  4f           StoreResult             
+  00029  2a           PushIt                  
+  0002a  ea           PushLiteral             literal-index=10  ; constant(0x6f766572) 'over' over
+  0002b  6b           Push1                   
+  0002c  eb           PushLiteral             literal-index=11  ; constant(0x756e6472) 'undr' under
+  0002d  6c           Push2                   
+  0002e  ec           PushLiteral             literal-index=12  ; constant(0x74687275) 'thru' thru
+  0002f  6d           Push3                   
+  00030  ed           PushLiteral             literal-index=13  ; 6
+  00031  0c000e       MessageSend             literal-index=14  ; "slide"
+  00034  4f           StoreResult             
+  00035  2a           PushIt                  
+  00036  ef           PushLiteral             literal-index=15  ; "alpha"
+  00037  65           PushTrue                
+  00038  610010       PushLiteralExtended     literal-index=16  ; "gamma"
+  0003b  65           PushTrue                
+  0003c  610011       PushLiteralExtended     literal-index=17  ; "beta"
+  0003f  66           PushFalse               
+  00040  610012       PushLiteralExtended     literal-index=18  ; "delta"
+  00043  6b           Push1                   
+  00044  610013       PushLiteralExtended     literal-index=19  ; 8
+  00047  0c0014       MessageSend             literal-index=20  ; "flags"
+  0004a  4f           StoreResult             
+  0004b  2a           PushIt                  
+  0004c  ef           PushLiteral             literal-index=15  ; "alpha"
+  0004d  65           PushTrue                
+  0004e  610011       PushLiteralExtended     literal-index=17  ; "beta"
+  00051  65           PushTrue                
+  00052  610010       PushLiteralExtended     literal-index=16  ; "gamma"
+  00055  65           PushTrue                
+  00056  610012       PushLiteralExtended     literal-index=18  ; "delta"
+  00059  610015       PushLiteralExtended     literal-index=21  ; "d"
+  0005c  610013       PushLiteralExtended     literal-index=19  ; 8
+  0005f  0c0014       MessageSend             literal-index=20  ; "flags"
+  00062  4f           StoreResult             
+  00063  2a           PushIt                  
+  00064  ef           PushLiteral             literal-index=15  ; "alpha"
+  00065  6b           Push1                   
+  00066  6a           Push0                   
+  00067  02           GreaterThan             
+  00068  610011       PushLiteralExtended     literal-index=17  ; "beta"
+  0006b  6c           Push2                   
+  0006c  610010       PushLiteralExtended     literal-index=16  ; "gamma"
+  0006f  6d           Push3                   
+  00070  610012       PushLiteralExtended     literal-index=18  ; "delta"
+  00073  e2           PushLiteral             literal-index=2  ; 4
+  00074  6b           Push1                   
+  00075  1e           Add                     
+  00076  610013       PushLiteralExtended     literal-index=19  ; 8
+  00079  0c0014       MessageSend             literal-index=20  ; "flags"
+  0007c  4f           StoreResult             
+  0007d  2a           PushIt                  
+  0007e  e4           PushLiteral             literal-index=4  ; constant(0x746f2020) 'to  ' to
+  0007f  ed           PushLiteral             literal-index=13  ; 6
+  00080  6c           Push2                   
+  00081  0c0006       MessageSend             literal-index=6  ; "polish"
+  00084  2a           PushIt                  
+  00085  6b           Push1                   
+  00086  6c           Push2                   
+  00087  6c           Push2                   
+  00088  2b0016       PositionalMessageSend   literal-index=22  ; "mix"
+  0008b  25           Concatenate             
+  0008c  45           GetData                 
+  0008d  600017       PopGlobalExtended       literal-index=23  ; "r"
+  00090  4f           StoreResult             
+  00091  29           PushMe                  
+  00092  12000b       Tell                    signed-word=11
+  00095  2a           PushIt                  
+  00096  e4           PushLiteral             literal-index=4  ; constant(0x746f2020) 'to  ' to
+  00097  610018       PushLiteralExtended     literal-index=24  ; 7
+  0009a  6c           Push2                   
+  0009b  0c0006       MessageSend             literal-index=6  ; "polish"
+  0009e  55           EndTell                 
+  0009f  4f           StoreResult             
+  000a0  610019       PushLiteralExtended     literal-index=25  ; descriptor("alis",000000000140000200010c4d6163696e746f736820484400...)
+  000a3  120017       Tell                    signed-word=23
+  000a6  29           PushMe                  
+  000a7  ef           PushLiteral             literal-index=15  ; "alpha"
+  000a8  6b           Push1                   
+  000a9  610011       PushLiteralExtended     literal-index=17  ; "beta"
+  000ac  6c           Push2                   
+  000ad  610010       PushLiteralExtended     literal-index=16  ; "gamma"
+  000b0  6d           Push3                   
+  000b1  610012       PushLiteralExtended     literal-index=18  ; "delta"
+  000b4  e2           PushLiteral             literal-index=2  ; 4
+  000b5  610013       PushLiteralExtended     literal-index=19  ; 8
+  000b8  0c0014       MessageSend             literal-index=20  ; "flags"
+  000bb  55           EndTell                 
+  000bc  4f           StoreResult             
+  000bd  5f0017       PushGlobalExtended      literal-index=23  ; "r"
+  000c0  0f           Return                  
+  000c1  0f           Return                  

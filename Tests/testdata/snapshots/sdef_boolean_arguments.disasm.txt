@@ -1,0 +1,27 @@
+FAS 1.10
+
+function[2] "booleanArguments" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "secret"
+  00001  e1           PushLiteral             literal-index=1  ; constant(0x68747874) 'htxt' hidden answer
+  00002  65           PushTrue                
+  00003  6c           Push2                   
+  00004  0c0002       MessageSend             literal-index=2  ; event("syso","dlog","askr",0x00000000,"TEXT",0x00000000) display dialog
+  00007  4f           StoreResult             
+  00008  e3           PushLiteral             literal-index=3  ; "visible"
+  00009  e1           PushLiteral             literal-index=1  ; constant(0x68747874) 'htxt' hidden answer
+  0000a  66           PushFalse               
+  0000b  6c           Push2                   
+  0000c  0c0002       MessageSend             literal-index=2  ; event("syso","dlog","askr",0x00000000,"TEXT",0x00000000) display dialog
+  0000f  4f           StoreResult             
+  00010  e4           PushLiteral             literal-index=4  ; "true"
+  00011  e5           PushLiteral             literal-index=5  ; constant(0x6261646d) 'badm' administrator privileges
+  00012  65           PushTrue                
+  00013  6c           Push2                   
+  00014  0c0006       MessageSend             literal-index=6  ; event("syso","exec","TEXT",0xffff8000,"TEXT",0x00000000) do shell script
+  00017  4f           StoreResult             
+  00018  e7           PushLiteral             literal-index=7  ; "true"
+  00019  e5           PushLiteral             literal-index=5  ; constant(0x6261646d) 'badm' administrator privileges
+  0001a  66           PushFalse               
+  0001b  6c           Push2                   
+  0001c  0c0006       MessageSend             literal-index=6  ; event("syso","exec","TEXT",0xffff8000,"TEXT",0x00000000) do shell script
+  0001f  0f           Return                  

@@ -1,0 +1,223 @@
+FAS 1.10
+
+function[2] "stackResultProbe" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "=== Basic IF ==="
+  00001  6a           Push0                   
+  00002  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00005  4f           StoreResult             
+  00006  e2           PushLiteral             literal-index=2  ; 10
+  00007  45           GetData                 
+  00008  b0           PopVariable             variable-index=0  ; "x"
+  00009  4f           StoreResult             
+  0000a  a0           PushVariable            variable-index=0  ; "x"
+  0000b  e3           PushLiteral             literal-index=3  ; 5
+  0000c  02           GreaterThan             
+  0000d  1d000a       TestIf                  branch-target=0x18
+  00010  e4           PushLiteral             literal-index=4  ; "x is greater than 5"
+  00011  6a           Push0                   
+  00012  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00015  590003       Jump                    branch-target=0x19
+  00018  68           PushUndefined           
+  00019  4f           StoreResult             
+  0001a  e5           PushLiteral             literal-index=5  ; "=== IF…ELSE ==="
+  0001b  6a           Push0                   
+  0001c  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0001f  4f           StoreResult             
+  00020  6d           Push3                   
+  00021  45           GetData                 
+  00022  b0           PopVariable             variable-index=0  ; "x"
+  00023  4f           StoreResult             
+  00024  a0           PushVariable            variable-index=0  ; "x"
+  00025  e3           PushLiteral             literal-index=3  ; 5
+  00026  02           GreaterThan             
+  00027  1d000a       TestIf                  branch-target=0x32
+  0002a  e6           PushLiteral             literal-index=6  ; "x is greater than 5"
+  0002b  6a           Push0                   
+  0002c  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0002f  590007       Jump                    branch-target=0x37
+  00032  e7           PushLiteral             literal-index=7  ; "x is NOT greater than 5"
+  00033  6a           Push0                   
+  00034  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00037  4f           StoreResult             
+  00038  e8           PushLiteral             literal-index=8  ; "=== IF…ELSE IF…ELSE chain ==="
+  00039  6a           Push0                   
+  0003a  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0003d  4f           StoreResult             
+  0003e  e9           PushLiteral             literal-index=9  ; 85
+  0003f  45           GetData                 
+  00040  b1           PopVariable             variable-index=1  ; "score"
+  00041  4f           StoreResult             
+  00042  a1           PushVariable            variable-index=1  ; "score"
+  00043  ea           PushLiteral             literal-index=10  ; 90
+  00044  03           GreaterThanOrEqual      
+  00045  1d000a       TestIf                  branch-target=0x50
+  00048  eb           PushLiteral             literal-index=11  ; "Grade: A"
+  00049  6a           Push0                   
+  0004a  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0004d  590025       Jump                    branch-target=0x73
+  00050  a1           PushVariable            variable-index=1  ; "score"
+  00051  ec           PushLiteral             literal-index=12  ; 80
+  00052  03           GreaterThanOrEqual      
+  00053  1d000a       TestIf                  branch-target=0x5e
+  00056  ed           PushLiteral             literal-index=13  ; "Grade: B"
+  00057  6a           Push0                   
+  00058  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0005b  590017       Jump                    branch-target=0x73
+  0005e  a1           PushVariable            variable-index=1  ; "score"
+  0005f  ee           PushLiteral             literal-index=14  ; 70
+  00060  03           GreaterThanOrEqual      
+  00061  1d000a       TestIf                  branch-target=0x6c
+  00064  ef           PushLiteral             literal-index=15  ; "Grade: C"
+  00065  6a           Push0                   
+  00066  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00069  590009       Jump                    branch-target=0x73
+  0006c  610010       PushLiteralExtended     literal-index=16  ; "Grade: F"
+  0006f  6a           Push0                   
+  00070  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00073  4f           StoreResult             
+  00074  610011       PushLiteralExtended     literal-index=17  ; "=== One-line IF ==="
+  00077  6a           Push0                   
+  00078  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0007b  4f           StoreResult             
+  0007c  6c           Push2                   
+  0007d  6c           Push2                   
+  0007e  1e           Add                     
+  0007f  610012       PushLiteralExtended     literal-index=18  ; 4
+  00082  00           Equal                   
+  00083  1d000c       TestIf                  branch-target=0x90
+  00086  610013       PushLiteralExtended     literal-index=19  ; "Math works!"
+  00089  6a           Push0                   
+  0008a  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0008d  590003       Jump                    branch-target=0x91
+  00090  68           PushUndefined           
+  00091  4f           StoreResult             
+  00092  610014       PushLiteralExtended     literal-index=20  ; "=== IF with AND/OR ==="
+  00095  6a           Push0                   
+  00096  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00099  4f           StoreResult             
+  0009a  610015       PushLiteralExtended     literal-index=21  ; 20
+  0009d  45           GetData                 
+  0009e  b2           PopVariable             variable-index=2  ; "age"
+  0009f  4f           StoreResult             
+  000a0  a2           PushVariable            variable-index=2  ; "age"
+  000a1  610016       PushLiteralExtended     literal-index=22  ; 18
+  000a4  03           GreaterThanOrEqual      
+  000a5  09000b       And                     branch-target=0xb1
+  000a8  a2           PushVariable            variable-index=2  ; "age"
+  000a9  610017       PushLiteralExtended     literal-index=23  ; 30
+  000ac  05           LessThanOrEqual         
+  000ad  610018       PushLiteralExtended     literal-index=24  ; constant(0x626f6f6c) 'bool' boolean
+  000b0  26           Coerce                  
+  000b1  1d000c       TestIf                  branch-target=0xbe
+  000b4  610019       PushLiteralExtended     literal-index=25  ; "Young adult"
+  000b7  6a           Push0                   
+  000b8  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000bb  590003       Jump                    branch-target=0xbf
+  000be  68           PushUndefined           
+  000bf  4f           StoreResult             
+  000c0  a2           PushVariable            variable-index=2  ; "age"
+  000c1  6a           Push0                   
+  000c2  04           LessThan                
+  000c3  0a000b       Or                      branch-target=0xcf
+  000c6  a2           PushVariable            variable-index=2  ; "age"
+  000c7  61001a       PushLiteralExtended     literal-index=26  ; 120
+  000ca  02           GreaterThan             
+  000cb  610018       PushLiteralExtended     literal-index=24  ; constant(0x626f6f6c) 'bool' boolean
+  000ce  26           Coerce                  
+  000cf  1d000c       TestIf                  branch-target=0xdc
+  000d2  61001b       PushLiteralExtended     literal-index=27  ; "Invalid age"
+  000d5  6a           Push0                   
+  000d6  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000d9  590003       Jump                    branch-target=0xdd
+  000dc  68           PushUndefined           
+  000dd  4f           StoreResult             
+  000de  61001c       PushLiteralExtended     literal-index=28  ; "=== IF inside a loop ==="
+  000e1  6a           Push0                   
+  000e2  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000e5  4f           StoreResult             
+  000e6  17002b       LinkRepeat              branch-target=0x112
+  000e9  6b           Push1                   
+  000ea  e3           PushLiteral             literal-index=3  ; 5
+  000eb  6b           Push1                   
+  000ec  68           PushUndefined           
+  000ed  1c0003       RepeatInRange           variable-index=3  ; "n"
+  000f0  a3           PushVariable            variable-index=3  ; "n"
+  000f1  6c           Push2                   
+  000f2  23           Remainder               
+  000f3  6a           Push0                   
+  000f4  00           Equal                   
+  000f5  1d000e       TestIf                  branch-target=0x104
+  000f8  a3           PushVariable            variable-index=3  ; "n"
+  000f9  61001d       PushLiteralExtended     literal-index=29  ; " is even"
+  000fc  25           Concatenate             
+  000fd  6a           Push0                   
+  000fe  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00101  59000b       Jump                    branch-target=0x10d
+  00104  a3           PushVariable            variable-index=3  ; "n"
+  00105  61001e       PushLiteralExtended     literal-index=30  ; " is odd"
+  00108  25           Concatenate             
+  00109  6a           Push0                   
+  0010a  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0010d  5b           Dup                     
+  0010e  4f           StoreResult             
+  0010f  59ffdd       Jump                    branch-target=0xed
+  00112  4f           StoreResult             
+  00113  61001f       PushLiteralExtended     literal-index=31  ; "=== IF checking list contents ==="
+  00116  6a           Push0                   
+  00117  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0011a  4f           StoreResult             
+  0011b  610020       PushLiteralExtended     literal-index=32  ; "apple"
+  0011e  610021       PushLiteralExtended     literal-index=33  ; "orange"
+  00121  610022       PushLiteralExtended     literal-index=34  ; "grape"
+  00124  6d           Push3                   
+  00125  76           MakeVector              
+  00126  45           GetData                 
+  00127  b4           PopVariable             variable-index=4  ; "fruits"
+  00128  4f           StoreResult             
+  00129  a4           PushVariable            variable-index=4  ; "fruits"
+  0012a  610023       PushLiteralExtended     literal-index=35  ; "orange"
+  0012d  08           Contains                
+  0012e  1d000c       TestIf                  branch-target=0x13b
+  00131  610024       PushLiteralExtended     literal-index=36  ; "We have an orange!"
+  00134  6a           Push0                   
+  00135  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00138  590009       Jump                    branch-target=0x142
+  0013b  610025       PushLiteralExtended     literal-index=37  ; "No orange found."
+  0013e  6a           Push0                   
+  0013f  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00142  4f           StoreResult             
+  00143  610026       PushLiteralExtended     literal-index=38  ; "=== Nested IF blocks ==="
+  00146  6a           Push0                   
+  00147  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0014a  4f           StoreResult             
+  0014b  e2           PushLiteral             literal-index=2  ; 10
+  0014c  45           GetData                 
+  0014d  b0           PopVariable             variable-index=0  ; "x"
+  0014e  4f           StoreResult             
+  0014f  e3           PushLiteral             literal-index=3  ; 5
+  00150  45           GetData                 
+  00151  b5           PopVariable             variable-index=5  ; "y"
+  00152  4f           StoreResult             
+  00153  a0           PushVariable            variable-index=0  ; "x"
+  00154  6a           Push0                   
+  00155  02           GreaterThan             
+  00156  1d0016       TestIf                  branch-target=0x16d
+  00159  a5           PushVariable            variable-index=5  ; "y"
+  0015a  6a           Push0                   
+  0015b  02           GreaterThan             
+  0015c  1d000c       TestIf                  branch-target=0x169
+  0015f  610027       PushLiteralExtended     literal-index=39  ; "Both numbers are positive"
+  00162  6a           Push0                   
+  00163  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00166  590003       Jump                    branch-target=0x16a
+  00169  68           PushUndefined           
+  0016a  590003       Jump                    branch-target=0x16e
+  0016d  68           PushUndefined           
+  0016e  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  2a           PushIt                  
+  00001  6a           Push0                   
+  00002  2b0000       PositionalMessageSend   literal-index=0  ; "stackResultProbe"
+  00005  0f           Return                  
+  00006  0f           Return                  

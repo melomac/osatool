@@ -1,0 +1,269 @@
+--- finder files and folders
+on t(p)
+    tell application "Finder"
+        set f to folder p
+        set a to name of every file of f
+        set b to every folder of f
+        set c to (files of f whose name extension is "txt") as alias list
+        set d to count of (items of f)
+        set e to exists file "a.txt" of f
+        set g to (container of f) as text
+        return {a, b, c, d, e, g, kind of f, size of f, modification date of f, name extension of file 1 of f, displayed name of f}
+    end tell
+end t
+--- finder make and move
+on t(p)
+    tell application "Finder"
+        if not (exists folder "out" of folder p) then
+            make new folder at folder p with properties {name:"out"}
+        end if
+        set dest to folder "out" of folder p
+        repeat with f in (get files of folder p)
+            if name extension of f is in {"jpg", "png"} then
+                move f to dest with replacing
+            else if size of f > 1000000 then
+                duplicate f to dest
+            else
+                set label index of f to 2
+            end if
+        end repeat
+        return count of files of dest
+    end tell
+end t
+--- finder windows
+on t()
+    tell application "Finder"
+        activate
+        set w to make new Finder window
+        set target of w to home
+        set current view of w to list view
+        set bounds of w to {10, 10, 500, 400}
+        set toolbar visible of w to false
+        set {x, y} to position of w
+        close every window
+        return {x, y, name of w, index of w, count of windows}
+    end tell
+end t
+--- finder selection
+on t()
+    tell application "Finder"
+        set sel to selection
+        if sel is {} then return 0
+        set n to 0
+        repeat with i in sel
+            if class of i is folder then
+                set n to n + (count of items of i)
+            else
+                set n to n + 1
+            end if
+        end repeat
+        return {n, name of item 1 of sel, (item 1 of sel) as alias, selection as alias list}
+    end tell
+end t
+--- finder insertion locations
+on t(p)
+    tell application "Finder"
+        make new folder at end of folder p
+        make new folder at beginning of folder p with properties {name:"a"}
+        make new alias file at desktop to folder p
+        move file "a" of folder p to end of folder "b" of folder p
+        duplicate file "a" of folder p to beginning of folder "b" of folder p
+        move file "a" of desktop to trash
+    end tell
+end t
+--- finder nested tell and its
+on t(p)
+    tell application "Finder"
+        tell folder p
+            set a to name
+            set b to its name
+            set c to name of it
+            set d to count of files
+            set e to name of files
+            tell file 1
+                set f to name
+                set g to its size
+                set h to name of its container
+            end tell
+        end tell
+    end tell
+    return {a, b, c, d, e, f, g, h}
+end t
+--- system events processes
+on t()
+    tell application "System Events"
+        set a to name of every process
+        set b to name of first process whose frontmost is true
+        set c to count of (every process whose background only is false)
+        set d to exists process "Finder"
+        set e to unix id of process "Finder"
+        set f to bundle identifier of process "Finder"
+        return {a, b, c, d, e, f}
+    end tell
+end t
+--- system events ui scripting
+on t(appName)
+    tell application "System Events"
+        tell process appName
+            set frontmost to true
+            click menu item "New" of menu "File" of menu bar 1
+            click menu item 2 of menu 1 of menu bar item "Edit" of menu bar 1
+            keystroke "a" using {command down}
+            key code 53
+            set v to value of text field 1 of window 1
+            set value of text field 1 of window 1 to "x"
+            click button "OK" of window 1
+            set n to count of windows
+            if exists sheet 1 of window 1 then click button 1 of sheet 1 of window 1
+            return {v, n, name of window 1, position of window 1, size of window 1, role of UI element 1 of window 1}
+        end tell
+    end tell
+end t
+--- system events files
+on t(p)
+    tell application "System Events"
+        set a to exists file p
+        set b to exists folder p
+        set c to name of every file of folder p
+        set d to size of file p
+        set e to POSIX path of file p
+        set f to name of disk item p
+        set g to path of home folder
+        set h to name of current user
+        return {a, b, c, d, e, f, g, h}
+    end tell
+end t
+--- system events property list
+on t(p)
+    tell application "System Events"
+        set pl to property list file p
+        set v to value of property list item "key" of pl
+        set value of property list item "key" of pl to "new"
+        set names to name of every property list item of pl
+        return {v, names}
+    end tell
+end t
+--- system events keystroke sequences
+on t(s)
+    tell application "System Events"
+        keystroke s
+        keystroke return
+        keystroke tab
+        keystroke "v" using command down
+        keystroke "z" using {command down, shift down}
+        key code 36 using {control down, option down}
+        key down shift
+        key up shift
+        delay 0.2
+    end tell
+end t
+--- two applications in one handler
+on t()
+    tell application "Finder" to set a to name of startup disk
+    tell application "System Events" to set b to name of current user
+    tell application "Finder"
+        set c to name of home
+        tell application "System Events"
+            set d to count of processes
+        end tell
+        set e to count of windows
+    end tell
+    return {a, b, c, d, e}
+end t
+--- application properties
+on t(n)
+    tell application n
+        set a to name
+        set b to version
+        set c to frontmost
+        set d to id
+        set e to running
+        return {a, b, c, d, e}
+    end tell
+end t
+--- application by variable with terms
+on t(n)
+    using terms from application "Finder"
+        tell application n
+            return name of startup disk
+        end tell
+    end using terms from
+end t
+--- tell with return in the middle and after
+on t()
+    tell application "Finder"
+        if (count of windows) is 0 then return "none"
+        set n to name of front window
+    end tell
+    return n
+end t
+--- tell with try and timeout
+on t()
+    tell application "Finder"
+        try
+            with timeout of 5 seconds
+                set n to name of startup disk
+            end timeout
+        on error msg
+            set n to msg
+        end try
+    end tell
+    return n
+end t
+--- ignoring responses around tell
+on t()
+    ignoring application responses
+        tell application "Finder"
+            activate
+            open home
+        end tell
+    end ignoring
+    tell application "Finder" to return name of home
+end t
+--- standard additions inside tell
+on t()
+    tell application "Finder"
+        set p to (path to desktop folder) as text
+        display dialog "x" buttons {"OK"} default button 1
+        set d to current date
+        set r to do shell script "true"
+        beep
+        delay 1
+        set n to name of folder p
+    end tell
+    return {p, d, r, n}
+end t
+--- finder labels and comments
+on t(f)
+    tell application "Finder"
+        set comment of f to "c"
+        set label index of f to 3
+        set locked of f to false
+        set name of f to "n"
+        set extension hidden of f to true
+        return {comment of f, label index of f, locked of f, creation date of f, physical size of f, owner of f}
+    end tell
+end t
+--- finder desktop positions
+on t()
+    tell application "Finder"
+        set l to {}
+        repeat with i from 1 to count of items of desktop
+            set end of l to {name of item i of desktop, desktop position of item i of desktop}
+        end repeat
+        return {l, bounds of window of desktop, name of startup disk, free space of startup disk, capacity of startup disk}
+    end tell
+end t
+--- every with ranges in app
+on t()
+    tell application "Finder"
+        return {items 1 thru 2 of desktop, name of items 1 thru -1 of desktop, files 2 thru 3 of home, first item of desktop, last item of desktop, item -2 of desktop, some item of desktop, middle item of desktop, every item of desktop, name of every item of desktop}
+    end tell
+end t
+--- capital name that is a word of an application
+on t(|Subject|)
+    tell application "Mail"
+        set x to |Subject|
+    end tell
+    return {x, |Subject|}
+end t

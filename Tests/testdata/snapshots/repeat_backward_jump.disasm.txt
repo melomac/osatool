@@ -1,0 +1,25 @@
+FAS 1.10
+
+function[2] "repeatProbe" arguments=[]
+  00000  6a           Push0                   
+  00001  45           GetData                 
+  00002  b0           PopVariable             variable-index=0  ; "x"
+  00003  4f           StoreResult             
+  00004  170011       LinkRepeat              branch-target=0x16
+  00007  68           PushUndefined           
+  00008  a0           PushVariable            variable-index=0  ; "x"
+  00009  6d           Push3                   
+  0000a  04           LessThan                
+  0000b  19           RepeatWhile             
+  0000c  a0           PushVariable            variable-index=0  ; "x"
+  0000d  6b           Push1                   
+  0000e  1e           Add                     
+  0000f  45           GetData                 
+  00010  b0           PopVariable             variable-index=0  ; "x"
+  00011  5b           Dup                     
+  00012  4f           StoreResult             
+  00013  59fff4       Jump                    branch-target=0x8
+  00016  4f           StoreResult             
+  00017  a0           PushVariable            variable-index=0  ; "x"
+  00018  0f           Return                  
+  00019  0f           Return                  

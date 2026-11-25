@@ -1,0 +1,23 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",000000000154000200010c4d6163696e746f736820484400...)
+  00001  12000b       Tell                    signed-word=11
+  00004  2a           PushIt                  
+  00005  e1           PushLiteral             literal-index=1  ; constant(0x78707062) 'xppb'
+  00006  e2           PushLiteral             literal-index=2  ; "com.apple.preference.general"
+  00007  e3           PushLiteral             literal-index=3  ; constant(0x6b66726d49442020) 'kfrmID  '
+  00008  30           MakeObjectAlias           ; key
+  00009  2a           PushIt                  
+  0000a  e4           PushLiteral             literal-index=4  ; constant(0x78706370) 'xpcp'
+  0000b  2c           MakeObjectAlias           ; property
+  0000c  46           SetData                 
+  0000d  55           EndTell                 
+  0000e  4f           StoreResult             
+  0000f  e5           PushLiteral             literal-index=5  ; descriptor("alis",00000000015c000200010c4d6163696e746f736820484400...)
+  00010  e6           PushLiteral             literal-index=6  ; constant(0x7072756e) 'prun' running
+  00011  2c           MakeObjectAlias           ; property
+  00012  65           PushTrue                
+  00013  00           Equal                   
+  00014  0f           Return                  
+  00015  0f           Return                  

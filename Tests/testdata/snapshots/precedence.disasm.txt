@@ -1,0 +1,17 @@
+FAS 1.10
+
+function[2] "precedenceProbe" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "a"
+  00001  a1           PushVariable            variable-index=1  ; "b"
+  00002  1e           Add                     
+  00003  a2           PushVariable            variable-index=2  ; "c"
+  00004  20           Multiply                
+  00005  a0           PushVariable            variable-index=0  ; "a"
+  00006  a1           PushVariable            variable-index=1  ; "b"
+  00007  a2           PushVariable            variable-index=2  ; "c"
+  00008  1f           Subtract                
+  00009  1f           Subtract                
+  0000a  6c           Push2                   
+  0000b  76           MakeVector              
+  0000c  0f           Return                  
+  0000d  0f           Return                  

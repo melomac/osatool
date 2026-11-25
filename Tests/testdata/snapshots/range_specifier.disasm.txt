@@ -1,0 +1,17 @@
+FAS 1.10
+
+function[2] "rangeProbe" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "itemsList"
+  00001  5b           Dup                     
+  00002  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00003  5c           GCSwap                  
+  00004  5b           Dup                     
+  00005  5a           Pop                     
+  00006  6c           Push2                   
+  00007  5c           GCSwap                  
+  00008  5a           Pop                     
+  00009  e1           PushLiteral             literal-index=1  ; 4
+  0000a  32           MakeObjectAlias           ; range
+  0000b  45           GetData                 
+  0000c  0f           Return                  
+  0000d  0f           Return                  

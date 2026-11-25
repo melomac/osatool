@@ -1,0 +1,168 @@
+--- split and join
+on t(x, d)
+    set saved to AppleScript's text item delimiters
+    set AppleScript's text item delimiters to d
+    set parts to text items of x
+    set AppleScript's text item delimiters to "-"
+    set joined to parts as text
+    set AppleScript's text item delimiters to saved
+    return joined
+end t
+--- replace text handler
+on replaceText(theText, searchString, replacementString)
+    set AppleScript's text item delimiters to searchString
+    set theItems to every text item of theText
+    set AppleScript's text item delimiters to replacementString
+    set theText to theItems as string
+    set AppleScript's text item delimiters to ""
+    return theText
+end replaceText
+--- trim handler
+on trim(s)
+    repeat while s begins with " "
+        set s to text 2 thru -1 of s
+    end repeat
+    repeat while s ends with " "
+        set s to text 1 thru -2 of s
+    end repeat
+    return s
+end trim
+--- substrings
+on t(s, n)
+    return {text 1 thru n of s, text (n + 1) thru -1 of s, text -n thru -1 of s, characters 1 thru n of s as text, (characters n thru -1 of s) as string, text 1 thru ((length of s) - 1) of s, text (offset of "x" in s) thru -1 of s, s's text 2 thru 3}
+end t
+--- text building in loop
+on t(l)
+    set out to ""
+    repeat with i from 1 to count of l
+        set out to out & (item i of l)
+        if i < (count of l) then set out to out & ", "
+    end repeat
+    return out
+end t
+--- character codes
+on t(s)
+    return {id of s, character id 65, character id {72, 105}, string id 97, (id of character 1 of s) + 1, ASCII number of s, ASCII character 66, (ASCII number s) - 32}
+end t
+--- case conversion by shell
+on upper(s)
+    return do shell script "echo " & quoted form of s & " | tr '[:lower:]' '[:upper:]'"
+end upper
+--- text comparisons under considering
+on t(a, b)
+    considering case
+        set x to a is b
+    end considering
+    ignoring case and diacriticals
+        set y to a is b
+    end ignoring
+    considering numeric strings
+        set z to a < b
+    end considering
+    ignoring white space, punctuation and hyphens
+        set w to a contains b
+    end ignoring
+    return {x, y, z, w}
+end t
+--- words and paragraphs
+on t(s)
+    set n to 0
+    repeat with w in words of s
+        set n to n + (length of w)
+    end repeat
+    repeat with p in paragraphs of s
+        if (contents of p) is not "" then set n to n + 1
+    end repeat
+    return {n, count of words of s, word 1 of paragraph 2 of s, last word of first paragraph of s, character -1 of word -1 of s}
+end t
+--- string containment
+on t(s)
+    return {s contains "a", s does not contain "b", s starts with "c", s ends with "d", "e" is in s, "f" is not in s, s is "", s is not "", (length of s) = 0, (count of s) > 3, s = "g" or s = "h"}
+end t
+--- text with special characters
+on t()
+    return "line1" & return & "line2" & linefeed & tab & "x" & quote & "q" & quote & space & "\\" & "/" & "é" & "—" & "…"
+end t
+--- unicode and long strings
+on t()
+    set a to "ÀÉÎÕÜ ßø 中文 日本語 한국어 עברית العربية 😀🎉"
+    set b to "a very long string with many words to make sure that a longer literal is stored and read back the same way without any loss of characters at all, including the last one."
+    return {a, b, length of a, length of b}
+end t
+--- number to text
+on t(n)
+    return {n as text, n as string, "" & n, n & "", (n as integer) as text, (n / 3) as text, (round n) as text, n div 1 as text, text -2 thru -1 of ("0" & n)}
+end t
+--- text to number
+on t(s)
+    try
+        return s as number
+    on error
+        try
+            return s as integer
+        on error
+            return 0
+        end try
+    end try
+end t
+--- text item delimiters list
+on t(s)
+    set text item delimiters to {",", ";", " "}
+    set parts to text items of s
+    set text item delimiters to ""
+    return parts
+end t
+--- offset idioms
+on t(s, sub)
+    set p to offset of sub in s
+    if p is 0 then return s
+    if p = 1 then return text ((length of sub) + 1) thru -1 of s
+    return (text 1 thru (p - 1) of s) & (text (p + (length of sub)) thru -1 of s)
+end t
+--- quoted form and posix
+on t(p)
+    set q to quoted form of POSIX path of p
+    set r to POSIX path of (p as alias)
+    set s to (POSIX file r) as text
+    set u to POSIX file (r & "/x") as alias
+    return {q, r, s, u, quoted form of r, r's quoted form}
+end t
+--- linefeeds in literals
+on t()
+    return "first
+second
+	third"
+end t
+--- empty and whitespace strings
+on t()
+    return {"", " ", "  ", "	", "
+", " a ", "\"", "'"}
+end t
+--- text class tests
+on t(x)
+    if class of x is text then return 1
+    if class of x is string then return 2
+    if class of x is in {text, string, Unicode text} then return 3
+    if x's class is integer or x's class is real then return 4
+    return 0
+end t
+--- reverse string
+on t(s)
+    return (reverse of characters of s) as text
+end t
+--- padding
+on pad(n, w)
+    set s to n as text
+    repeat while (length of s) < w
+        set s to "0" & s
+    end repeat
+    return s
+end pad
+--- concatenation chains
+on t(a, b, c)
+    return a & b & c & "x" & 1 & 2.5 & true & {a} & {b, c} & (a & b) & (1 + 2) & (a as text) & -1
+end t
+--- text in records and lists
+on t(s)
+    return {name:s, parts:{s, s & "2"}, size:length of s, flag:s is "", nested:{inner:s & "x"}}
+end t

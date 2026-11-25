@@ -1,0 +1,93 @@
+FAS 1.10
+
+function[4] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "derived"
+  00005  120009       Tell                    signed-word=9
+  00008  2a           PushIt                  
+  00009  e0           PushLiteral             literal-index=0  ; constant(0x746f2020) 'to  ' to
+  0000a  e1           PushLiteral             literal-index=1  ; 5
+  0000b  6c           Push2                   
+  0000c  0c0002       MessageSend             literal-index=2  ; "polish"
+  0000f  55           EndTell                 
+  00010  4f           StoreResult             
+  00011  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "derived"
+  00016  12000b       Tell                    signed-word=11
+  00019  2a           PushIt                  
+  0001a  e3           PushLiteral             literal-index=3  ; "flag"
+  0001b  65           PushTrue                
+  0001c  e4           PushLiteral             literal-index=4  ; constant(0x7074737a) 'ptsz' size
+  0001d  6b           Push1                   
+  0001e  e5           PushLiteral             literal-index=5  ; 4
+  0001f  0c0006       MessageSend             literal-index=6  ; "describe"
+  00022  55           EndTell                 
+  00023  4f           StoreResult             
+  00024  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "derived"
+  00029  120009       Tell                    signed-word=9
+  0002c  e7           PushLiteral             literal-index=7  ; "a"
+  0002d  e8           PushLiteral             literal-index=8  ; constant(0x62792020) 'by  ' by
+  0002e  e9           PushLiteral             literal-index=9  ; "b"
+  0002f  6c           Push2                   
+  00030  0c000a       MessageSend             literal-index=10  ; "spread"
+  00033  55           EndTell                 
+  00034  0f           Return                  
+
+function[2] "polish" arguments=[] owner="base" path=root[2].vector[4][2]
+  00000  a0           PushVariable            variable-index=0  ; "x"
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[3] "describe" arguments=[] owner="base" path=root[2].vector[4][3]
+  00000  a0           PushVariable            variable-index=0  ; "f"
+  00001  a1           PushVariable            variable-index=1  ; "n"
+  00002  6c           Push2                   
+  00003  76           MakeVector              
+  00004  0f           Return                  
+  00005  0f           Return                  
+
+function[4] "spread" arguments="x" owner="base" path=root[2].vector[4][4]
+  00000  a0           PushVariable            variable-index=0  ; "x"
+  00001  a1           PushVariable            variable-index=1  ; "y"
+  00002  25           Concatenate             
+  00003  0f           Return                  
+  00004  0f           Return                  
+
+function[3] "polish" arguments=[] owner="derived" path=root[3].vector[4][3]
+  00000  29           PushMe                  
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x746f2020) 'to  ' to
+  00002  a0           PushVariable            variable-index=0  ; "x"
+  00003  6b           Push1                   
+  00004  1e           Add                     
+  00005  6c           Push2                   
+  00006  64           PushNext                
+  00007  2a           PushIt                  
+  00008  100001       Continue                literal-index=1  ; "polish"
+  0000b  e2           PushLiteral             literal-index=2  ; "!"
+  0000c  25           Concatenate             
+  0000d  0f           Return                  
+  0000e  0f           Return                  
+
+function[4] "describe" arguments=[] owner="derived" path=root[3].vector[4][4]
+  00000  29           PushMe                  
+  00001  e0           PushLiteral             literal-index=0  ; "flag"
+  00002  a0           PushVariable            variable-index=0  ; "f"
+  00003  e1           PushLiteral             literal-index=1  ; constant(0x7074737a) 'ptsz' size
+  00004  a1           PushVariable            variable-index=1  ; "n"
+  00005  6b           Push1                   
+  00006  1e           Add                     
+  00007  e2           PushLiteral             literal-index=2  ; 4
+  00008  64           PushNext                
+  00009  2a           PushIt                  
+  0000a  100003       Continue                literal-index=3  ; "describe"
+  0000d  0f           Return                  
+
+function[5] "spread" arguments="x" owner="derived" path=root[3].vector[4][5]
+  00000  29           PushMe                  
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x62792020) 'by  ' by
+  00002  a1           PushVariable            variable-index=1  ; "y"
+  00003  6c           Push2                   
+  00004  64           PushNext                
+  00005  a0           PushVariable            variable-index=0  ; "x"
+  00006  e1           PushLiteral             literal-index=1  ; "!"
+  00007  25           Concatenate             
+  00008  100002       Continue                literal-index=2  ; "spread"
+  0000b  0f           Return                  

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"rawHandler\"",
+      "arguments": "[]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x7a7a7a7a) 'zzzz'"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 3,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x6d69736363757261) 'misccura' current application"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 18,
+          "mnemonic": "Tell",
+          "raw_hex": "120007",
+          "operands": [
+            {
+              "kind": "signed-word",
+              "value": 7
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 5,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 6,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0001",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "event(\"ABCD\",\"wxyz\",\"****\",0x00000000,\"****\",0x00009000)"
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 85,
+          "mnemonic": "EndTell",
+          "raw_hex": "55"
+        },
+        {
+          "offset": 10,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+FAS 1.10
+
+function[8] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "one"
+  00005  6a           Push0                   
+  00006  2b0000       PositionalMessageSend   literal-index=0  ; "value"
+  00009  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "two"
+  0000e  6a           Push0                   
+  0000f  2b0000       PositionalMessageSend   literal-index=0  ; "value"
+  00012  1e           Add                     
+  00013  6200010002   PushParentVariable      parent-depth=1, variable-index=2  ; "three"
+  00018  6a           Push0                   
+  00019  2b0000       PositionalMessageSend   literal-index=0  ; "value"
+  0001c  1e           Add                     
+  0001d  6200010003   PushParentVariable      parent-depth=1, variable-index=3  ; "four"
+  00022  6a           Push0                   
+  00023  2b0000       PositionalMessageSend   literal-index=0  ; "value"
+  00026  1e           Add                     
+  00027  6200010004   PushParentVariable      parent-depth=1, variable-index=4  ; "five"
+  0002c  6a           Push0                   
+  0002d  2b0000       PositionalMessageSend   literal-index=0  ; "value"
+  00030  1e           Add                     
+  00031  6200010005   PushParentVariable      parent-depth=1, variable-index=5  ; "six"
+  00036  6a           Push0                   
+  00037  2b0000       PositionalMessageSend   literal-index=0  ; "value"
+  0003a  1e           Add                     
+  0003b  0f           Return                  
+  0003c  0f           Return                  
+
+function[2] "value" arguments=[] owner="one" path=root[2].vector[4][2]
+  00000  6b           Push1                   
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[2] "value" arguments=[] owner="two" path=root[3].vector[4][2]
+  00000  6c           Push2                   
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[2] "value" arguments=[] owner="three" path=root[4].vector[4][2]
+  00000  6d           Push3                   
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[2] "value" arguments=[] owner="four" path=root[5].vector[4][2]
+  00000  e0           PushLiteral             literal-index=0  ; 4
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[2] "value" arguments=[] owner="five" path=root[6].vector[4][2]
+  00000  e0           PushLiteral             literal-index=0  ; 5
+  00001  0f           Return                  
+  00002  0f           Return                  
+
+function[2] "value" arguments=[] owner="six" path=root[7].vector[4][2]
+  00000  e0           PushLiteral             literal-index=0  ; 6
+  00001  0f           Return                  
+  00002  0f           Return                  

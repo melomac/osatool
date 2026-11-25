@@ -1,0 +1,10 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",000000000104000200000c4d6163696e746f736820484400...)
+  00001  e1           PushLiteral             literal-index=1  ; constant(0x7072756e) 'prun' running
+  00002  2c           MakeObjectAlias           ; property
+  00003  65           PushTrue                
+  00004  00           Equal                   
+  00005  0f           Return                  
+  00006  0f           Return                  

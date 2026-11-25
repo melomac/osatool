@@ -1,0 +1,16 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; "fixture_label"
+  00001  e1           PushLiteral             literal-index=1  ; "value"
+  00002  6c           Push2                   
+  00003  0e           MakeRecord              
+  00004  45           GetData                 
+  00005  d2           PopGlobal               literal-index=2  ; "recordValue"
+  00006  4f           StoreResult             
+  00007  c2           PushGlobal              literal-index=2  ; "recordValue"
+  00008  e0           PushLiteral             literal-index=0  ; "fixture_label"
+  00009  2c           MakeObjectAlias           ; property
+  0000a  45           GetData                 
+  0000b  0f           Return                  
+  0000c  0f           Return                  

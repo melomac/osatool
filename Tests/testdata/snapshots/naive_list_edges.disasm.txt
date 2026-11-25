@@ -1,0 +1,19 @@
+FAS 1.10
+
+function[2] "listProbe" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "a"
+  00001  e1           PushLiteral             literal-index=1  ; "b"
+  00002  e2           PushLiteral             literal-index=2  ; "c"
+  00003  6d           Push3                   
+  00004  76           MakeVector              
+  00005  6a           Push0                   
+  00006  76           MakeVector              
+  00007  e3           PushLiteral             literal-index=3  ; "killall"
+  00008  e4           PushLiteral             literal-index=4  ; "-9"
+  00009  e5           PushLiteral             literal-index=5  ; "Finder"
+  0000a  6d           Push3                   
+  0000b  76           MakeVector              
+  0000c  6d           Push3                   
+  0000d  76           MakeVector              
+  0000e  0f           Return                  
+  0000f  0f           Return                  

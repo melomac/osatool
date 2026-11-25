@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "event(\"emal\",\"cpma\",\"****\",0x00000000,\"****\",0x00009000)",
+      "arguments": "\"theMessages\"",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 20,
+          "mnemonic": "ErrorHandler",
+          "raw_hex": "14000c",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 13
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"theMessages\""
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 5,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0000",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "event(\"core\",\"cnte\",\"****\",0x00000000,\"****\",0x00001000) count"
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 9,
+          "opcode": 178,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b2",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"handledCount\""
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 87,
+          "mnemonic": "EndErrorHandler",
+          "raw_hex": "57000b",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 22
+            }
+          ]
+        },
+        {
+          "offset": 13,
+          "opcode": 88,
+          "mnemonic": "HandleError",
+          "raw_hex": "5800010002",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            },
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"messageText\"",
+            "binding(constant(0x6572726e),...)"
+          ]
+        },
+        {
+          "offset": 18,
+          "opcode": 163,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a3",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"messageText\""
+          ]
+        },
+        {
+          "offset": 19,
+          "opcode": 164,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a4",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "\"numberValue\""
+          ]
+        },
+        {
+          "offset": 20,
+          "opcode": 37,
+          "mnemonic": "Concatenate",
+          "raw_hex": "25"
+        },
+        {
+          "offset": 21,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 22,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 23,
+          "opcode": 162,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a2",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"handledCount\""
+          ]
+        },
+        {
+          "offset": 24,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 25,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 3,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "\"argv\"",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"argv\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 2,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

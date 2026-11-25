@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "descriptor(\"alis\",000000000102000200000c4d6163696e746f736820484400...)"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 18,
+          "mnemonic": "Tell",
+          "raw_hex": "12000f",
+          "operands": [
+            {
+              "kind": "signed-word",
+              "value": 15
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 5,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x66697864) 'fixd' fixed"
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 194,
+          "mnemonic": "PushGlobal",
+          "raw_hex": "c2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"indexing\""
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 47,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2f",
+          "annotations": [
+            "index"
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 9,
+          "opcode": 211,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"oldValue\""
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 11,
+          "opcode": 195,
+          "mnemonic": "PushGlobal",
+          "raw_hex": "c3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"oldValue\""
+          ]
+        },
+        {
+          "offset": 12,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 13,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x66697864) 'fixd' fixed"
+          ]
+        },
+        {
+          "offset": 14,
+          "opcode": 194,
+          "mnemonic": "PushGlobal",
+          "raw_hex": "c2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"indexing\""
+          ]
+        },
+        {
+          "offset": 15,
+          "opcode": 47,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2f",
+          "annotations": [
+            "index"
+          ]
+        },
+        {
+          "offset": 16,
+          "opcode": 71,
+          "mnemonic": "CopyData",
+          "raw_hex": "47"
+        },
+        {
+          "offset": 17,
+          "opcode": 85,
+          "mnemonic": "EndTell",
+          "raw_hex": "55"
+        },
+        {
+          "offset": 18,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+FAS 1.10
+
+function[2] "reader" arguments=[]
+  00000  c0           PushGlobal              literal-index=0  ; "shared"
+  00001  45           GetData                 
+  00002  d1           PopGlobal               literal-index=1  ; "other"
+  00003  4f           StoreResult             
+  00004  c1           PushGlobal              literal-index=1  ; "other"
+  00005  45           GetData                 
+  00006  b0           PopVariable             variable-index=0  ; "mine"
+  00007  4f           StoreResult             
+  00008  a0           PushVariable            variable-index=0  ; "mine"
+  00009  0f           Return                  
+  0000a  0f           Return                  
+
+function[4] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  6b           Push1                   
+  00001  45           GetData                 
+  00002  b0           PopVariable             variable-index=0  ; "secret"
+  00003  4f           StoreResult             
+  00004  a0           PushVariable            variable-index=0  ; "secret"
+  00005  45           GetData                 
+  00006  d0           PopGlobal               literal-index=0  ; "shared"
+  00007  4f           StoreResult             
+  00008  170013       LinkRepeat              branch-target=0x1c
+  0000b  6b           Push1                   
+  0000c  6c           Push2                   
+  0000d  6b           Push1                   
+  0000e  68           PushUndefined           
+  0000f  1c0001       RepeatInRange           variable-index=1  ; "i"
+  00012  a1           PushVariable            variable-index=1  ; "i"
+  00013  6a           Push0                   
+  00014  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00017  5b           Dup                     
+  00018  4f           StoreResult             
+  00019  59fff5       Jump                    branch-target=0xf
+  0001c  4f           StoreResult             
+  0001d  140009       ErrorHandler            branch-target=0x27
+  00020  29           PushMe                  
+  00021  6a           Push0                   
+  00022  e2           PushLiteral             literal-index=2  ; "x"
+  00023  15           Error                   
+  00024  57000c       EndErrorHandler         branch-target=0x31
+  00027  5800030004   HandleError             literal-index=3, literal-index=4  ; "msg", binding(constant(0x6572726e),...)
+  0002c  a2           PushVariable            variable-index=2  ; "msg"
+  0002d  6a           Push0                   
+  0002e  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00031  4f           StoreResult             
+  00032  2a           PushIt                  
+  00033  6a           Push0                   
+  00034  2b0005       PositionalMessageSend   literal-index=5  ; "reader"
+  00037  0f           Return                  
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil owner="worker" path=root[3].vector[4][2]
+  00000  c0           PushGlobal              literal-index=0  ; "shared"
+  00001  45           GetData                 
+  00002  b0           PopVariable             variable-index=0  ; "x"
+  00003  4f           StoreResult             
+  00004  a0           PushVariable            variable-index=0  ; "x"
+  00005  0f           Return                  
+  00006  0f           Return                  

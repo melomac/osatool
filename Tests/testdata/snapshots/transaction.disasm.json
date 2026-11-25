@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 104,
+          "mnemonic": "PushUndefined",
+          "raw_hex": "68"
+        },
+        {
+          "offset": 1,
+          "opcode": 112,
+          "mnemonic": "BeginTransaction",
+          "raw_hex": "700005",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 7
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 5,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 6,
+          "opcode": 208,
+          "mnemonic": "PopGlobal",
+          "raw_hex": "d0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"x\""
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 113,
+          "mnemonic": "EndTransaction",
+          "raw_hex": "71"
+        },
+        {
+          "offset": 8,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 9,
+          "opcode": 192,
+          "mnemonic": "PushGlobal",
+          "raw_hex": "c0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"x\""
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 11,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

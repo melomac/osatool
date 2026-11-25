@@ -1,0 +1,90 @@
+FAS 1.10
+
+function[2] "exerciseExpressions" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "leftValue"
+  00001  a1           PushVariable            variable-index=1  ; "rightValue"
+  00002  1e           Add                     
+  00003  a0           PushVariable            variable-index=0  ; "leftValue"
+  00004  a1           PushVariable            variable-index=1  ; "rightValue"
+  00005  1f           Subtract                
+  00006  a0           PushVariable            variable-index=0  ; "leftValue"
+  00007  a1           PushVariable            variable-index=1  ; "rightValue"
+  00008  20           Multiply                
+  00009  a0           PushVariable            variable-index=0  ; "leftValue"
+  0000a  a1           PushVariable            variable-index=1  ; "rightValue"
+  0000b  21           Divide                  
+  0000c  a0           PushVariable            variable-index=0  ; "leftValue"
+  0000d  a1           PushVariable            variable-index=1  ; "rightValue"
+  0000e  22           Quotient                
+  0000f  a0           PushVariable            variable-index=0  ; "leftValue"
+  00010  a1           PushVariable            variable-index=1  ; "rightValue"
+  00011  23           Remainder               
+  00012  a0           PushVariable            variable-index=0  ; "leftValue"
+  00013  a1           PushVariable            variable-index=1  ; "rightValue"
+  00014  24           Power                   
+  00015  a2           PushVariable            variable-index=2  ; "textValue"
+  00016  e0           PushLiteral             literal-index=0  ; "!"
+  00017  25           Concatenate             
+  00018  a0           PushVariable            variable-index=0  ; "leftValue"
+  00019  a1           PushVariable            variable-index=1  ; "rightValue"
+  0001a  00           Equal                   
+  0001b  a0           PushVariable            variable-index=0  ; "leftValue"
+  0001c  a1           PushVariable            variable-index=1  ; "rightValue"
+  0001d  01           NotEqual                
+  0001e  a0           PushVariable            variable-index=0  ; "leftValue"
+  0001f  a1           PushVariable            variable-index=1  ; "rightValue"
+  00020  04           LessThan                
+  00021  a0           PushVariable            variable-index=0  ; "leftValue"
+  00022  a1           PushVariable            variable-index=1  ; "rightValue"
+  00023  05           LessThanOrEqual         
+  00024  a0           PushVariable            variable-index=0  ; "leftValue"
+  00025  a1           PushVariable            variable-index=1  ; "rightValue"
+  00026  02           GreaterThan             
+  00027  a0           PushVariable            variable-index=0  ; "leftValue"
+  00028  a1           PushVariable            variable-index=1  ; "rightValue"
+  00029  03           GreaterThanOrEqual      
+  0002a  a2           PushVariable            variable-index=2  ; "textValue"
+  0002b  e1           PushLiteral             literal-index=1  ; "needle"
+  0002c  08           Contains                
+  0002d  a2           PushVariable            variable-index=2  ; "textValue"
+  0002e  e2           PushLiteral             literal-index=2  ; "A"
+  0002f  06           StartsWith              
+  00030  a2           PushVariable            variable-index=2  ; "textValue"
+  00031  e3           PushLiteral             literal-index=3  ; "Z"
+  00032  07           EndsWith                
+  00033  a0           PushVariable            variable-index=0  ; "leftValue"
+  00034  e4           PushLiteral             literal-index=4  ; constant(0x63747874) 'ctxt' text
+  00035  26           Coerce                  
+  00036  a0           PushVariable            variable-index=0  ; "leftValue"
+  00037  27           Negate                  
+  00038  a3           PushVariable            variable-index=3  ; "flagValue"
+  00039  0b           Not                     
+  0003a  a3           PushVariable            variable-index=3  ; "flagValue"
+  0003b  090007       And                     branch-target=0x43
+  0003e  a0           PushVariable            variable-index=0  ; "leftValue"
+  0003f  a1           PushVariable            variable-index=1  ; "rightValue"
+  00040  04           LessThan                
+  00041  e5           PushLiteral             literal-index=5  ; constant(0x626f6f6c) 'bool' boolean
+  00042  26           Coerce                  
+  00043  a3           PushVariable            variable-index=3  ; "flagValue"
+  00044  0a0007       Or                      branch-target=0x4c
+  00047  a0           PushVariable            variable-index=0  ; "leftValue"
+  00048  a1           PushVariable            variable-index=1  ; "rightValue"
+  00049  02           GreaterThan             
+  0004a  e5           PushLiteral             literal-index=5  ; constant(0x626f6f6c) 'bool' boolean
+  0004b  26           Coerce                  
+  0004c  e6           PushLiteral             literal-index=6  ; 22
+  0004d  76           MakeVector              
+  0004e  0f           Return                  
+  0004f  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  2a           PushIt                  
+  00001  e0           PushLiteral             literal-index=0  ; 8
+  00002  6d           Push3                   
+  00003  e1           PushLiteral             literal-index=1  ; "AneedleZ"
+  00004  66           PushFalse               
+  00005  e2           PushLiteral             literal-index=2  ; 4
+  00006  2b0003       PositionalMessageSend   literal-index=3  ; "exerciseExpressions"
+  00009  0f           Return                  
+  0000a  0f           Return                  

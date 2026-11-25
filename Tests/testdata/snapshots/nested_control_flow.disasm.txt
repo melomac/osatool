@@ -1,0 +1,24 @@
+FAS 1.10
+
+function[2] "nestedControlProbe" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "x"
+  00001  6a           Push0                   
+  00002  02           GreaterThan             
+  00003  1d001e       TestIf                  branch-target=0x22
+  00006  140012       ErrorHandler            branch-target=0x19
+  00009  a1           PushVariable            variable-index=1  ; "y"
+  0000a  6a           Push0                   
+  0000b  02           GreaterThan             
+  0000c  1d0007       TestIf                  branch-target=0x14
+  0000f  e0           PushLiteral             literal-index=0  ; "both"
+  00010  0f           Return                  
+  00011  590004       Jump                    branch-target=0x16
+  00014  e1           PushLiteral             literal-index=1  ; "x only"
+  00015  0f           Return                  
+  00016  570008       EndErrorHandler         branch-target=0x1f
+  00019  5800020003   HandleError             literal-index=2, literal-index=3  ; nil, []
+  0001e  68           PushUndefined           
+  0001f  590004       Jump                    branch-target=0x24
+  00022  e4           PushLiteral             literal-index=4  ; "neither"
+  00023  0f           Return                  
+  00024  0f           Return                  

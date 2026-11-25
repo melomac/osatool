@@ -1,0 +1,280 @@
+--- terminal do script
+on t(cmd)
+    tell application "Terminal"
+        activate
+        do script cmd
+        do script cmd in window 1
+        do script "echo " & quoted form of cmd in window 1
+        set w to do script ""
+        do script cmd in w
+        return w
+    end tell
+end t
+--- terminal windows and tabs
+on t()
+    tell application "Terminal"
+        set n to count every window
+        set a to name of window 1
+        set b to custom title of selected tab of window 1
+        set c to busy of tab 1 of window 1
+        set d to contents of selected tab of window 1
+        set e to history of tab 1 of window 1
+        set f to processes of tab 1 of window 1
+        set g to tty of tab 1 of window 1
+        set h to every tab of window 1 whose busy = true
+        return {n, a, b, c, d, e, f, g, h}
+    end tell
+end t
+--- terminal settings
+on t(s)
+    tell application "Terminal"
+        set current settings of selected tab of window 1 to settings set s
+        set custom title of selected tab of window 1 to "t"
+        set number of rows of window 1 to 40
+        set number of columns of window 1 to 120
+        set background color of selected tab of window 1 to {0, 0, 0}
+        set bounds of window 1 to {0, 0, 800, 600}
+        set miniaturized of window 1 to true
+        set frontmost of window 1 to true
+        return {name of default settings, name of startup settings, name of every settings set, font name of current settings of tab 1 of window 1}
+    end tell
+end t
+--- terminal wait until done
+on t(cmd)
+    tell application "Terminal"
+        set theTab to do script cmd
+        repeat while busy of theTab
+            delay 0.5
+        end repeat
+        set out to contents of theTab
+        close (every window whose every tab contains theTab)
+        return out
+    end tell
+end t
+--- terminal close and quit
+on t()
+    tell application "Terminal"
+        close window 1
+        close window 1 saving no
+        close every window
+        if (count every window) = 0 then
+            quit
+        end if
+    end tell
+end t
+--- safari documents and urls
+on t(u)
+    tell application "Safari"
+        activate
+        set a to URL of document 1
+        set b to name of document 1
+        set c to URL of current tab of window 1
+        set d to source of document 1
+        set e to text of document 1
+        set URL of document 1 to u
+        open location u
+        make new document with properties {URL:u}
+        return {a, b, c, d, e}
+    end tell
+end t
+--- safari tabs
+on t(u)
+    tell application "Safari"
+        tell window 1
+            set n to count every tab
+            set names to name of every tab
+            set urls to URL of every tab
+            set current tab to tab 1
+            make new tab at end of every tab with properties {URL:u}
+            set current tab to make new tab with properties {URL:u}
+            close tab 2
+            close (every tab whose URL contains "example")
+        end tell
+        return {n, names, urls, index of current tab of window 1, visible of tab 1 of window 1}
+    end tell
+end t
+--- safari do javascript
+on t(js)
+    tell application "Safari"
+        set a to do JavaScript js in document 1
+        set b to do JavaScript "document.title" in current tab of window 1
+        set c to do JavaScript "document.getElementById('" & js & "').value" in document 1
+        do JavaScript "window.scrollTo(0, 0)" in tab 1 of window 1
+        tell document 1
+            do JavaScript js
+        end tell
+        return {a, b, c}
+    end tell
+end t
+--- safari wait for page
+on t(u)
+    tell application "Safari"
+        set URL of document 1 to u
+        repeat until (do JavaScript "document.readyState" in document 1) = "complete"
+            delay 0.2
+        end repeat
+        return name of document 1
+    end tell
+end t
+--- safari windows and misc
+on t(q)
+    tell application "Safari"
+        set a to bounds of window 1
+        set b to id of window 1
+        set c to name of every window
+        set d to every document
+        search the web for q
+        add reading list item q
+        show bookmarks
+        close every window
+        return {a, b, c, d}
+    end tell
+end t
+--- mail new message
+on t(subj, body, addr)
+    tell application "Mail"
+        set m to make new outgoing message with properties {subject:subj, content:body, visible:true}
+        tell m
+            make new to recipient at end of every to recipient with properties {address:addr}
+            make new cc recipient at end of every cc recipient with properties {name:"n", address:addr}
+            make new bcc recipient with properties {address:addr}
+            set sender to addr
+        end tell
+        send m
+        return m
+    end tell
+end t
+--- mail attachment
+on t(p)
+    tell application "Mail"
+        set m to make new outgoing message with properties {subject:"s", content:"c" & return & return}
+        tell content of m
+            make new attachment with properties {file name:p} at after paragraph -1
+        end tell
+        set visible of m to true
+        activate
+    end tell
+end t
+--- mail reading messages
+on t()
+    tell application "Mail"
+        set unread to every message of inbox whose read status = false
+        set out to {}
+        repeat with m in unread
+            set end of out to {subject of m, sender of m, date received of m, content of m}
+            set read status of m to true
+            set flagged status of m to false
+        end repeat
+        return {out, (count every message of inbox), unread count of inbox}
+    end tell
+end t
+--- mail accounts and mailboxes
+on t(a, b)
+    tell application "Mail"
+        set names to name of every account
+        set boxes to name of every mailbox of account a
+        set box to mailbox b of account a
+        set n to count every message of box
+        set m to message 1 of box
+        move m to mailbox "Archive" of account a
+        delete (every message of box whose subject contains "spam")
+        check for new mail
+        check for new mail for account a
+        return {names, boxes, n, email addresses of account a, user name of account a, enabled of account a}
+    end tell
+end t
+--- mail selection and headers
+on t()
+    tell application "Mail"
+        set sel to selection
+        if sel = {} then
+            return missing value
+        end if
+        set m to item 1 of sel
+        set a to all headers of m
+        set b to source of m
+        set c to address of every to recipient of m
+        set d to name of every mail attachment of m
+        set e to message id of m
+        set f to mailbox of m
+        set g to extract address from sender of m
+        set h to extract name from sender of m
+        return {a, b, c, d, e, f, g, h}
+    end tell
+end t
+--- mail save attachments
+on t(folderPath)
+    tell application "Mail"
+        repeat with m in (get selection)
+            repeat with a in every mail attachment of m
+                save a in file (folderPath & name of a)
+            end repeat
+        end repeat
+    end tell
+end t
+--- mail rule handler
+using terms from application "Mail"
+    on perform mail action with messages theMessages for rule theRule
+        tell application "Mail"
+            repeat with m in theMessages
+                set s to subject of m
+                if s contains "x" then
+                    set flag index of m to 1
+                end if
+            end repeat
+        end tell
+    end perform mail action with messages
+end using terms from
+--- mail viewers and signatures
+on t()
+    tell application "Mail"
+        set v to message viewer 1
+        set a to selected messages of v
+        set b to selected mailboxes of v
+        set c to name of every signature
+        set d to visible messages of v
+        return {a, b, c, d, application version, always bcc myself, download html attachments}
+    end tell
+end t
+--- three applications together
+on t(u)
+    tell application "Safari"
+        set pageTitle to name of document 1
+    end tell
+    tell application "Terminal"
+        do script "echo " & quoted form of pageTitle
+    end tell
+    tell application "Mail"
+        set m to make new outgoing message with properties {subject:pageTitle, content:u}
+        tell m
+            make new to recipient with properties {address:"a@example.com"}
+        end tell
+    end tell
+    tell application "System Events"
+        set frontApp to name of process 1 whose frontmost = true
+    end tell
+    return {pageTitle, frontApp}
+end t
+--- names that are words of an application
+on t(x)
+    set tabs to 1
+    set subject to 3
+    set busy to 4
+    tell application "Safari"
+        set a to URL of document 1
+        set b to my helper(|tabs|)
+        set c to |tabs| + busy
+    end tell
+    tell application "Mail"
+        set d to subject of item 1 of x
+        set e to |subject| + tabs
+    end tell
+    tell application "Terminal"
+        set f to |busy| + subject
+    end tell
+    return {tabs, subject, busy, a, b, c, d, e, f}
+end t
+
+on helper(v)
+    return v
+end helper

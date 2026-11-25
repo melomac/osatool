@@ -1,0 +1,20 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",00000000015e000200010c4d6163696e746f736820484400...)
+  00001  120011       Tell                    signed-word=17
+  00004  2a           PushIt                  
+  00005  e1           PushLiteral             literal-index=1  ; constant(0x6b6f636c) 'kocl'
+  00006  e2           PushLiteral             literal-index=2  ; constant(0x646f6375) 'docu' document
+  00007  6c           Push2                   
+  00008  0c0003       MessageSend             literal-index=3  ; event("core","crel","****",0x00000000,"null",0x00009000) make
+  0000b  45           GetData                 
+  0000c  d4           PopGlobal               literal-index=4  ; "newDocument"
+  0000d  4f           StoreResult             
+  0000e  c4           PushGlobal              literal-index=4  ; "newDocument"
+  0000f  e5           PushLiteral             literal-index=5  ; constant(0x70414c4c) 'pALL'
+  00010  2c           MakeObjectAlias           ; property
+  00011  45           GetData                 
+  00012  0f           Return                  
+  00013  55           EndTell                 
+  00014  0f           Return                  

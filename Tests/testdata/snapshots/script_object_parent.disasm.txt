@@ -1,0 +1,24 @@
+FAS 1.10
+
+function[4] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "derived"
+  00005  6a           Push0                   
+  00006  2b0000       PositionalMessageSend   literal-index=0  ; "describe"
+  00009  0f           Return                  
+  0000a  0f           Return                  
+
+function[3] "describe" arguments=[] owner="base" path=root[2].vector[4][3]
+  00000  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "label"
+  00005  0f           Return                  
+  00006  0f           Return                  
+
+function[3] "describe" arguments=[] owner="derived" path=root[3].vector[4][3]
+  00000  e0           PushLiteral             literal-index=0  ; "derived from "
+  00001  29           PushMe                  
+  00002  6a           Push0                   
+  00003  64           PushNext                
+  00004  2a           PushIt                  
+  00005  100001       Continue                literal-index=1  ; "describe"
+  00008  25           Concatenate             
+  00009  0f           Return                  
+  0000a  0f           Return                  

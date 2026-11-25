@@ -1,0 +1,35 @@
+FAS 1.10
+
+function[4] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments="argv"
+  00000  a0           PushVariable            variable-index=0  ; "argv"
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00002  6b           Push1                   
+  00003  2f           MakeObjectAlias           ; index
+  00004  45           GetData                 
+  00005  d1           PopGlobal               literal-index=1  ; "visitor"
+  00006  4f           StoreResult             
+  00007  6200010001   PushParentVariable      parent-depth=1, variable-index=1  ; "main"
+  0000c  6a           Push0                   
+  0000d  0c0002       MessageSend             literal-index=2  ; event("aevt","oapp","null",0x00008000,"****",0x00009000) run
+  00010  0f           Return                  
+
+function[2] "greet" arguments=vector(type=4,len=2) owner="helper" path=root[2].vector[4][2]
+  00000  e0           PushLiteral             literal-index=0  ; "hello "
+  00001  a0           PushVariable            variable-index=0  ; "visitor"
+  00002  25           Concatenate             
+  00003  0f           Return                  
+  00004  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil owner="main" path=root[3].vector[4][3]
+  00000  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "inner"
+  00005  6a           Push0                   
+  00006  0c0000       MessageSend             literal-index=0  ; event("aevt","oapp","null",0x00008000,"****",0x00009000) run
+  00009  0f           Return                  
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil owner="inner" path=root[3].vector[4][2].vector[4][2]
+  00000  6200030000   PushParentVariable      parent-depth=3, variable-index=0  ; "helper"
+  00005  a0           PushVariable            variable-index=0  ; "visitor"
+  00006  6b           Push1                   
+  00007  2b0000       PositionalMessageSend   literal-index=0  ; "greet"
+  0000a  0f           Return                  
+  0000b  0f           Return                  

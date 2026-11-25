@@ -1,0 +1,256 @@
+00  Equal                  1  -  | cut: 1 - | 1 -
+01  NotEqual               1  -  | cut: 1 - | 1 -
+02  GreaterThan            1  -  | cut: 1 - | 1 -
+03  GreaterThanOrEqual     1  -  | cut: 1 - | 1 -
+04  LessThan               1  -  | cut: 1 - | 1 -
+05  LessThanOrEqual        1  -  | cut: 1 - | 1 -
+06  StartsWith             1  -  | cut: 1 - | 1 -
+07  EndsWith               1  -  | cut: 1 - | 1 -
+08  Contains               1  -  | cut: 1 - | 1 -
+09  And                    3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+0a  Or                     3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+0b  Not                    1  -  | cut: 1 - | 1 -
+0c  MessageSend            3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+0d  MakeList               1  -  | cut: 1 - | 1 -
+0e  MakeRecord             1  -  | cut: 1 - | 1 -
+0f  Return                 1  -  | cut: 1 - | 1 -
+10  Continue               3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+11  ObjectAliasQuote       1  -  | cut: 1 - | 1 -
+12  Tell                   3  signed-word=291  | cut: 1 - ! | 3 signed-word=291
+13  Consider               3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+14  ErrorHandler           3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+15  Error                  1  -  | cut: 1 - | 1 -
+16  Exit                   1  -  | cut: 1 - | 1 -
+17  LinkRepeat             3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+18  RepeatNTimes           1  -  | cut: 1 - | 1 -
+19  RepeatWhile            1  -  | cut: 1 - | 1 -
+1a  RepeatUntil            1  -  | cut: 1 - | 1 -
+1b  RepeatInCollection     3  variable-index=291  | cut: 1 - ! | 3 variable-index=291
+1c  RepeatInRange          3  variable-index=291  | cut: 1 - ! | 3 variable-index=291
+1d  TestIf                 3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+1e  Add                    1  -  | cut: 1 - | 1 -
+1f  Subtract               1  -  | cut: 1 - | 1 -
+20  Multiply               1  -  | cut: 1 - | 1 -
+21  Divide                 1  -  | cut: 1 - | 1 -
+22  Quotient               1  -  | cut: 1 - | 1 -
+23  Remainder              1  -  | cut: 1 - | 1 -
+24  Power                  1  -  | cut: 1 - | 1 -
+25  Concatenate            1  -  | cut: 1 - | 1 -
+26  Coerce                 1  -  | cut: 1 - | 1 -
+27  Negate                 1  -  | cut: 1 - | 1 -
+28  GetData                1  -  | cut: 1 - | 1 -
+29  PushMe                 1  -  | cut: 1 - | 1 -
+2a  PushIt                 1  -  | cut: 1 - | 1 -
+2b  PositionalMessageSend  3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+2c  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+2d  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+2e  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+2f  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+30  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+31  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+32  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+33  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+34  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+35  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+36  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+37  MakeObjectAlias        1  -  | cut: 1 - | 1 -
+38  MakeComp               1  -  | cut: 1 - | 1 -
+39  MakeComp               1  -  | cut: 1 - | 1 -
+3a  MakeComp               1  -  | cut: 1 - | 1 -
+3b  MakeComp               1  -  | cut: 1 - | 1 -
+3c  MakeComp               1  -  | cut: 1 - | 1 -
+3d  MakeComp               1  -  | cut: 1 - | 1 -
+3e  MakeComp               1  -  | cut: 1 - | 1 -
+3f  MakeComp               1  -  | cut: 1 - | 1 -
+40  MakeComp               1  -  | cut: 1 - | 1 -
+41  MakeComp               1  -  | cut: 1 - | 1 -
+42  MakeComp               1  -  | cut: 1 - | 1 -
+43  MakeComp               1  -  | cut: 1 - | 1 -
+44  MakeComp               1  -  | cut: 1 - | 1 -
+45  GetData                1  -  | cut: 1 - | 1 -
+46  SetData                1  -  | cut: 1 - | 1 -
+47  CopyData               1  -  | cut: 1 - | 1 -
+48  Undefined              1  -  | cut: 1 - | 1 -
+49  Undefined              1  -  | cut: 1 - | 1 -
+4a  PositionalContinue     3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+4b  DefineActor            3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+4c  DefineProcedure        3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+4d  DefineClosure          3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+4e  DefineProperty         3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+4f  StoreResult            1  -  | cut: 1 - | 1 -
+50  GetResult              1  -  | cut: 1 - | 1 -
+51  Clone                  1  -  | cut: 1 - | 1 -
+52  Of                     3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+53  EndDefineActor         1  -  | cut: 1 - | 1 -
+54  EndOf                  1  -  | cut: 1 - | 1 -
+55  EndTell                1  -  | cut: 1 - | 1 -
+56  EndConsider            1  -  | cut: 1 - | 1 -
+57  EndErrorHandler        3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+58  HandleError            5  literal-index=291 literal-index=1110  | cut: 1 - ! | 4 literal-index=291 !
+59  Jump                   3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+5a  Pop                    1  -  | cut: 1 - | 1 -
+5b  Dup                    1  -  | cut: 1 - | 1 -
+5c  GCSwap                 1  -  | cut: 1 - | 1 -
+5d  PushVariableExtended   3  variable-index=291  | cut: 1 - ! | 3 variable-index=291
+5e  PopVariableExtended    3  variable-index=291  | cut: 1 - ! | 3 variable-index=291
+5f  PushGlobalExtended     3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+60  PopGlobalExtended      3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+61  PushLiteralExtended    3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+62  PushParentVariable     5  parent-depth=291 variable-index=1110  | cut: 1 - ! | 4 parent-depth=291 !
+63  PopParentVariable      5  parent-depth=291 variable-index=1110  | cut: 1 - ! | 4 parent-depth=291 !
+64  PushNext               1  -  | cut: 1 - | 1 -
+65  PushTrue               1  -  | cut: 1 - | 1 -
+66  PushFalse              1  -  | cut: 1 - | 1 -
+67  PushEmpty              1  -  | cut: 1 - | 1 -
+68  PushUndefined          1  -  | cut: 1 - | 1 -
+69  PushMinus1             1  -  | cut: 1 - | 1 -
+6a  Push0                  1  -  | cut: 1 - | 1 -
+6b  Push1                  1  -  | cut: 1 - | 1 -
+6c  Push2                  1  -  | cut: 1 - | 1 -
+6d  Push3                  1  -  | cut: 1 - | 1 -
+6e  BeginTimeout           1  -  | cut: 1 - | 1 -
+6f  EndTimeout             1  -  | cut: 1 - | 1 -
+70  BeginTransaction       3  branch-target=292  | cut: 1 - ! | 3 branch-target=292
+71  EndTransaction         1  -  | cut: 1 - | 1 -
+72  Undefined              1  -  | cut: 1 - | 1 -
+73  Undefined              1  -  | cut: 1 - | 1 -
+74  Undefined              1  -  | cut: 1 - | 1 -
+75  MatchLiteral           3  literal-index=291  | cut: 1 - ! | 3 literal-index=291
+76  MakeVector             1  -  | cut: 1 - | 1 -
+77  None                   1  -  | cut: 1 - | 1 -
+78  None                   1  -  | cut: 1 - | 1 -
+79  None                   1  -  | cut: 1 - | 1 -
+7a  None                   1  -  | cut: 1 - | 1 -
+7b  None                   1  -  | cut: 1 - | 1 -
+7c  None                   1  -  | cut: 1 - | 1 -
+7d  None                   1  -  | cut: 1 - | 1 -
+7e  None                   1  -  | cut: 1 - | 1 -
+7f  None                   1  -  | cut: 1 - | 1 -
+80  Undefined              1  -  | cut: 1 - | 1 -
+81  Undefined              1  -  | cut: 1 - | 1 -
+82  Undefined              1  -  | cut: 1 - | 1 -
+83  Undefined              1  -  | cut: 1 - | 1 -
+84  Undefined              1  -  | cut: 1 - | 1 -
+85  Undefined              1  -  | cut: 1 - | 1 -
+86  Undefined              1  -  | cut: 1 - | 1 -
+87  Undefined              1  -  | cut: 1 - | 1 -
+88  Undefined              1  -  | cut: 1 - | 1 -
+89  Undefined              1  -  | cut: 1 - | 1 -
+8a  Undefined              1  -  | cut: 1 - | 1 -
+8b  Undefined              1  -  | cut: 1 - | 1 -
+8c  Undefined              1  -  | cut: 1 - | 1 -
+8d  Undefined              1  -  | cut: 1 - | 1 -
+8e  Undefined              1  -  | cut: 1 - | 1 -
+8f  Undefined              1  -  | cut: 1 - | 1 -
+90  Undefined              1  -  | cut: 1 - | 1 -
+91  Undefined              1  -  | cut: 1 - | 1 -
+92  Undefined              1  -  | cut: 1 - | 1 -
+93  Undefined              1  -  | cut: 1 - | 1 -
+94  Undefined              1  -  | cut: 1 - | 1 -
+95  Undefined              1  -  | cut: 1 - | 1 -
+96  Undefined              1  -  | cut: 1 - | 1 -
+97  Undefined              1  -  | cut: 1 - | 1 -
+98  Undefined              1  -  | cut: 1 - | 1 -
+99  Undefined              1  -  | cut: 1 - | 1 -
+9a  Undefined              1  -  | cut: 1 - | 1 -
+9b  Undefined              1  -  | cut: 1 - | 1 -
+9c  Undefined              1  -  | cut: 1 - | 1 -
+9d  Undefined              1  -  | cut: 1 - | 1 -
+9e  Undefined              1  -  | cut: 1 - | 1 -
+9f  Undefined              1  -  | cut: 1 - | 1 -
+a0  PushVariable           1  variable-index=0  | cut: 1 variable-index=0 | 1 variable-index=0
+a1  PushVariable           1  variable-index=1  | cut: 1 variable-index=1 | 1 variable-index=1
+a2  PushVariable           1  variable-index=2  | cut: 1 variable-index=2 | 1 variable-index=2
+a3  PushVariable           1  variable-index=3  | cut: 1 variable-index=3 | 1 variable-index=3
+a4  PushVariable           1  variable-index=4  | cut: 1 variable-index=4 | 1 variable-index=4
+a5  PushVariable           1  variable-index=5  | cut: 1 variable-index=5 | 1 variable-index=5
+a6  PushVariable           1  variable-index=6  | cut: 1 variable-index=6 | 1 variable-index=6
+a7  PushVariable           1  variable-index=7  | cut: 1 variable-index=7 | 1 variable-index=7
+a8  PushVariable           1  variable-index=8  | cut: 1 variable-index=8 | 1 variable-index=8
+a9  PushVariable           1  variable-index=9  | cut: 1 variable-index=9 | 1 variable-index=9
+aa  PushVariable           1  variable-index=10  | cut: 1 variable-index=10 | 1 variable-index=10
+ab  PushVariable           1  variable-index=11  | cut: 1 variable-index=11 | 1 variable-index=11
+ac  PushVariable           1  variable-index=12  | cut: 1 variable-index=12 | 1 variable-index=12
+ad  PushVariable           1  variable-index=13  | cut: 1 variable-index=13 | 1 variable-index=13
+ae  PushVariable           1  variable-index=14  | cut: 1 variable-index=14 | 1 variable-index=14
+af  PushVariable           1  variable-index=15  | cut: 1 variable-index=15 | 1 variable-index=15
+b0  PopVariable            1  variable-index=0  | cut: 1 variable-index=0 | 1 variable-index=0
+b1  PopVariable            1  variable-index=1  | cut: 1 variable-index=1 | 1 variable-index=1
+b2  PopVariable            1  variable-index=2  | cut: 1 variable-index=2 | 1 variable-index=2
+b3  PopVariable            1  variable-index=3  | cut: 1 variable-index=3 | 1 variable-index=3
+b4  PopVariable            1  variable-index=4  | cut: 1 variable-index=4 | 1 variable-index=4
+b5  PopVariable            1  variable-index=5  | cut: 1 variable-index=5 | 1 variable-index=5
+b6  PopVariable            1  variable-index=6  | cut: 1 variable-index=6 | 1 variable-index=6
+b7  PopVariable            1  variable-index=7  | cut: 1 variable-index=7 | 1 variable-index=7
+b8  PopVariable            1  variable-index=8  | cut: 1 variable-index=8 | 1 variable-index=8
+b9  PopVariable            1  variable-index=9  | cut: 1 variable-index=9 | 1 variable-index=9
+ba  PopVariable            1  variable-index=10  | cut: 1 variable-index=10 | 1 variable-index=10
+bb  PopVariable            1  variable-index=11  | cut: 1 variable-index=11 | 1 variable-index=11
+bc  PopVariable            1  variable-index=12  | cut: 1 variable-index=12 | 1 variable-index=12
+bd  PopVariable            1  variable-index=13  | cut: 1 variable-index=13 | 1 variable-index=13
+be  PopVariable            1  variable-index=14  | cut: 1 variable-index=14 | 1 variable-index=14
+bf  PopVariable            1  variable-index=15  | cut: 1 variable-index=15 | 1 variable-index=15
+c0  PushGlobal             1  literal-index=0  | cut: 1 literal-index=0 | 1 literal-index=0
+c1  PushGlobal             1  literal-index=1  | cut: 1 literal-index=1 | 1 literal-index=1
+c2  PushGlobal             1  literal-index=2  | cut: 1 literal-index=2 | 1 literal-index=2
+c3  PushGlobal             1  literal-index=3  | cut: 1 literal-index=3 | 1 literal-index=3
+c4  PushGlobal             1  literal-index=4  | cut: 1 literal-index=4 | 1 literal-index=4
+c5  PushGlobal             1  literal-index=5  | cut: 1 literal-index=5 | 1 literal-index=5
+c6  PushGlobal             1  literal-index=6  | cut: 1 literal-index=6 | 1 literal-index=6
+c7  PushGlobal             1  literal-index=7  | cut: 1 literal-index=7 | 1 literal-index=7
+c8  PushGlobal             1  literal-index=8  | cut: 1 literal-index=8 | 1 literal-index=8
+c9  PushGlobal             1  literal-index=9  | cut: 1 literal-index=9 | 1 literal-index=9
+ca  PushGlobal             1  literal-index=10  | cut: 1 literal-index=10 | 1 literal-index=10
+cb  PushGlobal             1  literal-index=11  | cut: 1 literal-index=11 | 1 literal-index=11
+cc  PushGlobal             1  literal-index=12  | cut: 1 literal-index=12 | 1 literal-index=12
+cd  PushGlobal             1  literal-index=13  | cut: 1 literal-index=13 | 1 literal-index=13
+ce  PushGlobal             1  literal-index=14  | cut: 1 literal-index=14 | 1 literal-index=14
+cf  PushGlobal             1  literal-index=15  | cut: 1 literal-index=15 | 1 literal-index=15
+d0  PopGlobal              1  literal-index=0  | cut: 1 literal-index=0 | 1 literal-index=0
+d1  PopGlobal              1  literal-index=1  | cut: 1 literal-index=1 | 1 literal-index=1
+d2  PopGlobal              1  literal-index=2  | cut: 1 literal-index=2 | 1 literal-index=2
+d3  PopGlobal              1  literal-index=3  | cut: 1 literal-index=3 | 1 literal-index=3
+d4  PopGlobal              1  literal-index=4  | cut: 1 literal-index=4 | 1 literal-index=4
+d5  PopGlobal              1  literal-index=5  | cut: 1 literal-index=5 | 1 literal-index=5
+d6  PopGlobal              1  literal-index=6  | cut: 1 literal-index=6 | 1 literal-index=6
+d7  PopGlobal              1  literal-index=7  | cut: 1 literal-index=7 | 1 literal-index=7
+d8  PopGlobal              1  literal-index=8  | cut: 1 literal-index=8 | 1 literal-index=8
+d9  PopGlobal              1  literal-index=9  | cut: 1 literal-index=9 | 1 literal-index=9
+da  PopGlobal              1  literal-index=10  | cut: 1 literal-index=10 | 1 literal-index=10
+db  PopGlobal              1  literal-index=11  | cut: 1 literal-index=11 | 1 literal-index=11
+dc  PopGlobal              1  literal-index=12  | cut: 1 literal-index=12 | 1 literal-index=12
+dd  PopGlobal              1  literal-index=13  | cut: 1 literal-index=13 | 1 literal-index=13
+de  PopGlobal              1  literal-index=14  | cut: 1 literal-index=14 | 1 literal-index=14
+df  PopGlobal              1  literal-index=15  | cut: 1 literal-index=15 | 1 literal-index=15
+e0  PushLiteral            1  literal-index=0  | cut: 1 literal-index=0 | 1 literal-index=0
+e1  PushLiteral            1  literal-index=1  | cut: 1 literal-index=1 | 1 literal-index=1
+e2  PushLiteral            1  literal-index=2  | cut: 1 literal-index=2 | 1 literal-index=2
+e3  PushLiteral            1  literal-index=3  | cut: 1 literal-index=3 | 1 literal-index=3
+e4  PushLiteral            1  literal-index=4  | cut: 1 literal-index=4 | 1 literal-index=4
+e5  PushLiteral            1  literal-index=5  | cut: 1 literal-index=5 | 1 literal-index=5
+e6  PushLiteral            1  literal-index=6  | cut: 1 literal-index=6 | 1 literal-index=6
+e7  PushLiteral            1  literal-index=7  | cut: 1 literal-index=7 | 1 literal-index=7
+e8  PushLiteral            1  literal-index=8  | cut: 1 literal-index=8 | 1 literal-index=8
+e9  PushLiteral            1  literal-index=9  | cut: 1 literal-index=9 | 1 literal-index=9
+ea  PushLiteral            1  literal-index=10  | cut: 1 literal-index=10 | 1 literal-index=10
+eb  PushLiteral            1  literal-index=11  | cut: 1 literal-index=11 | 1 literal-index=11
+ec  PushLiteral            1  literal-index=12  | cut: 1 literal-index=12 | 1 literal-index=12
+ed  PushLiteral            1  literal-index=13  | cut: 1 literal-index=13 | 1 literal-index=13
+ee  PushLiteral            1  literal-index=14  | cut: 1 literal-index=14 | 1 literal-index=14
+ef  PushLiteral            1  literal-index=15  | cut: 1 literal-index=15 | 1 literal-index=15
+f0  PushLiteral            1  literal-index=0  | cut: 1 literal-index=0 | 1 literal-index=0
+f1  PushLiteral            1  literal-index=1  | cut: 1 literal-index=1 | 1 literal-index=1
+f2  PushLiteral            1  literal-index=2  | cut: 1 literal-index=2 | 1 literal-index=2
+f3  PushLiteral            1  literal-index=3  | cut: 1 literal-index=3 | 1 literal-index=3
+f4  PushLiteral            1  literal-index=4  | cut: 1 literal-index=4 | 1 literal-index=4
+f5  PushLiteral            1  literal-index=5  | cut: 1 literal-index=5 | 1 literal-index=5
+f6  PushLiteral            1  literal-index=6  | cut: 1 literal-index=6 | 1 literal-index=6
+f7  PushLiteral            1  literal-index=7  | cut: 1 literal-index=7 | 1 literal-index=7
+f8  PushLiteral            1  literal-index=8  | cut: 1 literal-index=8 | 1 literal-index=8
+f9  PushLiteral            1  literal-index=9  | cut: 1 literal-index=9 | 1 literal-index=9
+fa  PushLiteral            1  literal-index=10  | cut: 1 literal-index=10 | 1 literal-index=10
+fb  PushLiteral            1  literal-index=11  | cut: 1 literal-index=11 | 1 literal-index=11
+fc  PushLiteral            1  literal-index=12  | cut: 1 literal-index=12 | 1 literal-index=12
+fd  PushLiteral            1  literal-index=13  | cut: 1 literal-index=13 | 1 literal-index=13
+fe  PushLiteral            1  literal-index=14  | cut: 1 literal-index=14 | 1 literal-index=14
+ff  PushLiteral            1  literal-index=15  | cut: 1 literal-index=15 | 1 literal-index=15

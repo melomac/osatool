@@ -1,0 +1,938 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"exerciseSpecifiers\"",
+      "arguments": "vector(type=4,len=2)",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x636f626a) 'cobj' item"
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 3,
+          "opcode": 47,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2f",
+          "annotations": [
+            "index"
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 5,
+          "opcode": 177,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"indexedValue\""
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 7,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 91,
+          "mnemonic": "Dup",
+          "raw_hex": "5b"
+        },
+        {
+          "offset": 9,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x636f626a) 'cobj' item"
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 92,
+          "mnemonic": "GCSwap",
+          "raw_hex": "5c"
+        },
+        {
+          "offset": 11,
+          "opcode": 91,
+          "mnemonic": "Dup",
+          "raw_hex": "5b"
+        },
+        {
+          "offset": 12,
+          "opcode": 90,
+          "mnemonic": "Pop",
+          "raw_hex": "5a"
+        },
+        {
+          "offset": 13,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 14,
+          "opcode": 92,
+          "mnemonic": "GCSwap",
+          "raw_hex": "5c"
+        },
+        {
+          "offset": 15,
+          "opcode": 90,
+          "mnemonic": "Pop",
+          "raw_hex": "5a"
+        },
+        {
+          "offset": 16,
+          "opcode": 109,
+          "mnemonic": "Push3",
+          "raw_hex": "6d"
+        },
+        {
+          "offset": 17,
+          "opcode": 50,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "32",
+          "annotations": [
+            "range"
+          ]
+        },
+        {
+          "offset": 18,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 19,
+          "opcode": 178,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b2",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"rangedValues\""
+          ]
+        },
+        {
+          "offset": 20,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 21,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 22,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x636f626a) 'cobj' item"
+          ]
+        },
+        {
+          "offset": 23,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 24,
+          "opcode": 47,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2f",
+          "annotations": [
+            "index"
+          ]
+        },
+        {
+          "offset": 25,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 26,
+          "opcode": 179,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b3",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"firstValue\""
+          ]
+        },
+        {
+          "offset": 27,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 28,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 29,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x636f626a) 'cobj' item"
+          ]
+        },
+        {
+          "offset": 30,
+          "opcode": 105,
+          "mnemonic": "PushMinus1",
+          "raw_hex": "69"
+        },
+        {
+          "offset": 31,
+          "opcode": 47,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2f",
+          "annotations": [
+            "index"
+          ]
+        },
+        {
+          "offset": 32,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 33,
+          "opcode": 180,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b4",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "\"lastValue\""
+          ]
+        },
+        {
+          "offset": 34,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 35,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 36,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x636f626a) 'cobj' item"
+          ]
+        },
+        {
+          "offset": 37,
+          "opcode": 55,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "37",
+          "annotations": [
+            "middle"
+          ]
+        },
+        {
+          "offset": 38,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 39,
+          "opcode": 181,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b5",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "\"middleValue\""
+          ]
+        },
+        {
+          "offset": 40,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 41,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 42,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x636f626a) 'cobj' item"
+          ]
+        },
+        {
+          "offset": 43,
+          "opcode": 46,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2e",
+          "annotations": [
+            "some"
+          ]
+        },
+        {
+          "offset": 44,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 45,
+          "opcode": 182,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b6",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "\"someValue\""
+          ]
+        },
+        {
+          "offset": 46,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 47,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 48,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "constant(0x636f626a) 'cobj' item"
+          ]
+        },
+        {
+          "offset": 49,
+          "opcode": 45,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2d",
+          "annotations": [
+            "every"
+          ]
+        },
+        {
+          "offset": 50,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 51,
+          "opcode": 183,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b7",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 7
+            }
+          ],
+          "annotations": [
+            "\"allValues\""
+          ]
+        },
+        {
+          "offset": 52,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 53,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 54,
+          "opcode": 53,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "35",
+          "annotations": [
+            "beginning"
+          ]
+        },
+        {
+          "offset": 55,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 56,
+          "opcode": 184,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b8",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 8
+            }
+          ],
+          "annotations": [
+            "\"beginningValue\""
+          ]
+        },
+        {
+          "offset": 57,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 58,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"inputValues\""
+          ]
+        },
+        {
+          "offset": 59,
+          "opcode": 54,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "36",
+          "annotations": [
+            "end"
+          ]
+        },
+        {
+          "offset": 60,
+          "opcode": 69,
+          "mnemonic": "GetData",
+          "raw_hex": "45"
+        },
+        {
+          "offset": 61,
+          "opcode": 185,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b9",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 9
+            }
+          ],
+          "annotations": [
+            "\"endValue\""
+          ]
+        },
+        {
+          "offset": 62,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 63,
+          "opcode": 161,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"indexedValue\""
+          ]
+        },
+        {
+          "offset": 64,
+          "opcode": 162,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a2",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"rangedValues\""
+          ]
+        },
+        {
+          "offset": 65,
+          "opcode": 163,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a3",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"firstValue\""
+          ]
+        },
+        {
+          "offset": 66,
+          "opcode": 164,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a4",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "\"lastValue\""
+          ]
+        },
+        {
+          "offset": 67,
+          "opcode": 165,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a5",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "\"middleValue\""
+          ]
+        },
+        {
+          "offset": 68,
+          "opcode": 166,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a6",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "\"someValue\""
+          ]
+        },
+        {
+          "offset": 69,
+          "opcode": 167,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a7",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 7
+            }
+          ],
+          "annotations": [
+            "\"allValues\""
+          ]
+        },
+        {
+          "offset": 70,
+          "opcode": 168,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a8",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 8
+            }
+          ],
+          "annotations": [
+            "\"beginningValue\""
+          ]
+        },
+        {
+          "offset": 71,
+          "opcode": 169,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a9",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 9
+            }
+          ],
+          "annotations": [
+            "\"endValue\""
+          ]
+        },
+        {
+          "offset": 72,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "9"
+          ]
+        },
+        {
+          "offset": 73,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 74,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 75,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    },
+    {
+      "offset": 3,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 1,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"a\""
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"b\""
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"c\""
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 227,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"d\""
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 228,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e4",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "4"
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 118,
+          "mnemonic": "MakeVector",
+          "raw_hex": "76"
+        },
+        {
+          "offset": 7,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 8,
+          "opcode": 43,
+          "mnemonic": "PositionalMessageSend",
+          "raw_hex": "2b0005",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "\"exerciseSpecifiers\""
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 12,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

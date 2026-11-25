@@ -1,0 +1,6 @@
+FAS 1.10
+
+function[2] event("aevt","odoc","null",0x00008000,"alis",0x00001000) arguments="dropped_items"
+  00000  a0           PushVariable            variable-index=0  ; "dropped_items"
+  00001  0f           Return                  
+  00002  0f           Return                  

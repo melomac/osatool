@@ -1,0 +1,13 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  68           PushUndefined           
+  00001  700005       BeginTransaction        branch-target=0x7
+  00004  6b           Push1                   
+  00005  45           GetData                 
+  00006  d0           PopGlobal               literal-index=0  ; "x"
+  00007  71           EndTransaction          
+  00008  4f           StoreResult             
+  00009  c0           PushGlobal              literal-index=0  ; "x"
+  0000a  0f           Return                  
+  0000b  0f           Return                  

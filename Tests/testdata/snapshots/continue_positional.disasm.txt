@@ -1,0 +1,10 @@
+FAS 1.10
+
+function[2] "forwardValue" arguments=vector(type=4,len=2)
+  00000  29           PushMe                  
+  00001  a0           PushVariable            variable-index=0  ; "x"
+  00002  6b           Push1                   
+  00003  64           PushNext                
+  00004  2a           PushIt                  
+  00005  4a0000       PositionalContinue      literal-index=0  ; "forwardValue"
+  00008  0f           Return                  

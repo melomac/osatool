@@ -1,0 +1,81 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; "value00"
+  00001  45           GetData                 
+  00002  d1           PopGlobal               literal-index=1  ; "literal00"
+  00003  4f           StoreResult             
+  00004  e2           PushLiteral             literal-index=2  ; "value01"
+  00005  45           GetData                 
+  00006  d3           PopGlobal               literal-index=3  ; "literal01"
+  00007  4f           StoreResult             
+  00008  e4           PushLiteral             literal-index=4  ; "value02"
+  00009  45           GetData                 
+  0000a  d5           PopGlobal               literal-index=5  ; "literal02"
+  0000b  4f           StoreResult             
+  0000c  e6           PushLiteral             literal-index=6  ; "value03"
+  0000d  45           GetData                 
+  0000e  d7           PopGlobal               literal-index=7  ; "literal03"
+  0000f  4f           StoreResult             
+  00010  e8           PushLiteral             literal-index=8  ; "value04"
+  00011  45           GetData                 
+  00012  d9           PopGlobal               literal-index=9  ; "literal04"
+  00013  4f           StoreResult             
+  00014  ea           PushLiteral             literal-index=10  ; "value05"
+  00015  45           GetData                 
+  00016  db           PopGlobal               literal-index=11  ; "literal05"
+  00017  4f           StoreResult             
+  00018  ec           PushLiteral             literal-index=12  ; "value06"
+  00019  45           GetData                 
+  0001a  dd           PopGlobal               literal-index=13  ; "literal06"
+  0001b  4f           StoreResult             
+  0001c  ee           PushLiteral             literal-index=14  ; "value07"
+  0001d  45           GetData                 
+  0001e  df           PopGlobal               literal-index=15  ; "literal07"
+  0001f  4f           StoreResult             
+  00020  610010       PushLiteralExtended     literal-index=16  ; "value08"
+  00023  45           GetData                 
+  00024  600011       PopGlobalExtended       literal-index=17  ; "literal08"
+  00027  4f           StoreResult             
+  00028  610012       PushLiteralExtended     literal-index=18  ; "value09"
+  0002b  45           GetData                 
+  0002c  600013       PopGlobalExtended       literal-index=19  ; "literal09"
+  0002f  4f           StoreResult             
+  00030  610014       PushLiteralExtended     literal-index=20  ; "value10"
+  00033  45           GetData                 
+  00034  600015       PopGlobalExtended       literal-index=21  ; "literal10"
+  00037  4f           StoreResult             
+  00038  610016       PushLiteralExtended     literal-index=22  ; "value11"
+  0003b  45           GetData                 
+  0003c  600017       PopGlobalExtended       literal-index=23  ; "literal11"
+  0003f  4f           StoreResult             
+  00040  610018       PushLiteralExtended     literal-index=24  ; "value12"
+  00043  45           GetData                 
+  00044  600019       PopGlobalExtended       literal-index=25  ; "literal12"
+  00047  4f           StoreResult             
+  00048  61001a       PushLiteralExtended     literal-index=26  ; "value13"
+  0004b  45           GetData                 
+  0004c  60001b       PopGlobalExtended       literal-index=27  ; "literal13"
+  0004f  4f           StoreResult             
+  00050  61001c       PushLiteralExtended     literal-index=28  ; "value14"
+  00053  45           GetData                 
+  00054  60001d       PopGlobalExtended       literal-index=29  ; "literal14"
+  00057  4f           StoreResult             
+  00058  61001e       PushLiteralExtended     literal-index=30  ; "value15"
+  0005b  45           GetData                 
+  0005c  60001f       PopGlobalExtended       literal-index=31  ; "literal15"
+  0005f  4f           StoreResult             
+  00060  610020       PushLiteralExtended     literal-index=32  ; "value16"
+  00063  45           GetData                 
+  00064  600021       PopGlobalExtended       literal-index=33  ; "literal16"
+  00067  4f           StoreResult             
+  00068  610022       PushLiteralExtended     literal-index=34  ; "value17"
+  0006b  45           GetData                 
+  0006c  600023       PopGlobalExtended       literal-index=35  ; "literal17"
+  0006f  4f           StoreResult             
+  00070  5f0023       PushGlobalExtended      literal-index=35  ; "literal17"
+  00073  610024       PushLiteralExtended     literal-index=36  ; data[6](544553540102)
+  00076  6c           Push2                   
+  00077  76           MakeVector              
+  00078  0f           Return                  
+  00079  0f           Return                  

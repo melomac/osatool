@@ -1,0 +1,1120 @@
+FAS 1.10
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  29           PushMe                  
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x70737866) 'psxf' POSIX file
+  00002  e1           PushLiteral             literal-index=1  ; "/path/to/Logger.scpt"
+  00003  2f           MakeObjectAlias           ; index
+  00004  6a           Push0                   
+  00005  0c0002       MessageSend             literal-index=2  ; event("syso","load","scpt",0x00000000,"file",0x00000000) load script
+  00008  45           GetData                 
+  00009  d3           PopGlobal               literal-index=3  ; "other_script"
+  0000a  4f           StoreResult             
+  0000b  c3           PushGlobal              literal-index=3  ; "other_script"
+  0000c  e4           PushLiteral             literal-index=4  ; "Hello"
+  0000d  6b           Push1                   
+  0000e  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00011  4f           StoreResult             
+  00012  29           PushMe                  
+  00013  e6           PushLiteral             literal-index=6  ; "Starting demo script…"
+  00014  6b           Push1                   
+  00015  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00018  4f           StoreResult             
+  00019  29           PushMe                  
+  0001a  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "current_prefix"
+  0001f  6b           Push1                   
+  00020  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00023  4f           StoreResult             
+  00024  29           PushMe                  
+  00025  c7           PushGlobal              literal-index=7  ; "current_prefix2"
+  00026  6b           Push1                   
+  00027  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  0002a  4f           StoreResult             
+  0002b  29           PushMe                  
+  0002c  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "current_prefix"
+  00031  6b           Push1                   
+  00032  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00035  4f           StoreResult             
+  00036  29           PushMe                  
+  00037  6a           Push0                   
+  00038  2b0008       PositionalMessageSend   literal-index=8  ; "collectEnvironmentInfo"
+  0003b  45           GetData                 
+  0003c  d9           PopGlobal               literal-index=9  ; "envInfo"
+  0003d  4f           StoreResult             
+  0003e  29           PushMe                  
+  0003f  ea           PushLiteral             literal-index=10  ; "Collected environment info: "
+  00040  c9           PushGlobal              literal-index=9  ; "envInfo"
+  00041  eb           PushLiteral             literal-index=11  ; constant(0x54455854) 'TEXT' string
+  00042  26           Coerce                  
+  00043  25           Concatenate             
+  00044  6b           Push1                   
+  00045  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00048  4f           StoreResult             
+  00049  ec           PushLiteral             literal-index=12  ; "do"
+  0004a  ed           PushLiteral             literal-index=13  ; " "
+  0004b  ee           PushLiteral             literal-index=14  ; "she"
+  0004c  ef           PushLiteral             literal-index=15  ; "ll"
+  0004d  610010       PushLiteralExtended     literal-index=16  ; " "
+  00050  610011       PushLiteralExtended     literal-index=17  ; "sc"
+  00053  610012       PushLiteralExtended     literal-index=18  ; "ri"
+  00056  610013       PushLiteralExtended     literal-index=19  ; "pt"
+  00059  610014       PushLiteralExtended     literal-index=20  ; " \"ec"
+  0005c  610015       PushLiteralExtended     literal-index=21  ; "ho"
+  0005f  610016       PushLiteralExtended     literal-index=22  ; " \"\"He"
+  00062  610017       PushLiteralExtended     literal-index=23  ; "llo"
+  00065  610018       PushLiteralExtended     literal-index=24  ; " fr"
+  00068  610019       PushLiteralExtended     literal-index=25  ; "om"
+  0006b  61001a       PushLiteralExtended     literal-index=26  ; " obf"
+  0006e  61001b       PushLiteralExtended     literal-index=27  ; "usc"
+  00071  61001c       PushLiteralExtended     literal-index=28  ; "at"
+  00074  61001d       PushLiteralExtended     literal-index=29  ; "ed"
+  00077  61001e       PushLiteralExtended     literal-index=30  ; " co"
+  0007a  61001f       PushLiteralExtended     literal-index=31  ; "mm"
+  0007d  610020       PushLiteralExtended     literal-index=32  ; "an"
+  00080  610021       PushLiteralExtended     literal-index=33  ; "d\"\"\""
+  00083  610022       PushLiteralExtended     literal-index=34  ; 22
+  00086  76           MakeVector              
+  00087  45           GetData                 
+  00088  600023       PopGlobalExtended       literal-index=35  ; "obfuscated"
+  0008b  4f           StoreResult             
+  0008c  29           PushMe                  
+  0008d  5f0023       PushGlobalExtended      literal-index=35  ; "obfuscated"
+  00090  6b           Push1                   
+  00091  2b0024       PositionalMessageSend   literal-index=36  ; "deobfuscateStringList"
+  00094  45           GetData                 
+  00095  600025       PopGlobalExtended       literal-index=37  ; "cmd"
+  00098  4f           StoreResult             
+  00099  29           PushMe                  
+  0009a  610026       PushLiteralExtended     literal-index=38  ; "About to run (safe) obfuscated command…"
+  0009d  6b           Push1                   
+  0009e  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  000a1  4f           StoreResult             
+  000a2  14001d       ErrorHandler            branch-target=0xc0
+  000a5  5f0025       PushGlobalExtended      literal-index=37  ; "cmd"
+  000a8  6a           Push0                   
+  000a9  0c0027       MessageSend             literal-index=39  ; event("syso","exec","TEXT",0xffff8000,"TEXT",0x00000000) do shell script
+  000ac  45           GetData                 
+  000ad  600028       PopGlobalExtended       literal-index=40  ; "cmdResult"
+  000b0  4f           StoreResult             
+  000b1  29           PushMe                  
+  000b2  610029       PushLiteralExtended     literal-index=41  ; "Command result: "
+  000b5  5f0028       PushGlobalExtended      literal-index=40  ; "cmdResult"
+  000b8  25           Concatenate             
+  000b9  6b           Push1                   
+  000ba  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  000bd  57001b       EndErrorHandler         branch-target=0xd9
+  000c0  58002a002b   HandleError             literal-index=42, literal-index=43  ; "errMsg", binding(constant(0x6572726e),...)
+  000c5  29           PushMe                  
+  000c6  61002c       PushLiteralExtended     literal-index=44  ; "Error running shell command: "
+  000c9  a0           PushVariable            variable-index=0  ; "errMsg"
+  000ca  25           Concatenate             
+  000cb  61002d       PushLiteralExtended     literal-index=45  ; " ("
+  000ce  25           Concatenate             
+  000cf  a1           PushVariable            variable-index=1  ; "errNum"
+  000d0  25           Concatenate             
+  000d1  61002e       PushLiteralExtended     literal-index=46  ; ")"
+  000d4  25           Concatenate             
+  000d5  6b           Push1                   
+  000d6  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  000d9  4f           StoreResult             
+  000da  14004d       ErrorHandler            branch-target=0x128
+  000dd  5f0025       PushGlobalExtended      literal-index=37  ; "cmd"
+  000e0  6a           Push0                   
+  000e1  0c0027       MessageSend             literal-index=39  ; event("syso","exec","TEXT",0xffff8000,"TEXT",0x00000000) do shell script
+  000e4  45           GetData                 
+  000e5  600028       PopGlobalExtended       literal-index=40  ; "cmdResult"
+  000e8  4f           StoreResult             
+  000e9  29           PushMe                  
+  000ea  61002f       PushLiteralExtended     literal-index=47  ; "Another command result: "
+  000ed  5f0028       PushGlobalExtended      literal-index=40  ; "cmdResult"
+  000f0  25           Concatenate             
+  000f1  6b           Push1                   
+  000f2  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  000f5  4f           StoreResult             
+  000f6  6b           Push1                   
+  000f7  6c           Push2                   
+  000f8  1e           Add                     
+  000f9  4f           StoreResult             
+  000fa  6b           Push1                   
+  000fb  610030       PushLiteralExtended     literal-index=48  ; 5
+  000fe  24           Power                   
+  000ff  27           Negate                  
+  00100  6d           Push3                   
+  00101  21           Divide                  
+  00102  4f           StoreResult             
+  00103  6b           Push1                   
+  00104  6c           Push2                   
+  00105  04           LessThan                
+  00106  0b           Not                     
+  00107  45           GetData                 
+  00108  600031       PopGlobalExtended       literal-index=49  ; "temp"
+  0010b  4f           StoreResult             
+  0010c  29           PushMe                  
+  0010d  610032       PushLiteralExtended     literal-index=50  ; "Another command result: "
+  00110  5f0028       PushGlobalExtended      literal-index=40  ; "cmdResult"
+  00113  25           Concatenate             
+  00114  6b           Push1                   
+  00115  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00118  4f           StoreResult             
+  00119  29           PushMe                  
+  0011a  610033       PushLiteralExtended     literal-index=51  ; "Not last command result: "
+  0011d  5f0028       PushGlobalExtended      literal-index=40  ; "cmdResult"
+  00120  25           Concatenate             
+  00121  6b           Push1                   
+  00122  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00125  570008       EndErrorHandler         branch-target=0x12e
+  00128  5800340035   HandleError             literal-index=52, literal-index=53  ; nil, []
+  0012d  68           PushUndefined           
+  0012e  4f           StoreResult             
+  0012f  14001d       ErrorHandler            branch-target=0x14d
+  00132  5f0025       PushGlobalExtended      literal-index=37  ; "cmd"
+  00135  6a           Push0                   
+  00136  0c0027       MessageSend             literal-index=39  ; event("syso","exec","TEXT",0xffff8000,"TEXT",0x00000000) do shell script
+  00139  45           GetData                 
+  0013a  600028       PopGlobalExtended       literal-index=40  ; "cmdResult"
+  0013d  4f           StoreResult             
+  0013e  29           PushMe                  
+  0013f  610036       PushLiteralExtended     literal-index=54  ; "Last Command result: "
+  00142  5f0028       PushGlobalExtended      literal-index=40  ; "cmdResult"
+  00145  25           Concatenate             
+  00146  6b           Push1                   
+  00147  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  0014a  57001f       EndErrorHandler         branch-target=0x16a
+  0014d  58002a0035   HandleError             literal-index=42, literal-index=53  ; "errMsg", []
+  00152  29           PushMe                  
+  00153  610037       PushLiteralExtended     literal-index=55  ; "Error running shell command: "
+  00156  a0           PushVariable            variable-index=0  ; "errMsg"
+  00157  25           Concatenate             
+  00158  610038       PushLiteralExtended     literal-index=56  ; " ("
+  0015b  25           Concatenate             
+  0015c  610039       PushLiteralExtended     literal-index=57  ; ")"
+  0015f  25           Concatenate             
+  00160  6b           Push1                   
+  00161  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00164  4f           StoreResult             
+  00165  29           PushMe                  
+  00166  6a           Push0                   
+  00167  2b003a       PositionalMessageSend   literal-index=58  ; "finderDemo"
+  0016a  4f           StoreResult             
+  0016b  29           PushMe                  
+  0016c  6a           Push0                   
+  0016d  2b003a       PositionalMessageSend   literal-index=58  ; "finderDemo"
+  00170  4f           StoreResult             
+  00171  29           PushMe                  
+  00172  6a           Push0                   
+  00173  2b003b       PositionalMessageSend   literal-index=59  ; "systemEventsDemo"
+  00176  4f           StoreResult             
+  00177  2a           PushIt                  
+  00178  6a           Push0                   
+  00179  2b003b       PositionalMessageSend   literal-index=59  ; "systemEventsDemo"
+  0017c  4f           StoreResult             
+  0017d  2a           PushIt                  
+  0017e  61003c       PushLiteralExtended     literal-index=60  ; "Demo script finished."
+  00181  6b           Push1                   
+  00182  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00185  4f           StoreResult             
+  00186  5f003d       PushGlobalExtended      literal-index=61  ; "otherlogger"
+  00189  61003e       PushLiteralExtended     literal-index=62  ; "Demo script finished."
+  0018c  6b           Push1                   
+  0018d  2b0005       PositionalMessageSend   literal-index=5  ; "logMessage"
+  00190  0f           Return                  
+
+function[5] "collectEnvironmentInfo" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "scutil --get LocalHostName || hostname"
+  00001  6a           Push0                   
+  00002  0c0001       MessageSend             literal-index=1  ; event("syso","exec","TEXT",0xffff8000,"TEXT",0x00000000) do shell script
+  00005  45           GetData                 
+  00006  b0           PopVariable             variable-index=0  ; "hostName"
+  00007  4f           StoreResult             
+  00008  e2           PushLiteral             literal-index=2  ; "USER"
+  00009  6a           Push0                   
+  0000a  0c0003       MessageSend             literal-index=3  ; event("fndr","gstl","****",0x00000000,"****",0xffff8000) system attribute
+  0000d  45           GetData                 
+  0000e  b1           PopVariable             variable-index=1  ; "userName"
+  0000f  4f           StoreResult             
+  00010  e4           PushLiteral             literal-index=4  ; "HOME"
+  00011  6a           Push0                   
+  00012  0c0003       MessageSend             literal-index=3  ; event("fndr","gstl","****",0x00000000,"****",0xffff8000) system attribute
+  00015  45           GetData                 
+  00016  b2           PopVariable             variable-index=2  ; "homePath"
+  00017  4f           StoreResult             
+  00018  e5           PushLiteral             literal-index=5  ; "hostName"
+  00019  a0           PushVariable            variable-index=0  ; "hostName"
+  0001a  e6           PushLiteral             literal-index=6  ; "userName"
+  0001b  a1           PushVariable            variable-index=1  ; "userName"
+  0001c  e7           PushLiteral             literal-index=7  ; "homePath"
+  0001d  a2           PushVariable            variable-index=2  ; "homePath"
+  0001e  e8           PushLiteral             literal-index=8  ; 6
+  0001f  0e           MakeRecord              
+  00020  45           GetData                 
+  00021  b3           PopVariable             variable-index=3  ; "infoRecord"
+  00022  4f           StoreResult             
+  00023  a3           PushVariable            variable-index=3  ; "infoRecord"
+  00024  0f           Return                  
+  00025  0f           Return                  
+
+function[6] "deobfuscateStringList" arguments=vector(type=4,len=2)
+  00000  e0           PushLiteral             literal-index=0  ; ""
+  00001  45           GetData                 
+  00002  b1           PopVariable             variable-index=1  ; "finalText"
+  00003  4f           StoreResult             
+  00004  170019       LinkRepeat              branch-target=0x1e
+  00007  a0           PushVariable            variable-index=0  ; "fragmentList"
+  00008  5b           Dup                     
+  00009  e1           PushLiteral             literal-index=1  ; constant(0x6b6f636c) 'kocl'
+  0000a  e2           PushLiteral             literal-index=2  ; constant(0x636f626a) 'cobj' item
+  0000b  6c           Push2                   
+  0000c  0c0003       MessageSend             literal-index=3  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  0000f  6b           Push1                   
+  00010  68           PushUndefined           
+  00011  1b0002       RepeatInCollection      variable-index=2  ; "fragment"
+  00014  a1           PushVariable            variable-index=1  ; "finalText"
+  00015  a2           PushVariable            variable-index=2  ; "fragment"
+  00016  25           Concatenate             
+  00017  45           GetData                 
+  00018  b1           PopVariable             variable-index=1  ; "finalText"
+  00019  5b           Dup                     
+  0001a  4f           StoreResult             
+  0001b  59fff5       Jump                    branch-target=0x11
+  0001e  4f           StoreResult             
+  0001f  a1           PushVariable            variable-index=1  ; "finalText"
+  00020  0f           Return                  
+  00021  0f           Return                  
+
+function[7] "demoRepeats" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "=== repeat \"forever\"==="
+  00001  6a           Push0                   
+  00002  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00005  4f           StoreResult             
+  00006  170022       LinkRepeat              branch-target=0x29
+  00009  68           PushUndefined           
+  0000a  5a           Pop                     
+  0000b  a0           PushVariable            variable-index=0  ; "counter"
+  0000c  6b           Push1                   
+  0000d  1e           Add                     
+  0000e  45           GetData                 
+  0000f  b0           PopVariable             variable-index=0  ; "counter"
+  00010  4f           StoreResult             
+  00011  e2           PushLiteral             literal-index=2  ; "counter = "
+  00012  a0           PushVariable            variable-index=0  ; "counter"
+  00013  25           Concatenate             
+  00014  6a           Push0                   
+  00015  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00018  4f           StoreResult             
+  00019  a0           PushVariable            variable-index=0  ; "counter"
+  0001a  e3           PushLiteral             literal-index=3  ; 5
+  0001b  02           GreaterThan             
+  0001c  1d0006       TestIf                  branch-target=0x23
+  0001f  16           Exit                    
+  00020  590003       Jump                    branch-target=0x24
+  00023  68           PushUndefined           
+  00024  5b           Dup                     
+  00025  4f           StoreResult             
+  00026  59ffe3       Jump                    branch-target=0xa
+  00029  4f           StoreResult             
+  0002a  e4           PushLiteral             literal-index=4  ; "=== repeat n times ==="
+  0002b  6a           Push0                   
+  0002c  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0002f  4f           StoreResult             
+  00030  170010       LinkRepeat              branch-target=0x41
+  00033  6d           Push3                   
+  00034  6b           Push1                   
+  00035  68           PushUndefined           
+  00036  18           RepeatNTimes            
+  00037  e5           PushLiteral             literal-index=5  ; "Hello!"
+  00038  6a           Push0                   
+  00039  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0003c  5b           Dup                     
+  0003d  4f           StoreResult             
+  0003e  59fff7       Jump                    branch-target=0x36
+  00041  4f           StoreResult             
+  00042  e6           PushLiteral             literal-index=6  ; "=== repeat while ==="
+  00043  6a           Push0                   
+  00044  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00047  4f           StoreResult             
+  00048  6b           Push1                   
+  00049  45           GetData                 
+  0004a  b0           PopVariable             variable-index=0  ; "counter"
+  0004b  4f           StoreResult             
+  0004c  170019       LinkRepeat              branch-target=0x66
+  0004f  68           PushUndefined           
+  00050  a0           PushVariable            variable-index=0  ; "counter"
+  00051  6d           Push3                   
+  00052  05           LessThanOrEqual         
+  00053  19           RepeatWhile             
+  00054  e7           PushLiteral             literal-index=7  ; "Counter is "
+  00055  a0           PushVariable            variable-index=0  ; "counter"
+  00056  25           Concatenate             
+  00057  6a           Push0                   
+  00058  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0005b  4f           StoreResult             
+  0005c  a0           PushVariable            variable-index=0  ; "counter"
+  0005d  6b           Push1                   
+  0005e  1e           Add                     
+  0005f  45           GetData                 
+  00060  b0           PopVariable             variable-index=0  ; "counter"
+  00061  5b           Dup                     
+  00062  4f           StoreResult             
+  00063  59ffec       Jump                    branch-target=0x50
+  00066  4f           StoreResult             
+  00067  e8           PushLiteral             literal-index=8  ; "=== repeat until ==="
+  00068  6a           Push0                   
+  00069  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0006c  4f           StoreResult             
+  0006d  66           PushFalse               
+  0006e  45           GetData                 
+  0006f  b1           PopVariable             variable-index=1  ; "done"
+  00070  4f           StoreResult             
+  00071  6a           Push0                   
+  00072  45           GetData                 
+  00073  b2           PopVariable             variable-index=2  ; "countUp"
+  00074  4f           StoreResult             
+  00075  170025       LinkRepeat              branch-target=0x9b
+  00078  68           PushUndefined           
+  00079  a1           PushVariable            variable-index=1  ; "done"
+  0007a  1a           RepeatUntil             
+  0007b  a2           PushVariable            variable-index=2  ; "countUp"
+  0007c  6b           Push1                   
+  0007d  1e           Add                     
+  0007e  45           GetData                 
+  0007f  b2           PopVariable             variable-index=2  ; "countUp"
+  00080  4f           StoreResult             
+  00081  e9           PushLiteral             literal-index=9  ; "CountUp is "
+  00082  a2           PushVariable            variable-index=2  ; "countUp"
+  00083  25           Concatenate             
+  00084  6a           Push0                   
+  00085  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00088  4f           StoreResult             
+  00089  a2           PushVariable            variable-index=2  ; "countUp"
+  0008a  6d           Push3                   
+  0008b  03           GreaterThanOrEqual      
+  0008c  1d0008       TestIf                  branch-target=0x95
+  0008f  65           PushTrue                
+  00090  45           GetData                 
+  00091  b1           PopVariable             variable-index=1  ; "done"
+  00092  590003       Jump                    branch-target=0x96
+  00095  68           PushUndefined           
+  00096  5b           Dup                     
+  00097  4f           StoreResult             
+  00098  59ffe0       Jump                    branch-target=0x79
+  0009b  4f           StoreResult             
+  0009c  ea           PushLiteral             literal-index=10  ; "=== repeat with i from a to b ==="
+  0009d  6a           Push0                   
+  0009e  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000a1  4f           StoreResult             
+  000a2  170015       LinkRepeat              branch-target=0xb8
+  000a5  6b           Push1                   
+  000a6  6d           Push3                   
+  000a7  6b           Push1                   
+  000a8  68           PushUndefined           
+  000a9  1c0003       RepeatInRange           variable-index=3  ; "i"
+  000ac  eb           PushLiteral             literal-index=11  ; "i = "
+  000ad  a3           PushVariable            variable-index=3  ; "i"
+  000ae  25           Concatenate             
+  000af  6a           Push0                   
+  000b0  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000b3  5b           Dup                     
+  000b4  4f           StoreResult             
+  000b5  59fff3       Jump                    branch-target=0xa9
+  000b8  4f           StoreResult             
+  000b9  ec           PushLiteral             literal-index=12  ; "=== repeat with i from a to b by step ==="
+  000ba  6a           Push0                   
+  000bb  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000be  4f           StoreResult             
+  000bf  170015       LinkRepeat              branch-target=0xd5
+  000c2  6a           Push0                   
+  000c3  ed           PushLiteral             literal-index=13  ; 6
+  000c4  6c           Push2                   
+  000c5  68           PushUndefined           
+  000c6  1c0003       RepeatInRange           variable-index=3  ; "i"
+  000c9  ee           PushLiteral             literal-index=14  ; "i (step 2) = "
+  000ca  a3           PushVariable            variable-index=3  ; "i"
+  000cb  25           Concatenate             
+  000cc  6a           Push0                   
+  000cd  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000d0  5b           Dup                     
+  000d1  4f           StoreResult             
+  000d2  59fff3       Jump                    branch-target=0xc6
+  000d5  4f           StoreResult             
+  000d6  ef           PushLiteral             literal-index=15  ; "=== repeat with item in list ==="
+  000d7  6a           Push0                   
+  000d8  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000db  4f           StoreResult             
+  000dc  610010       PushLiteralExtended     literal-index=16  ; "apple"
+  000df  610011       PushLiteralExtended     literal-index=17  ; "banana"
+  000e2  610012       PushLiteralExtended     literal-index=18  ; "orange"
+  000e5  6d           Push3                   
+  000e6  76           MakeVector              
+  000e7  45           GetData                 
+  000e8  b4           PopVariable             variable-index=4  ; "fruits"
+  000e9  4f           StoreResult             
+  000ea  170025       LinkRepeat              branch-target=0x110
+  000ed  a4           PushVariable            variable-index=4  ; "fruits"
+  000ee  5b           Dup                     
+  000ef  610013       PushLiteralExtended     literal-index=19  ; constant(0x6b6f636c) 'kocl'
+  000f2  610014       PushLiteralExtended     literal-index=20  ; constant(0x636f626a) 'cobj' item
+  000f5  6c           Push2                   
+  000f6  0c0015       MessageSend             literal-index=21  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  000f9  6b           Push1                   
+  000fa  68           PushUndefined           
+  000fb  1b0005       RepeatInCollection      variable-index=5  ; "f"
+  000fe  610016       PushLiteralExtended     literal-index=22  ; "Fruit = "
+  00101  a5           PushVariable            variable-index=5  ; "f"
+  00102  610017       PushLiteralExtended     literal-index=23  ; constant(0x70636e74) 'pcnt' contents
+  00105  2c           MakeObjectAlias           ; property
+  00106  25           Concatenate             
+  00107  6a           Push0                   
+  00108  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0010b  5b           Dup                     
+  0010c  4f           StoreResult             
+  0010d  59ffed       Jump                    branch-target=0xfb
+  00110  4f           StoreResult             
+  00111  610018       PushLiteralExtended     literal-index=24  ; "=== repeat with exit repeat ==="
+  00114  6a           Push0                   
+  00115  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00118  4f           StoreResult             
+  00119  6b           Push1                   
+  0011a  45           GetData                 
+  0011b  b6           PopVariable             variable-index=6  ; "x"
+  0011c  4f           StoreResult             
+  0011d  170024       LinkRepeat              branch-target=0x142
+  00120  68           PushUndefined           
+  00121  5a           Pop                     
+  00122  a6           PushVariable            variable-index=6  ; "x"
+  00123  6d           Push3                   
+  00124  02           GreaterThan             
+  00125  1d0006       TestIf                  branch-target=0x12c
+  00128  16           Exit                    
+  00129  590003       Jump                    branch-target=0x12d
+  0012c  68           PushUndefined           
+  0012d  4f           StoreResult             
+  0012e  610019       PushLiteralExtended     literal-index=25  ; "x = "
+  00131  a6           PushVariable            variable-index=6  ; "x"
+  00132  25           Concatenate             
+  00133  6a           Push0                   
+  00134  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00137  4f           StoreResult             
+  00138  a6           PushVariable            variable-index=6  ; "x"
+  00139  6b           Push1                   
+  0013a  1e           Add                     
+  0013b  45           GetData                 
+  0013c  b6           PopVariable             variable-index=6  ; "x"
+  0013d  5b           Dup                     
+  0013e  4f           StoreResult             
+  0013f  59ffe1       Jump                    branch-target=0x121
+  00142  4f           StoreResult             
+  00143  61001a       PushLiteralExtended     literal-index=26  ; "=== nested repeats ==="
+  00146  6a           Push0                   
+  00147  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0014a  4f           StoreResult             
+  0014b  17003b       LinkRepeat              branch-target=0x187
+  0014e  6b           Push1                   
+  0014f  6c           Push2                   
+  00150  6b           Push1                   
+  00151  68           PushUndefined           
+  00152  1c0007       RepeatInRange           variable-index=7  ; "a"
+  00155  17002c       LinkRepeat              branch-target=0x182
+  00158  6b           Push1                   
+  00159  6c           Push2                   
+  0015a  6b           Push1                   
+  0015b  68           PushUndefined           
+  0015c  1c0008       RepeatInRange           variable-index=8  ; "b"
+  0015f  17001d       LinkRepeat              branch-target=0x17d
+  00162  6b           Push1                   
+  00163  6c           Push2                   
+  00164  6b           Push1                   
+  00165  68           PushUndefined           
+  00166  1c0009       RepeatInRange           variable-index=9  ; "c"
+  00169  61001b       PushLiteralExtended     literal-index=27  ; "a="
+  0016c  a7           PushVariable            variable-index=7  ; "a"
+  0016d  25           Concatenate             
+  0016e  61001c       PushLiteralExtended     literal-index=28  ; ", b="
+  00171  25           Concatenate             
+  00172  a8           PushVariable            variable-index=8  ; "b"
+  00173  25           Concatenate             
+  00174  6a           Push0                   
+  00175  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00178  5b           Dup                     
+  00179  4f           StoreResult             
+  0017a  59ffeb       Jump                    branch-target=0x166
+  0017d  5b           Dup                     
+  0017e  4f           StoreResult             
+  0017f  59ffdc       Jump                    branch-target=0x15c
+  00182  5b           Dup                     
+  00183  4f           StoreResult             
+  00184  59ffcd       Jump                    branch-target=0x152
+  00187  4f           StoreResult             
+  00188  50           GetResult               
+  00189  0f           Return                  
+
+function[8] "demoIfStatements" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "=== Basic IF ==="
+  00001  6a           Push0                   
+  00002  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00005  4f           StoreResult             
+  00006  e2           PushLiteral             literal-index=2  ; 10
+  00007  45           GetData                 
+  00008  b0           PopVariable             variable-index=0  ; "x"
+  00009  4f           StoreResult             
+  0000a  a0           PushVariable            variable-index=0  ; "x"
+  0000b  e3           PushLiteral             literal-index=3  ; 5
+  0000c  02           GreaterThan             
+  0000d  1d000a       TestIf                  branch-target=0x18
+  00010  e4           PushLiteral             literal-index=4  ; "x is greater than 5"
+  00011  6a           Push0                   
+  00012  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00015  590003       Jump                    branch-target=0x19
+  00018  68           PushUndefined           
+  00019  4f           StoreResult             
+  0001a  e5           PushLiteral             literal-index=5  ; "=== IF…ELSE ==="
+  0001b  6a           Push0                   
+  0001c  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0001f  4f           StoreResult             
+  00020  6d           Push3                   
+  00021  45           GetData                 
+  00022  b0           PopVariable             variable-index=0  ; "x"
+  00023  4f           StoreResult             
+  00024  a0           PushVariable            variable-index=0  ; "x"
+  00025  e3           PushLiteral             literal-index=3  ; 5
+  00026  02           GreaterThan             
+  00027  1d000a       TestIf                  branch-target=0x32
+  0002a  e6           PushLiteral             literal-index=6  ; "x is greater than 5"
+  0002b  6a           Push0                   
+  0002c  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0002f  590007       Jump                    branch-target=0x37
+  00032  e7           PushLiteral             literal-index=7  ; "x is NOT greater than 5"
+  00033  6a           Push0                   
+  00034  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00037  4f           StoreResult             
+  00038  e8           PushLiteral             literal-index=8  ; "=== IF…ELSE IF…ELSE chain ==="
+  00039  6a           Push0                   
+  0003a  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0003d  4f           StoreResult             
+  0003e  e9           PushLiteral             literal-index=9  ; 85
+  0003f  45           GetData                 
+  00040  b1           PopVariable             variable-index=1  ; "score"
+  00041  4f           StoreResult             
+  00042  a1           PushVariable            variable-index=1  ; "score"
+  00043  ea           PushLiteral             literal-index=10  ; 90
+  00044  03           GreaterThanOrEqual      
+  00045  1d000a       TestIf                  branch-target=0x50
+  00048  eb           PushLiteral             literal-index=11  ; "Grade: A"
+  00049  6a           Push0                   
+  0004a  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0004d  590025       Jump                    branch-target=0x73
+  00050  a1           PushVariable            variable-index=1  ; "score"
+  00051  ec           PushLiteral             literal-index=12  ; 80
+  00052  03           GreaterThanOrEqual      
+  00053  1d000a       TestIf                  branch-target=0x5e
+  00056  ed           PushLiteral             literal-index=13  ; "Grade: B"
+  00057  6a           Push0                   
+  00058  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0005b  590017       Jump                    branch-target=0x73
+  0005e  a1           PushVariable            variable-index=1  ; "score"
+  0005f  ee           PushLiteral             literal-index=14  ; 70
+  00060  03           GreaterThanOrEqual      
+  00061  1d000a       TestIf                  branch-target=0x6c
+  00064  ef           PushLiteral             literal-index=15  ; "Grade: C"
+  00065  6a           Push0                   
+  00066  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00069  590009       Jump                    branch-target=0x73
+  0006c  610010       PushLiteralExtended     literal-index=16  ; "Grade: F"
+  0006f  6a           Push0                   
+  00070  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00073  4f           StoreResult             
+  00074  610011       PushLiteralExtended     literal-index=17  ; "=== One-line IF ==="
+  00077  6a           Push0                   
+  00078  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0007b  4f           StoreResult             
+  0007c  6c           Push2                   
+  0007d  6c           Push2                   
+  0007e  1e           Add                     
+  0007f  610012       PushLiteralExtended     literal-index=18  ; 4
+  00082  00           Equal                   
+  00083  1d000c       TestIf                  branch-target=0x90
+  00086  610013       PushLiteralExtended     literal-index=19  ; "Math works!"
+  00089  6a           Push0                   
+  0008a  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0008d  590003       Jump                    branch-target=0x91
+  00090  68           PushUndefined           
+  00091  4f           StoreResult             
+  00092  610014       PushLiteralExtended     literal-index=20  ; "=== IF with AND/OR ==="
+  00095  6a           Push0                   
+  00096  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00099  4f           StoreResult             
+  0009a  610015       PushLiteralExtended     literal-index=21  ; 20
+  0009d  45           GetData                 
+  0009e  b2           PopVariable             variable-index=2  ; "age"
+  0009f  4f           StoreResult             
+  000a0  a2           PushVariable            variable-index=2  ; "age"
+  000a1  610016       PushLiteralExtended     literal-index=22  ; 18
+  000a4  03           GreaterThanOrEqual      
+  000a5  09000b       And                     branch-target=0xb1
+  000a8  a2           PushVariable            variable-index=2  ; "age"
+  000a9  610017       PushLiteralExtended     literal-index=23  ; 30
+  000ac  05           LessThanOrEqual         
+  000ad  610018       PushLiteralExtended     literal-index=24  ; constant(0x626f6f6c) 'bool' boolean
+  000b0  26           Coerce                  
+  000b1  1d000c       TestIf                  branch-target=0xbe
+  000b4  610019       PushLiteralExtended     literal-index=25  ; "Young adult"
+  000b7  6a           Push0                   
+  000b8  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000bb  590003       Jump                    branch-target=0xbf
+  000be  68           PushUndefined           
+  000bf  4f           StoreResult             
+  000c0  a2           PushVariable            variable-index=2  ; "age"
+  000c1  6a           Push0                   
+  000c2  04           LessThan                
+  000c3  0a000b       Or                      branch-target=0xcf
+  000c6  a2           PushVariable            variable-index=2  ; "age"
+  000c7  61001a       PushLiteralExtended     literal-index=26  ; 120
+  000ca  02           GreaterThan             
+  000cb  610018       PushLiteralExtended     literal-index=24  ; constant(0x626f6f6c) 'bool' boolean
+  000ce  26           Coerce                  
+  000cf  1d000c       TestIf                  branch-target=0xdc
+  000d2  61001b       PushLiteralExtended     literal-index=27  ; "Invalid age"
+  000d5  6a           Push0                   
+  000d6  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000d9  590003       Jump                    branch-target=0xdd
+  000dc  68           PushUndefined           
+  000dd  4f           StoreResult             
+  000de  61001c       PushLiteralExtended     literal-index=28  ; "=== IF inside a loop ==="
+  000e1  6a           Push0                   
+  000e2  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  000e5  4f           StoreResult             
+  000e6  17002b       LinkRepeat              branch-target=0x112
+  000e9  6b           Push1                   
+  000ea  e3           PushLiteral             literal-index=3  ; 5
+  000eb  6b           Push1                   
+  000ec  68           PushUndefined           
+  000ed  1c0003       RepeatInRange           variable-index=3  ; "n"
+  000f0  a3           PushVariable            variable-index=3  ; "n"
+  000f1  6c           Push2                   
+  000f2  23           Remainder               
+  000f3  6a           Push0                   
+  000f4  00           Equal                   
+  000f5  1d000e       TestIf                  branch-target=0x104
+  000f8  a3           PushVariable            variable-index=3  ; "n"
+  000f9  61001d       PushLiteralExtended     literal-index=29  ; " is even"
+  000fc  25           Concatenate             
+  000fd  6a           Push0                   
+  000fe  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00101  59000b       Jump                    branch-target=0x10d
+  00104  a3           PushVariable            variable-index=3  ; "n"
+  00105  61001e       PushLiteralExtended     literal-index=30  ; " is odd"
+  00108  25           Concatenate             
+  00109  6a           Push0                   
+  0010a  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0010d  5b           Dup                     
+  0010e  4f           StoreResult             
+  0010f  59ffdd       Jump                    branch-target=0xed
+  00112  4f           StoreResult             
+  00113  61001f       PushLiteralExtended     literal-index=31  ; "=== IF checking list contents ==="
+  00116  6a           Push0                   
+  00117  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0011a  4f           StoreResult             
+  0011b  610020       PushLiteralExtended     literal-index=32  ; "apple"
+  0011e  610021       PushLiteralExtended     literal-index=33  ; "orange"
+  00121  610022       PushLiteralExtended     literal-index=34  ; "grape"
+  00124  6d           Push3                   
+  00125  76           MakeVector              
+  00126  45           GetData                 
+  00127  b4           PopVariable             variable-index=4  ; "fruits"
+  00128  4f           StoreResult             
+  00129  a4           PushVariable            variable-index=4  ; "fruits"
+  0012a  610023       PushLiteralExtended     literal-index=35  ; "orange"
+  0012d  08           Contains                
+  0012e  1d000c       TestIf                  branch-target=0x13b
+  00131  610024       PushLiteralExtended     literal-index=36  ; "We have an orange!"
+  00134  6a           Push0                   
+  00135  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00138  590009       Jump                    branch-target=0x142
+  0013b  610025       PushLiteralExtended     literal-index=37  ; "No orange found."
+  0013e  6a           Push0                   
+  0013f  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00142  4f           StoreResult             
+  00143  610026       PushLiteralExtended     literal-index=38  ; "=== Nested IF blocks ==="
+  00146  6a           Push0                   
+  00147  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  0014a  4f           StoreResult             
+  0014b  e2           PushLiteral             literal-index=2  ; 10
+  0014c  45           GetData                 
+  0014d  b0           PopVariable             variable-index=0  ; "x"
+  0014e  4f           StoreResult             
+  0014f  e3           PushLiteral             literal-index=3  ; 5
+  00150  45           GetData                 
+  00151  b5           PopVariable             variable-index=5  ; "y"
+  00152  4f           StoreResult             
+  00153  a0           PushVariable            variable-index=0  ; "x"
+  00154  6a           Push0                   
+  00155  02           GreaterThan             
+  00156  1d0016       TestIf                  branch-target=0x16d
+  00159  a5           PushVariable            variable-index=5  ; "y"
+  0015a  6a           Push0                   
+  0015b  02           GreaterThan             
+  0015c  1d000c       TestIf                  branch-target=0x169
+  0015f  610027       PushLiteralExtended     literal-index=39  ; "Both numbers are positive"
+  00162  6a           Push0                   
+  00163  0c0001       MessageSend             literal-index=1  ; event("ascr","cmnt","****",0x00000000,"****",0x00009000) log
+  00166  590003       Jump                    branch-target=0x16a
+  00169  68           PushUndefined           
+  0016a  590003       Jump                    branch-target=0x16e
+  0016d  68           PushUndefined           
+  0016e  4f           StoreResult             
+  0016f  50           GetResult               
+  00170  0f           Return                  
+
+function[9] "decodeWithOffset" arguments=vector(type=4,len=2)
+  00000  e0           PushLiteral             literal-index=0  ; ""
+  00001  45           GetData                 
+  00002  b2           PopVariable             variable-index=2  ; "outputText"
+  00003  4f           StoreResult             
+  00004  170023       LinkRepeat              branch-target=0x28
+  00007  a0           PushVariable            variable-index=0  ; "codeList"
+  00008  5b           Dup                     
+  00009  e1           PushLiteral             literal-index=1  ; constant(0x6b6f636c) 'kocl'
+  0000a  e2           PushLiteral             literal-index=2  ; constant(0x636f626a) 'cobj' item
+  0000b  6c           Push2                   
+  0000c  0c0003       MessageSend             literal-index=3  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  0000f  6b           Push1                   
+  00010  68           PushUndefined           
+  00011  1b0003       RepeatInCollection      variable-index=3  ; "c"
+  00014  a2           PushVariable            variable-index=2  ; "outputText"
+  00015  a3           PushVariable            variable-index=3  ; "c"
+  00016  e4           PushLiteral             literal-index=4  ; constant(0x6c6f6e67) 'long' integer
+  00017  26           Coerce                  
+  00018  a1           PushVariable            variable-index=1  ; "off"
+  00019  1f           Subtract                
+  0001a  e5           PushLiteral             literal-index=5  ; constant(0x63686120) 'cha ' character
+  0001b  2a           PushIt                  
+  0001c  e6           PushLiteral             literal-index=6  ; constant(0x49442020) 'ID  ' id
+  0001d  2c           MakeObjectAlias           ; property
+  0001e  45           GetData                 
+  0001f  2f           MakeObjectAlias           ; index
+  00020  25           Concatenate             
+  00021  45           GetData                 
+  00022  b2           PopVariable             variable-index=2  ; "outputText"
+  00023  5b           Dup                     
+  00024  4f           StoreResult             
+  00025  59ffeb       Jump                    branch-target=0x11
+  00028  4f           StoreResult             
+  00029  6b           Push1                   
+  0002a  6b           Push1                   
+  0002b  1e           Add                     
+  0002c  4f           StoreResult             
+  0002d  a2           PushVariable            variable-index=2  ; "outputText"
+  0002e  0f           Return                  
+  0002f  0f           Return                  
+
+function[10] "get_url" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; 104
+  00001  6a           Push0                   
+  00002  0c0001       MessageSend             literal-index=1  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  00005  e2           PushLiteral             literal-index=2  ; 116
+  00006  6a           Push0                   
+  00007  0c0001       MessageSend             literal-index=1  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  0000a  25           Concatenate             
+  0000b  e2           PushLiteral             literal-index=2  ; 116
+  0000c  6a           Push0                   
+  0000d  0c0001       MessageSend             literal-index=1  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  00010  25           Concatenate             
+  00011  e3           PushLiteral             literal-index=3  ; 112
+  00012  6a           Push0                   
+  00013  0c0001       MessageSend             literal-index=1  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  00016  25           Concatenate             
+  00017  e4           PushLiteral             literal-index=4  ; 58
+  00018  6a           Push0                   
+  00019  0c0001       MessageSend             literal-index=1  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  0001c  25           Concatenate             
+  0001d  e5           PushLiteral             literal-index=5  ; 47
+  0001e  6a           Push0                   
+  0001f  0c0001       MessageSend             literal-index=1  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  00022  25           Concatenate             
+  00023  e5           PushLiteral             literal-index=5  ; 47
+  00024  6a           Push0                   
+  00025  0c0001       MessageSend             literal-index=1  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  00028  25           Concatenate             
+  00029  0f           Return                  
+  0002a  0f           Return                  
+
+function[11] "finderDemo" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",00000000014a000200010c4d6163696e746f736820484400...)
+  00001  120003       Tell                    signed-word=3
+  00004  68           PushUndefined           
+  00005  55           EndTell                 
+  00006  4f           StoreResult             
+  00007  e1           PushLiteral             literal-index=1  ; descriptor("alis",000000000140000200010c4d6163696e746f736820484400...)
+  00008  120067       Tell                    signed-word=103
+  0000b  2a           PushIt                  
+  0000c  6a           Push0                   
+  0000d  0c0002       MessageSend             literal-index=2  ; event("misc","actv","null",0xffff8000,"obj ",0xffff8000) activate
+  00010  4f           StoreResult             
+  00011  2a           PushIt                  
+  00012  e3           PushLiteral             literal-index=3  ; constant(0x6465736b) 'desk' desktop
+  00013  2c           MakeObjectAlias           ; property
+  00014  e4           PushLiteral             literal-index=4  ; constant(0x616c6973) 'alis' alias
+  00015  26           Coerce                  
+  00016  45           GetData                 
+  00017  b0           PopVariable             variable-index=0  ; "desktopFolder"
+  00018  4f           StoreResult             
+  00019  a0           PushVariable            variable-index=0  ; "desktopFolder"
+  0001a  e5           PushLiteral             literal-index=5  ; constant(0x636f626a) 'cobj' item
+  0001b  2d           MakeObjectAlias           ; every
+  0001c  6a           Push0                   
+  0001d  0c0006       MessageSend             literal-index=6  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  00020  45           GetData                 
+  00021  b1           PopVariable             variable-index=1  ; "itemCount"
+  00022  4f           StoreResult             
+  00023  29           PushMe                  
+  00024  e7           PushLiteral             literal-index=7  ; "Finder: there are "
+  00025  a1           PushVariable            variable-index=1  ; "itemCount"
+  00026  25           Concatenate             
+  00027  e8           PushLiteral             literal-index=8  ; " item(s) on the Desktop."
+  00028  25           Concatenate             
+  00029  6b           Push1                   
+  0002a  2b0009       PositionalMessageSend   literal-index=9  ; "logMessage"
+  0002d  4f           StoreResult             
+  0002e  ea           PushLiteral             literal-index=10  ; "AS_Disassembler_Test"
+  0002f  45           GetData                 
+  00030  b2           PopVariable             variable-index=2  ; "tempFolderName"
+  00031  4f           StoreResult             
+  00032  a0           PushVariable            variable-index=0  ; "desktopFolder"
+  00033  eb           PushLiteral             literal-index=11  ; constant(0x63666f6c) 'cfol'
+  00034  a2           PushVariable            variable-index=2  ; "tempFolderName"
+  00035  2f           MakeObjectAlias           ; index
+  00036  6a           Push0                   
+  00037  0c000c       MessageSend             literal-index=12  ; event("core","doex","null",0xffff8000,"obj ",0x00000000) exists
+  0003a  0b           Not                     
+  0003b  1d0026       TestIf                  branch-target=0x62
+  0003e  2a           PushIt                  
+  0003f  ed           PushLiteral             literal-index=13  ; constant(0x6b6f636c) 'kocl'
+  00040  eb           PushLiteral             literal-index=11  ; constant(0x63666f6c) 'cfol'
+  00041  ee           PushLiteral             literal-index=14  ; constant(0x696e7368) 'insh'
+  00042  a0           PushVariable            variable-index=0  ; "desktopFolder"
+  00043  ef           PushLiteral             literal-index=15  ; constant(0x70726474) 'prdt' with properties
+  00044  610010       PushLiteralExtended     literal-index=16  ; constant(0x706e616d) 'pnam' name
+  00047  a2           PushVariable            variable-index=2  ; "tempFolderName"
+  00048  6c           Push2                   
+  00049  0e           MakeRecord              
+  0004a  610011       PushLiteralExtended     literal-index=17  ; 6
+  0004d  0c0012       MessageSend             literal-index=18  ; event("core","crel","****",0x00000000,"null",0x00009000) make
+  00050  4f           StoreResult             
+  00051  29           PushMe                  
+  00052  610013       PushLiteralExtended     literal-index=19  ; "Finder: created folder \""
+  00055  a2           PushVariable            variable-index=2  ; "tempFolderName"
+  00056  25           Concatenate             
+  00057  610014       PushLiteralExtended     literal-index=20  ; "\" on Desktop."
+  0005a  25           Concatenate             
+  0005b  6b           Push1                   
+  0005c  2b0009       PositionalMessageSend   literal-index=9  ; "logMessage"
+  0005f  590010       Jump                    branch-target=0x70
+  00062  29           PushMe                  
+  00063  610015       PushLiteralExtended     literal-index=21  ; "Finder: folder \""
+  00066  a2           PushVariable            variable-index=2  ; "tempFolderName"
+  00067  25           Concatenate             
+  00068  610016       PushLiteralExtended     literal-index=22  ; "\" already exists."
+  0006b  25           Concatenate             
+  0006c  6b           Push1                   
+  0006d  2b0009       PositionalMessageSend   literal-index=9  ; "logMessage"
+  00070  55           EndTell                 
+  00071  0f           Return                  
+
+function[12] "systemEventsDemo" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; descriptor("alis",00000000015c000200010c4d6163696e746f736820484400...)
+  00001  120009       Tell                    signed-word=9
+  00004  2a           PushIt                  
+  00005  e1           PushLiteral             literal-index=1  ; constant(0x70726373) 'prcs'
+  00006  2d           MakeObjectAlias           ; every
+  00007  e2           PushLiteral             literal-index=2  ; constant(0x706e616d) 'pnam' name
+  00008  2c           MakeObjectAlias           ; property
+  00009  45           GetData                 
+  0000a  b0           PopVariable             variable-index=0  ; "procNames"
+  0000b  55           EndTell                 
+  0000c  4f           StoreResult             
+  0000d  6a           Push0                   
+  0000e  76           MakeVector              
+  0000f  45           GetData                 
+  00010  b1           PopVariable             variable-index=1  ; "interestingNames"
+  00011  4f           StoreResult             
+  00012  17002a       LinkRepeat              branch-target=0x3d
+  00015  e3           PushLiteral             literal-index=3  ; "Finder"
+  00016  e4           PushLiteral             literal-index=4  ; "Dock"
+  00017  e5           PushLiteral             literal-index=5  ; "SystemUIServer"
+  00018  e6           PushLiteral             literal-index=6  ; "Terminal"
+  00019  e7           PushLiteral             literal-index=7  ; 4
+  0001a  76           MakeVector              
+  0001b  5b           Dup                     
+  0001c  e8           PushLiteral             literal-index=8  ; constant(0x6b6f636c) 'kocl'
+  0001d  e9           PushLiteral             literal-index=9  ; constant(0x636f626a) 'cobj' item
+  0001e  6c           Push2                   
+  0001f  0c000a       MessageSend             literal-index=10  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  00022  6b           Push1                   
+  00023  68           PushUndefined           
+  00024  1b0002       RepeatInCollection      variable-index=2  ; "candidate"
+  00027  a0           PushVariable            variable-index=0  ; "procNames"
+  00028  a2           PushVariable            variable-index=2  ; "candidate"
+  00029  08           Contains                
+  0002a  1d000c       TestIf                  branch-target=0x37
+  0002d  a2           PushVariable            variable-index=2  ; "candidate"
+  0002e  a1           PushVariable            variable-index=1  ; "interestingNames"
+  0002f  36           MakeObjectAlias           ; end
+  00030  46           SetData                 
+  00031  4f           StoreResult             
+  00032  a2           PushVariable            variable-index=2  ; "candidate"
+  00033  0f           Return                  
+  00034  590003       Jump                    branch-target=0x38
+  00037  68           PushUndefined           
+  00038  5b           Dup                     
+  00039  4f           StoreResult             
+  0003a  59ffe9       Jump                    branch-target=0x24
+  0003d  4f           StoreResult             
+  0003e  a1           PushVariable            variable-index=1  ; "interestingNames"
+  0003f  6a           Push0                   
+  00040  0c000a       MessageSend             literal-index=10  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  00043  6a           Push0                   
+  00044  00           Equal                   
+  00045  1d000b       TestIf                  branch-target=0x51
+  00048  29           PushMe                  
+  00049  eb           PushLiteral             literal-index=11  ; "System Events: no interesting processes found (from our sample list)."
+  0004a  6b           Push1                   
+  0004b  2b000c       PositionalMessageSend   literal-index=12  ; "logMessage"
+  0004e  59000c       Jump                    branch-target=0x5b
+  00051  29           PushMe                  
+  00052  ed           PushLiteral             literal-index=13  ; "System Events: some running processes: "
+  00053  a1           PushVariable            variable-index=1  ; "interestingNames"
+  00054  ee           PushLiteral             literal-index=14  ; constant(0x54455854) 'TEXT' string
+  00055  26           Coerce                  
+  00056  25           Concatenate             
+  00057  6b           Push1                   
+  00058  2b000c       PositionalMessageSend   literal-index=12  ; "logMessage"
+  0005b  4f           StoreResult             
+  0005c  ef           PushLiteral             literal-index=15  ; "Sample AppleScript for disassembler testing is running."
+  0005d  610010       PushLiteralExtended     literal-index=16  ; constant(0x62746e73) 'btns' buttons
+  00060  610011       PushLiteralExtended     literal-index=17  ; "OK"
+  00063  6b           Push1                   
+  00064  76           MakeVector              
+  00065  610012       PushLiteralExtended     literal-index=18  ; constant(0x64666c74) 'dflt' default button
+  00068  610013       PushLiteralExtended     literal-index=19  ; "OK"
+  0006b  610014       PushLiteralExtended     literal-index=20  ; constant(0x67697675) 'givu' giving up after
+  0006e  610015       PushLiteralExtended     literal-index=21  ; 5
+  00071  610016       PushLiteralExtended     literal-index=22  ; 6
+  00074  0c0017       MessageSend             literal-index=23  ; event("syso","dlog","askr",0x00000000,"TEXT",0x00000000) display dialog
+  00077  0f           Return                  
+
+function[13] "logMessage" arguments=vector(type=4,len=2)
+  00000  e0           PushLiteral             literal-index=0  ; "date '+%Y-%m-%d %H:%M:%S'"
+  00001  6a           Push0                   
+  00002  0c0001       MessageSend             literal-index=1  ; event("syso","exec","TEXT",0xffff8000,"TEXT",0x00000000) do shell script
+  00005  45           GetData                 
+  00006  b1           PopVariable             variable-index=1  ; "timeStamp"
+  00007  4f           StoreResult             
+  00008  e2           PushLiteral             literal-index=2  ; "log \"["
+  00009  a1           PushVariable            variable-index=1  ; "timeStamp"
+  0000a  25           Concatenate             
+  0000b  e3           PushLiteral             literal-index=3  ; "] "
+  0000c  25           Concatenate             
+  0000d  29           PushMe                  
+  0000e  a0           PushVariable            variable-index=0  ; "msg"
+  0000f  6b           Push1                   
+  00010  2b0004       PositionalMessageSend   literal-index=4  ; "escapeQuotes"
+  00013  25           Concatenate             
+  00014  e5           PushLiteral             literal-index=5  ; "\""
+  00015  25           Concatenate             
+  00016  45           GetData                 
+  00017  b2           PopVariable             variable-index=2  ; "assembled"
+  00018  4f           StoreResult             
+  00019  14000a       ErrorHandler            branch-target=0x24
+  0001c  a2           PushVariable            variable-index=2  ; "assembled"
+  0001d  6a           Push0                   
+  0001e  0c0006       MessageSend             literal-index=6  ; event("syso","dsct","****",0x00000000,"scpt",0x00000000) run script
+  00021  57001c       EndErrorHandler         branch-target=0x3e
+  00024  5800070008   HandleError             literal-index=7, literal-index=8  ; nil, []
+  00029  e9           PushLiteral             literal-index=9  ; "["
+  0002a  a1           PushVariable            variable-index=1  ; "timeStamp"
+  0002b  25           Concatenate             
+  0002c  ea           PushLiteral             literal-index=10  ; "] "
+  0002d  25           Concatenate             
+  0002e  a0           PushVariable            variable-index=0  ; "msg"
+  0002f  25           Concatenate             
+  00030  eb           PushLiteral             literal-index=11  ; constant(0x62746e73) 'btns' buttons
+  00031  ec           PushLiteral             literal-index=12  ; "OK"
+  00032  6b           Push1                   
+  00033  76           MakeVector              
+  00034  ed           PushLiteral             literal-index=13  ; constant(0x64666c74) 'dflt' default button
+  00035  ee           PushLiteral             literal-index=14  ; "OK"
+  00036  ef           PushLiteral             literal-index=15  ; constant(0x67697675) 'givu' giving up after
+  00037  6d           Push3                   
+  00038  610010       PushLiteralExtended     literal-index=16  ; 6
+  0003b  0c0011       MessageSend             literal-index=17  ; event("syso","dlog","askr",0x00000000,"TEXT",0x00000000) display dialog
+  0003e  0f           Return                  
+
+function[14] "escapeQuotes" arguments=vector(type=4,len=2)
+  00000  e0           PushLiteral             literal-index=0  ; "\""
+  00001  c1           PushGlobal              literal-index=1  ; constant(0x61736372) 'ascr' AppleScript
+  00002  e2           PushLiteral             literal-index=2  ; constant(0x7478646c) 'txdl' text item delimiters
+  00003  2c           MakeObjectAlias           ; property
+  00004  46           SetData                 
+  00005  4f           StoreResult             
+  00006  e3           PushLiteral             literal-index=3  ; "\""
+  00007  c1           PushGlobal              literal-index=1  ; constant(0x61736372) 'ascr' AppleScript
+  00008  e2           PushLiteral             literal-index=2  ; constant(0x7478646c) 'txdl' text item delimiters
+  00009  2c           MakeObjectAlias           ; property
+  0000a  46           SetData                 
+  0000b  4f           StoreResult             
+  0000c  a0           PushVariable            variable-index=0  ; "t"
+  0000d  e4           PushLiteral             literal-index=4  ; constant(0x6369746d) 'citm' text item
+  0000e  2d           MakeObjectAlias           ; every
+  0000f  45           GetData                 
+  00010  b1           PopVariable             variable-index=1  ; "parts"
+  00011  4f           StoreResult             
+  00012  e5           PushLiteral             literal-index=5  ; "\\\""
+  00013  c1           PushGlobal              literal-index=1  ; constant(0x61736372) 'ascr' AppleScript
+  00014  e2           PushLiteral             literal-index=2  ; constant(0x7478646c) 'txdl' text item delimiters
+  00015  2c           MakeObjectAlias           ; property
+  00016  46           SetData                 
+  00017  4f           StoreResult             
+  00018  a1           PushVariable            variable-index=1  ; "parts"
+  00019  e6           PushLiteral             literal-index=6  ; constant(0x54455854) 'TEXT' string
+  0001a  26           Coerce                  
+  0001b  45           GetData                 
+  0001c  b2           PopVariable             variable-index=2  ; "escaped"
+  0001d  4f           StoreResult             
+  0001e  e7           PushLiteral             literal-index=7  ; ""
+  0001f  c1           PushGlobal              literal-index=1  ; constant(0x61736372) 'ascr' AppleScript
+  00020  e2           PushLiteral             literal-index=2  ; constant(0x7478646c) 'txdl' text item delimiters
+  00021  2c           MakeObjectAlias           ; property
+  00022  46           SetData                 
+  00023  4f           StoreResult             
+  00024  a2           PushVariable            variable-index=2  ; "escaped"
+  00025  0f           Return                  
+  00026  0f           Return                  
+
+function[15] "rangeDemo" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; 10
+  00001  e1           PushLiteral             literal-index=1  ; 20
+  00002  e2           PushLiteral             literal-index=2  ; 30
+  00003  e3           PushLiteral             literal-index=3  ; 40
+  00004  e4           PushLiteral             literal-index=4  ; 50
+  00005  e5           PushLiteral             literal-index=5  ; 60
+  00006  e6           PushLiteral             literal-index=6  ; 6
+  00007  76           MakeVector              
+  00008  45           GetData                 
+  00009  b0           PopVariable             variable-index=0  ; "myList"
+  0000a  4f           StoreResult             
+  0000b  a0           PushVariable            variable-index=0  ; "myList"
+  0000c  5b           Dup                     
+  0000d  e7           PushLiteral             literal-index=7  ; constant(0x636f626a) 'cobj' item
+  0000e  5c           GCSwap                  
+  0000f  5b           Dup                     
+  00010  5a           Pop                     
+  00011  6c           Push2                   
+  00012  5c           GCSwap                  
+  00013  5a           Pop                     
+  00014  e8           PushLiteral             literal-index=8  ; 4
+  00015  32           MakeObjectAlias           ; range
+  00016  45           GetData                 
+  00017  b1           PopVariable             variable-index=1  ; "subList"
+  00018  4f           StoreResult             
+  00019  a1           PushVariable            variable-index=1  ; "subList"
+  0001a  0f           Return                  
+  0001b  0f           Return                  

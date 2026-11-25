@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"makeWorkflow\"",
+      "arguments": "[]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"Workflow\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "statement(type=0,span=0:0)"
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 75,
+          "mnemonic": "DefineActor",
+          "raw_hex": "4b0002",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "vector(type=17,len=7) handler"
+          ]
+        },
+        {
+          "offset": 5,
+          "opcode": 83,
+          "mnemonic": "EndDefineActor",
+          "raw_hex": "53"
+        },
+        {
+          "offset": 6,
+          "opcode": 176,
+          "mnemonic": "PopVariable",
+          "raw_hex": "b0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"Workflow\""
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 8,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"Workflow\""
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 10,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

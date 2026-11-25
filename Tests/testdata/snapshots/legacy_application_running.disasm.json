@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "event(\"aevt\",\"oapp\",\"null\",0x00008000,\"****\",0x00009000)",
+      "arguments": "nil",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "descriptor(\"alis\",000000000154000200010c4d6163696e746f736820484400...)"
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 18,
+          "mnemonic": "Tell",
+          "raw_hex": "12000b",
+          "operands": [
+            {
+              "kind": "signed-word",
+              "value": 11
+            }
+          ]
+        },
+        {
+          "offset": 4,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 5,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x78707062) 'xppb'"
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 226,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e2",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "\"com.apple.preference.general\""
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 227,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "constant(0x6b66726d49442020) 'kfrmID  '"
+          ]
+        },
+        {
+          "offset": 8,
+          "opcode": 48,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "30",
+          "annotations": [
+            "key"
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 42,
+          "mnemonic": "PushIt",
+          "raw_hex": "2a"
+        },
+        {
+          "offset": 10,
+          "opcode": 228,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e4",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "constant(0x78706370) 'xpcp'"
+          ]
+        },
+        {
+          "offset": 11,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 12,
+          "opcode": 70,
+          "mnemonic": "SetData",
+          "raw_hex": "46"
+        },
+        {
+          "offset": 13,
+          "opcode": 85,
+          "mnemonic": "EndTell",
+          "raw_hex": "55"
+        },
+        {
+          "offset": 14,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 15,
+          "opcode": 229,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e5",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "descriptor(\"alis\",00000000015c000200010c4d6163696e746f736820484400...)"
+          ]
+        },
+        {
+          "offset": 16,
+          "opcode": 230,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e6",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "constant(0x7072756e) 'prun' running"
+          ]
+        },
+        {
+          "offset": 17,
+          "opcode": 44,
+          "mnemonic": "MakeObjectAlias",
+          "raw_hex": "2c",
+          "annotations": [
+            "property"
+          ]
+        },
+        {
+          "offset": 18,
+          "opcode": 101,
+          "mnemonic": "PushTrue",
+          "raw_hex": "65"
+        },
+        {
+          "offset": 19,
+          "opcode": 0,
+          "mnemonic": "Equal",
+          "raw_hex": "00"
+        },
+        {
+          "offset": 20,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 21,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

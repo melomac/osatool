@@ -1,0 +1,38 @@
+FAS 1.10
+
+function[2] "appendValues" arguments=[]
+  00000  6a           Push0                   
+  00001  76           MakeVector              
+  00002  45           GetData                 
+  00003  b0           PopVariable             variable-index=0  ; "outputValues"
+  00004  4f           StoreResult             
+  00005  17001b       LinkRepeat              branch-target=0x21
+  00008  6b           Push1                   
+  00009  6c           Push2                   
+  0000a  6c           Push2                   
+  0000b  76           MakeVector              
+  0000c  5b           Dup                     
+  0000d  e0           PushLiteral             literal-index=0  ; constant(0x6b6f636c) 'kocl'
+  0000e  e1           PushLiteral             literal-index=1  ; constant(0x636f626a) 'cobj' item
+  0000f  6c           Push2                   
+  00010  0c0002       MessageSend             literal-index=2  ; event("core","cnte","****",0x00000000,"****",0x00001000) count
+  00013  6b           Push1                   
+  00014  68           PushUndefined           
+  00015  1b0001       RepeatInCollection      variable-index=1  ; "currentValue"
+  00018  a1           PushVariable            variable-index=1  ; "currentValue"
+  00019  a0           PushVariable            variable-index=0  ; "outputValues"
+  0001a  36           MakeObjectAlias           ; end
+  0001b  46           SetData                 
+  0001c  5b           Dup                     
+  0001d  4f           StoreResult             
+  0001e  59fff6       Jump                    branch-target=0x15
+  00021  4f           StoreResult             
+  00022  a0           PushVariable            variable-index=0  ; "outputValues"
+  00023  0f           Return                  
+  00024  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  2a           PushIt                  
+  00001  6a           Push0                   
+  00002  2b0000       PositionalMessageSend   literal-index=0  ; "appendValues"
+  00005  0f           Return                  

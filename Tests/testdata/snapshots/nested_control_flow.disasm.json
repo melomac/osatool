@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"nestedControlProbe\"",
+      "arguments": "vector(type=4,len=2)",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 160,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a0",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"x\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 2,
+          "opcode": 2,
+          "mnemonic": "GreaterThan",
+          "raw_hex": "02"
+        },
+        {
+          "offset": 3,
+          "opcode": 29,
+          "mnemonic": "TestIf",
+          "raw_hex": "1d001e",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 34
+            }
+          ]
+        },
+        {
+          "offset": 6,
+          "opcode": 20,
+          "mnemonic": "ErrorHandler",
+          "raw_hex": "140012",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 25
+            }
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 161,
+          "mnemonic": "PushVariable",
+          "raw_hex": "a1",
+          "operands": [
+            {
+              "kind": "variable-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"y\""
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 106,
+          "mnemonic": "Push0",
+          "raw_hex": "6a"
+        },
+        {
+          "offset": 11,
+          "opcode": 2,
+          "mnemonic": "GreaterThan",
+          "raw_hex": "02"
+        },
+        {
+          "offset": 12,
+          "opcode": 29,
+          "mnemonic": "TestIf",
+          "raw_hex": "1d0007",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 20
+            }
+          ]
+        },
+        {
+          "offset": 15,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"both\""
+          ]
+        },
+        {
+          "offset": 16,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 17,
+          "opcode": 89,
+          "mnemonic": "Jump",
+          "raw_hex": "590004",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 22
+            }
+          ]
+        },
+        {
+          "offset": 20,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "\"x only\""
+          ]
+        },
+        {
+          "offset": 21,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 22,
+          "opcode": 87,
+          "mnemonic": "EndErrorHandler",
+          "raw_hex": "570008",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 31
+            }
+          ]
+        },
+        {
+          "offset": 25,
+          "opcode": 88,
+          "mnemonic": "HandleError",
+          "raw_hex": "5800020003",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            },
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "nil",
+            "[]"
+          ]
+        },
+        {
+          "offset": 30,
+          "opcode": 104,
+          "mnemonic": "PushUndefined",
+          "raw_hex": "68"
+        },
+        {
+          "offset": 31,
+          "opcode": 89,
+          "mnemonic": "Jump",
+          "raw_hex": "590004",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 36
+            }
+          ]
+        },
+        {
+          "offset": 34,
+          "opcode": 228,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e4",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "\"neither\""
+          ]
+        },
+        {
+          "offset": 35,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        },
+        {
+          "offset": 36,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

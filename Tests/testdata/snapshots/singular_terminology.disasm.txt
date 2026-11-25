@@ -1,0 +1,9 @@
+FAS 1.10
+
+function[2] "singularTerminologyProbe" arguments=vector(type=4,len=2)
+  00000  a0           PushVariable            variable-index=0  ; "inputList"
+  00001  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00002  2d           MakeObjectAlias           ; every
+  00003  45           GetData                 
+  00004  0f           Return                  
+  00005  0f           Return                  

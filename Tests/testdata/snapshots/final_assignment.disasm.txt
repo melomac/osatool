@@ -1,0 +1,13 @@
+FAS 1.10
+
+function[2] "finalAssignment" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; 42
+  00001  45           GetData                 
+  00002  b0           PopVariable             variable-index=0  ; "answerValue"
+  00003  0f           Return                  
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  2a           PushIt                  
+  00001  6a           Push0                   
+  00002  2b0000       PositionalMessageSend   literal-index=0  ; "finalAssignment"
+  00005  0f           Return                  

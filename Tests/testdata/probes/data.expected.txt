@@ -1,0 +1,206 @@
+--- list basics
+on t(l)
+    return {(count l), length of l, item 1 of l, item -1 of l, rest of l, reverse of l, items 2 thru -1 of l, some item of l, l contains 1, l contains {1}, l & {9}, {0} & l, item 2 of l, class of l}
+end t
+--- list mutation
+on t(l)
+    set end of l to 1
+    set beginning of l to 0
+    set item 2 of l to "x"
+    set item -1 of l to "z"
+    set l to l & {5, 6}
+    set l to rest of l
+    set l to reverse of l
+    set l to items 1 thru -2 of l
+    return l
+end t
+--- list of lists
+on t(m)
+    set total to 0
+    repeat with row in m
+        repeat with cell in row
+            set total to total + cell
+        end repeat
+    end repeat
+    set item 2 of item 1 of m to 0
+    return {total, item 1 of item 2 of m, (count item 1 of m), item 1 of item 1 of m}
+end t
+--- list filter by loop
+on t(l)
+    set out to {}
+    repeat with x in l
+        if contents of x > 2 then
+            set end of out to contents of x
+        end if
+    end repeat
+    return out
+end t
+--- list index of
+on indexOf(l, v)
+    repeat with i from 1 to (count l)
+        if item i of l = v then
+            return i
+        end if
+    end repeat
+    return 0
+end indexOf
+--- list class filters
+on t(l)
+    return {every integer of l, every real of l, every string of l, every list of l, every record of l, every boolean of l, every number of l, every integer of l, integer 1 of l, string -1 of l, (count every integer of l), (count every integer of l)}
+end t
+--- record basics
+on t(r)
+    return {name of r, name of r, (count r), length of r, r & {extra:1}, {extra:1} & r, r as list, class of r, r contains {name:"a"}, r contains {name:"a"}}
+end t
+--- record mutation
+on t(r)
+    set name of r to "n"
+    set size of r to 3
+    set r to r & {added:true}
+    set alpha of r to (alpha of r) + 1
+    set end of items_ of r to 4
+    set item 1 of items_ of r to 0
+    return r
+end t
+--- record labels kinds
+on t()
+    return {name:"n", |name|:"u", size:1, |size|:2, id:3, |id|:4, class:"c", |class|:"d", alpha:5, |alpha beta|:6, x:7, |end|:8, |it|:9, result:10, |result|:11}
+end t
+--- nested records
+on t(r)
+    return {a of b of c of r, a of b of c of r, name of item 1 of rows of r, name of r & id of r, (count rows of r), a of item 1 of rows of r}
+end t
+--- record iteration by list
+on t(rs)
+    set names to {}
+    repeat with r in rs
+        set end of names to name of r & ":" & value of r
+    end repeat
+    return names
+end t
+--- booleans
+on t(a, b)
+    set x to true
+    set y to false
+    set z to a and not b
+    if a then
+        set x to not x
+    end if
+    if a = true then
+        set y to true
+    end if
+    if b = false then
+        set y to false
+    end if
+    return {x, y, z, a as integer, b as text, not a, a ≠ b, a = b}
+end t
+--- numbers
+on t(n)
+    return {n + 1, n - 1, n * 2, n / 2, n div 2, n mod 2, n ^ 2, -n, n as integer, n as real, (round n), n > 0, n ≥ 0, n = 0, n ≠ 0, (n + 0.5) div 1, n mod 1, n ^ 0.5}
+end t
+--- integer limits
+on t()
+    return {536870911, 5.36870912E+8, -536870911, -5.36870912E+8, -5.36870913E+8, 1.073741824E+9, 2.0E+9, 99999999, 100000000, 123456789}
+end t
+--- dates
+on t()
+    set d to current date
+    set e to d + 1 * days
+    set f to d - 2 * weeks
+    set g to (e - d) div hours
+    set day of d to 1
+    set month of d to January
+    set year of d to 2020
+    set time of d to 12 * hours + 30 * minutes
+    return {d, e, f, g, month of d, month of d as integer, weekday of d, d < e, date string of d, short date string of d, time string of d, d as text}
+end t
+--- date arithmetic
+on t(d, e)
+    return {d + 60, d - 3600, d + 2 * days, e - d, (e - d) / days, (e - d) div minutes, d > e, d = e, d ≥ e, month of d, weekday of d as integer, (year of d) - (year of e), (month of d) * 1}
+end t
+--- month and weekday tests
+on t(d)
+    if month of d = January then
+        return 1
+    end if
+    if {Saturday, Sunday} contains weekday of d then
+        return 2
+    end if
+    if month of d ≠ December and day of d > 15 then
+        return 3
+    end if
+    return month of d as integer
+end t
+--- missing value handling
+on t(x)
+    if x = missing value then
+        set x to "default"
+    end if
+    if x = missing value then
+        return 1
+    end if
+    if x ≠ missing value and x ≠ "" then
+        return 2
+    end if
+    set y to missing value
+    return {x, y, y = missing value, class of y}
+end t
+--- class and coercion tests
+on t(x)
+    return {class of x, class of x = list, class of class of x, x as list, x as text, {x} as text, (x as list) & {1}, (count (x as list)), class of (x as text)}
+end t
+--- data and raw values
+on t()
+    return {«data utxt00480069», null, «class furl», «constant ****pict», «data TEXT68656C6C6F»}
+end t
+--- alias and file values
+on t(p)
+    set a to alias p
+    set f to file p
+    set g to POSIX file p
+    set h to a as text
+    set i to f as alias
+    return {a, f, g, h, i, class of a, a as «class furl», POSIX path of a}
+end t
+--- constants
+on t()
+    return {yes, no, ask, true, false, missing value, null, current application, it, me, pi, space, tab, return, linefeed, quote, minutes, hours, days, weeks, AppleScript, version, version of AppleScript}
+end t
+--- units of measure
+on t(x)
+    return {x as miles, x as kilometers as number, x as pounds, x as grams, x as liters, x as degrees Celsius, x as degrees Kelvin, x as feet as inches as number, x as yards, x as ounces, x as quarts, x as cubic meters, x as square feet}
+end t
+--- big literal mix
+on t()
+    return {1, "a", 2.5, true, {2, "b", {3, "c", {4, "d"}}}, {k:1, l:{m:2, n:{o:3}}}, missing value, pi, {}, "", 0, -1, {{}}, {a:{}}}
+end t
+--- swapping and tuples
+on t(a, b)
+    set {a, b} to {b, a}
+    set {x, y, z} to {1, 2, 3}
+    set {p, {q, r}} to {a, {b, x}}
+    set {name:n, id:i} to {name:"a", id:1}
+    return {a, b, x, y, z, p, q, r, n, i}
+end t
+--- counting kinds
+on t(l)
+    return {(count l), (count l), (count every item of l), (count each item of l), (count every integer of l), number of every item of l, number of every string of l, (count every item of l), (count l) = 0, (count l) = 0, l = {}, l = {}}
+end t
+--- list equality and contains
+on t(l)
+    return {l = {1, 2}, l = {}, l ≠ {}, l contains 1, l contains {1, 2}, l starts with 1, l ends with {2}, l contains {1, 2}, not (l contains "a"), l contains {}}
+end t
+--- date literals
+on t()
+    return {date "Tuesday, February 3, 1970 at 12:00:00 AM", date "Tuesday, December 25, 2001 at 3:04:05 PM", date "Thursday, July 4, 1776 at 12:00:00 PM", date "Thursday, March 5, 2020 at 12:30:00 AM"}
+end t
+--- date literals of the Julian calendar
+on t()
+    return {date "Thursday, October 4, 1582 at 12:00:00 AM", date "Friday, October 15, 1582 at 12:00:00 AM", date "Monday, January 1, 1000 at 12:00:00 AM", date "Monday, June 15, 800 at 6:07:08 AM"}
+end t
+--- date in a property
+property start : date "Tuesday, February 29, 2000 at 9:05:07 AM"
+
+on t(d)
+    return d > start
+end t

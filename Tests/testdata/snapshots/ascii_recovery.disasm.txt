@@ -1,0 +1,31 @@
+FAS 1.10
+
+function[2] "characterProbe" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; 65
+  00001  e1           PushLiteral             literal-index=1  ; 85
+  00002  e2           PushLiteral             literal-index=2  ; 120
+  00003  6d           Push3                   
+  00004  76           MakeVector              
+  00005  45           GetData                 
+  00006  b0           PopVariable             variable-index=0  ; "numericValues"
+  00007  4f           StoreResult             
+  00008  e0           PushLiteral             literal-index=0  ; 65
+  00009  6a           Push0                   
+  0000a  0c0003       MessageSend             literal-index=3  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  0000d  e1           PushLiteral             literal-index=1  ; 85
+  0000e  6a           Push0                   
+  0000f  0c0003       MessageSend             literal-index=3  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  00012  25           Concatenate             
+  00013  e2           PushLiteral             literal-index=2  ; 120
+  00014  6a           Push0                   
+  00015  0c0003       MessageSend             literal-index=3  ; event("syso","ntoc","TEXT",0x00001000,"shor",0x00000000) ASCII character
+  00018  25           Concatenate             
+  00019  45           GetData                 
+  0001a  b1           PopVariable             variable-index=1  ; "builtText"
+  0001b  4f           StoreResult             
+  0001c  a0           PushVariable            variable-index=0  ; "numericValues"
+  0001d  a1           PushVariable            variable-index=1  ; "builtText"
+  0001e  6c           Push2                   
+  0001f  76           MakeVector              
+  00020  0f           Return                  
+  00021  0f           Return                  

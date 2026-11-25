@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"emptyTryProbe\"",
+      "arguments": "[]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 20,
+          "mnemonic": "ErrorHandler",
+          "raw_hex": "140008",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 9
+            }
+          ]
+        },
+        {
+          "offset": 3,
+          "opcode": 107,
+          "mnemonic": "Push1",
+          "raw_hex": "6b"
+        },
+        {
+          "offset": 4,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 5,
+          "opcode": 30,
+          "mnemonic": "Add",
+          "raw_hex": "1e"
+        },
+        {
+          "offset": 6,
+          "opcode": 87,
+          "mnemonic": "EndErrorHandler",
+          "raw_hex": "570008",
+          "operands": [
+            {
+              "kind": "branch-target",
+              "value": 15
+            }
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 88,
+          "mnemonic": "HandleError",
+          "raw_hex": "5800000001",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            },
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "nil",
+            "[]"
+          ]
+        },
+        {
+          "offset": 14,
+          "opcode": 104,
+          "mnemonic": "PushUndefined",
+          "raw_hex": "68"
+        },
+        {
+          "offset": 15,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

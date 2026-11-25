@@ -1,0 +1,31 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  140011       ErrorHandler            branch-target=0x12
+  00003  29           PushMe                  
+  00004  e0           PushLiteral             literal-index=0  ; constant(0x6572726e) 'errn' number
+  00005  e1           PushLiteral             literal-index=1  ; 42
+  00006  e2           PushLiteral             literal-index=2  ; constant(0x70746c72) 'ptlr' partial result
+  00007  e3           PushLiteral             literal-index=3  ; "partial"
+  00008  e4           PushLiteral             literal-index=4  ; constant(0x65726f62) 'erob' from
+  00009  e5           PushLiteral             literal-index=5  ; "source"
+  0000a  e6           PushLiteral             literal-index=6  ; constant(0x65727274) 'errt' to
+  0000b  e7           PushLiteral             literal-index=7  ; "target"
+  0000c  e8           PushLiteral             literal-index=8  ; 8
+  0000d  e9           PushLiteral             literal-index=9  ; "original"
+  0000e  15           Error                   
+  0000f  570013       EndErrorHandler         branch-target=0x23
+  00012  58000a000b   HandleError             literal-index=10, literal-index=11  ; "messageText", binding(constant(0x6572726e),...)
+  00017  29           PushMe                  
+  00018  e0           PushLiteral             literal-index=0  ; constant(0x6572726e) 'errn' number
+  00019  a1           PushVariable            variable-index=1  ; "numberValue"
+  0001a  e2           PushLiteral             literal-index=2  ; constant(0x70746c72) 'ptlr' partial result
+  0001b  a2           PushVariable            variable-index=2  ; "partialValue"
+  0001c  e4           PushLiteral             literal-index=4  ; constant(0x65726f62) 'erob' from
+  0001d  a3           PushVariable            variable-index=3  ; "fromValue"
+  0001e  e6           PushLiteral             literal-index=6  ; constant(0x65727274) 'errt' to
+  0001f  a4           PushVariable            variable-index=4  ; "toValue"
+  00020  e8           PushLiteral             literal-index=8  ; 8
+  00021  a0           PushVariable            variable-index=0  ; "messageText"
+  00022  15           Error                   
+  00023  0f           Return                  

@@ -1,0 +1,180 @@
+--- words of two applications
+on t()
+    tell application "Finder"
+        set a to name of Finder window 1
+        tell application "System Events"
+            set b to name of process 1 whose frontmost = true
+            set c to home directory of current user
+        end tell
+        set d to name of home
+    end tell
+    return {a, b, c, d}
+end t
+--- tell me keeps the words
+on t()
+    tell application "Finder"
+        tell me
+            set a to Finder window 1
+            set b to home
+        end tell
+        tell current application
+            set c to home directory of (system info)
+        end tell
+    end tell
+    return {a, b, c}
+end t
+--- tell an object keeps the words
+on t(x)
+    tell application "System Events"
+        tell process "Finder"
+            tell x
+                set a to name of every UI element
+            end tell
+            set b to value of attribute "AXFocused" of window 1
+        end tell
+    end tell
+    return {a, b}
+end t
+--- raw codes where the words are not known
+on t(x)
+    set a to «class brow» 1 of x
+    set b to «constant ****icnv»
+    tell application "System Events"
+        set c to «class brow» 1 of x
+        set d to process 1
+    end tell
+    tell application x
+        set e to «class sdsk»
+    end tell
+    return {a, b, c, d, e}
+end t
+--- commands of another application
+on t(x)
+    tell application "Finder"
+        «event prcsclic» x
+        update x
+    end tell
+    tell x
+        «event fndrfupd» 1
+        display dialog "a"
+    end tell
+end t
+--- tell by identifier
+on t()
+    tell application id "com.apple.finder"
+        set a to name of Finder window 1
+        set b to home
+    end tell
+    tell application "/System/Library/CoreServices/Finder.app"
+        set c to startup disk
+    end tell
+    return {a, b, c, name of application id "com.apple.finder"}
+end t
+--- properties inside and outside a tell block
+on t(x)
+    tell application "Safari"
+        set a to properties of window 1
+    end tell
+    tell application "System Events"
+        set b to properties of x
+    end tell
+    set c to properties of x
+    set d to «class pALL» of x
+    tell application x
+        set e to «class pALL» of x
+        set f to class of item 1 of x
+    end tell
+    return {a, b, c, d, e, f}
+end t
+--- an application with script suites
+on t()
+    tell application "TextEdit"
+        set a to name of document 1
+        set b to paragraph 2 of text of document 1
+        set c to size of attribute run 1 of text of document 1
+        set d to properties of window 1
+        print document 1 with properties {copies:2, collating:true} without print dialog
+        make new document with properties {text:"a"}
+        return {a, b, c, d, color of word 1 of text of document 1, path of document 1}
+    end tell
+end t
+--- a class that is its own plural
+on t(x)
+    set a to text of x
+    set b to {styled text of x, Unicode text of x, every string of x}
+    set c to text of x as list
+    set d to count text of x
+    repeat with i in text of x
+        set e to i
+    end repeat
+    tell application "TextEdit"
+        set f to text of document 1
+        set g to every text
+        set h to text of every document whose name = "a"
+    end tell
+    tell application "Mail"
+        set j to {rich text of x, every paragraph of rich text of x}
+    end tell
+    tell x
+        set k to every text
+    end tell
+    return {a, b, c, d, e, f, g, h, j, k}
+end t
+--- the property with the code of a class that is its own plural
+on t(x)
+    return {«property ctxt» of x, «property ctxt», text of x}
+end t
+--- use application
+use application "Finder"
+
+on t()
+    set a to name of Finder window 1 of application "Finder"
+    set b to home
+    tell application "Finder"
+        update b
+    end tell
+    tell application "Safari"
+        set c to URL of document 1
+        set d to startup disk of application "Finder"
+    end tell
+    tell current application
+        set e to name of home
+    end tell
+    return {a, b, c, d, e}
+end t
+--- use two applications
+use application "System Events"
+use application id "com.apple.finder"
+
+on t(x)
+    set a to name of UI element 1 of application "System Events"
+    set b to home directory of application "System Events"
+    set c to name of Finder window 1 of application id "com.apple.finder"
+    set d to «class cfol» 1 of x
+    tell application "Finder"
+        set e to folder 1
+    end tell
+    return {a, b, c, d, e}
+end t
+--- use lines without scripting additions
+use AppleScript version "2.4"
+use framework "Foundation"
+
+on t(x)
+    set a to «event sysoexec» "ls" with «class badm»
+    «event sysodlog» "a" given «class btns»:{"x"}
+    set b to POSIX file of x
+    tell application "Finder"
+        set c to «event sysoexec» name of home
+    end tell
+    return {a, b, c}
+end t
+--- use lines with scripting additions
+use framework "Foundation"
+use scripting additions
+
+on t(x)
+    set a to do shell script "ls" with administrator privileges
+    display dialog "a" buttons {"x"}
+    return a
+end t

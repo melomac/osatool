@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "fas_version": "1.10",
+  "functions": [
+    {
+      "offset": 2,
+      "name": "\"booleanArguments\"",
+      "arguments": "[]",
+      "instructions": [
+        {
+          "offset": 0,
+          "opcode": 224,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e0",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 0
+            }
+          ],
+          "annotations": [
+            "\"secret\""
+          ]
+        },
+        {
+          "offset": 1,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x68747874) 'htxt' hidden answer"
+          ]
+        },
+        {
+          "offset": 2,
+          "opcode": 101,
+          "mnemonic": "PushTrue",
+          "raw_hex": "65"
+        },
+        {
+          "offset": 3,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 4,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0002",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "event(\"syso\",\"dlog\",\"askr\",0x00000000,\"TEXT\",0x00000000) display dialog"
+          ]
+        },
+        {
+          "offset": 7,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 8,
+          "opcode": 227,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e3",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 3
+            }
+          ],
+          "annotations": [
+            "\"visible\""
+          ]
+        },
+        {
+          "offset": 9,
+          "opcode": 225,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e1",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 1
+            }
+          ],
+          "annotations": [
+            "constant(0x68747874) 'htxt' hidden answer"
+          ]
+        },
+        {
+          "offset": 10,
+          "opcode": 102,
+          "mnemonic": "PushFalse",
+          "raw_hex": "66"
+        },
+        {
+          "offset": 11,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 12,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0002",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 2
+            }
+          ],
+          "annotations": [
+            "event(\"syso\",\"dlog\",\"askr\",0x00000000,\"TEXT\",0x00000000) display dialog"
+          ]
+        },
+        {
+          "offset": 15,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 16,
+          "opcode": 228,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e4",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 4
+            }
+          ],
+          "annotations": [
+            "\"true\""
+          ]
+        },
+        {
+          "offset": 17,
+          "opcode": 229,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e5",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "constant(0x6261646d) 'badm' administrator privileges"
+          ]
+        },
+        {
+          "offset": 18,
+          "opcode": 101,
+          "mnemonic": "PushTrue",
+          "raw_hex": "65"
+        },
+        {
+          "offset": 19,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 20,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0006",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "event(\"syso\",\"exec\",\"TEXT\",0xffff8000,\"TEXT\",0x00000000) do shell script"
+          ]
+        },
+        {
+          "offset": 23,
+          "opcode": 79,
+          "mnemonic": "StoreResult",
+          "raw_hex": "4f"
+        },
+        {
+          "offset": 24,
+          "opcode": 231,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e7",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 7
+            }
+          ],
+          "annotations": [
+            "\"true\""
+          ]
+        },
+        {
+          "offset": 25,
+          "opcode": 229,
+          "mnemonic": "PushLiteral",
+          "raw_hex": "e5",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 5
+            }
+          ],
+          "annotations": [
+            "constant(0x6261646d) 'badm' administrator privileges"
+          ]
+        },
+        {
+          "offset": 26,
+          "opcode": 102,
+          "mnemonic": "PushFalse",
+          "raw_hex": "66"
+        },
+        {
+          "offset": 27,
+          "opcode": 108,
+          "mnemonic": "Push2",
+          "raw_hex": "6c"
+        },
+        {
+          "offset": 28,
+          "opcode": 12,
+          "mnemonic": "MessageSend",
+          "raw_hex": "0c0006",
+          "operands": [
+            {
+              "kind": "literal-index",
+              "value": 6
+            }
+          ],
+          "annotations": [
+            "event(\"syso\",\"exec\",\"TEXT\",0xffff8000,\"TEXT\",0x00000000) do shell script"
+          ]
+        },
+        {
+          "offset": 31,
+          "opcode": 15,
+          "mnemonic": "Return",
+          "raw_hex": "0f"
+        }
+      ]
+    }
+  ]
+}

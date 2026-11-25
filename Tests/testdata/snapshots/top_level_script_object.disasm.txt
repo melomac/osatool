@@ -1,0 +1,29 @@
+FAS 1.10
+
+function[3] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments="argv"
+  00000  140015       ErrorHandler            branch-target=0x16
+  00003  a0           PushVariable            variable-index=0  ; "argv"
+  00004  e0           PushLiteral             literal-index=0  ; constant(0x636f626a) 'cobj' item
+  00005  6b           Push1                   
+  00006  2f           MakeObjectAlias           ; index
+  00007  45           GetData                 
+  00008  d1           PopGlobal               literal-index=1  ; "visitor"
+  00009  4f           StoreResult             
+  0000a  6200010000   PushParentVariable      parent-depth=1, variable-index=0  ; "main"
+  0000f  6a           Push0                   
+  00010  0c0002       MessageSend             literal-index=2  ; event("aevt","oapp","null",0x00008000,"****",0x00009000) run
+  00013  570008       EndErrorHandler         branch-target=0x1c
+  00016  5800030004   HandleError             literal-index=3, literal-index=4  ; nil, []
+  0001b  68           PushUndefined           
+  0001c  0f           Return                  
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil owner="main" path=root[2].vector[4][2]
+  00000  e0           PushLiteral             literal-index=0  ; "hello "
+  00001  a0           PushVariable            variable-index=0  ; "visitor"
+  00002  25           Concatenate             
+  00003  45           GetData                 
+  00004  b1           PopVariable             variable-index=1  ; "greeting"
+  00005  4f           StoreResult             
+  00006  a1           PushVariable            variable-index=1  ; "greeting"
+  00007  0f           Return                  
+  00008  0f           Return                  

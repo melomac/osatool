@@ -1,0 +1,442 @@
+--- display dialog forms
+on t(x)
+    display dialog x
+    display dialog x buttons {"A", "B"} default button 1
+    display dialog x default answer "" with hidden answer
+    display dialog x with title "T" with icon caution giving up after 5
+    display dialog x buttons {"OK"} default button "OK" cancel button "OK" with icon stop
+    display dialog x with icon note without hidden answer
+    set r to display dialog "q" default answer "a"
+    return {button returned of r, text returned of r, gave up of r}
+end t
+--- display dialog result inline
+on t(x)
+    set a to text returned of (display dialog x default answer "")
+    set b to button returned of (display dialog x buttons {"Y", "N"})
+    if button returned of (display dialog x) is "OK" then return a
+    return b
+end t
+--- display alert and notification
+on t(x)
+    display alert x
+    display alert x message "m" as critical buttons {"A", "B"} default button "B" giving up after 3
+    display notification x
+    display notification x with title "T" subtitle "S" sound name "Glass"
+end t
+--- choose commands
+on t(x)
+    set a to choose from list x
+    set b to choose from list x with prompt "p" default items {1} with multiple selections allowed and empty selection allowed
+    set c to choose file
+    set d to choose file with prompt "p" of type {"txt"} default location (path to desktop) with invisibles without multiple selections allowed
+    set e to choose folder with prompt "p"
+    set f to choose file name with prompt "p" default name "n"
+    set g to choose color default color {0, 0, 0}
+    set h to choose application
+    return {a, b, c, d, e, f, g, h}
+end t
+--- do shell script forms
+on t(x)
+    set a to do shell script x
+    set b to do shell script "echo " & quoted form of x
+    set c to do shell script x with administrator privileges
+    set d to do shell script x user name "u" password "p" with administrator privileges
+    set e to do shell script x without altering line endings
+    do shell script "true"
+    return {a, b, c, d, e, paragraphs of (do shell script x)}
+end t
+--- path to forms
+on t()
+    return {path to desktop, path to home folder, path to me, path to desktop folder from user domain, path to library folder from user domain as text, path to temporary items, (path to documents folder) as text, POSIX path of (path to me), path to application "Finder", path to resource "a.txt", path to frontmost application as text}
+end t
+--- file io
+on t(p, x)
+    set f to open for access file p with write permission
+    set eof of f to 0
+    write x to f
+    write x to f starting at eof
+    write x to f as «class utf8»
+    close access f
+    set r to read file p
+    set s to read file p as «class utf8» using delimiter linefeed
+    set u to read f from 1 to 10
+    set e to get eof f
+    return {r, s, u, e}
+end t
+--- info and list
+on t(p)
+    set i to info for p
+    set l to list folder p without invisibles
+    set d to list disks
+    return {size of i, name of i, folder of i, l, d, system info, system attribute "sysv"}
+end t
+--- misc additions
+on t(x)
+    beep
+    beep 2
+    delay 1
+    delay 0.5
+    say x
+    say x using "Alex"
+    set a to random number
+    set b to random number from 1 to 10
+    set c to round x
+    set d to current date
+    set e to time to GMT
+    set f to ASCII number x
+    set g to ASCII character 65
+    set h to the clipboard
+    set the clipboard to x
+    set i to clipboard info
+    set j to offset of "a" in x
+    set k to summarize x in 1
+    set l to localized string x
+    return {a, b, c, d, e, f, g, h, i, j, k, l}
+end t
+--- log and comments
+on t(x)
+    log x
+    log "a" & x
+    log {x, x}
+    -- a comment
+    (* a block comment *)
+    return x -- trailing
+end t
+--- open location and url
+on t(u)
+    open location u
+    open location u with error reporting
+    return do shell script "curl " & quoted form of u
+end t
+--- run and launch
+on t(n)
+    launch application n
+    activate application n
+    tell application n to activate
+    tell application n to quit
+    tell application n to launch
+    tell application n
+        activate
+        reopen
+        quit saving no
+    end tell
+    return running of application n
+end t
+--- is running
+on t()
+    if application "Finder" is running then return 1
+    if application "Safari" is not running then return 2
+    if running of application "Finder" then return 3
+    return {application "Finder" is running, not (application "Finder" is running)}
+end t
+--- tell to one liners
+on t(n)
+    tell application "Finder" to set a to name of startup disk
+    tell application "Finder" to return {a, name of desktop}
+end t
+--- tell blocks nested apps
+on t(n)
+    tell application "Finder"
+        set a to name of startup disk
+        tell application "System Events"
+            set b to name of first process
+        end tell
+        set c to a & b
+    end tell
+    return c
+end t
+--- tell variable application
+on t(n)
+    tell application n
+        activate
+        set a to name
+        set b to its name
+        set c to name of it
+        set d to version
+    end tell
+    return {a, b, c, d}
+end t
+--- tell by id and path
+on t()
+    tell application id "com.apple.finder" to set a to name
+    tell application "/System/Library/CoreServices/Finder.app" to set b to name
+    return {a, b}
+end t
+--- using terms from
+on t(n)
+    using terms from application "Finder"
+        tell application n
+            set a to name of startup disk
+        end tell
+    end using terms from
+    return a
+end t
+--- tell me and it
+on t(x)
+    tell me
+        set a to name
+    end tell
+    tell x
+        set b to length
+        set c to its length
+        set d to item 1
+        set e to (length of it) + 1
+    end tell
+    tell x to set f to class
+    return {a, b, c, d, e, f}
+end t
+--- tell current application
+on t()
+    tell current application
+        set a to name
+        set b to (path to desktop)
+    end tell
+    return {a, b}
+end t
+--- system events keystrokes
+on t(x)
+    tell application "System Events"
+        keystroke x
+        keystroke "a" using command down
+        keystroke "b" using {command down, shift down}
+        key code 36
+        key code 123 using {option down}
+        click button 1 of window 1 of process x
+        set frontmost of process x to true
+        return name of first process whose frontmost is true
+    end tell
+end t
+--- finder commands
+on t(p)
+    tell application "Finder"
+        open p
+        reveal p
+        select p
+        set a to selection
+        set b to (selection as alias list)
+        set c to POSIX path of (p as alias)
+        set d to name of p
+        set e to container of p
+        set f to (target of front window) as alias
+        empty trash
+        eject disk "x"
+        update p
+        return {a, b, c, d, e, f, sort (files of desktop) by name}
+    end tell
+end t
+--- commands with direct parameters as specifiers
+on t(p)
+    tell application "Finder"
+        open file "a" of desktop
+        open every file of desktop
+        duplicate file "a" of desktop to folder "b" of desktop
+        move (every file of desktop whose name ends with ".tmp") to trash
+        set name of file "a" of desktop to "c"
+        set label index of every file of desktop to 0
+        count files of desktop
+        exists file "a" of desktop
+        get name of every file of desktop
+    end tell
+end t
+--- quit and cancel errors
+on t(x)
+    try
+        display dialog x
+    on error number -128
+        return "cancelled"
+    end try
+    try
+        error number -128
+    on error number n
+        if n is -128 then return 1
+    end try
+end t
+--- string commands
+on t(x)
+    return {quoted form of x, POSIX path of x, x as POSIX file, id of x, character id 65, string id {72, 105}, text of x, contents of x, do shell script "echo " & quoted form of (POSIX path of x)}
+end t
+--- current application and me in commands
+on t()
+    return {path to current application, path to me, name of me, (path to me) as text, name of current application, id of me, version of current application}
+end t
+--- count and length in commands
+on t(x)
+    repeat with i from 1 to count of x
+        log item i of x
+    end repeat
+    repeat with i from 1 to (count x)
+        log item i of x
+    end repeat
+    repeat with i from 1 to length of x
+        log item i of x
+    end repeat
+    repeat with i from 1 to (number of items in x)
+        log item i of x
+    end repeat
+end t
+--- set many kinds
+on t(x)
+    set a to 1
+    set b to a
+    set c to {a, b}
+    set d to c's item 1
+    set item 1 of c to d
+    set {e, f} to c
+    copy c to g
+    set h to c as text
+    set i to missing value
+    set j to x's length
+    set k to length of x
+    tell x to set l to length
+    return {a, b, c, d, e, f, g, h, i, j, k, l}
+end t
+--- copy forms
+on t(x)
+    copy x to a
+    copy {1, 2} to b
+    copy x to item 1 of b
+    copy x & x to c
+    copy (item 1 of x) to d
+    copy a to {e, f}
+    copy x to end of b
+    put x into g
+    return {a, b, c, d, e, f, g}
+end t
+--- coercion given to a command
+on t(x, y)
+    do shell script (x as text)
+    set a to (do shell script x) as text
+    set b to do shell script x as text
+    write (x as text) to y
+    write x to (y as alias)
+    display alert (x as text)
+    set c to path to (x as text)
+    log (x as text)
+    return {a, b, c, count of (x as list)}
+end t
+--- raw event with raw labels
+on t(v)
+    tell v
+        «event abcdefgh» 2 given «class rtyp»:text
+        «event abcdefgh» 2 given «class kfil»:v, name:v
+        «event abcdefgh» with «class flag» without «class nope»
+    end tell
+end t
+--- name between bars with a backslash
+on t()
+    set |a\\b| to 1
+    set |a b| to 2
+    return {|a\\b|, |a b|}
+end t
+--- name that is the ending of an ordinal
+on t(|st|, |nd|)
+    set |rd| to |st| + |nd|
+    set |th| to |rd| * 2
+    return {|st|, |nd|, |rd|, |th|}
+end t
+--- name that is the first word of a keyword
+on t(start, contained, |Begin|)
+    display dialog start
+    display dialog |start| with icon 1
+    display dialog "a" & |Begin| with icon 1
+    repeat with i from 1 to |contained| by 2
+    end repeat
+    lab of |start| with flag
+    return {start, contained, |Begin|}
+end t
+
+on lab of x given flag:b
+end lab
+--- name that is the first word of a preposition
+on t(y, |info|)
+    repeat with |apart| from 1 to 2
+    end repeat
+    repeat with |aside| from |apart| to 3
+    end repeat
+    read |info| for 10
+    return {|instead| of y, |out| of y, item |out| of y, out, info}
+end t
+--- name that joins the next word in a handler header
+on lab2 from |contained| by y
+    return y
+end lab2
+
+on |contained| by y
+    return y
+end |contained|
+
+on lab3 of |contained| by y
+    return y
+end lab3
+
+on |out| of x by y
+    return x
+end |out|
+
+on adding folder items to |comes| after receiving x
+    return {|comes|, x}
+end adding folder items to
+
+on t(|info|, x)
+    lab2 from |contained| by 2
+    lab4 of |info| for x
+    |out| of x by 1
+    try
+        x
+    on error |aside| from f
+    end try
+end t
+
+on lab4 of a for b
+end lab4
+--- using terms from inside a block and with nothing in it
+on t(x)
+    if x then
+        using terms from application "Finder"
+            set m to 1
+            set n to 2
+        end using terms from
+    end if
+    using terms from application "Finder"
+        using terms from application "Mail"
+            set o to 3
+        end using terms from
+    end using terms from
+end t
+
+on u()
+    using terms from application "Finder"
+    end using terms from
+end u
+--- using terms from scripting additions
+on t()
+    using terms from scripting additions
+        set m to 1
+    end using terms from
+end t
+--- using terms from gives the words of a property of the target
+on t(x)
+    using terms from application "Finder"
+        tell x
+            return {startup disk, name of startup disk, desktop, home, trash, name of home}
+        end tell
+    end using terms from
+end t
+
+on u(x)
+    using terms from application "Finder"
+        tell x
+            open startup disk
+        end tell
+    end using terms from
+end u
+--- property of the target given by its code
+on t(x)
+    tell x
+        return {«property sdsk», name of «property sdsk», «class sdsk» of «property abcd», «class sdsk», «class abcd» of x}
+    end tell
+end t
+
+on u(x)
+    return «property sdsk»
+end u

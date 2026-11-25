@@ -1,0 +1,190 @@
+--- integers
+on t()
+    return {0, 1, -1, 42, 536870911, -5.36870912E+8, 1.073741823E+9, 2.147483647E+9, -2.147483648E+9, 4.294967296E+9, 1.0E+15}
+end t
+--- reals
+on t()
+    return {1.5, -0.25, 3.14159, 1.0E+10, 1.0E-10, 0.1, 100.0, 2500.0, 6.02E+23, -1.0E-3}
+end t
+--- strings
+on t()
+    return {"", "a", "two words", "tab\there", "line\nfeed", "return\rhere", "quote\"inside", "back\\slash", "é ü ñ", "日本語", "emoji 🎉"}
+end t
+--- booleans and missing
+on t()
+    return {true, false, missing value, null}
+end t
+--- text constants
+on t()
+    return {space, tab, return, linefeed, quote, pi, missing value}
+end t
+--- text constants in concatenation
+on t(x)
+    return x & return & tab & x & space & quote & linefeed
+end t
+--- nested lists
+on t()
+    return {{}, {1}, {1, {2, {3, {4}}}}, {{}, {{}}}, {"a", 1, true, 1.5, missing value}}
+end t
+--- records keyword labels
+on t()
+    return {name:"n", id:1, class:"c", length:2, size:3, color:{0, 0, 0}, bounds:{1, 2, 3, 4}, index:1, version:"1"}
+end t
+--- records user labels
+on t()
+    return {alpha:1, beta:"two", gammaValue:{nested:true, deeper:{deepest:0}}, |with space|:3, |end|:4}
+end t
+--- record mixed
+on t(x)
+    return {name:x, alpha:x, visible:true, |my key|:x}
+end t
+--- empty record like
+on t()
+    set r to {}
+    return r
+end t
+--- classes as values
+on t()
+    return {integer, real, text, string, list, record, boolean, date, number, class, alias, file, script, application, item, character, word, paragraph, data, constant, handler, reference, Unicode text, POSIX file, RGB color, centimeters, inches}
+end t
+--- class comparisons
+on t(x)
+    return {class of x = integer, class of x = text, class of x ≠ list, {integer, real} contains class of x}
+end t
+--- raw data
+on t()
+    return «data rdat48656C6C6F»
+end t
+--- raw class and constant
+on t()
+    return {«class abcd», «constant ****efgh», «class utf8», «class furl»}
+end t
+--- months and weekdays
+on t()
+    return {January, February, December, Monday, Sunday, Jan, Mon}
+end t
+--- time constants
+on t()
+    return {minutes, hours, days, weeks, 2 * hours + 30 * minutes}
+end t
+--- current date
+on t()
+    set d to current date
+    return {year of d, month of d, day of d, weekday of d, time of d, hours of d, minutes of d, seconds of d, date string of d, time string of d, short date string of d}
+end t
+--- posix file literal
+on t()
+    return {POSIX file "/tmp" of me, POSIX path of (path to home folder), "/tmp" as POSIX file}
+end t
+--- file and alias specifiers
+on t(p)
+    return {file p, alias p, file "a:b:c", POSIX file p}
+end t
+--- result variable
+on t(x)
+    x + 1
+    set a to result
+    x & "s"
+    return {a, result}
+end t
+--- me it my
+on t(x)
+    return {me, it, class of me, name of me, name of me, length of x, length of x}
+end t
+--- bar identifiers
+on t()
+    set |a b| to 1
+    set |name| to 2
+    set |item| to 3
+    set |end| to 4
+    return {|a b|, |name|, |item|, |end|}
+end t
+--- identifier cases
+on t()
+    set camelCase to 1
+    set with_underscore to 2
+    set x2 to 3
+    set UPPER to 4
+    return camelCase + with_underscore + x2 + UPPER
+end t
+--- text class forms
+on t(x)
+    return {x as text, x as string, x as Unicode text, x as «class utf8», x as list, x as integer, x as real, x as number, x as boolean, x as record, x as alias, x as date}
+end t
+--- coercion of literals
+on t()
+    return {"12" as integer, 12 as text, {1, 2} as text, "a" as list, 1.9 as integer, true as integer, 3 as real}
+end t
+--- units
+on t(x)
+    return {x as inches, x as centimeters, x as feet as meters, x as degrees Fahrenheit, x as kilograms, x as gallons, x as square meters}
+end t
+--- list of handlers
+on a()
+    return 1
+end a
+
+on t()
+    set f to a
+    return {f, a, class of a}
+end t
+--- script literal value
+on t()
+    script inner
+        property p : 1
+    end script
+    return {inner, p of inner, class of inner}
+end t
+--- application values
+on t()
+    return {application "Finder", application id "com.apple.finder", current application, name of current application}
+end t
+--- negative literals
+on t(x)
+    return {-1, -1.5, -x, x - 1, x - -1, x * -2, -(x + 1), -x ^ 2, 2 ^ -x}
+end t
+--- large and odd numbers
+on t()
+    return {1.0E+308, 1.0E-308, 0.0, 1.0, 1.23456789012E+11, 9.99999999999E+11, 0.5, 1.2345678E+4}
+end t
+--- string with special
+on t()
+    return {"«»", "|", "--", "(* *)", "¬", "{}", "a'b", "\"\"", "\\\\", "end tell"}
+end t
+--- data in list with text
+on t(x)
+    return {x, {x}, {x, x}, {{x}}, {a:x}, {a:{x}}, {{a:x}}}
+end t
+--- class of a constant
+on t()
+    set a to class of "x"
+    set b to class of class of "x"
+    if class of 5 = integer then
+        set a to class of 1.5
+    end if
+    return {a, b, class of true, class of missing value, class of text, class of "x" as text}
+end t
+--- reference to the class of a constant in a property
+property p : a reference to class of "x"
+
+on t()
+    return {p, a reference to class of 5}
+end t
+--- references kept in properties
+property q : 5
+property p : {1, 2}
+property r : a reference to q
+property s : a reference to item 1 of p
+property t : a reference to length of p
+property u : a reference to every item of {1, 2}
+property v : a reference to items 1 thru 2 of {1, 2, 3}
+property w : a reference to some item of {1, 2}
+property x : a reference to middle item of {1, 2, 3}
+
+script inner
+    property a : 1
+    property b : a reference to a
+    property c : a reference to q
+end script
+
+property y : a reference to a of inner

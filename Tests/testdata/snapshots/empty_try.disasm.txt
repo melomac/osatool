@@ -1,0 +1,11 @@
+FAS 1.10
+
+function[2] "emptyTryProbe" arguments=[]
+  00000  140008       ErrorHandler            branch-target=0x9
+  00003  6b           Push1                   
+  00004  6c           Push2                   
+  00005  1e           Add                     
+  00006  570008       EndErrorHandler         branch-target=0xf
+  00009  5800000001   HandleError             literal-index=0, literal-index=1  ; nil, []
+  0000e  68           PushUndefined           
+  0000f  0f           Return                  

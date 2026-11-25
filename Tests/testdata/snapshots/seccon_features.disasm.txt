@@ -1,0 +1,75 @@
+FAS 1.10
+
+function[5] "secconFeatureProbe" arguments=vector(type=4,len=2)
+  00000  e0           PushLiteral             literal-index=0  ; pair(constant(0x636f6e736e756d65),...)
+  00001  67           PushEmpty               
+  00002  13004e       Consider                branch-target=0x51
+  00005  e1           PushLiteral             literal-index=1  ; 10
+  00006  6e           BeginTimeout            
+  00007  6a           Push0                   
+  00008  76           MakeVector              
+  00009  45           GetData                 
+  0000a  b1           PopVariable             variable-index=1  ; "originalValues"
+  0000b  4f           StoreResult             
+  0000c  a1           PushVariable            variable-index=1  ; "originalValues"
+  0000d  45           GetData                 
+  0000e  51           Clone                   
+  0000f  b2           PopVariable             variable-index=2  ; "clonedValues"
+  00010  4f           StoreResult             
+  00011  e2           PushLiteral             literal-index=2  ; 17
+  00012  e3           PushLiteral             literal-index=3  ; 5
+  00013  22           Quotient                
+  00014  45           GetData                 
+  00015  b3           PopVariable             variable-index=3  ; "quotientValue"
+  00016  4f           StoreResult             
+  00017  a0           PushVariable            variable-index=0  ; "candidate"
+  00018  e4           PushLiteral             literal-index=4  ; "A"
+  00019  06           StartsWith              
+  0001a  45           GetData                 
+  0001b  b4           PopVariable             variable-index=4  ; "startsCorrectly"
+  0001c  4f           StoreResult             
+  0001d  a0           PushVariable            variable-index=0  ; "candidate"
+  0001e  e5           PushLiteral             literal-index=5  ; "Z"
+  0001f  07           EndsWith                
+  00020  45           GetData                 
+  00021  b5           PopVariable             variable-index=5  ; "endsCorrectly"
+  00022  4f           StoreResult             
+  00023  29           PushMe                  
+  00024  e6           PushLiteral             literal-index=6  ; constant(0x63686120) 'cha ' character
+  00025  e7           PushLiteral             literal-index=7  ; 65
+  00026  e8           PushLiteral             literal-index=8  ; constant(0x6b66726d49442020) 'kfrmID  '
+  00027  30           MakeObjectAlias           ; key
+  00028  45           GetData                 
+  00029  b6           PopVariable             variable-index=6  ; "generatedCharacter"
+  0002a  4f           StoreResult             
+  0002b  e9           PushLiteral             literal-index=9  ; constant(0x6d69736363757261) 'misccura' current application
+  0002c  ea           PushLiteral             literal-index=10  ; "NSString"
+  0002d  2c           MakeObjectAlias           ; property
+  0002e  a0           PushVariable            variable-index=0  ; "candidate"
+  0002f  6b           Push1                   
+  00030  2b000b       PositionalMessageSend   literal-index=11  ; "stringWithString_"
+  00033  45           GetData                 
+  00034  b7           PopVariable             variable-index=7  ; "nsValue"
+  00035  4f           StoreResult             
+  00036  a7           PushVariable            variable-index=7  ; "nsValue"
+  00037  6a           Push0                   
+  00038  2b000c       PositionalMessageSend   literal-index=12  ; "length"
+  0003b  45           GetData                 
+  0003c  b8           PopVariable             variable-index=8  ; "objectiveCLength"
+  0003d  4f           StoreResult             
+  0003e  a2           PushVariable            variable-index=2  ; "clonedValues"
+  0003f  a3           PushVariable            variable-index=3  ; "quotientValue"
+  00040  a4           PushVariable            variable-index=4  ; "startsCorrectly"
+  00041  a5           PushVariable            variable-index=5  ; "endsCorrectly"
+  00042  a6           PushVariable            variable-index=6  ; "generatedCharacter"
+  00043  a8           PushVariable            variable-index=8  ; "objectiveCLength"
+  00044  6200010002   PushParentVariable      parent-depth=1, variable-index=2  ; "namedValues"
+  00049  ed           PushLiteral             literal-index=13  ; "alpha"
+  0004a  2c           MakeObjectAlias           ; property
+  0004b  45           GetData                 
+  0004c  ee           PushLiteral             literal-index=14  ; 7
+  0004d  76           MakeVector              
+  0004e  0f           Return                  
+  0004f  6f           EndTimeout              
+  00050  56           EndConsider             
+  00051  0f           Return                  

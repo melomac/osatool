@@ -1,0 +1,18 @@
+FAS 1.10
+
+function[2] "errorProbe" arguments=[]
+  00000  14000b       ErrorHandler            branch-target=0xc
+  00003  29           PushMe                  
+  00004  e0           PushLiteral             literal-index=0  ; constant(0x6572726e) 'errn' number
+  00005  e1           PushLiteral             literal-index=1  ; 42
+  00006  6c           Push2                   
+  00007  e2           PushLiteral             literal-index=2  ; "boom"
+  00008  15           Error                   
+  00009  57000c       EndErrorHandler         branch-target=0x16
+  0000c  5800030004   HandleError             literal-index=3, literal-index=4  ; "errMsg", binding(constant(0x6572726e),...)
+  00011  a0           PushVariable            variable-index=0  ; "errMsg"
+  00012  a1           PushVariable            variable-index=1  ; "errNum"
+  00013  6c           Push2                   
+  00014  76           MakeVector              
+  00015  0f           Return                  
+  00016  0f           Return                  

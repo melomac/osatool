@@ -1,0 +1,207 @@
+--- use foundation basics
+use framework "Foundation"
+use scripting additions
+
+on t(x)
+    set s to current application's NSString's stringWithString:x
+    set u to s's uppercaseString()
+    set l to (s's |length|()) as integer
+    return {u as text, l}
+end t
+--- objc class and alloc init
+use framework "Foundation"
+use scripting additions
+
+on t(x)
+    set a to current application's NSMutableArray's alloc()'s init()
+    a's addObject:x
+    a's insertObject:x atIndex:0
+    set d to current application's NSMutableDictionary's dictionary()
+    d's setObject:x forKey:"k"
+    set v to d's objectForKey:"k"
+    set w to (d's valueForKey:"k") as text
+    return {a as list, v, w, a's |count|()}
+end t
+--- objc nested calls
+use framework "Foundation"
+use scripting additions
+
+on t(p)
+    set u to current application's NSURL's fileURLWithPath:p
+    set n to (u's lastPathComponent()) as text
+    set e to (u's URLByDeletingLastPathComponent()'s |path|()) as text
+    set f to current application's NSFileManager's defaultManager()
+    set ok to (f's fileExistsAtPath:p) as boolean
+    set {r, err} to f's contentsOfDirectoryAtPath:p |error|:(reference)
+    if r is missing value then error (err's localizedDescription() as text)
+    return {n, e, ok, r as list}
+end t
+--- objc constants and enums
+use framework "Foundation"
+use framework "AppKit"
+use scripting additions
+
+on t(x)
+    set a to current application's NSUTF8StringEncoding
+    set b to current application's NSNotFound
+    set c to current application's NSString's alloc()'s initWithData:x encoding:(current application's NSUTF8StringEncoding)
+    set d to current application's NSPasteboard's generalPasteboard()
+    set e to (current application's NSScreen's mainScreen()'s frame())
+    set f to current application's NSMakeRange(0, 5)
+    set g to current application's NSMakeRect(0, 0, 10, 10)
+    return {a, b, c, d, e, f, g, missing value}
+end t
+--- objc properties
+use framework "Foundation"
+use scripting additions
+
+property NSString : a reference to current application's NSString
+property NSArray : a reference to current application's NSArray
+
+on t(x)
+    set s to NSString's stringWithString:x
+    set a to NSArray's arrayWithArray:{1, 2}
+    set p to current application's NSProcessInfo's processInfo()
+    return {s, a, p's environment(), p's processIdentifier(), p's arguments() as list}
+end t
+--- objc tell and my
+use framework "Foundation"
+use scripting additions
+
+on t(x)
+    tell current application's NSString
+        set s to its stringWithString:x
+    end tell
+    set r to my helper:x withOther:1
+    set q to my simple()
+    return {s, r, q}
+end t
+
+on helper:a withOther:b
+    return a
+end helper:withOther:
+
+on simple()
+    return 1
+end simple
+--- objc interleaved handler definitions
+use framework "Foundation"
+
+on doSomething:sender
+    return sender
+end doSomething:
+
+on tableView:tv objectValueForTableColumn:col row:r
+    return r
+end tableView:objectValueForTableColumn:row:
+
+on applicationShouldTerminate:sender
+    return current application's NSTerminateNow
+end applicationShouldTerminate:
+--- objc class script
+use framework "Foundation"
+use scripting additions
+
+script AppDelegate
+    property parent : class "NSObject"
+    property theWindow : missing value
+    property counter : 0
+
+    on applicationWillFinishLaunching:aNotification
+        set counter to 1
+    end applicationWillFinishLaunching:
+
+    on buttonClicked:sender
+        set counter to counter + 1
+        theWindow's setTitle:("n " & counter)
+    end buttonClicked:
+end script
+--- objc chained and arguments
+use framework "Foundation"
+use scripting additions
+
+on t(x, y)
+    set s to current application's NSString's stringWithFormat_("%@ %@", x, y)
+    set u to (current application's NSString's stringWithString:x)'s stringByAppendingString:y
+    set v to ((current application's NSString's stringWithString:x)'s stringByReplacingOccurrencesOfString:"a" withString:"b")
+    set w to (current application's NSArray's arrayWithArray:{x, y})'s componentsJoinedByString:", "
+    set z to (s's isEqualToString:u) as boolean
+    return {s as text, u as text, v as text, w as text, z}
+end t
+--- objc in conditions and loops
+use framework "Foundation"
+use scripting additions
+
+on t(x)
+    set a to current application's NSMutableArray's array()
+    repeat with e in x
+        if (e's isKindOfClass:(current application's NSString)) as boolean then
+            a's addObject:(e's uppercaseString())
+        else if e is missing value then
+            a's addObject:(current application's NSNull's |null|())
+        end if
+    end repeat
+    repeat with i from 0 to (a's |count|()) - 1
+        log ((a's objectAtIndex:i) as text)
+    end repeat
+    return a as list
+end t
+--- use application
+use application "Finder"
+
+on t()
+    return name of startup disk
+end t
+--- use with version
+use AppleScript version "2.4"
+use scripting additions
+use framework "Foundation"
+
+on t(x)
+    return x
+end t
+--- scripting additions inside tell with use
+use scripting additions
+
+on t(x)
+    tell application "Finder"
+        display dialog x
+        set a to (path to desktop)
+        set b to do shell script "true"
+        set c to name of startup disk
+    end tell
+    return {a, b, c}
+end t
+--- no use scripting additions inside tell
+on t(x)
+    tell application "Finder"
+        display dialog x
+        set a to (path to desktop)
+        set c to name of startup disk
+    end tell
+    tell current application
+        set b to do shell script "true"
+    end tell
+    return {a, b, c}
+end t
+--- objc reference and missing value arguments
+use framework "Foundation"
+use scripting additions
+
+on t(p)
+    set {s, e} to current application's NSString's stringWithContentsOfFile:p encoding:(current application's NSUTF8StringEncoding) |error|:(reference)
+    set d to s's dataUsingEncoding:(current application's NSUTF8StringEncoding)
+    set j to current application's NSJSONSerialization's JSONObjectWithData:d options:0 |error|:(missing value)
+    return j as record
+end t
+--- colon labels that are words of the language
+on t(x)
+    x's foo:1 |data|:2
+    x's dictionaryWithObjects:1 forKeys:2 |count|:3
+    x's |open|:1
+    x's foo:|contained| |by|:2
+end t
+
+on foo:a |data|:b
+    return b
+end foo:|data|:

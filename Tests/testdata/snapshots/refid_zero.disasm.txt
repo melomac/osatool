@@ -1,0 +1,6 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; constant(0x6d736e67) 'msng' missing value
+  00001  0f           Return                  
+  00002  0f           Return                  

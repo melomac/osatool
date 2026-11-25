@@ -1,0 +1,27 @@
+FAS 1.10
+
+function[2] "loopProbe" arguments=[]
+  00000  6b           Push1                   
+  00001  45           GetData                 
+  00002  b0           PopVariable             variable-index=0  ; "x"
+  00003  4f           StoreResult             
+  00004  17001a       LinkRepeat              branch-target=0x1f
+  00007  68           PushUndefined           
+  00008  5a           Pop                     
+  00009  a0           PushVariable            variable-index=0  ; "x"
+  0000a  6c           Push2                   
+  0000b  02           GreaterThan             
+  0000c  1d0006       TestIf                  branch-target=0x13
+  0000f  16           Exit                    
+  00010  590003       Jump                    branch-target=0x14
+  00013  68           PushUndefined           
+  00014  4f           StoreResult             
+  00015  a0           PushVariable            variable-index=0  ; "x"
+  00016  6b           Push1                   
+  00017  1e           Add                     
+  00018  45           GetData                 
+  00019  b0           PopVariable             variable-index=0  ; "x"
+  0001a  5b           Dup                     
+  0001b  4f           StoreResult             
+  0001c  59ffeb       Jump                    branch-target=0x8
+  0001f  0f           Return                  

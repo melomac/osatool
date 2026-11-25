@@ -1,0 +1,64 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-26]
+        preview: [false]
+        include:
+          # macOS 27 with Xcode 27, a preview image until GitHub has a macos-27 label: its failures do not fail the run.
+          - os: xcode-27
+            preview: true
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.preview }}
+    timeout-minutes: 30
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
+    steps:
+      - uses: actions/checkout@v6
+
+      # The package asks for the Swift of .swift-version (see the first line of Package.swift).
+      # Xcode 27 has it. The Xcode of macOS 26 has an older Swift, so there the toolchain of
+      # swift.org is installed with swiftly, and its `swift` comes first in the PATH.
+      - name: Swift toolchain
+        run: |
+          wanted="$(cat .swift-version)"
+          if swift --version 2>&1 | grep -qF "Swift version ${wanted}"; then
+            echo "The Swift of Xcode is ${wanted}: nothing to install."
+            exit 0
+          fi
+          brew install swiftly
+          swiftly init --assume-yes --skip-install --no-modify-profile --quiet-shell-followup
+          swiftly install --assume-yes "${wanted}"
+          echo "${SWIFTLY_BIN_DIR:-$HOME/.swiftly/bin}" >> "$GITHUB_PATH"
+
+      - name: Versions
+        run: |
+          sw_vers
+          xcodebuild -version
+          swift --version
+
+      # The tests that read a folder of samples, and the ones that call osacompile or
+      # osadecompile, run only with OSATOOL_SAMPLES and OSATOOL_APPLE_TOOLS: not here.
+      - name: Build
+        run: swift build --build-tests
+
+      - name: Test
+        run: swift test --skip-build

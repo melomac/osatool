@@ -1,0 +1,13 @@
+FAS 1.10
+
+function[2] "recordProbe" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "host"
+  00001  45           GetData                 
+  00002  b0           PopVariable             variable-index=0  ; "hostName"
+  00003  4f           StoreResult             
+  00004  e1           PushLiteral             literal-index=1  ; "hostName"
+  00005  a0           PushVariable            variable-index=0  ; "hostName"
+  00006  6c           Push2                   
+  00007  0e           MakeRecord              
+  00008  0f           Return                  
+  00009  0f           Return                  

@@ -1,0 +1,505 @@
+--- script properties and handlers order
+script s
+    property a : 1
+    on f()
+        return a
+    end f
+    property b : 2
+    on g()
+        return b + f()
+    end g
+end script
+
+on t()
+    return s's g()
+end t
+--- script using outer handler and property
+property base : 10
+
+on helper(x)
+    return x + base
+end helper
+
+script worker
+    property factor : 2
+    on work(x)
+        return (my helper(x)) * factor
+    end work
+    on direct(x)
+        return helper(x)
+    end direct
+end script
+
+on t()
+    return {worker's work(1), worker's direct(2)}
+end t
+--- script with its and my
+script s
+    property n : 1
+    on f()
+        return {n, my n, its n, n of me, n of it}
+    end f
+    on g(n)
+        return {n, my n}
+    end g
+end script
+--- script object returned from handler with closure-like property
+on makeAdder(k)
+    script adder
+        property amount : k
+        on add(x)
+            return x + amount
+        end add
+    end script
+    return adder
+end makeAdder
+
+on t()
+    set add5 to makeAdder(5)
+    return add5's add(1)
+end t
+--- script in list and record
+script a
+    property v : 1
+end script
+
+script b
+    property v : 2
+end script
+
+on t()
+    set l to {a, b}
+    set r to {first_:a, second_:b}
+    return {v of item 1 of l, v of second_ of r, (item 2 of l)'s v}
+end t
+--- script parent chain
+script grand
+    property kind : "grand"
+    on who()
+        return kind
+    end who
+end script
+
+script parent_
+    property parent : grand
+    on who()
+        return "parent of " & (continue who())
+    end who
+end script
+
+script child
+    property parent : parent_
+    on who()
+        return "child of " & (continue who())
+    end who
+end script
+
+on t()
+    return child's who()
+end t
+--- script with run handler and properties
+script task
+    property done : false
+    property result_ : missing value
+    on run
+        set result_ to 42
+        set done to true
+        return result_
+    end run
+end script
+
+on t()
+    set r to run task
+    return {r, done of task, result_ of task}
+end t
+--- script handlers with labeled parameters
+script s
+    on carry from a to b
+        return {a, b}
+    end carry
+    on check of x given strict:f
+        return {x, f}
+    end check
+end script
+
+on t()
+    tell s
+        set a to carry from 1 to 2
+        set b to check of 3 with strict
+    end tell
+    return {a, b}
+end t
+--- tell script object blocks
+script s
+    property n : 0
+    on bump()
+        set n to n + 1
+    end bump
+end script
+
+on t()
+    tell s
+        bump()
+        bump()
+        set its n to (its n) * 2
+        set m to its n
+    end tell
+    tell s to bump()
+    return {m, s's n, n of s}
+end t
+--- globals between handlers
+global counter, names
+
+on setup()
+    set counter to 0
+    set names to {}
+end setup
+
+on add(n)
+    set counter to counter + 1
+    set end of names to n
+end add
+
+on run
+    setup()
+    add("a")
+    add("b")
+    return {counter, names}
+end run
+--- global declared in handlers only
+on setup()
+    global shared
+    set shared to 1
+end setup
+
+on use_()
+    global shared
+    return shared + 1
+end use_
+
+on run
+    setup()
+    return use_()
+end run
+--- local in run handler
+on run
+    local a, b
+    set a to 1
+    set b to a + 1
+    set c to b + 1
+    return {a, b, c}
+end run
+--- properties referencing each other
+property a : 2
+property b : a * 2
+property c : {a, b}
+property d : "x" & a
+property e : a > 1
+
+return {a, b, c, d, e}
+--- property with script value and handler value
+on helper()
+    return 1
+end helper
+
+script inner
+    property v : 5
+end script
+
+property s : inner
+property h : helper
+
+on t()
+    return {v of s, h}
+end t
+--- nested handlers access
+script outer
+    property x : 1
+    script inner
+        property y : 2
+        on both()
+            return {x, y, my y, x of outer}
+        end both
+    end script
+    on run
+        return inner's both()
+    end run
+end script
+--- script object defined in handler with handlers and nested script
+on build()
+    script top
+        property items_ : {}
+        script helper
+            on double(n)
+                return n * 2
+            end double
+        end script
+        on add(n)
+            set end of items_ to helper's double(n)
+            return count of items_
+        end add
+    end script
+    return top
+end build
+--- script object in handler with blank lines
+on build(start)
+    script counter
+        property n : start
+
+        on bump()
+            set n to n + 1
+            return n
+        end bump
+
+        on reset()
+            set n to start
+        end reset
+    end script
+    return counter
+end build
+--- me and current application in script
+script s
+    on f()
+        return {me, it, class of me, name of current application, my class}
+    end f
+end script
+--- property parent application
+script finderScript
+    property parent : application "Finder"
+    on desktopCount()
+        return count of items of desktop
+    end desktopCount
+end script
+--- top level script objects and run
+script a
+    on go()
+        return 1
+    end go
+end script
+
+script b
+    on go()
+        return a's go() + 1
+    end go
+end script
+
+return b's go()
+--- handlers with same parameter names as properties
+property name_ : "p"
+property x : 1
+
+on f(x)
+    return x
+end f
+
+on g(name_)
+    return name_ & my name_
+end g
+
+on h()
+    return {x, name_}
+end h
+--- recursion in script object
+script math
+    on fib(n)
+        if n < 2 then return n
+        return fib(n - 1) + fib(n - 2)
+    end fib
+    on fact(n)
+        if n ≤ 1 then return 1
+        return n * (my fact(n - 1))
+    end fact
+end script
+--- copy and identity of script objects
+script proto
+    property items_ : {}
+end script
+
+on t()
+    copy proto to a
+    copy proto to b
+    set end of a's items_ to 1
+    set c to a
+    set end of c's items_ to 2
+    return {a's items_, b's items_, proto's items_, a is c, a = proto}
+end t
+--- global outside used in script object
+global g
+
+script s
+    on f()
+        return g
+    end f
+end script
+
+set g to 1
+return s's f()
+--- global outside and declared again in script object
+global g, h
+
+script s
+    on f()
+        global g
+        return g
+    end f
+    on k()
+        set h to 2
+        return h
+    end k
+end script
+
+on run
+    set g to 1
+    return s's f() + s's k()
+end run
+--- global outside with nested script objects
+global g
+
+script outer
+    script inner
+        on f()
+            return g
+        end f
+    end script
+    on run
+        return inner's f()
+    end run
+end script
+
+set g to 1
+return run outer
+--- global inside a script object for its script objects
+script outer
+    global g
+    script inner
+        on f()
+            return g
+        end f
+    end script
+    on run
+        set g to 3
+        return inner's f()
+    end run
+end script
+
+return run outer
+--- global outside not used by script objects
+global g, unused
+
+script s
+    on f()
+        return 1
+    end f
+end script
+
+on helper()
+    return g
+end helper
+
+set g to 1
+return helper()
+--- property and global used in script object
+property p : 1
+global g
+
+script s
+    on f()
+        return p + g
+    end f
+    on k()
+        global z
+        set z to 1
+        return z
+    end k
+end script
+
+set g to 2
+return s's f()
+--- script object made in a tell block
+on t()
+    tell application "Finder"
+        script s
+            on f()
+                return name of Finder window 1
+            end f
+        end script
+    end tell
+    return s
+end t
+--- script object made in a tell block at the top level
+tell application "Finder"
+    script s
+        on f()
+            return 1
+        end f
+    end script
+end tell
+return s
+--- script objects made in blocks at the top level
+set x to 1
+if x = 1 then
+    script s
+        on f()
+            return 1
+        end f
+    end script
+    set y to s
+end if
+try
+    repeat 2 times
+        script u
+            property p : 1
+        end script
+    end repeat
+on error
+    script v
+    end script
+end try
+--- script object as the last statement
+on t(x)
+    tell x
+        set y to 1
+        script s
+            property p : y
+        end script
+    end tell
+end t
+on u()
+    script s
+        on f()
+            return 1
+        end f
+    end script
+end u
+--- script object in a handler with a parent and properties named by words
+on t(x)
+    script a
+    end script
+    script b
+        property parent : a
+        property name : "n"
+        property size : 3
+        property q : 2
+        property class : 5
+        on f()
+            return {name, size, q, my class}
+        end f
+    end script
+    tell application "Finder"
+        script c
+            property parent : b
+        end script
+    end tell
+    return {b, c}
+end t
+--- property named like a variable without a name
+on t(a, b, c)
+    script s
+        property var_1 : 5
+        property var_7 : 6
+        on g()
+            return var_1 + var_7
+        end g
+    end script
+    return s
+end t

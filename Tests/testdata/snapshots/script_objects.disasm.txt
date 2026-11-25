@@ -1,0 +1,12 @@
+FAS 1.10
+
+function[2] "makeWorkflow" arguments=[]
+  00000  e0           PushLiteral             literal-index=0  ; "Workflow"
+  00001  e1           PushLiteral             literal-index=1  ; statement(type=0,span=0:0)
+  00002  4b0002       DefineActor             literal-index=2  ; vector(type=17,len=7) handler
+  00005  53           EndDefineActor          
+  00006  b0           PopVariable             variable-index=0  ; "Workflow"
+  00007  4f           StoreResult             
+  00008  a0           PushVariable            variable-index=0  ; "Workflow"
+  00009  0f           Return                  
+  0000a  0f           Return                  
